@@ -1,0 +1,1655 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>data_loader API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>data_loader</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import sys,os
+from pathlib import Path
+import pandas as pd
+import numpy as np
+
+# b.pyのディレクトリの絶対パスを取得
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)  # Aディレクトリーのパスを取得
+
+from common.trading_logger import TradingLogger
+from common.config_manager import ConfigManager
+
+class DataLoader:
+    &#34;&#34;&#34;
+    データをロードし、加工するクラスです。
+
+    Attributes:
+        logger (TradingLogger): ログ情報を管理するオブジェクト。
+        __raw (pd.DataFrame): ロードされた生データ。
+        tstpath (Path): テストデータのパス。
+        tstfile (str): テストファイルの名前。
+
+    Args:
+        conf (dict): 設定情報が含まれる辞書。&#39;TSTPATH&#39;と&#39;TSTFILE&#39;をキーとして持ちます。
+    &#34;&#34;&#34;
+
+    def __init__(self,conf):
+        self.logger = TradingLogger.get_instance()
+        self.__raw = None # Aディレクトリーのパスを取得
+        self.tstpath = Path(parent_dir + &#39;/&#39; +  conf[&#39;TSTPATH&#39;])
+        self.tstfile = conf[&#39;TSTFILE&#39;]
+        self.load_data()
+
+
+    def get_tstfile(self):
+        &#34;&#34;&#34;
+        テストファイルの名前を取得します。
+
+        Returns:
+            str: テストファイルの名前。
+        &#34;&#34;&#34;
+        return self.tstfile
+
+    def get_tstpath(self):
+        &#34;&#34;&#34;
+        テストデータのパスを取得します。
+
+        Returns:
+            Path: テストデータのパス。
+        &#34;&#34;&#34;
+        return self.tstpath
+
+    def load_data_from_csv(self, file: str):
+        &#34;&#34;&#34;
+        CSVファイルからデータをロードします。
+
+        Args:
+            file (str): ロードするファイル名。
+
+        Returns:
+            pd.DataFrame: ロードされたデータ。
+
+        Raises:
+            FileNotFoundError: 指定されたファイルが見つからない場合に発生します。
+        &#34;&#34;&#34;
+        try:
+            self.__raw = pd.read_csv(self.tstpath / file)
+        except FileNotFoundError as e:
+            self.logger.log_system_message(f&#34;FileNotFoundError: {e}&#34;)
+            raise
+
+        self.remove_unuse_colums()
+        return self.__raw
+
+    def remove_unuse_colums(self):
+        &#34;&#34;&#34;
+        # &#34;Unnamed: 0&#34; という列がある場合は削除
+        &#34;&#34;&#34;
+        if &#39;Unnamed: 0&#39; in self.__raw.columns:
+            self.__raw = self.__raw.drop(columns=[&#39;Unnamed: 0&#39;])
+
+    def load_data(self):
+        &#34;&#34;&#34;
+        初期設定に基づいてデータをロードします。
+        &#34;&#34;&#34;
+        try:
+            self.__raw = pd.read_csv(self.tstpath / self.tstfile)
+        except FileNotFoundError as e:
+            self.logger.log_system_message(f&#34;FileNotFoundError: {e}&#34;)
+            raise
+        self.remove_unuse_colums()
+
+    def get_raw_copy(self) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;ロードされた生データのコピーを返します。
+
+        Returns:
+            pd.DataFrame: 生データのコピー。
+        &#34;&#34;&#34;
+        return self.__raw.copy()
+
+    def get_raw(self) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        ロードされた生データのDataFrameを取得します。
+
+        Returns:
+            pd.DataFrame: ロードされた生データ。
+        &#34;&#34;&#34;
+        return self.__raw
+
+    def set_raw(self, df: pd.DataFrame):
+        &#34;&#34;&#34;
+        生データのDataFrameを設定します。
+
+        Args:
+            df (pd.DataFrame): 新しい生データ。
+        &#34;&#34;&#34;
+        self.__raw = df
+
+    def get_df(self, index:int,column) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        指定したインデックスとカラム名に対応するデータフレームの値を取得します。
+
+        Args:
+            index (int): 値を取得したい行のインデックス。
+            column (str): 値を取得したいカラム名。
+
+        Returns:
+            pd.DataFrame: 指定されたインデックスとカラムに対応する値。
+        &#34;&#34;&#34;
+        return self.__raw.at[index,column]
+
+    def set_df(self, index:int,column,value) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        指定したインデックスとカラム名の位置に値を設定します。
+
+        Args:
+            index (int): 値を設定する行のインデックス。
+            column (str): 値を設定するカラム名。
+            value: 設定する値。
+        &#34;&#34;&#34;
+        self.__raw.at[index,column] = value
+
+    def set_df_fromto(self, start_index:int,end_index:int,column,value):
+        &#34;&#34;&#34;
+        指定した範囲のインデックスとカラム名の位置に値を一括設定します。
+
+        Args:
+            start_index (int): 値を設定する開始行のインデックス。
+            end_index (int): 値を設定する終了行のインデックス。
+            column (str): 値を設定するカラム名。
+            value: 設定する値。
+        &#34;&#34;&#34;
+        self.__raw.loc[start_index:end_index,column] = value
+
+    def get_df_fromto(self, start_index:int,end_index:int) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        指定した範囲のインデックスに対応するデータフレームの部分集合を取得します。
+
+        Args:
+            start_index (int): 部分集合の開始行のインデックス。
+            end_index (int): 部分集合の終了行のインデックス。
+
+        Returns:
+            pd.DataFrame: 指定された範囲のデータフレーム。
+        &#34;&#34;&#34;
+        return self.__raw.loc[start_index:end_index]
+
+    def df_new_column(self, column, value, dtype):
+        &#34;&#34;&#34;
+        新しいカラムをデータフレームに追加し、指定された値とデータ型で初期化します。
+
+        Args:
+            column (str): 新しいカラムの名前。
+            value: カラムの初期値。
+            dtype: カラムのデータ型。
+        &#34;&#34;&#34;
+        self.__raw[column] = value
+        self.__raw[column] = self.__raw[column].astype(dtype)
+
+    def is_first_column_less_than_second(self, index:int, col1,col2) -&gt; bool:
+        &#34;&#34;&#34;
+        指定されたインデックスで、一つ目のカラムの値が二つ目のカラムの値より小さいかどうかを判定します。
+
+        Args:
+            index (int): 判定する行のインデックス。
+            col1 (str): 一つ目のカラム名。
+            col2 (str): 二つ目のカラム名。
+
+        Returns:
+            bool: 一つ目のカラムの値が二つ目のカラムの値より小さい場合はTrue、そうでない場合はFalse。
+        &#34;&#34;&#34;
+        return self.__raw.at[index,col1] &lt; self.__raw.at[index,col2]
+
+    def is_first_column_greater_than_second(self, index:int, col1,col2) -&gt; bool:
+        &#34;&#34;&#34;
+        指定されたインデックスで、一つ目のカラムの値が二つ目のカラムの値より大きいかどうかを判定します。
+
+        Args:
+            index (int): 判定する行のインデックス。
+            col1 (str): 一つ目のカラム名。
+            col2 (str): 二つ目のカラム名。
+
+        Returns:
+            bool: 一つ目のカラムの値が二つ目のカラムの値より大きい場合はTrue、そうでない場合はFalse。
+        &#34;&#34;&#34;
+        return self.__raw.at[index,col1] &gt; self.__raw.at[index,col2]
+
+    def max_value(self, start_index:int,end_index:int,column) -&gt; float:
+        &#34;&#34;&#34;
+        指定された範囲のカラムで最大値を求めます。
+
+        Args:
+            start_index (int): 範囲の開始行のインデックス。
+            end_index (int): 範囲の終了行のインデックス。
+            column (str): 最大値を求めるカラム名。
+
+        Returns:
+            float: 指定された範囲のカラムの最大値。
+        &#34;&#34;&#34;
+        return self.__raw.loc[start_index:end_index,column].max()
+
+    def min_value(self, start_index:int,end_index:int,column) -&gt; float:
+        &#34;&#34;&#34;
+        指定された範囲のカラムで最小値を求めます。
+
+        Args:
+            start_index (int): 範囲の開始行のインデックス。
+            end_index (int): 範囲の終了行のインデックス。
+            column (str): 最小値を求めるカラム名。
+
+        Returns:
+            float: 指定された範囲のカラムの最小値。
+        &#34;&#34;&#34;
+        return self.__raw.loc[start_index:end_index,column].min()
+
+    def max_value_index(self, start_index:int,end_index:int,column) -&gt; int:
+        &#34;&#34;&#34;
+        指定されたカラムにおいて、指定された範囲で最大値を持つ行のインデックスを返します。
+
+        Args:
+            start_index (int): 検索範囲の開始インデックス。
+            end_index (int): 検索範囲の終了インデックス。
+            column (str): 値を検索するカラム名。
+
+        Returns:
+            int: 最大値を持つ行のインデックス。
+        &#34;&#34;&#34;
+        return self.__raw.loc[start_index:end_index,column].idxmax()
+
+    def min_value_index(self, start_index:int,end_index:int,column) -&gt; int:
+        &#34;&#34;&#34;
+        指定されたカラムにおいて、指定された範囲で最小値を持つ行のインデックスを返します。
+
+        Args:
+            start_index (int): 検索範囲の開始インデックス。
+            end_index (int): 検索範囲の終了インデックス。
+            column (str): 値を検索するカラム名。
+
+        Returns:
+            int: 最小値を持つ行のインデックス。
+        &#34;&#34;&#34;
+        return self.__raw.loc[start_index:end_index,column].idxmin()
+
+    def mean_value(self, start_index:int,end_index:int,column) -&gt; float:
+        &#34;&#34;&#34;
+        指定されたカラムの、指定された範囲における平均値を計算します。
+
+        Args:
+            start_index (int): 平均値計算の開始インデックス。
+            end_index (int): 平均値計算の終了インデックス。
+            column (str): 平均値を計算するカラム名。
+
+        Returns:
+            float: 指定された範囲での平均値。
+        &#34;&#34;&#34;
+        return self.__raw.loc[start_index:end_index,column].mean()
+
+    def std_value(self, start_index:int,end_index:int,column) -&gt; float:
+        &#34;&#34;&#34;
+        指定されたカラムの、指定された範囲における標準偏差を計算します。
+
+        Args:
+            start_index (int): 標準偏差計算の開始インデックス。
+            end_index (int): 標準偏差計算の終了インデックス。
+            column (str): 標準偏差を計算するカラム名。
+
+        Returns:
+            float: 指定された範囲での標準偏差。
+        &#34;&#34;&#34;
+        return self.__raw.loc[start_index:end_index,column].std()
+
+    def describe(self, start_index:int,end_index:int,column)-&gt; pd.Series:
+        &#34;&#34;&#34;
+        指定されたカラムの、指定された範囲における統計的記述を提供します。
+
+        Args:
+            start_index (int): 統計記述の開始インデックス。
+            end_index (int): 統計記述の終了インデックス。
+            column (str): 統計的記述を取得するカラム名。
+
+        Returns:
+            pd.Series: 指定された範囲での統計的記述（最小値、25%パーセンタイル、平均値、75%パーセンタイル、最大値など）。
+        &#34;&#34;&#34;
+        return self.__raw.loc[start_index:end_index,column].describe()
+
+    def filter(self,column,operator,value) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        指定されたカラムに対してフィルタ操作を適用します。
+
+        Args:
+            column (str): フィルタを適用するカラム名。
+            operator (callable): 比較演算子またはフィルタ条件を表す関数。
+            value: フィルタ条件に使用する値。
+
+        Returns:
+            pd.DataFrame: フィルタ条件を満たす行のみを含むデータフレーム。
+        &#34;&#34;&#34;
+        return self.__raw[operator(self.__raw[column],value)]
+
+    def filter_and(self,column1,operator1,value1,column2,operator2,value2) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        二つのカラムに対してAND条件でフィルタ操作を適用します。
+
+        Args:
+            column1 (str): 最初のフィルタを適用するカラム名。
+            operator1 (callable): 最初のカラムの比較演算子またはフィルタ条件を表す関数。
+            value1: 最初のフィルタ条件に使用する値。
+            column2 (str): 二つ目のフィルタを適用するカラム名。
+            operator2 (callable): 二つ目のカラムの比較演算子またはフィルタ条件を表す関数。
+            value2: 二つ目のフィルタ条件に使用する値。
+
+        Returns:
+            pd.DataFrame: 両方のフィルタ条件を満たす行のみを含むデータフレーム。
+        &#34;&#34;&#34;
+        return self.__raw[operator1(self.__raw[column1],value1) &amp; operator2(self.__raw[column2],value2)]
+
+    def filter_or(self,column1,operator1,value1,column2,operator2,value2) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        二つのカラムに対してOR条件でフィルタ操作を適用します。
+
+        Args:
+            column1 (str): 最初のフィルタを適用するカラム名。
+            operator1 (callable): 最初のカラムの比較演算子またはフィルタ条件を表す関数。
+            value1: 最初のフィルタ条件に使用する値。
+            column2 (str): 二つ目のフィルタを適用するカラム名。
+            operator2 (callable): 二つ目のカラムの比較演算子またはフィルタ条件を表す関数。
+            value2: 二つ目のフィルタ条件に使用する値。
+
+        Returns:
+            pd.DataFrame: いずれかのフィルタ条件を満たす行のみを含むデータフレーム。
+        &#34;&#34;&#34;
+        return self.__raw[operator1(self.__raw[column1],value1) | operator2(self.__raw[column2],value2)]</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="data_loader.DataLoader"><code class="flex name class">
+<span>class <span class="ident">DataLoader</span></span>
+<span>(</span><span>conf)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>データをロードし、加工するクラスです。</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>logger</code></strong> :&ensp;<code>TradingLogger</code></dt>
+<dd>ログ情報を管理するオブジェクト。</dd>
+<dt><strong><code>__raw</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>ロードされた生データ。</dd>
+<dt><strong><code>tstpath</code></strong> :&ensp;<code>Path</code></dt>
+<dd>テストデータのパス。</dd>
+<dt><strong><code>tstfile</code></strong> :&ensp;<code>str</code></dt>
+<dd>テストファイルの名前。</dd>
+</dl>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>conf</code></strong> :&ensp;<code>dict</code></dt>
+<dd>設定情報が含まれる辞書。'TSTPATH'と'TSTFILE'をキーとして持ちます。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DataLoader:
+    &#34;&#34;&#34;
+    データをロードし、加工するクラスです。
+
+    Attributes:
+        logger (TradingLogger): ログ情報を管理するオブジェクト。
+        __raw (pd.DataFrame): ロードされた生データ。
+        tstpath (Path): テストデータのパス。
+        tstfile (str): テストファイルの名前。
+
+    Args:
+        conf (dict): 設定情報が含まれる辞書。&#39;TSTPATH&#39;と&#39;TSTFILE&#39;をキーとして持ちます。
+    &#34;&#34;&#34;
+
+    def __init__(self,conf):
+        self.logger = TradingLogger.get_instance()
+        self.__raw = None # Aディレクトリーのパスを取得
+        self.tstpath = Path(parent_dir + &#39;/&#39; +  conf[&#39;TSTPATH&#39;])
+        self.tstfile = conf[&#39;TSTFILE&#39;]
+        self.load_data()
+
+
+    def get_tstfile(self):
+        &#34;&#34;&#34;
+        テストファイルの名前を取得します。
+
+        Returns:
+            str: テストファイルの名前。
+        &#34;&#34;&#34;
+        return self.tstfile
+
+    def get_tstpath(self):
+        &#34;&#34;&#34;
+        テストデータのパスを取得します。
+
+        Returns:
+            Path: テストデータのパス。
+        &#34;&#34;&#34;
+        return self.tstpath
+
+    def load_data_from_csv(self, file: str):
+        &#34;&#34;&#34;
+        CSVファイルからデータをロードします。
+
+        Args:
+            file (str): ロードするファイル名。
+
+        Returns:
+            pd.DataFrame: ロードされたデータ。
+
+        Raises:
+            FileNotFoundError: 指定されたファイルが見つからない場合に発生します。
+        &#34;&#34;&#34;
+        try:
+            self.__raw = pd.read_csv(self.tstpath / file)
+        except FileNotFoundError as e:
+            self.logger.log_system_message(f&#34;FileNotFoundError: {e}&#34;)
+            raise
+
+        self.remove_unuse_colums()
+        return self.__raw
+
+    def remove_unuse_colums(self):
+        &#34;&#34;&#34;
+        # &#34;Unnamed: 0&#34; という列がある場合は削除
+        &#34;&#34;&#34;
+        if &#39;Unnamed: 0&#39; in self.__raw.columns:
+            self.__raw = self.__raw.drop(columns=[&#39;Unnamed: 0&#39;])
+
+    def load_data(self):
+        &#34;&#34;&#34;
+        初期設定に基づいてデータをロードします。
+        &#34;&#34;&#34;
+        try:
+            self.__raw = pd.read_csv(self.tstpath / self.tstfile)
+        except FileNotFoundError as e:
+            self.logger.log_system_message(f&#34;FileNotFoundError: {e}&#34;)
+            raise
+        self.remove_unuse_colums()
+
+    def get_raw_copy(self) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;ロードされた生データのコピーを返します。
+
+        Returns:
+            pd.DataFrame: 生データのコピー。
+        &#34;&#34;&#34;
+        return self.__raw.copy()
+
+    def get_raw(self) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        ロードされた生データのDataFrameを取得します。
+
+        Returns:
+            pd.DataFrame: ロードされた生データ。
+        &#34;&#34;&#34;
+        return self.__raw
+
+    def set_raw(self, df: pd.DataFrame):
+        &#34;&#34;&#34;
+        生データのDataFrameを設定します。
+
+        Args:
+            df (pd.DataFrame): 新しい生データ。
+        &#34;&#34;&#34;
+        self.__raw = df
+
+    def get_df(self, index:int,column) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        指定したインデックスとカラム名に対応するデータフレームの値を取得します。
+
+        Args:
+            index (int): 値を取得したい行のインデックス。
+            column (str): 値を取得したいカラム名。
+
+        Returns:
+            pd.DataFrame: 指定されたインデックスとカラムに対応する値。
+        &#34;&#34;&#34;
+        return self.__raw.at[index,column]
+
+    def set_df(self, index:int,column,value) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        指定したインデックスとカラム名の位置に値を設定します。
+
+        Args:
+            index (int): 値を設定する行のインデックス。
+            column (str): 値を設定するカラム名。
+            value: 設定する値。
+        &#34;&#34;&#34;
+        self.__raw.at[index,column] = value
+
+    def set_df_fromto(self, start_index:int,end_index:int,column,value):
+        &#34;&#34;&#34;
+        指定した範囲のインデックスとカラム名の位置に値を一括設定します。
+
+        Args:
+            start_index (int): 値を設定する開始行のインデックス。
+            end_index (int): 値を設定する終了行のインデックス。
+            column (str): 値を設定するカラム名。
+            value: 設定する値。
+        &#34;&#34;&#34;
+        self.__raw.loc[start_index:end_index,column] = value
+
+    def get_df_fromto(self, start_index:int,end_index:int) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        指定した範囲のインデックスに対応するデータフレームの部分集合を取得します。
+
+        Args:
+            start_index (int): 部分集合の開始行のインデックス。
+            end_index (int): 部分集合の終了行のインデックス。
+
+        Returns:
+            pd.DataFrame: 指定された範囲のデータフレーム。
+        &#34;&#34;&#34;
+        return self.__raw.loc[start_index:end_index]
+
+    def df_new_column(self, column, value, dtype):
+        &#34;&#34;&#34;
+        新しいカラムをデータフレームに追加し、指定された値とデータ型で初期化します。
+
+        Args:
+            column (str): 新しいカラムの名前。
+            value: カラムの初期値。
+            dtype: カラムのデータ型。
+        &#34;&#34;&#34;
+        self.__raw[column] = value
+        self.__raw[column] = self.__raw[column].astype(dtype)
+
+    def is_first_column_less_than_second(self, index:int, col1,col2) -&gt; bool:
+        &#34;&#34;&#34;
+        指定されたインデックスで、一つ目のカラムの値が二つ目のカラムの値より小さいかどうかを判定します。
+
+        Args:
+            index (int): 判定する行のインデックス。
+            col1 (str): 一つ目のカラム名。
+            col2 (str): 二つ目のカラム名。
+
+        Returns:
+            bool: 一つ目のカラムの値が二つ目のカラムの値より小さい場合はTrue、そうでない場合はFalse。
+        &#34;&#34;&#34;
+        return self.__raw.at[index,col1] &lt; self.__raw.at[index,col2]
+
+    def is_first_column_greater_than_second(self, index:int, col1,col2) -&gt; bool:
+        &#34;&#34;&#34;
+        指定されたインデックスで、一つ目のカラムの値が二つ目のカラムの値より大きいかどうかを判定します。
+
+        Args:
+            index (int): 判定する行のインデックス。
+            col1 (str): 一つ目のカラム名。
+            col2 (str): 二つ目のカラム名。
+
+        Returns:
+            bool: 一つ目のカラムの値が二つ目のカラムの値より大きい場合はTrue、そうでない場合はFalse。
+        &#34;&#34;&#34;
+        return self.__raw.at[index,col1] &gt; self.__raw.at[index,col2]
+
+    def max_value(self, start_index:int,end_index:int,column) -&gt; float:
+        &#34;&#34;&#34;
+        指定された範囲のカラムで最大値を求めます。
+
+        Args:
+            start_index (int): 範囲の開始行のインデックス。
+            end_index (int): 範囲の終了行のインデックス。
+            column (str): 最大値を求めるカラム名。
+
+        Returns:
+            float: 指定された範囲のカラムの最大値。
+        &#34;&#34;&#34;
+        return self.__raw.loc[start_index:end_index,column].max()
+
+    def min_value(self, start_index:int,end_index:int,column) -&gt; float:
+        &#34;&#34;&#34;
+        指定された範囲のカラムで最小値を求めます。
+
+        Args:
+            start_index (int): 範囲の開始行のインデックス。
+            end_index (int): 範囲の終了行のインデックス。
+            column (str): 最小値を求めるカラム名。
+
+        Returns:
+            float: 指定された範囲のカラムの最小値。
+        &#34;&#34;&#34;
+        return self.__raw.loc[start_index:end_index,column].min()
+
+    def max_value_index(self, start_index:int,end_index:int,column) -&gt; int:
+        &#34;&#34;&#34;
+        指定されたカラムにおいて、指定された範囲で最大値を持つ行のインデックスを返します。
+
+        Args:
+            start_index (int): 検索範囲の開始インデックス。
+            end_index (int): 検索範囲の終了インデックス。
+            column (str): 値を検索するカラム名。
+
+        Returns:
+            int: 最大値を持つ行のインデックス。
+        &#34;&#34;&#34;
+        return self.__raw.loc[start_index:end_index,column].idxmax()
+
+    def min_value_index(self, start_index:int,end_index:int,column) -&gt; int:
+        &#34;&#34;&#34;
+        指定されたカラムにおいて、指定された範囲で最小値を持つ行のインデックスを返します。
+
+        Args:
+            start_index (int): 検索範囲の開始インデックス。
+            end_index (int): 検索範囲の終了インデックス。
+            column (str): 値を検索するカラム名。
+
+        Returns:
+            int: 最小値を持つ行のインデックス。
+        &#34;&#34;&#34;
+        return self.__raw.loc[start_index:end_index,column].idxmin()
+
+    def mean_value(self, start_index:int,end_index:int,column) -&gt; float:
+        &#34;&#34;&#34;
+        指定されたカラムの、指定された範囲における平均値を計算します。
+
+        Args:
+            start_index (int): 平均値計算の開始インデックス。
+            end_index (int): 平均値計算の終了インデックス。
+            column (str): 平均値を計算するカラム名。
+
+        Returns:
+            float: 指定された範囲での平均値。
+        &#34;&#34;&#34;
+        return self.__raw.loc[start_index:end_index,column].mean()
+
+    def std_value(self, start_index:int,end_index:int,column) -&gt; float:
+        &#34;&#34;&#34;
+        指定されたカラムの、指定された範囲における標準偏差を計算します。
+
+        Args:
+            start_index (int): 標準偏差計算の開始インデックス。
+            end_index (int): 標準偏差計算の終了インデックス。
+            column (str): 標準偏差を計算するカラム名。
+
+        Returns:
+            float: 指定された範囲での標準偏差。
+        &#34;&#34;&#34;
+        return self.__raw.loc[start_index:end_index,column].std()
+
+    def describe(self, start_index:int,end_index:int,column)-&gt; pd.Series:
+        &#34;&#34;&#34;
+        指定されたカラムの、指定された範囲における統計的記述を提供します。
+
+        Args:
+            start_index (int): 統計記述の開始インデックス。
+            end_index (int): 統計記述の終了インデックス。
+            column (str): 統計的記述を取得するカラム名。
+
+        Returns:
+            pd.Series: 指定された範囲での統計的記述（最小値、25%パーセンタイル、平均値、75%パーセンタイル、最大値など）。
+        &#34;&#34;&#34;
+        return self.__raw.loc[start_index:end_index,column].describe()
+
+    def filter(self,column,operator,value) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        指定されたカラムに対してフィルタ操作を適用します。
+
+        Args:
+            column (str): フィルタを適用するカラム名。
+            operator (callable): 比較演算子またはフィルタ条件を表す関数。
+            value: フィルタ条件に使用する値。
+
+        Returns:
+            pd.DataFrame: フィルタ条件を満たす行のみを含むデータフレーム。
+        &#34;&#34;&#34;
+        return self.__raw[operator(self.__raw[column],value)]
+
+    def filter_and(self,column1,operator1,value1,column2,operator2,value2) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        二つのカラムに対してAND条件でフィルタ操作を適用します。
+
+        Args:
+            column1 (str): 最初のフィルタを適用するカラム名。
+            operator1 (callable): 最初のカラムの比較演算子またはフィルタ条件を表す関数。
+            value1: 最初のフィルタ条件に使用する値。
+            column2 (str): 二つ目のフィルタを適用するカラム名。
+            operator2 (callable): 二つ目のカラムの比較演算子またはフィルタ条件を表す関数。
+            value2: 二つ目のフィルタ条件に使用する値。
+
+        Returns:
+            pd.DataFrame: 両方のフィルタ条件を満たす行のみを含むデータフレーム。
+        &#34;&#34;&#34;
+        return self.__raw[operator1(self.__raw[column1],value1) &amp; operator2(self.__raw[column2],value2)]
+
+    def filter_or(self,column1,operator1,value1,column2,operator2,value2) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        二つのカラムに対してOR条件でフィルタ操作を適用します。
+
+        Args:
+            column1 (str): 最初のフィルタを適用するカラム名。
+            operator1 (callable): 最初のカラムの比較演算子またはフィルタ条件を表す関数。
+            value1: 最初のフィルタ条件に使用する値。
+            column2 (str): 二つ目のフィルタを適用するカラム名。
+            operator2 (callable): 二つ目のカラムの比較演算子またはフィルタ条件を表す関数。
+            value2: 二つ目のフィルタ条件に使用する値。
+
+        Returns:
+            pd.DataFrame: いずれかのフィルタ条件を満たす行のみを含むデータフレーム。
+        &#34;&#34;&#34;
+        return self.__raw[operator1(self.__raw[column1],value1) | operator2(self.__raw[column2],value2)]</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="data_loader.DataLoader.describe"><code class="name flex">
+<span>def <span class="ident">describe</span></span>(<span>self, start_index: int, end_index: int, column) ‑> pandas.core.series.Series</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定されたカラムの、指定された範囲における統計的記述を提供します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>start_index</code></strong> :&ensp;<code>int</code></dt>
+<dd>統計記述の開始インデックス。</dd>
+<dt><strong><code>end_index</code></strong> :&ensp;<code>int</code></dt>
+<dd>統計記述の終了インデックス。</dd>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>統計的記述を取得するカラム名。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.Series</code></dt>
+<dd>指定された範囲での統計的記述（最小値、25%パーセンタイル、平均値、75%パーセンタイル、最大値など）。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def describe(self, start_index:int,end_index:int,column)-&gt; pd.Series:
+    &#34;&#34;&#34;
+    指定されたカラムの、指定された範囲における統計的記述を提供します。
+
+    Args:
+        start_index (int): 統計記述の開始インデックス。
+        end_index (int): 統計記述の終了インデックス。
+        column (str): 統計的記述を取得するカラム名。
+
+    Returns:
+        pd.Series: 指定された範囲での統計的記述（最小値、25%パーセンタイル、平均値、75%パーセンタイル、最大値など）。
+    &#34;&#34;&#34;
+    return self.__raw.loc[start_index:end_index,column].describe()</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.df_new_column"><code class="name flex">
+<span>def <span class="ident">df_new_column</span></span>(<span>self, column, value, dtype)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>新しいカラムをデータフレームに追加し、指定された値とデータ型で初期化します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>新しいカラムの名前。</dd>
+<dt><strong><code>value</code></strong></dt>
+<dd>カラムの初期値。</dd>
+<dt><strong><code>dtype</code></strong></dt>
+<dd>カラムのデータ型。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def df_new_column(self, column, value, dtype):
+    &#34;&#34;&#34;
+    新しいカラムをデータフレームに追加し、指定された値とデータ型で初期化します。
+
+    Args:
+        column (str): 新しいカラムの名前。
+        value: カラムの初期値。
+        dtype: カラムのデータ型。
+    &#34;&#34;&#34;
+    self.__raw[column] = value
+    self.__raw[column] = self.__raw[column].astype(dtype)</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.filter"><code class="name flex">
+<span>def <span class="ident">filter</span></span>(<span>self, column, operator, value) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定されたカラムに対してフィルタ操作を適用します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>フィルタを適用するカラム名。</dd>
+<dt><strong><code>operator</code></strong> :&ensp;<code>callable</code></dt>
+<dd>比較演算子またはフィルタ条件を表す関数。</dd>
+<dt><strong><code>value</code></strong></dt>
+<dd>フィルタ条件に使用する値。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>フィルタ条件を満たす行のみを含むデータフレーム。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def filter(self,column,operator,value) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    指定されたカラムに対してフィルタ操作を適用します。
+
+    Args:
+        column (str): フィルタを適用するカラム名。
+        operator (callable): 比較演算子またはフィルタ条件を表す関数。
+        value: フィルタ条件に使用する値。
+
+    Returns:
+        pd.DataFrame: フィルタ条件を満たす行のみを含むデータフレーム。
+    &#34;&#34;&#34;
+    return self.__raw[operator(self.__raw[column],value)]</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.filter_and"><code class="name flex">
+<span>def <span class="ident">filter_and</span></span>(<span>self, column1, operator1, value1, column2, operator2, value2) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>二つのカラムに対してAND条件でフィルタ操作を適用します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>column1</code></strong> :&ensp;<code>str</code></dt>
+<dd>最初のフィルタを適用するカラム名。</dd>
+<dt><strong><code>operator1</code></strong> :&ensp;<code>callable</code></dt>
+<dd>最初のカラムの比較演算子またはフィルタ条件を表す関数。</dd>
+<dt><strong><code>value1</code></strong></dt>
+<dd>最初のフィルタ条件に使用する値。</dd>
+<dt><strong><code>column2</code></strong> :&ensp;<code>str</code></dt>
+<dd>二つ目のフィルタを適用するカラム名。</dd>
+<dt><strong><code>operator2</code></strong> :&ensp;<code>callable</code></dt>
+<dd>二つ目のカラムの比較演算子またはフィルタ条件を表す関数。</dd>
+<dt><strong><code>value2</code></strong></dt>
+<dd>二つ目のフィルタ条件に使用する値。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>両方のフィルタ条件を満たす行のみを含むデータフレーム。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def filter_and(self,column1,operator1,value1,column2,operator2,value2) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    二つのカラムに対してAND条件でフィルタ操作を適用します。
+
+    Args:
+        column1 (str): 最初のフィルタを適用するカラム名。
+        operator1 (callable): 最初のカラムの比較演算子またはフィルタ条件を表す関数。
+        value1: 最初のフィルタ条件に使用する値。
+        column2 (str): 二つ目のフィルタを適用するカラム名。
+        operator2 (callable): 二つ目のカラムの比較演算子またはフィルタ条件を表す関数。
+        value2: 二つ目のフィルタ条件に使用する値。
+
+    Returns:
+        pd.DataFrame: 両方のフィルタ条件を満たす行のみを含むデータフレーム。
+    &#34;&#34;&#34;
+    return self.__raw[operator1(self.__raw[column1],value1) &amp; operator2(self.__raw[column2],value2)]</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.filter_or"><code class="name flex">
+<span>def <span class="ident">filter_or</span></span>(<span>self, column1, operator1, value1, column2, operator2, value2) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>二つのカラムに対してOR条件でフィルタ操作を適用します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>column1</code></strong> :&ensp;<code>str</code></dt>
+<dd>最初のフィルタを適用するカラム名。</dd>
+<dt><strong><code>operator1</code></strong> :&ensp;<code>callable</code></dt>
+<dd>最初のカラムの比較演算子またはフィルタ条件を表す関数。</dd>
+<dt><strong><code>value1</code></strong></dt>
+<dd>最初のフィルタ条件に使用する値。</dd>
+<dt><strong><code>column2</code></strong> :&ensp;<code>str</code></dt>
+<dd>二つ目のフィルタを適用するカラム名。</dd>
+<dt><strong><code>operator2</code></strong> :&ensp;<code>callable</code></dt>
+<dd>二つ目のカラムの比較演算子またはフィルタ条件を表す関数。</dd>
+<dt><strong><code>value2</code></strong></dt>
+<dd>二つ目のフィルタ条件に使用する値。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>いずれかのフィルタ条件を満たす行のみを含むデータフレーム。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def filter_or(self,column1,operator1,value1,column2,operator2,value2) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    二つのカラムに対してOR条件でフィルタ操作を適用します。
+
+    Args:
+        column1 (str): 最初のフィルタを適用するカラム名。
+        operator1 (callable): 最初のカラムの比較演算子またはフィルタ条件を表す関数。
+        value1: 最初のフィルタ条件に使用する値。
+        column2 (str): 二つ目のフィルタを適用するカラム名。
+        operator2 (callable): 二つ目のカラムの比較演算子またはフィルタ条件を表す関数。
+        value2: 二つ目のフィルタ条件に使用する値。
+
+    Returns:
+        pd.DataFrame: いずれかのフィルタ条件を満たす行のみを含むデータフレーム。
+    &#34;&#34;&#34;
+    return self.__raw[operator1(self.__raw[column1],value1) | operator2(self.__raw[column2],value2)]</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.get_df"><code class="name flex">
+<span>def <span class="ident">get_df</span></span>(<span>self, index: int, column) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定したインデックスとカラム名に対応するデータフレームの値を取得します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>index</code></strong> :&ensp;<code>int</code></dt>
+<dd>値を取得したい行のインデックス。</dd>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>値を取得したいカラム名。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>指定されたインデックスとカラムに対応する値。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_df(self, index:int,column) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    指定したインデックスとカラム名に対応するデータフレームの値を取得します。
+
+    Args:
+        index (int): 値を取得したい行のインデックス。
+        column (str): 値を取得したいカラム名。
+
+    Returns:
+        pd.DataFrame: 指定されたインデックスとカラムに対応する値。
+    &#34;&#34;&#34;
+    return self.__raw.at[index,column]</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.get_df_fromto"><code class="name flex">
+<span>def <span class="ident">get_df_fromto</span></span>(<span>self, start_index: int, end_index: int) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定した範囲のインデックスに対応するデータフレームの部分集合を取得します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>start_index</code></strong> :&ensp;<code>int</code></dt>
+<dd>部分集合の開始行のインデックス。</dd>
+<dt><strong><code>end_index</code></strong> :&ensp;<code>int</code></dt>
+<dd>部分集合の終了行のインデックス。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>指定された範囲のデータフレーム。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_df_fromto(self, start_index:int,end_index:int) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    指定した範囲のインデックスに対応するデータフレームの部分集合を取得します。
+
+    Args:
+        start_index (int): 部分集合の開始行のインデックス。
+        end_index (int): 部分集合の終了行のインデックス。
+
+    Returns:
+        pd.DataFrame: 指定された範囲のデータフレーム。
+    &#34;&#34;&#34;
+    return self.__raw.loc[start_index:end_index]</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.get_raw"><code class="name flex">
+<span>def <span class="ident">get_raw</span></span>(<span>self) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>ロードされた生データのDataFrameを取得します。</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>ロードされた生データ。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_raw(self) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    ロードされた生データのDataFrameを取得します。
+
+    Returns:
+        pd.DataFrame: ロードされた生データ。
+    &#34;&#34;&#34;
+    return self.__raw</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.get_raw_copy"><code class="name flex">
+<span>def <span class="ident">get_raw_copy</span></span>(<span>self) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>ロードされた生データのコピーを返します。</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>生データのコピー。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_raw_copy(self) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;ロードされた生データのコピーを返します。
+
+    Returns:
+        pd.DataFrame: 生データのコピー。
+    &#34;&#34;&#34;
+    return self.__raw.copy()</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.get_tstfile"><code class="name flex">
+<span>def <span class="ident">get_tstfile</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>テストファイルの名前を取得します。</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>テストファイルの名前。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_tstfile(self):
+    &#34;&#34;&#34;
+    テストファイルの名前を取得します。
+
+    Returns:
+        str: テストファイルの名前。
+    &#34;&#34;&#34;
+    return self.tstfile</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.get_tstpath"><code class="name flex">
+<span>def <span class="ident">get_tstpath</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>テストデータのパスを取得します。</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Path</code></dt>
+<dd>テストデータのパス。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_tstpath(self):
+    &#34;&#34;&#34;
+    テストデータのパスを取得します。
+
+    Returns:
+        Path: テストデータのパス。
+    &#34;&#34;&#34;
+    return self.tstpath</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.is_first_column_greater_than_second"><code class="name flex">
+<span>def <span class="ident">is_first_column_greater_than_second</span></span>(<span>self, index: int, col1, col2) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定されたインデックスで、一つ目のカラムの値が二つ目のカラムの値より大きいかどうかを判定します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>index</code></strong> :&ensp;<code>int</code></dt>
+<dd>判定する行のインデックス。</dd>
+<dt><strong><code>col1</code></strong> :&ensp;<code>str</code></dt>
+<dd>一つ目のカラム名。</dd>
+<dt><strong><code>col2</code></strong> :&ensp;<code>str</code></dt>
+<dd>二つ目のカラム名。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>一つ目のカラムの値が二つ目のカラムの値より大きい場合はTrue、そうでない場合はFalse。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_first_column_greater_than_second(self, index:int, col1,col2) -&gt; bool:
+    &#34;&#34;&#34;
+    指定されたインデックスで、一つ目のカラムの値が二つ目のカラムの値より大きいかどうかを判定します。
+
+    Args:
+        index (int): 判定する行のインデックス。
+        col1 (str): 一つ目のカラム名。
+        col2 (str): 二つ目のカラム名。
+
+    Returns:
+        bool: 一つ目のカラムの値が二つ目のカラムの値より大きい場合はTrue、そうでない場合はFalse。
+    &#34;&#34;&#34;
+    return self.__raw.at[index,col1] &gt; self.__raw.at[index,col2]</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.is_first_column_less_than_second"><code class="name flex">
+<span>def <span class="ident">is_first_column_less_than_second</span></span>(<span>self, index: int, col1, col2) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定されたインデックスで、一つ目のカラムの値が二つ目のカラムの値より小さいかどうかを判定します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>index</code></strong> :&ensp;<code>int</code></dt>
+<dd>判定する行のインデックス。</dd>
+<dt><strong><code>col1</code></strong> :&ensp;<code>str</code></dt>
+<dd>一つ目のカラム名。</dd>
+<dt><strong><code>col2</code></strong> :&ensp;<code>str</code></dt>
+<dd>二つ目のカラム名。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>一つ目のカラムの値が二つ目のカラムの値より小さい場合はTrue、そうでない場合はFalse。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_first_column_less_than_second(self, index:int, col1,col2) -&gt; bool:
+    &#34;&#34;&#34;
+    指定されたインデックスで、一つ目のカラムの値が二つ目のカラムの値より小さいかどうかを判定します。
+
+    Args:
+        index (int): 判定する行のインデックス。
+        col1 (str): 一つ目のカラム名。
+        col2 (str): 二つ目のカラム名。
+
+    Returns:
+        bool: 一つ目のカラムの値が二つ目のカラムの値より小さい場合はTrue、そうでない場合はFalse。
+    &#34;&#34;&#34;
+    return self.__raw.at[index,col1] &lt; self.__raw.at[index,col2]</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.load_data"><code class="name flex">
+<span>def <span class="ident">load_data</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>初期設定に基づいてデータをロードします。</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_data(self):
+    &#34;&#34;&#34;
+    初期設定に基づいてデータをロードします。
+    &#34;&#34;&#34;
+    try:
+        self.__raw = pd.read_csv(self.tstpath / self.tstfile)
+    except FileNotFoundError as e:
+        self.logger.log_system_message(f&#34;FileNotFoundError: {e}&#34;)
+        raise
+    self.remove_unuse_colums()</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.load_data_from_csv"><code class="name flex">
+<span>def <span class="ident">load_data_from_csv</span></span>(<span>self, file: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>CSVファイルからデータをロードします。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>file</code></strong> :&ensp;<code>str</code></dt>
+<dd>ロードするファイル名。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>ロードされたデータ。</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>FileNotFoundError</code></dt>
+<dd>指定されたファイルが見つからない場合に発生します。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_data_from_csv(self, file: str):
+    &#34;&#34;&#34;
+    CSVファイルからデータをロードします。
+
+    Args:
+        file (str): ロードするファイル名。
+
+    Returns:
+        pd.DataFrame: ロードされたデータ。
+
+    Raises:
+        FileNotFoundError: 指定されたファイルが見つからない場合に発生します。
+    &#34;&#34;&#34;
+    try:
+        self.__raw = pd.read_csv(self.tstpath / file)
+    except FileNotFoundError as e:
+        self.logger.log_system_message(f&#34;FileNotFoundError: {e}&#34;)
+        raise
+
+    self.remove_unuse_colums()
+    return self.__raw</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.max_value"><code class="name flex">
+<span>def <span class="ident">max_value</span></span>(<span>self, start_index: int, end_index: int, column) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定された範囲のカラムで最大値を求めます。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>start_index</code></strong> :&ensp;<code>int</code></dt>
+<dd>範囲の開始行のインデックス。</dd>
+<dt><strong><code>end_index</code></strong> :&ensp;<code>int</code></dt>
+<dd>範囲の終了行のインデックス。</dd>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>最大値を求めるカラム名。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float</code></dt>
+<dd>指定された範囲のカラムの最大値。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def max_value(self, start_index:int,end_index:int,column) -&gt; float:
+    &#34;&#34;&#34;
+    指定された範囲のカラムで最大値を求めます。
+
+    Args:
+        start_index (int): 範囲の開始行のインデックス。
+        end_index (int): 範囲の終了行のインデックス。
+        column (str): 最大値を求めるカラム名。
+
+    Returns:
+        float: 指定された範囲のカラムの最大値。
+    &#34;&#34;&#34;
+    return self.__raw.loc[start_index:end_index,column].max()</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.max_value_index"><code class="name flex">
+<span>def <span class="ident">max_value_index</span></span>(<span>self, start_index: int, end_index: int, column) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定されたカラムにおいて、指定された範囲で最大値を持つ行のインデックスを返します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>start_index</code></strong> :&ensp;<code>int</code></dt>
+<dd>検索範囲の開始インデックス。</dd>
+<dt><strong><code>end_index</code></strong> :&ensp;<code>int</code></dt>
+<dd>検索範囲の終了インデックス。</dd>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>値を検索するカラム名。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>最大値を持つ行のインデックス。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def max_value_index(self, start_index:int,end_index:int,column) -&gt; int:
+    &#34;&#34;&#34;
+    指定されたカラムにおいて、指定された範囲で最大値を持つ行のインデックスを返します。
+
+    Args:
+        start_index (int): 検索範囲の開始インデックス。
+        end_index (int): 検索範囲の終了インデックス。
+        column (str): 値を検索するカラム名。
+
+    Returns:
+        int: 最大値を持つ行のインデックス。
+    &#34;&#34;&#34;
+    return self.__raw.loc[start_index:end_index,column].idxmax()</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.mean_value"><code class="name flex">
+<span>def <span class="ident">mean_value</span></span>(<span>self, start_index: int, end_index: int, column) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定されたカラムの、指定された範囲における平均値を計算します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>start_index</code></strong> :&ensp;<code>int</code></dt>
+<dd>平均値計算の開始インデックス。</dd>
+<dt><strong><code>end_index</code></strong> :&ensp;<code>int</code></dt>
+<dd>平均値計算の終了インデックス。</dd>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>平均値を計算するカラム名。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float</code></dt>
+<dd>指定された範囲での平均値。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mean_value(self, start_index:int,end_index:int,column) -&gt; float:
+    &#34;&#34;&#34;
+    指定されたカラムの、指定された範囲における平均値を計算します。
+
+    Args:
+        start_index (int): 平均値計算の開始インデックス。
+        end_index (int): 平均値計算の終了インデックス。
+        column (str): 平均値を計算するカラム名。
+
+    Returns:
+        float: 指定された範囲での平均値。
+    &#34;&#34;&#34;
+    return self.__raw.loc[start_index:end_index,column].mean()</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.min_value"><code class="name flex">
+<span>def <span class="ident">min_value</span></span>(<span>self, start_index: int, end_index: int, column) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定された範囲のカラムで最小値を求めます。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>start_index</code></strong> :&ensp;<code>int</code></dt>
+<dd>範囲の開始行のインデックス。</dd>
+<dt><strong><code>end_index</code></strong> :&ensp;<code>int</code></dt>
+<dd>範囲の終了行のインデックス。</dd>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>最小値を求めるカラム名。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float</code></dt>
+<dd>指定された範囲のカラムの最小値。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def min_value(self, start_index:int,end_index:int,column) -&gt; float:
+    &#34;&#34;&#34;
+    指定された範囲のカラムで最小値を求めます。
+
+    Args:
+        start_index (int): 範囲の開始行のインデックス。
+        end_index (int): 範囲の終了行のインデックス。
+        column (str): 最小値を求めるカラム名。
+
+    Returns:
+        float: 指定された範囲のカラムの最小値。
+    &#34;&#34;&#34;
+    return self.__raw.loc[start_index:end_index,column].min()</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.min_value_index"><code class="name flex">
+<span>def <span class="ident">min_value_index</span></span>(<span>self, start_index: int, end_index: int, column) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定されたカラムにおいて、指定された範囲で最小値を持つ行のインデックスを返します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>start_index</code></strong> :&ensp;<code>int</code></dt>
+<dd>検索範囲の開始インデックス。</dd>
+<dt><strong><code>end_index</code></strong> :&ensp;<code>int</code></dt>
+<dd>検索範囲の終了インデックス。</dd>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>値を検索するカラム名。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>最小値を持つ行のインデックス。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def min_value_index(self, start_index:int,end_index:int,column) -&gt; int:
+    &#34;&#34;&#34;
+    指定されたカラムにおいて、指定された範囲で最小値を持つ行のインデックスを返します。
+
+    Args:
+        start_index (int): 検索範囲の開始インデックス。
+        end_index (int): 検索範囲の終了インデックス。
+        column (str): 値を検索するカラム名。
+
+    Returns:
+        int: 最小値を持つ行のインデックス。
+    &#34;&#34;&#34;
+    return self.__raw.loc[start_index:end_index,column].idxmin()</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.remove_unuse_colums"><code class="name flex">
+<span>def <span class="ident">remove_unuse_colums</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><h1 id="unnamed-0">"Unnamed: 0" という列がある場合は削除</h1></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def remove_unuse_colums(self):
+    &#34;&#34;&#34;
+    # &#34;Unnamed: 0&#34; という列がある場合は削除
+    &#34;&#34;&#34;
+    if &#39;Unnamed: 0&#39; in self.__raw.columns:
+        self.__raw = self.__raw.drop(columns=[&#39;Unnamed: 0&#39;])</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.set_df"><code class="name flex">
+<span>def <span class="ident">set_df</span></span>(<span>self, index: int, column, value) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定したインデックスとカラム名の位置に値を設定します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>index</code></strong> :&ensp;<code>int</code></dt>
+<dd>値を設定する行のインデックス。</dd>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>値を設定するカラム名。</dd>
+<dt><strong><code>value</code></strong></dt>
+<dd>設定する値。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_df(self, index:int,column,value) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    指定したインデックスとカラム名の位置に値を設定します。
+
+    Args:
+        index (int): 値を設定する行のインデックス。
+        column (str): 値を設定するカラム名。
+        value: 設定する値。
+    &#34;&#34;&#34;
+    self.__raw.at[index,column] = value</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.set_df_fromto"><code class="name flex">
+<span>def <span class="ident">set_df_fromto</span></span>(<span>self, start_index: int, end_index: int, column, value)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定した範囲のインデックスとカラム名の位置に値を一括設定します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>start_index</code></strong> :&ensp;<code>int</code></dt>
+<dd>値を設定する開始行のインデックス。</dd>
+<dt><strong><code>end_index</code></strong> :&ensp;<code>int</code></dt>
+<dd>値を設定する終了行のインデックス。</dd>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>値を設定するカラム名。</dd>
+<dt><strong><code>value</code></strong></dt>
+<dd>設定する値。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_df_fromto(self, start_index:int,end_index:int,column,value):
+    &#34;&#34;&#34;
+    指定した範囲のインデックスとカラム名の位置に値を一括設定します。
+
+    Args:
+        start_index (int): 値を設定する開始行のインデックス。
+        end_index (int): 値を設定する終了行のインデックス。
+        column (str): 値を設定するカラム名。
+        value: 設定する値。
+    &#34;&#34;&#34;
+    self.__raw.loc[start_index:end_index,column] = value</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.set_raw"><code class="name flex">
+<span>def <span class="ident">set_raw</span></span>(<span>self, df: pandas.core.frame.DataFrame)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>生データのDataFrameを設定します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>新しい生データ。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_raw(self, df: pd.DataFrame):
+    &#34;&#34;&#34;
+    生データのDataFrameを設定します。
+
+    Args:
+        df (pd.DataFrame): 新しい生データ。
+    &#34;&#34;&#34;
+    self.__raw = df</code></pre>
+</details>
+</dd>
+<dt id="data_loader.DataLoader.std_value"><code class="name flex">
+<span>def <span class="ident">std_value</span></span>(<span>self, start_index: int, end_index: int, column) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定されたカラムの、指定された範囲における標準偏差を計算します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>start_index</code></strong> :&ensp;<code>int</code></dt>
+<dd>標準偏差計算の開始インデックス。</dd>
+<dt><strong><code>end_index</code></strong> :&ensp;<code>int</code></dt>
+<dd>標準偏差計算の終了インデックス。</dd>
+<dt><strong><code>column</code></strong> :&ensp;<code>str</code></dt>
+<dd>標準偏差を計算するカラム名。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float</code></dt>
+<dd>指定された範囲での標準偏差。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def std_value(self, start_index:int,end_index:int,column) -&gt; float:
+    &#34;&#34;&#34;
+    指定されたカラムの、指定された範囲における標準偏差を計算します。
+
+    Args:
+        start_index (int): 標準偏差計算の開始インデックス。
+        end_index (int): 標準偏差計算の終了インデックス。
+        column (str): 標準偏差を計算するカラム名。
+
+    Returns:
+        float: 指定された範囲での標準偏差。
+    &#34;&#34;&#34;
+    return self.__raw.loc[start_index:end_index,column].std()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="data_loader.DataLoader" href="#data_loader.DataLoader">DataLoader</a></code></h4>
+<ul class="">
+<li><code><a title="data_loader.DataLoader.describe" href="#data_loader.DataLoader.describe">describe</a></code></li>
+<li><code><a title="data_loader.DataLoader.df_new_column" href="#data_loader.DataLoader.df_new_column">df_new_column</a></code></li>
+<li><code><a title="data_loader.DataLoader.filter" href="#data_loader.DataLoader.filter">filter</a></code></li>
+<li><code><a title="data_loader.DataLoader.filter_and" href="#data_loader.DataLoader.filter_and">filter_and</a></code></li>
+<li><code><a title="data_loader.DataLoader.filter_or" href="#data_loader.DataLoader.filter_or">filter_or</a></code></li>
+<li><code><a title="data_loader.DataLoader.get_df" href="#data_loader.DataLoader.get_df">get_df</a></code></li>
+<li><code><a title="data_loader.DataLoader.get_df_fromto" href="#data_loader.DataLoader.get_df_fromto">get_df_fromto</a></code></li>
+<li><code><a title="data_loader.DataLoader.get_raw" href="#data_loader.DataLoader.get_raw">get_raw</a></code></li>
+<li><code><a title="data_loader.DataLoader.get_raw_copy" href="#data_loader.DataLoader.get_raw_copy">get_raw_copy</a></code></li>
+<li><code><a title="data_loader.DataLoader.get_tstfile" href="#data_loader.DataLoader.get_tstfile">get_tstfile</a></code></li>
+<li><code><a title="data_loader.DataLoader.get_tstpath" href="#data_loader.DataLoader.get_tstpath">get_tstpath</a></code></li>
+<li><code><a title="data_loader.DataLoader.is_first_column_greater_than_second" href="#data_loader.DataLoader.is_first_column_greater_than_second">is_first_column_greater_than_second</a></code></li>
+<li><code><a title="data_loader.DataLoader.is_first_column_less_than_second" href="#data_loader.DataLoader.is_first_column_less_than_second">is_first_column_less_than_second</a></code></li>
+<li><code><a title="data_loader.DataLoader.load_data" href="#data_loader.DataLoader.load_data">load_data</a></code></li>
+<li><code><a title="data_loader.DataLoader.load_data_from_csv" href="#data_loader.DataLoader.load_data_from_csv">load_data_from_csv</a></code></li>
+<li><code><a title="data_loader.DataLoader.max_value" href="#data_loader.DataLoader.max_value">max_value</a></code></li>
+<li><code><a title="data_loader.DataLoader.max_value_index" href="#data_loader.DataLoader.max_value_index">max_value_index</a></code></li>
+<li><code><a title="data_loader.DataLoader.mean_value" href="#data_loader.DataLoader.mean_value">mean_value</a></code></li>
+<li><code><a title="data_loader.DataLoader.min_value" href="#data_loader.DataLoader.min_value">min_value</a></code></li>
+<li><code><a title="data_loader.DataLoader.min_value_index" href="#data_loader.DataLoader.min_value_index">min_value_index</a></code></li>
+<li><code><a title="data_loader.DataLoader.remove_unuse_colums" href="#data_loader.DataLoader.remove_unuse_colums">remove_unuse_colums</a></code></li>
+<li><code><a title="data_loader.DataLoader.set_df" href="#data_loader.DataLoader.set_df">set_df</a></code></li>
+<li><code><a title="data_loader.DataLoader.set_df_fromto" href="#data_loader.DataLoader.set_df_fromto">set_df_fromto</a></code></li>
+<li><code><a title="data_loader.DataLoader.set_raw" href="#data_loader.DataLoader.set_raw">set_raw</a></code></li>
+<li><code><a title="data_loader.DataLoader.std_value" href="#data_loader.DataLoader.std_value">std_value</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

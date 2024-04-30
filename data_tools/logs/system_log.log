@@ -1,0 +1,23 @@
+2024-02-21 02:21:43,980 INFO: FileNotFoundError: [Errno 2] No such file or directory: '/Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/algorithmic_trading/data/BTCUSDT_2023-09-01_2024-02-20_60_price.csv'
+2024-02-21 02:25:17,837 INFO: FileNotFoundError: [Errno 2] No such file or directory: '/Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/algorithmic_trading/data/BTCUSDT_2023-09-01_2024-02-20_60_price.csv'
+2024-02-21 02:31:29,654 INFO: FileNotFoundError: [Errno 2] No such file or directory: '/Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/algorithmic_trading/data/data_ml/BTCUSDT_2023-09-01_2024-02-20_60_price_ml.csv'
+2024-02-21 02:44:02,132 INFO: FileNotFoundError: [Errno 2] No such file or directory: '/Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/algorithmic_trading/data/BTCUSDT_2023-09-01_2024-02-20_60_price.csv'
+2024-02-21 03:06:02,218 INFO: FileNotFoundError: [Errno 2] No such file or directory: '/Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/algorithmic_trading/data/data_ml/BTCUSDT_2023-09-01_2024-02-20_60_price_ml_ml.csv'
+2024-02-21 03:07:10,269 INFO: FileNotFoundError: [Errno 2] No such file or directory: '/Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/algorithmic_trading/data/data_ml/BTCUSDT_2023-09-01_2024-02-20_60_price_ml.csv_ml.csv'
+2024-03-03 14:04:47,423 INFO: ByBit HTTP Access Error: HTTPSConnectionPool(host='api.bybit.com', port=443): Read timed out. (read timeout=10)
+2024-03-03 14:10:13,510 INFO: ByBit HTTP Access Error: HTTPSConnectionPool(host='api.bybit.com', port=443): Read timed out. (read timeout=10)
+2024-03-03 17:43:35,015 INFO: ByBit HTTP Access Error: HTTPSConnectionPool(host='api.bybit.com', port=443): Max retries exceeded with url: /v5/market/open-interest?category=linear&endTime=1638284400000&intervalTime=4h&limit=200&startTime=1635404400000&symbol=BTCUSDT (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000199924C7370>: Failed to resolve 'api.bybit.com' ([Errno 11001] getaddrinfo failed)"))
+2024-04-04 01:32:16,527 INFO: Sequence 'ETHUSDT_account_serial_seq' created.
+2024-04-04 01:32:16,546 INFO: Table 'ETHUSDT_account' created with existing sequence 'ETHUSDT_account_serial_seq'.
+2024-04-04 01:32:16,613 INFO: Sequence 'ETHUSDT_fxtransaction_serial_seq' created.
+2024-04-04 01:32:16,628 INFO: Table 'ETHUSDT_fxtransaction' created.
+2024-04-05 21:07:57,068 INFO: Sequence 'trading_log_serial_seq' created.
+2024-04-05 21:07:57,085 INFO: Table 'trading_log' and  created.
+2024-04-05 22:07:16,971 INFO: Sequence 'ETHUSDT_account_serial_seq' created.
+2024-04-05 22:07:16,980 INFO: Table 'ETHUSDT_account' created with existing sequence 'ETHUSDT_account_serial_seq'.
+2024-04-05 22:07:17,046 INFO: Sequence 'ETHUSDT_fxtransaction_serial_seq' created.
+2024-04-05 22:07:17,059 INFO: Table 'ETHUSDT_fxtransaction' created.
+2024-04-15 13:20:36,026 INFO: Sequence 'trading_log_serial_seq' already exists. No action taken.
+2024-04-15 13:20:36,059 INFO: Table 'trading_log' and  created.
+2024-04-15 13:23:01,053 INFO: Sequence 'trading_log_serial_seq' already exists. No action taken.
+2024-04-15 13:23:01,088 INFO: Table 'trading_log' and  created.

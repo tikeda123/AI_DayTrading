@@ -1,0 +1,11 @@
+{
+	"editor.fontFamily": "'Courier New', monospace",
+	"editor.detectIndentation": false,
+	"notebook.output.wordWrap": true,
+	"editor.copyWithSyntaxHighlighting": false,
+	"files.trimTrailingWhitespace": true,
+	"editor.acceptSuggestionOnEnter": "off",
+	"editor.renderWhitespace": "all",
+	"editor.fontSize": 16,
+	"python.analysis.autoImportCompletions": false
+}

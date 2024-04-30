@@ -1,0 +1,490 @@
+2024-04-13 13:05:51,577 INFO: ByBit HTTP Access Error: Unmatched IP, please check your API key's bound IP addresses. (ErrCode: 10010) (ErrTime: 04:05:51).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": 10, "sellLeverage": 10}.
+2024-04-13 13:17:07,731 INFO: ByBit HTTP Access Error: Request parameter error. (ErrCode: 10001) (ErrTime: 04:17:07).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": 10, "sellLeverage": 10}.
+2024-04-13 13:18:46,343 INFO: ByBit HTTP Access Error: Request parameter error. (ErrCode: 10001) (ErrTime: 04:18:46).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": 10, "sellLeverage": 10}.
+2024-04-13 13:22:20,558 INFO: ByBit HTTP Access Error: Request parameter error. (ErrCode: 10001) (ErrTime: 04:22:20).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": 10, "sellLeverage": 10}.
+2024-04-13 13:23:45,001 INFO: ByBit HTTP Access Error: Request parameter error. (ErrCode: 10001) (ErrTime: 04:23:45).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": 10, "sellLeverage": 10}.
+2024-04-13 13:24:15,102 INFO: ByBit HTTP Access Error: Request parameter error. (ErrCode: 10001) (ErrTime: 04:24:15).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": 10, "sellLeverage": 10}.
+2024-04-13 13:26:01,561 INFO: ByBit HTTP Access Error: Request parameter error. (ErrCode: 10001) (ErrTime: 04:26:01).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": 10, "sellLeverage": 10}.
+2024-04-13 13:31:17,100 INFO: ByBit HTTP Access Error: Request parameter error. (ErrCode: 10001) (ErrTime: 04:31:17).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": 10, "sellLeverage": 10}.
+2024-04-13 13:33:04,132 INFO: ByBit HTTP Access Error: Request parameter error. (ErrCode: 10001) (ErrTime: 04:33:04).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": 10, "sellLeverage": 10}.
+2024-04-13 13:34:15,906 INFO: ByBit HTTP Access Error: buy lv should equal to sell lv (ErrCode: 10001) (ErrTime: 04:34:15).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": "10", "sellLeverage": "9"}.
+2024-04-13 13:48:07,665 INFO: ByBit HTTP Access Error: leverage not modified (ErrCode: 110043) (ErrTime: 04:48:07).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": "10", "sellLeverage": "10"}.
+2024-04-13 13:48:12,819 INFO: ByBit HTTP Access Error: leverage not modified (ErrCode: 110043) (ErrTime: 04:48:12).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": "10", "sellLeverage": "10"}.
+2024-04-13 13:48:17,949 INFO: ByBit HTTP Access Error: leverage not modified (ErrCode: 110043) (ErrTime: 04:48:17).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": "10", "sellLeverage": "10"}.
+2024-04-13 13:49:37,364 INFO: ByBit HTTP Access Error: leverage not modified (ErrCode: 110043) (ErrTime: 04:49:37).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": "10", "sellLeverage": "10"}.
+2024-04-13 13:49:42,498 INFO: ByBit HTTP Access Error: leverage not modified (ErrCode: 110043) (ErrTime: 04:49:42).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": "10", "sellLeverage": "10"}.
+2024-04-13 13:49:47,618 INFO: ByBit HTTP Access Error: leverage not modified (ErrCode: 110043) (ErrTime: 04:49:47).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": "10", "sellLeverage": "10"}.
+2024-04-13 13:49:52,621 INFO: set_leverage:MAX TRY OUT Error.
+2024-04-13 14:00:06,383 INFO: ByBit HTTP Access Error: 'HTTP' object has no attribute 'get_position'
+2024-04-13 16:22:05,438 INFO: ByBit HTTP Access Error: position idx not match position mode (ErrCode: 10001) (ErrTime: 07:22:05).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "orderType": "Market", "qty": "0.01", "price": "63000", "timeInForce": "GTC", "orderLinkId": "ai-algo"}.
+2024-04-13 16:23:35,962 INFO: ByBit HTTP Access Error: position idx not match position mode (ErrCode: 10001) (ErrTime: 07:23:35).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "orderType": "Market", "qty": "0.01", "price": "63000", "timeInForce": "GTC", "orderLinkId": "ai-algo"}.
+2024-04-13 16:24:26,001 INFO: ByBit HTTP Access Error: position idx not match position mode (ErrCode: 10001) (ErrTime: 07:24:26).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "orderType": "Market", "qty": "0.01", "price": "63000", "timeInForce": "GTC", "orderLinkId": "ai-algo"}.
+2024-04-13 16:25:14,560 INFO: ByBit HTTP Access Error: position idx not match position mode (ErrCode: 10001) (ErrTime: 07:25:14).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "orderType": "Market", "qty": "0.01", "price": "63000", "timeInForce": "GTC", "orderLinkId": "ai-algo"}.
+2024-04-13 16:25:48,404 INFO: place_order ByBit HTTP Access Error: position idx not match position mode (ErrCode: 10001) (ErrTime: 07:25:48).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "orderType": "Market", "qty": "0.01", "price": "63000", "timeInForce": "GTC", "orderLinkId": "ai-algo"}.
+2024-04-13 16:27:15,661 INFO: place_order ByBit HTTP Access Error: position idx not match position mode (ErrCode: 10001) (ErrTime: 07:27:15).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "orderType": "Market", "qty": "0.01", "price": "None", "timeInForce": "GTC", "orderLinkId": "ai-algo"}.
+2024-04-13 16:57:18,230 INFO: ByBit HTTP Access Error: 'HTTP' object has no attribute 'switch_mode'
+2024-04-13 16:57:18,468 INFO: place_order ByBit HTTP Access Error: position idx not match position mode (ErrCode: 10001) (ErrTime: 07:57:18).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "orderType": "Market", "qty": "0.01", "price": "None", "timeInForce": "GTC", "orderLinkId": "ai-algo"}.
+2024-04-13 16:59:14,880 INFO: ByBit HTTP Access Error: 'HTTP' object has no attribute 'switch_mode'
+2024-04-13 16:59:15,062 INFO: place_order ByBit HTTP Access Error: position idx not match position mode (ErrCode: 10001) (ErrTime: 07:59:15).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "orderType": "Market", "qty": "0.01", "price": "None", "timeInForce": "GTC", "orderLinkId": "ai-algo"}.
+2024-04-13 17:38:16,830 INFO: place_order ByBit HTTP Access Error: OrderLinkedID is duplicate (ErrCode: 110072) (ErrTime: 08:38:16).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "orderType": "LIMIT", "qty": "0.01", "price": "67000", "timeInForce": "GTC", "orderLinkId": "ai-algo"}.
+2024-04-13 18:41:20,861 INFO: place_order ByBit HTTP Access Error: position idx not match position mode (ErrCode: 10001) (ErrTime: 09:41:20).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "orderType": "LIMIT", "qty": "0.01", "price": "3000", "timeInForce": "GTC"}.
+2024-04-13 19:29:07,553 INFO: ByBit HTTP Access Error: position_mode invalid (ErrCode: 10001) (ErrTime: 10:29:07).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/switch-mode: {"category": "linear", "symbol": "ETHUSDT", "mode": 1}.
+2024-04-13 19:29:12,676 INFO: ByBit HTTP Access Error: position_mode invalid (ErrCode: 10001) (ErrTime: 10:29:12).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/switch-mode: {"category": "linear", "symbol": "ETHUSDT", "mode": 1}.
+2024-04-13 19:29:17,791 INFO: ByBit HTTP Access Error: position_mode invalid (ErrCode: 10001) (ErrTime: 10:29:17).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/switch-mode: {"category": "linear", "symbol": "ETHUSDT", "mode": 1}.
+2024-04-13 19:29:22,794 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-13 19:29:50,054 INFO: ByBit HTTP Access Error: position_mode invalid (ErrCode: 10001) (ErrTime: 10:29:50).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/switch-mode: {"category": "linear", "symbol": "ETHUSDT", "mode": 2}.
+2024-04-13 19:29:55,178 INFO: ByBit HTTP Access Error: position_mode invalid (ErrCode: 10001) (ErrTime: 10:29:55).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/switch-mode: {"category": "linear", "symbol": "ETHUSDT", "mode": 2}.
+2024-04-13 19:30:00,310 INFO: ByBit HTTP Access Error: position_mode invalid (ErrCode: 10001) (ErrTime: 10:30:00).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/switch-mode: {"category": "linear", "symbol": "ETHUSDT", "mode": 2}.
+2024-04-13 19:30:05,374 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-13 19:30:22,356 INFO: ByBit HTTP Access Error: Position mode is not modified (ErrCode: 110025) (ErrTime: 10:30:22).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/switch-mode: {"category": "linear", "symbol": "ETHUSDT", "mode": 0}.
+2024-04-13 19:30:27,508 INFO: ByBit HTTP Access Error: Position mode is not modified (ErrCode: 110025) (ErrTime: 10:30:27).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/switch-mode: {"category": "linear", "symbol": "ETHUSDT", "mode": 0}.
+2024-04-13 19:30:32,633 INFO: ByBit HTTP Access Error: Position mode is not modified (ErrCode: 110025) (ErrTime: 10:30:32).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/switch-mode: {"category": "linear", "symbol": "ETHUSDT", "mode": 0}.
+2024-04-13 19:30:37,638 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-13 19:32:49,741 INFO: ByBit HTTP Access Error: Position mode is not modified (ErrCode: 110025) (ErrTime: 10:32:49).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/switch-mode: {"category": "linear", "symbol": "ETHUSDT", "mode": 0}.
+2024-04-13 19:32:54,861 INFO: ByBit HTTP Access Error: Position mode is not modified (ErrCode: 110025) (ErrTime: 10:32:54).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/switch-mode: {"category": "linear", "symbol": "ETHUSDT", "mode": 0}.
+2024-04-13 19:32:59,997 INFO: ByBit HTTP Access Error: Position mode is not modified (ErrCode: 110025) (ErrTime: 10:32:59).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/switch-mode: {"category": "linear", "symbol": "ETHUSDT", "mode": 0}.
+2024-04-13 19:33:05,003 INFO: set_switch_mode:MAX TRY OUT Error.
+2024-04-13 19:33:19,716 INFO: ByBit HTTP Access Error: position_mode invalid (ErrCode: 10001) (ErrTime: 10:33:19).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/switch-mode: {"category": "linear", "symbol": "ETHUSDT", "mode": 1}.
+2024-04-13 19:33:24,845 INFO: ByBit HTTP Access Error: position_mode invalid (ErrCode: 10001) (ErrTime: 10:33:24).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/switch-mode: {"category": "linear", "symbol": "ETHUSDT", "mode": 1}.
+2024-04-13 19:33:29,966 INFO: ByBit HTTP Access Error: position_mode invalid (ErrCode: 10001) (ErrTime: 10:33:29).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/switch-mode: {"category": "linear", "symbol": "ETHUSDT", "mode": 1}.
+2024-04-13 19:33:34,970 INFO: set_switch_mode:MAX TRY OUT Error.
+2024-04-13 19:50:32,832 INFO: ByBit HTTP Access Error: Price is required (ErrCode: 10001) (ErrTime: 10:50:32).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.01", "orderType": "Limit", "entry_price": 3000, "timeInForce": "GTC", "reduceOnly": false, "losscut_price": 2800}.
+2024-04-13 19:50:37,976 INFO: ByBit HTTP Access Error: Price is required (ErrCode: 10001) (ErrTime: 10:50:37).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.01", "orderType": "Limit", "entry_price": 3000, "timeInForce": "GTC", "reduceOnly": false, "losscut_price": 2800}.
+2024-04-13 19:50:43,116 INFO: ByBit HTTP Access Error: Price is required (ErrCode: 10001) (ErrTime: 10:50:43).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.01", "orderType": "Limit", "entry_price": 3000, "timeInForce": "GTC", "reduceOnly": false, "losscut_price": 2800}.
+2024-04-13 19:50:48,119 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-13 19:51:43,852 INFO: ByBit HTTP Access Error: Price is required (ErrCode: 10001) (ErrTime: 10:51:43).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.01", "orderType": "Limit", "entry_price": 3000, "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 19:51:48,981 INFO: ByBit HTTP Access Error: Price is required (ErrCode: 10001) (ErrTime: 10:51:48).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.01", "orderType": "Limit", "entry_price": 3000, "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 19:51:54,165 INFO: ByBit HTTP Access Error: Price is required (ErrCode: 10001) (ErrTime: 10:51:54).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.01", "orderType": "Limit", "entry_price": 3000, "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 19:51:59,168 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-13 21:27:32,642 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:27:32).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.30622431543554285", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:27:37,773 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:27:37).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.30622431543554285", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:27:42,902 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:27:42).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.30622431543554285", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:27:47,906 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-13 21:28:04,361 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:28:04).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.306", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:28:09,500 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:28:09).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.306", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:28:14,621 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:28:14).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.306", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:28:19,636 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-13 21:31:25,145 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:31:25).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.30616993656158914", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:31:30,276 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:31:30).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.30616993656158914", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:31:35,413 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:31:35).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.30616993656158914", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:31:40,417 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-13 21:31:56,077 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:31:56).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.306", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:32:01,206 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:32:01).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.306", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:32:06,352 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:32:06).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.306", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:32:11,359 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-13 21:32:51,305 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:32:51).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.306", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:32:56,437 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:32:56).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.306", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:33:01,563 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:33:01).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.306", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:33:06,572 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-13 21:33:34,550 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:33:34).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.306", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:33:39,687 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:33:39).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.306", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:33:44,810 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:33:44).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.306", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:33:49,815 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-13 21:34:12,304 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:34:12).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.306", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:34:17,467 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:34:17).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.306", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:50:10,924 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:50:10).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.305", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:50:16,061 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:50:16).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.305", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:50:21,204 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 12:50:21).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.305", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2800}.
+2024-04-13 21:50:26,210 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-13 22:08:27,062 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 13:08:27).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.305", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2954.871}.
+2024-04-13 22:08:32,189 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 13:08:32).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.305", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2954.871}.
+2024-04-13 22:08:37,329 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 13:08:37).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.305", "orderType": "Market", "price": "None", "timeInForce": "GTC", "losscut_price": 2954.871}.
+2024-04-13 22:08:42,336 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-13 22:39:19,302 INFO: ByBit HTTP Access Error: StopLoss:26162600 set for Sell position should greater base_price:32670300??LastPrice (ErrCode: 10001) (ErrTime: 13:39:19).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.31", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "2616.264", "reduceOnly": true}.
+2024-04-13 22:39:24,430 INFO: ByBit HTTP Access Error: StopLoss:26162600 set for Sell position should greater base_price:32661800??LastPrice (ErrCode: 10001) (ErrTime: 13:39:24).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.31", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "2616.264", "reduceOnly": true}.
+2024-04-13 22:39:29,575 INFO: ByBit HTTP Access Error: StopLoss:26162600 set for Sell position should greater base_price:32670500??LastPrice (ErrCode: 10001) (ErrTime: 13:39:29).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.31", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "2616.264", "reduceOnly": true}.
+2024-04-13 22:39:34,577 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-13 23:53:07,306 INFO: ByBit HTTP Access Error: leverage not modified (ErrCode: 110043) (ErrTime: 14:53:07).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": "3", "sellLeverage": "3"}.
+2024-04-13 23:53:12,432 INFO: ByBit HTTP Access Error: leverage not modified (ErrCode: 110043) (ErrTime: 14:53:12).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": "3", "sellLeverage": "3"}.
+2024-04-13 23:53:17,558 INFO: ByBit HTTP Access Error: leverage not modified (ErrCode: 110043) (ErrTime: 14:53:17).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": "3", "sellLeverage": "3"}.
+2024-04-13 23:53:22,565 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-14 00:07:18,446 INFO: ByBit HTTP Access Error: The number of contracts exceeds maximum limit allowed: too large, order_qty:100000000000 > max_qty:11900000000 (ErrCode: 10001) (ErrTime: 15:07:18).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "1000", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "54107.76", "reduceOnly": null}.
+2024-04-14 00:07:23,571 INFO: ByBit HTTP Access Error: The number of contracts exceeds maximum limit allowed: too large, order_qty:100000000000 > max_qty:11900000000 (ErrCode: 10001) (ErrTime: 15:07:23).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "1000", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "54107.76", "reduceOnly": null}.
+2024-04-14 00:07:28,693 INFO: ByBit HTTP Access Error: The number of contracts exceeds maximum limit allowed: too large, order_qty:100000000000 > max_qty:11900000000 (ErrCode: 10001) (ErrTime: 15:07:28).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "1000", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "54107.76", "reduceOnly": null}.
+2024-04-14 00:07:33,698 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-14 00:09:27,181 INFO: ByBit HTTP Access Error: The number of contracts exceeds maximum limit allowed: too large, order_qty:100000000000 > max_qty:11900000000 (ErrCode: 10001) (ErrTime: 15:09:27).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "1000", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "54078.32", "reduceOnly": null}.
+2024-04-14 00:09:32,312 INFO: ByBit HTTP Access Error: The number of contracts exceeds maximum limit allowed: too large, order_qty:100000000000 > max_qty:11900000000 (ErrCode: 10001) (ErrTime: 15:09:32).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "1000", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "54078.32", "reduceOnly": null}.
+2024-04-14 00:09:37,438 INFO: ByBit HTTP Access Error: The number of contracts exceeds maximum limit allowed: too large, order_qty:100000000000 > max_qty:11900000000 (ErrCode: 10001) (ErrTime: 15:09:37).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "1000", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "54078.32", "reduceOnly": null}.
+2024-04-14 00:09:42,444 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-14 00:10:23,986 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 15:10:23).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "0.0148", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "54030.96", "reduceOnly": null}.
+2024-04-14 00:10:29,121 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 15:10:29).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "0.0148", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "54030.96", "reduceOnly": null}.
+2024-04-14 00:40:19,414 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 15:40:19).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "0.0147", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "66496.332", "reduceOnly": null}.
+2024-04-14 00:40:24,544 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 15:40:24).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "0.0147", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "66496.332", "reduceOnly": null}.
+2024-04-14 02:24:18,537 INFO: ByBit HTTP Access Error: StopLoss:655684000 set for Sell position should greater base_price:668534000??LastPrice (ErrCode: 10001) (ErrTime: 17:24:18).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Sell", "qty": "0.015", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "65568.46800000001", "reduceOnly": null}.
+2024-04-14 02:24:23,672 INFO: ByBit HTTP Access Error: StopLoss:655684000 set for Sell position should greater base_price:668808000??LastPrice (ErrCode: 10001) (ErrTime: 17:24:23).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Sell", "qty": "0.015", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "65568.46800000001", "reduceOnly": null}.
+2024-04-14 02:24:28,796 INFO: ByBit HTTP Access Error: StopLoss:655684000 set for Sell position should greater base_price:668866000??LastPrice (ErrCode: 10001) (ErrTime: 17:24:28).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Sell", "qty": "0.015", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "65568.46800000001", "reduceOnly": null}.
+2024-04-14 02:24:33,803 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-14 04:58:08,561 INFO: ByBit HTTP Access Error: current position is zero, cannot fix reduce-only order qty (ErrCode: 110017) (ErrTime: 19:58:08).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "0.015", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "reduceOnly": true}.
+2024-04-14 04:58:13,698 INFO: ByBit HTTP Access Error: current position is zero, cannot fix reduce-only order qty (ErrCode: 110017) (ErrTime: 19:58:13).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "0.015", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "reduceOnly": true}.
+2024-04-14 04:58:18,847 INFO: ByBit HTTP Access Error: current position is zero, cannot fix reduce-only order qty (ErrCode: 110017) (ErrTime: 19:58:18).
+Request ‚Üí POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "0.015", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "reduceOnly": true}.
+2024-04-14 04:58:23,882 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-14 18:54:16,040 INFO: ByBit HTTP Access Error: 'HTTP' object has no attribute 'get_position'
+2024-04-14 18:54:21,057 INFO: ByBit HTTP Access Error: 'HTTP' object has no attribute 'get_position'
+2024-04-14 18:54:26,067 INFO: ByBit HTTP Access Error: 'HTTP' object has no attribute 'get_position'
+2024-04-14 19:05:25,600 INFO: ByBit HTTP Access Error: Request parameter error. (ErrCode: 10001) (ErrTime: 10:05:25).
+Request Å® POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": 5, "sellLeverage": 5}.
+2024-04-14 19:05:30,971 INFO: ByBit HTTP Access Error: Request parameter error. (ErrCode: 10001) (ErrTime: 10:05:30).
+Request Å® POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": 5, "sellLeverage": 5}.
+2024-04-14 19:05:36,468 INFO: ByBit HTTP Access Error: Request parameter error. (ErrCode: 10001) (ErrTime: 10:05:36).
+Request Å® POST https://api-testnet.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BTCUSDT", "buyLeverage": 5, "sellLeverage": 5}.
+2024-04-14 19:05:41,478 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-14 21:32:46,843 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 12:32:46).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Sell", "qty": "0.016", "marketUnit": "quoteCoin", "orderType": "Limit", "price": "64663.30799999999", "triggerPrice": "64663.30799999999", "timeInForce": "GTC", "stopLoss": "64920.67439999999", "reduceOnly": null}.
+2024-04-14 21:32:52,349 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 12:32:52).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Sell", "qty": "0.016", "marketUnit": "quoteCoin", "orderType": "Limit", "price": "64663.30799999999", "triggerPrice": "64663.30799999999", "timeInForce": "GTC", "stopLoss": "64920.67439999999", "reduceOnly": null}.
+2024-04-14 21:32:57,896 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 12:32:57).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Sell", "qty": "0.016", "marketUnit": "quoteCoin", "orderType": "Limit", "price": "64663.30799999999", "triggerPrice": "64663.30799999999", "timeInForce": "GTC", "stopLoss": "64920.67439999999", "reduceOnly": null}.
+2024-04-14 21:33:02,912 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-14 21:35:24,246 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 12:35:24).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Sell", "qty": "0.016", "marketUnit": "quoteCoin", "orderType": "Limit", "price": "64299.7", "triggerPrice": "64299.7", "timeInForce": "GTC", "stopLoss": "61084.715", "reduceOnly": null}.
+2024-04-14 21:35:29,888 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 12:35:29).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Sell", "qty": "0.016", "marketUnit": "quoteCoin", "orderType": "Limit", "price": "64299.7", "triggerPrice": "64299.7", "timeInForce": "GTC", "stopLoss": "61084.715", "reduceOnly": null}.
+2024-04-14 21:36:37,406 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 12:36:37).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "0.016", "marketUnit": "quoteCoin", "orderType": "Limit", "price": "64400.1", "triggerPrice": "64400.1", "timeInForce": "GTC", "stopLoss": "61180.094999999994", "reduceOnly": null}.
+2024-04-14 21:36:42,756 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 12:36:42).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "0.016", "marketUnit": "quoteCoin", "orderType": "Limit", "price": "64400.1", "triggerPrice": "64400.1", "timeInForce": "GTC", "stopLoss": "61180.094999999994", "reduceOnly": null}.
+2024-04-14 21:36:48,136 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 12:36:48).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "0.016", "marketUnit": "quoteCoin", "orderType": "Limit", "price": "64400.1", "triggerPrice": "64400.1", "timeInForce": "GTC", "stopLoss": "61180.094999999994", "reduceOnly": null}.
+2024-04-14 21:38:20,567 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 12:38:20).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "0.016", "marketUnit": "quoteCoin", "orderType": "Limit", "price": "64409.8", "triggerPrice": "64409.8", "timeInForce": "GTC", "stopLoss": "61189.31", "reduceOnly": null}.
+2024-04-14 21:38:26,188 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 12:38:26).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "0.016", "marketUnit": "quoteCoin", "orderType": "Limit", "price": "64409.8", "triggerPrice": "64409.8", "timeInForce": "GTC", "stopLoss": "61189.31", "reduceOnly": null}.
+2024-04-14 21:38:31,543 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 12:38:31).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "0.016", "marketUnit": "quoteCoin", "orderType": "Limit", "price": "64409.8", "triggerPrice": "64409.8", "timeInForce": "GTC", "stopLoss": "61189.31", "reduceOnly": null}.
+2024-04-14 21:38:36,562 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-14 21:39:05,858 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 12:39:05).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "0.016", "marketUnit": "quoteCoin", "orderType": "Limit", "price": "64447.7", "triggerPrice": "None", "timeInForce": "GTC", "stopLoss": "61225.314999999995", "reduceOnly": null}.
+2024-04-14 21:39:11,275 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 12:39:11).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "0.016", "marketUnit": "quoteCoin", "orderType": "Limit", "price": "64447.7", "triggerPrice": "None", "timeInForce": "GTC", "stopLoss": "61225.314999999995", "reduceOnly": null}.
+2024-04-14 21:42:31,368 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 12:42:31).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "0.016", "marketUnit": "quoteCoin", "orderType": "Limit", "price": "64446.4", "triggerPrice": "None", "timeInForce": "GTC", "stopLoss": "61224.08", "reduceOnly": null}.
+2024-04-14 21:42:36,728 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 12:42:36).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "BTCUSDT", "side": "Buy", "qty": "0.016", "marketUnit": "quoteCoin", "orderType": "Limit", "price": "64446.4", "triggerPrice": "None", "timeInForce": "GTC", "stopLoss": "61224.08", "reduceOnly": null}.
+2024-04-16 13:33:32,773 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 04:33:32).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3019.89", "timeInForce": "GTC", "stopLoss": "2887.8954999999996", "triggerPrice": "3019.89", "triggerBy": "LastPrice", "reduceOnly": null}.
+2024-04-16 13:33:38,291 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 04:33:38).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3019.89", "timeInForce": "GTC", "stopLoss": "2887.8954999999996", "triggerPrice": "3019.89", "triggerBy": "LastPrice", "reduceOnly": null}.
+2024-04-16 13:33:43,802 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 04:33:43).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3019.89", "timeInForce": "GTC", "stopLoss": "2887.8954999999996", "triggerPrice": "3019.89", "triggerBy": "LastPrice", "reduceOnly": null}.
+2024-04-16 13:37:07,380 INFO: ByBit HTTP Access Error: expect Rising, but trigger_price[30145800] <= current[30345700]??LastPrice (ErrCode: 110092) (ErrTime: 04:37:07).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3014.58", "timeInForce": "GTC", "stopLoss": "2882.8509999999997", "triggerPrice": "3014.58", "triggerBy": "LastPrice", "triggerDirection": 1, "reduceOnly": null}.
+2024-04-16 13:37:12,890 INFO: ByBit HTTP Access Error: expect Rising, but trigger_price[30145800] <= current[30331100]??LastPrice (ErrCode: 110092) (ErrTime: 04:37:12).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3014.58", "timeInForce": "GTC", "stopLoss": "2882.8509999999997", "triggerPrice": "3014.58", "triggerBy": "LastPrice", "triggerDirection": 1, "reduceOnly": null}.
+2024-04-16 13:40:11,926 INFO: ByBit HTTP Access Error: StopLoss:28842000 set for Buy position should lower than base_price:25360000??LastPrice (ErrCode: 10001) (ErrTime: 04:40:11).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "2536", "timeInForce": "GTC", "stopLoss": "2884.2", "triggerPrice": "2536", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-16 13:40:17,580 INFO: ByBit HTTP Access Error: StopLoss:28842000 set for Buy position should lower than base_price:25360000??LastPrice (ErrCode: 10001) (ErrTime: 04:40:17).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "2536", "timeInForce": "GTC", "stopLoss": "2884.2", "triggerPrice": "2536", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-16 13:52:32,439 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 04:52:32).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "triggerPrice": "None", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": true}.
+2024-04-16 13:52:38,317 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 04:52:38).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "triggerPrice": "None", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": true}.
+2024-04-16 13:52:44,146 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 04:52:44).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "triggerPrice": "None", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": true}.
+2024-04-16 13:52:49,160 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-16 14:11:37,862 INFO: ByBit HTTP Access Error: expect Rising, but trigger_price[30307000] <= current[30367800]??LastPrice (ErrCode: 110092) (ErrTime: 05:11:37).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3030.7064400000004", "timeInForce": "GTC", "stopLoss": "3182.2417620000006", "triggerPrice": "3030.7064400000004", "triggerBy": "LastPrice", "triggerDirection": 1, "reduceOnly": null}.
+2024-04-16 14:11:43,415 INFO: ByBit HTTP Access Error: expect Rising, but trigger_price[30307000] <= current[30384900]??LastPrice (ErrCode: 110092) (ErrTime: 05:11:43).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3030.7064400000004", "timeInForce": "GTC", "stopLoss": "3182.2417620000006", "triggerPrice": "3030.7064400000004", "triggerBy": "LastPrice", "triggerDirection": 1, "reduceOnly": null}.
+2024-04-16 15:24:47,433 INFO: ByBit HTTP Access Error: API key is invalid. (ErrCode: 10003) (ErrTime: 06:24:47).
+Request Å® POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3061.35502", "timeInForce": "GTC", "stopLoss": "3214.422771", "triggerPrice": "3061.35502", "triggerBy": "LastPrice", "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 15:24:53,726 INFO: ByBit HTTP Access Error: API key is invalid. (ErrCode: 10003) (ErrTime: 06:24:53).
+Request Å® POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3061.35502", "timeInForce": "GTC", "stopLoss": "3214.422771", "triggerPrice": "3061.35502", "triggerBy": "LastPrice", "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 15:24:59,942 INFO: ByBit HTTP Access Error: API key is invalid. (ErrCode: 10003) (ErrTime: 06:24:59).
+Request Å® POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3061.35502", "timeInForce": "GTC", "stopLoss": "3214.422771", "triggerPrice": "3061.35502", "triggerBy": "LastPrice", "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 15:25:04,961 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-16 15:25:48,854 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 06:25:48).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3064.1095", "timeInForce": "GTC", "stopLoss": "3217.3149750000002", "triggerPrice": "3064.1095", "triggerBy": "LastPrice", "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 15:25:55,058 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 06:25:55).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3064.1095", "timeInForce": "GTC", "stopLoss": "3217.3149750000002", "triggerPrice": "3064.1095", "triggerBy": "LastPrice", "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 15:26:02,136 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 06:26:02).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3064.1095", "timeInForce": "GTC", "stopLoss": "3217.3149750000002", "triggerPrice": "3064.1095", "triggerBy": "LastPrice", "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 15:26:07,152 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-16 16:13:04,077 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 07:13:04).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.32", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3080.14736", "timeInForce": "GTC", "stopLoss": "3234.154728", "triggerPrice": "3080.14736", "triggerBy": "LastPrice", "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 16:13:09,651 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 07:13:09).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.32", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3080.14736", "timeInForce": "GTC", "stopLoss": "3234.154728", "triggerPrice": "3080.14736", "triggerBy": "LastPrice", "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 16:30:06,551 INFO: ByBit HTTP Access Error: expect Rising, but trigger_price[30865400] <= current[30927400]??LastPrice (ErrCode: 110092) (ErrTime: 07:30:06).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.32", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3086.54454", "timeInForce": "GTC", "stopLoss": "3240.871767", "triggerPrice": "3086.54454", "triggerBy": "LastPrice", "triggerDirection": 1, "reduceOnly": null}.
+2024-04-16 16:30:12,103 INFO: ByBit HTTP Access Error: expect Rising, but trigger_price[30865400] <= current[30926500]??LastPrice (ErrCode: 110092) (ErrTime: 07:30:12).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.32", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3086.54454", "timeInForce": "GTC", "stopLoss": "3240.871767", "triggerPrice": "3086.54454", "triggerBy": "LastPrice", "triggerDirection": 1, "reduceOnly": null}.
+2024-04-16 18:58:11,901 INFO: ByBit HTTP Access Error: API key is invalid. (ErrCode: 10003) (ErrTime: 09:58:11).
+Request Å® POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3069.72824", "timeInForce": "GTC", "stopLoss": "3223.214652", "triggerPrice": "3069.72824", "triggerBy": "LastPrice", "triggerDirection": 1, "reduceOnly": null}.
+2024-04-16 18:58:17,789 INFO: ByBit HTTP Access Error: API key is invalid. (ErrCode: 10003) (ErrTime: 09:58:17).
+Request Å® POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3069.72824", "timeInForce": "GTC", "stopLoss": "3223.214652", "triggerPrice": "3069.72824", "triggerBy": "LastPrice", "triggerDirection": 1, "reduceOnly": null}.
+2024-04-16 21:11:59,449 INFO: ByBit HTTP Access Error: API key is invalid. (ErrCode: 10003) (ErrTime: 12:11:59).
+Request Å® POST https://api.bybit.com/v5/position/switch-mode: {"category": "linear", "symbol": "ETHUSDT", "mode": "OneWay"}.
+2024-04-16 21:12:04,935 INFO: ByBit HTTP Access Error: API key is invalid. (ErrCode: 10003) (ErrTime: 12:12:04).
+Request Å® POST https://api.bybit.com/v5/position/switch-mode: {"category": "linear", "symbol": "ETHUSDT", "mode": "OneWay"}.
+2024-04-16 21:13:01,396 INFO: ByBit HTTP Access Error: Request parameter error. (ErrCode: 10001) (ErrTime: 12:13:01).
+Request Å® POST https://api-testnet.bybit.com/v5/position/switch-mode: {"category": "linear", "symbol": "ETHUSDT", "mode": "OneWay"}.
+2024-04-16 21:13:06,914 INFO: ByBit HTTP Access Error: Request parameter error. (ErrCode: 10001) (ErrTime: 12:13:06).
+Request Å® POST https://api-testnet.bybit.com/v5/position/switch-mode: {"category": "linear", "symbol": "ETHUSDT", "mode": "OneWay"}.
+2024-04-16 22:18:42,594 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 13:18:42).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3098.2961999999998", "timeInForce": "GTC", "stopLoss": "2914.2389999999996", "triggerPrice": "None", "triggerBy": "LastPrice", "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 22:18:48,097 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 13:18:48).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3098.2961999999998", "timeInForce": "GTC", "stopLoss": "2914.2389999999996", "triggerPrice": "None", "triggerBy": "LastPrice", "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 22:20:35,148 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 13:20:35).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3115.8197", "timeInForce": "GTC", "stopLoss": "2930.7214999999997", "triggerPrice": "3115.8197", "triggerBy": "LastPrice", "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 22:20:40,658 INFO: ByBit HTTP Access Error: TriggerDirection invalid (ErrCode: 10001) (ErrTime: 13:20:40).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3115.8197", "timeInForce": "GTC", "stopLoss": "2930.7214999999997", "triggerPrice": "3115.8197", "triggerBy": "LastPrice", "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 22:22:31,351 INFO: ByBit HTTP Access Error: StopLoss:29270500 set for Sell position should greater base_price:31119200??LastPrice (ErrCode: 10001) (ErrTime: 13:22:31).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3111.9211", "timeInForce": "GTC", "stopLoss": "2927.0545", "triggerPrice": "3111.9211", "triggerBy": "LastPrice", "triggerDirection": 1, "reduceOnly": null}.
+2024-04-16 22:22:36,942 INFO: ByBit HTTP Access Error: StopLoss:29270500 set for Sell position should greater base_price:31119200??LastPrice (ErrCode: 10001) (ErrTime: 13:22:36).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3111.9211", "timeInForce": "GTC", "stopLoss": "2927.0545", "triggerPrice": "3111.9211", "triggerBy": "LastPrice", "triggerDirection": 1, "reduceOnly": null}.
+2024-04-16 22:23:31,141 INFO: ByBit HTTP Access Error: expect Falling, but trigger_price[31096800] >= current[30789000]??LastPrice (ErrCode: 110093) (ErrTime: 13:23:31).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3109.6890000000003", "timeInForce": "GTC", "stopLoss": "2924.955", "triggerPrice": "3109.6890000000003", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-16 22:23:36,657 INFO: ByBit HTTP Access Error: expect Falling, but trigger_price[31096800] >= current[30776000]??LastPrice (ErrCode: 110093) (ErrTime: 13:23:36).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3109.6890000000003", "timeInForce": "GTC", "stopLoss": "2924.955", "triggerPrice": "3109.6890000000003", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-16 22:44:28,381 INFO: ByBit HTTP Access Error: expect Falling, but trigger_price[30923700] >= current[30589100]??LastPrice (ErrCode: 110093) (ErrTime: 13:44:28).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3092.3776000000003", "timeInForce": "GTC", "stopLoss": "2908.672", "triggerPrice": "3092.3776000000003", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-16 22:44:33,862 INFO: ByBit HTTP Access Error: expect Falling, but trigger_price[30923700] >= current[30617600]??LastPrice (ErrCode: 110093) (ErrTime: 13:44:33).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3092.3776000000003", "timeInForce": "GTC", "stopLoss": "2908.672", "triggerPrice": "3092.3776000000003", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-16 22:44:39,393 INFO: ByBit HTTP Access Error: expect Falling, but trigger_price[30923700] >= current[30626000]??LastPrice (ErrCode: 110093) (ErrTime: 13:44:39).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3092.3776000000003", "timeInForce": "GTC", "stopLoss": "2908.672", "triggerPrice": "3092.3776000000003", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-16 23:00:55,248 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 14:00:55).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "triggerPrice": "None", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-16 23:01:00,798 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 14:01:00).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "triggerPrice": "None", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-16 23:04:47,825 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 14:04:47).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "triggerPrice": "None", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-16 23:04:53,548 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 14:04:53).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "triggerPrice": "None", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-16 23:04:59,107 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 14:04:59).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "triggerPrice": "None", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-16 23:05:04,117 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-16 23:11:10,003 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 14:11:10).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "triggerPrice": "None", "triggerBy": "LastPrice", "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 23:11:15,600 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 14:11:15).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "triggerPrice": "None", "triggerBy": "LastPrice", "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 23:11:21,239 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 14:11:21).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "triggerPrice": "None", "triggerBy": "LastPrice", "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 23:11:26,282 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-16 23:19:55,684 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 14:19:55).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "triggerPrice": "None", "triggerBy": null, "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 23:20:01,203 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 14:20:01).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "triggerPrice": "None", "triggerBy": null, "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 23:20:06,671 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 14:20:06).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "triggerPrice": "None", "triggerBy": null, "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 23:20:11,683 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-16 23:25:31,834 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 14:25:31).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "triggerPrice": "None", "triggerBy": null, "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 23:25:37,336 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 14:25:37).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "triggerPrice": "None", "triggerBy": null, "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 23:28:55,113 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 14:28:55).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "triggerBy": null, "triggerDirection": null, "reduceOnly": null}.
+2024-04-16 23:29:00,646 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 14:29:00).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "0", "triggerBy": null, "triggerDirection": null, "reduceOnly": null}.
+2024-04-17 01:08:04,926 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 16:08:04).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3019.9", "timeInForce": "GTC", "stopLoss": "2959.502", "triggerPrice": "2959.502", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:08:10,477 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 16:08:10).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3019.9", "timeInForce": "GTC", "stopLoss": "2959.502", "triggerPrice": "2959.502", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:09:34,630 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 16:09:34).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3006.47", "timeInForce": "GTC", "stopLoss": "2946.3405999999995", "triggerPrice": "2946.3405999999995", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:09:40,129 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 16:09:40).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3006.47", "timeInForce": "GTC", "stopLoss": "2946.3405999999995", "triggerPrice": "2946.3405999999995", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:10:43,336 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 16:10:43).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3000.93", "timeInForce": "GTC", "stopLoss": "2940.9114", "triggerPrice": "2940.9114", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:10:49,049 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 16:10:49).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3000.93", "timeInForce": "GTC", "stopLoss": "2940.9114", "triggerPrice": "2940.9114", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:11:29,195 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 16:11:29).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3010.39", "timeInForce": "GTC", "stopLoss": "2950.1821999999997", "triggerPrice": "2950.1821999999997", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:11:34,811 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 16:11:34).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3010.39", "timeInForce": "GTC", "stopLoss": "2950.1821999999997", "triggerPrice": "2950.1821999999997", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:29:18,128 INFO: ByBit HTTP Access Error: StopLoss:30099300 set for Buy position should lower than base_price:29556500??LastPrice (ErrCode: 10001) (ErrTime: 16:29:18).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3015.97", "timeInForce": "GTC", "stopLoss": "3009.93806", "triggerPrice": "2955.6506", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:29:24,155 INFO: ByBit HTTP Access Error: StopLoss:30099300 set for Buy position should lower than base_price:29556500??LastPrice (ErrCode: 10001) (ErrTime: 16:29:24).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3015.97", "timeInForce": "GTC", "stopLoss": "3009.93806", "triggerPrice": "2955.6506", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:29:30,222 INFO: ByBit HTTP Access Error: StopLoss:30099300 set for Buy position should lower than base_price:29556500??LastPrice (ErrCode: 10001) (ErrTime: 16:29:30).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3015.97", "timeInForce": "GTC", "stopLoss": "3009.93806", "triggerPrice": "2955.6506", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:29:35,226 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-17 01:31:31,615 INFO: ByBit HTTP Access Error: StopLoss:30155900 set for Buy position should lower than base_price:29552800??LastPrice (ErrCode: 10001) (ErrTime: 16:31:31).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3015.59672", "timeInForce": "GTC", "stopLoss": "3015.59672", "triggerPrice": "2955.2847856", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:31:37,081 INFO: ByBit HTTP Access Error: StopLoss:30155900 set for Buy position should lower than base_price:29552800??LastPrice (ErrCode: 10001) (ErrTime: 16:31:37).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3015.59672", "timeInForce": "GTC", "stopLoss": "3015.59672", "triggerPrice": "2955.2847856", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:31:42,920 INFO: ByBit HTTP Access Error: StopLoss:30155900 set for Buy position should lower than base_price:29552800??LastPrice (ErrCode: 10001) (ErrTime: 16:31:42).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3015.59672", "timeInForce": "GTC", "stopLoss": "3015.59672", "triggerPrice": "2955.2847856", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:32:46,310 INFO: ByBit HTTP Access Error: StopLoss:30088000 set for Buy position should lower than base_price:29486200??LastPrice (ErrCode: 10001) (ErrTime: 16:32:46).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3008.8004", "timeInForce": "GTC", "stopLoss": "3008.8004", "triggerPrice": "2948.624392", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:32:51,886 INFO: ByBit HTTP Access Error: StopLoss:30088000 set for Buy position should lower than base_price:29486200??LastPrice (ErrCode: 10001) (ErrTime: 16:32:51).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3008.8004", "timeInForce": "GTC", "stopLoss": "3008.8004", "triggerPrice": "2948.624392", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:33:23,148 INFO: ByBit HTTP Access Error: StopLoss:30062300 set for Buy position should lower than base_price:27056000??LastPrice (ErrCode: 10001) (ErrTime: 16:33:23).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3006.2333000000003", "timeInForce": "GTC", "stopLoss": "3006.2333000000003", "triggerPrice": "2705.6099700000004", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:33:28,643 INFO: ByBit HTTP Access Error: StopLoss:30062300 set for Buy position should lower than base_price:27056000??LastPrice (ErrCode: 10001) (ErrTime: 16:33:28).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3006.2333000000003", "timeInForce": "GTC", "stopLoss": "3006.2333000000003", "triggerPrice": "2705.6099700000004", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:33:34,208 INFO: ByBit HTTP Access Error: StopLoss:30062300 set for Buy position should lower than base_price:27056000??LastPrice (ErrCode: 10001) (ErrTime: 16:33:34).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3006.2333000000003", "timeInForce": "GTC", "stopLoss": "3006.2333000000003", "triggerPrice": "2705.6099700000004", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:33:39,225 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-17 01:34:30,298 INFO: ByBit HTTP Access Error: StopLoss:30029300 set for Buy position should lower than base_price:27026400??LastPrice (ErrCode: 10001) (ErrTime: 16:34:30).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3002.93985", "timeInForce": "GTC", "stopLoss": "3002.93985", "triggerPrice": "2702.6458650000004", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:34:35,800 INFO: ByBit HTTP Access Error: StopLoss:30029300 set for Buy position should lower than base_price:27026400??LastPrice (ErrCode: 10001) (ErrTime: 16:34:35).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3002.93985", "timeInForce": "GTC", "stopLoss": "3002.93985", "triggerPrice": "2702.6458650000004", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:38:09,147 INFO: ByBit HTTP Access Error: StopLoss:29834000 set for Buy position should lower than base_price:27121800??LastPrice (ErrCode: 10001) (ErrTime: 16:38:09).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3013.54", "timeInForce": "GTC", "stopLoss": "2983.4046", "triggerPrice": "2712.186", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:38:14,625 INFO: ByBit HTTP Access Error: StopLoss:29834000 set for Buy position should lower than base_price:27121800??LastPrice (ErrCode: 10001) (ErrTime: 16:38:14).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3013.54", "timeInForce": "GTC", "stopLoss": "2983.4046", "triggerPrice": "2712.186", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:57:03,315 INFO: ByBit HTTP Access Error: expect Falling, but trigger_price[30434000] >= current[30434000]??LastPrice (ErrCode: 110093) (ErrTime: 16:57:03).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3043.4", "timeInForce": "GTC", "stopLoss": "2982.532", "triggerPrice": "3043.4", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:58:56,257 INFO: ByBit HTTP Access Error: expect Falling, but trigger_price[30470100] >= current[30470100]??LastPrice (ErrCode: 110093) (ErrTime: 16:58:56).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3047.01", "timeInForce": "GTC", "stopLoss": "2986.0698", "triggerPrice": "3047.01", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 01:59:01,775 INFO: ByBit HTTP Access Error: expect Falling, but trigger_price[30470100] >= current[30461100]??LastPrice (ErrCode: 110093) (ErrTime: 16:59:01).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3047.01", "timeInForce": "GTC", "stopLoss": "2986.0698", "triggerPrice": "3047.01", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 02:01:08,420 INFO: ByBit HTTP Access Error: expect Falling, but trigger_price[30560000] >= current[30560000]??LastPrice (ErrCode: 110093) (ErrTime: 17:01:08).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3056", "timeInForce": "GTC", "stopLoss": "2994.88", "triggerPrice": "3056", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 02:01:13,903 INFO: ByBit HTTP Access Error: expect Falling, but trigger_price[30560000] >= current[30560000]??LastPrice (ErrCode: 110093) (ErrTime: 17:01:13).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3056", "timeInForce": "GTC", "stopLoss": "2994.88", "triggerPrice": "3056", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 02:03:35,243 INFO: ByBit HTTP Access Error: expect Falling, but trigger_price[30502300] >= current[30502300]??LastPrice (ErrCode: 110093) (ErrTime: 17:03:35).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3050.23", "timeInForce": "GTC", "stopLoss": "2989.2254", "triggerPrice": "3050.23", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 02:06:00,437 INFO: ByBit HTTP Access Error: StopLoss:30524100 set for Buy position should lower than base_price:29913600??LastPrice (ErrCode: 10001) (ErrTime: 17:06:00).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3052.41", "timeInForce": "GTC", "stopLoss": "3052.41", "triggerPrice": "2991.3617999999997", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 02:06:05,929 INFO: ByBit HTTP Access Error: StopLoss:30524100 set for Buy position should lower than base_price:29913600??LastPrice (ErrCode: 10001) (ErrTime: 17:06:05).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3052.41", "timeInForce": "GTC", "stopLoss": "3052.41", "triggerPrice": "2991.3617999999997", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 02:06:11,420 INFO: ByBit HTTP Access Error: StopLoss:30524100 set for Buy position should lower than base_price:29913600??LastPrice (ErrCode: 10001) (ErrTime: 17:06:11).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3052.41", "timeInForce": "GTC", "stopLoss": "3052.41", "triggerPrice": "2991.3617999999997", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 02:09:43,755 INFO: ByBit HTTP Access Error: expect Falling, but trigger_price[30689900] >= current[30689900]??LastPrice (ErrCode: 110093) (ErrTime: 17:09:43).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3068.99", "timeInForce": "GTC", "stopLoss": "3007.6101999999996", "triggerPrice": "3068.99", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 02:09:49,401 INFO: ByBit HTTP Access Error: expect Falling, but trigger_price[30689900] >= current[30689900]??LastPrice (ErrCode: 110093) (ErrTime: 17:09:49).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.33", "marketUnit": "quoteCoin", "orderType": "Market", "price": "3068.99", "timeInForce": "GTC", "stopLoss": "3007.6101999999996", "triggerPrice": "3068.99", "triggerBy": "LastPrice", "triggerDirection": 2, "reduceOnly": null}.
+2024-04-17 02:31:53,668 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 17:31:53).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "None", "triggerPrice": "None", "triggerBy": null, "triggerDirection": null, "reduceOnly": true}.
+2024-04-17 02:31:59,220 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 17:31:59).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "None", "triggerPrice": "None", "triggerBy": null, "triggerDirection": null, "reduceOnly": true}.
+2024-04-17 02:32:04,798 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 17:32:04).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "None", "triggerPrice": "None", "triggerBy": null, "triggerDirection": null, "reduceOnly": true}.
+2024-04-17 02:32:09,814 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-17 08:46:51,600 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 23:46:51).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "None", "triggerPrice": "None", "triggerBy": null, "triggerDirection": null, "reduceOnly": true}.
+2024-04-17 08:46:57,659 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 23:46:57).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "None", "triggerPrice": "None", "triggerBy": null, "triggerDirection": null, "reduceOnly": true}.
+2024-04-17 08:47:03,338 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 23:47:03).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "None", "triggerPrice": "None", "triggerBy": null, "triggerDirection": null, "reduceOnly": true}.
+2024-04-17 08:47:08,343 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-17 08:48:09,615 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 23:48:09).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "None", "triggerPrice": "None", "triggerBy": null, "triggerDirection": null, "reduceOnly": true}.
+2024-04-17 08:48:15,428 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 23:48:15).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "None", "triggerPrice": "None", "triggerBy": null, "triggerDirection": null, "reduceOnly": true}.
+2024-04-17 08:49:13,906 INFO: ByBit HTTP Access Error: stopLoss invalid (ErrCode: 10001) (ErrTime: 23:49:13).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "None", "triggerBy": null, "triggerDirection": null, "reduceOnly": true}.
+2024-04-17 08:49:35,465 INFO: ByBit HTTP Access Error: stopLoss invalid (ErrCode: 10001) (ErrTime: 23:49:35).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "None", "triggerDirection": null, "reduceOnly": true}.
+2024-04-17 08:49:40,993 INFO: ByBit HTTP Access Error: stopLoss invalid (ErrCode: 10001) (ErrTime: 23:49:40).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "None", "triggerDirection": null, "reduceOnly": true}.
+2024-04-17 08:50:00,410 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 23:50:00).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "triggerDirection": null, "reduceOnly": true}.
+2024-04-17 08:50:06,249 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 23:50:06).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "triggerDirection": null, "reduceOnly": true}.
+2024-04-17 08:50:46,936 INFO: ByBit HTTP Access Error: reduce-only order has same side with current position (ErrCode: 110017) (ErrTime: 23:50:46).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "1", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "triggerDirection": null, "reduceOnly": true}.
+2024-04-17 08:50:52,875 INFO: ByBit HTTP Access Error: reduce-only order has same side with current position (ErrCode: 110017) (ErrTime: 23:50:52).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "1", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "triggerDirection": null, "reduceOnly": true}.
+2024-04-17 08:50:58,513 INFO: ByBit HTTP Access Error: reduce-only order has same side with current position (ErrCode: 110017) (ErrTime: 23:50:58).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Buy", "qty": "1", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "triggerDirection": null, "reduceOnly": true}.
+2024-04-17 08:51:03,528 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-17 08:52:19,303 INFO: ByBit HTTP Access Error: 'BybitPnlManager' object has no attribute '_BybitPnlManager__symbol'
+2024-04-17 08:52:24,311 INFO: ByBit HTTP Access Error: 'BybitPnlManager' object has no attribute '_BybitPnlManager__symbol'
+2024-04-17 08:52:29,313 INFO: ByBit HTTP Access Error: 'BybitPnlManager' object has no attribute '_BybitPnlManager__symbol'
+2024-04-17 08:52:34,319 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-17 09:00:19,412 INFO: ByBit HTTP Access Error: current position is zero, cannot fix reduce-only order qty (ErrCode: 110017) (ErrTime: 00:00:19).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "1", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "triggerDirection": null, "reduceOnly": true}.
+2024-04-17 09:00:24,921 INFO: ByBit HTTP Access Error: current position is zero, cannot fix reduce-only order qty (ErrCode: 110017) (ErrTime: 00:00:24).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "1", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "triggerDirection": null, "reduceOnly": true}.
+2024-04-17 09:00:30,522 INFO: ByBit HTTP Access Error: current position is zero, cannot fix reduce-only order qty (ErrCode: 110017) (ErrTime: 00:00:30).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "1", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "triggerDirection": null, "reduceOnly": true}.
+2024-04-17 09:04:07,014 INFO: ByBit HTTP Access Error: current position is zero, cannot fix reduce-only order qty (ErrCode: 110017) (ErrTime: 00:04:07).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "1", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "triggerDirection": null, "reduceOnly": true}.
+2024-04-17 09:04:12,787 INFO: ByBit HTTP Access Error: current position is zero, cannot fix reduce-only order qty (ErrCode: 110017) (ErrTime: 00:04:12).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "1", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "triggerDirection": null, "reduceOnly": true}.

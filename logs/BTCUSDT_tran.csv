@@ -1,0 +1,2 @@
+,serial,init_equity,equity,leverage,contract,qty,entry_price,losscut_price,exit_price,limit_price,pl,pred,tradetype,stage,losscut,entrytime,exittime,direction,startup_flag
+0,7445,1000.0,1000.0,3.0,BTCUSDT,0.046,65551.28469999999,65332.780417666654,0.0,43812.15426521738,0.0,1,LONG_CANCEL,0,0,2024-04-15 07:00:00,2024-04-15 08:00:00,upper,1

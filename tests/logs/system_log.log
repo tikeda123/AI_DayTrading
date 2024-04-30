@@ -1,0 +1,78 @@
+2024-03-20 13:32:21,484 INFO: Failed to create table 'trading_log': relation "trading_log_serial_seq" already exists
+
+2024-03-20 13:32:21,484 INFO: Failed to create table 'trading_log': relation "trading_log_serial_seq" already exists
+
+2024-03-20 13:32:21,497 INFO: Failed to write data to table 'trading_log': column "Serial" of relation "trading_log" does not exist
+LINE 1: ...RT INTO trading_log ("serial", "date", "message", "Serial") ...
+                                                             ^
+
+2024-03-20 13:32:21,497 INFO: Failed to write data to table 'trading_log': column "Serial" of relation "trading_log" does not exist
+LINE 1: ...RT INTO trading_log ("serial", "date", "message", "Serial") ...
+                                                             ^
+
+2024-03-20 15:55:09,411 INFO: Failed to create table 'trading_log': relation "trading_log_serial_seq" already exists
+
+2024-03-20 15:55:09,411 INFO: Failed to create table 'trading_log': relation "trading_log_serial_seq" already exists
+
+2024-03-20 16:18:03,148 INFO: Failed to create table 'trading_log': relation "trading_log_serial_seq" already exists
+
+2024-03-20 16:18:03,148 INFO: Failed to create table 'trading_log': relation "trading_log_serial_seq" already exists
+
+2024-03-20 16:28:46,888 INFO: Failed to create table 'trading_log': relation "trading_log_serial_seq" already exists
+
+2024-03-20 16:28:46,888 INFO: Failed to create table 'trading_log': relation "trading_log_serial_seq" already exists
+
+2024-03-20 16:31:23,131 INFO: Table 'trading_log' and sequence 'trading_log_serial_seq' created.
+2024-03-20 16:31:23,131 INFO: Table 'trading_log' and sequence 'trading_log_serial_seq' created.
+2024-03-20 16:34:29,019 INFO: Failed to create table 'trading_log': relation "trading_log_serial_seq" already exists
+
+2024-03-20 16:34:29,019 INFO: Failed to create table 'trading_log': relation "trading_log_serial_seq" already exists
+
+2024-03-20 16:58:55,028 INFO: Failed to create table 'trading_log': relation "trading_log_serial_seq" already exists
+
+2024-03-20 17:02:33,371 INFO: Failed to create table 'trading_log': relation "trading_log_serial_seq" already exists
+
+2024-03-20 17:03:14,892 INFO: Failed to create table 'trading_log': relation "trading_log_serial_seq" already exists
+
+2024-03-20 17:03:49,890 INFO: Failed to create table 'trading_log': relation "trading_log_serial_seq" already exists
+
+2024-03-20 17:10:50,143 INFO: Table 'trading_log' and sequence 'trading_log_serial_seq' created.
+2024-04-14 14:49:27,451 INFO: Failed to write data to table 'BTCUSDT_account': column "date" is of type timestamp without time zone but expression is of type integer
+LINE 1: ...ash_out", "amount", "startup_flag") VALUES (13641,21000,3998...
+                                                             ^
+HINT:  You will need to rewrite or cast the expression.
+
+2024-04-14 14:49:27,481 INFO: Failed to update data in table 'BTCUSDT_fxtransaction': column "exittime" is of type timestamp without time zone but expression is of type integer
+LINE 3: ...me = '2023-01-03T19:00:00'::timestamp, exittime = 21000, dir...
+                                                             ^
+HINT:  You will need to rewrite or cast the expression.
+
+2024-04-14 14:54:49,564 INFO: Sequence 'trading_log_serial_seq' already exists. No action taken.
+2024-04-14 14:54:49,581 INFO: Table 'trading_log' and  created.
+2024-04-14 14:54:49,651 INFO: Sequence 'BTCUSDT_account_serial_seq' already exists. No action taken.
+2024-04-14 14:54:49,663 INFO: Table 'BTCUSDT_account' created with existing sequence 'BTCUSDT_account_serial_seq'.
+2024-04-14 14:54:49,728 INFO: Sequence 'BTCUSDT_fxtransaction_serial_seq' already exists. No action taken.
+2024-04-14 14:54:49,741 INFO: Table 'BTCUSDT_fxtransaction' created.
+2024-04-14 14:54:49,787 INFO: Failed to write data to table 'BTCUSDT_account': column "date" is of type timestamp without time zone but expression is of type integer
+LINE 1: ...ash_out", "amount", "startup_flag") VALUES (13643,21000,3998...
+                                                             ^
+HINT:  You will need to rewrite or cast the expression.
+
+2024-04-14 14:54:49,800 INFO: Failed to update data in table 'BTCUSDT_fxtransaction': column "exittime" is of type timestamp without time zone but expression is of type integer
+LINE 3: ...me = '2023-01-03T19:00:00'::timestamp, exittime = 21000, dir...
+                                                             ^
+HINT:  You will need to rewrite or cast the expression.
+
+2024-04-14 15:01:55,456 INFO: Failed to write data to table 'BTCUSDT_account': column "date" is of type timestamp without time zone but expression is of type integer
+LINE 1: ...ash_out", "amount", "startup_flag") VALUES (14023,21000,3998...
+                                                             ^
+HINT:  You will need to rewrite or cast the expression.
+
+2024-04-14 15:01:55,466 INFO: Failed to update data in table 'BTCUSDT_fxtransaction': column "exittime" is of type timestamp without time zone but expression is of type integer
+LINE 3: ...me = '2023-01-03T19:00:00'::timestamp, exittime = 21000, dir...
+                                                             ^
+HINT:  You will need to rewrite or cast the expression.
+
+2024-04-14 15:02:51,737 INFO: Data updated in table 'BTCUSDT_fxtransaction' for serial 7046.
+2024-04-14 15:06:15,989 INFO: Data updated in table 'BTCUSDT_fxtransaction' for serial 7047.
+2024-04-14 15:09:19,056 INFO: Data updated in table 'BTCUSDT_fxtransaction' for serial 7048.

@@ -1,0 +1,1165 @@
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 21000, 243.85, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 5
+Initial balance   [$]: 1000.00
+Final balance   [$]: 1243.85
+Net Performance [%]: 24.38
+=======================================================
+Entry: 2, SHORT, 1, 20000, 2023-01-03 19:00:00
+Exit: 2, SHORT_EXIT, None, 20000, 21000, -256.15, STAGE1
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 5
+Initial balance   [$]: 1000.00
+Final balance   [$]: 987.70
+Net Performance [%]: -1.23
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 21000, 243.85, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 5
+Initial balance   [$]: 1000.00
+Final balance   [$]: 1243.85
+Net Performance [%]: 24.38
+=======================================================
+Entry: 2, SHORT, 1, 20000, 2023-01-03 19:00:00
+Exit: 2, SHORT_EXIT, None, 20000, 21000, -256.15, STAGE1
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 5
+Initial balance   [$]: 1000.00
+Final balance   [$]: 987.70
+Net Performance [%]: -1.23
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 21000, 243.85, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 5
+Initial balance   [$]: 1000.00
+Final balance   [$]: 1243.85
+Net Performance [%]: 24.38
+=======================================================
+Entry: 2, SHORT, 1, 20000, 2023-01-03 19:00:00
+Exit: 2, SHORT_EXIT, None, 20000, 21000, -256.15, STAGE1
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 5
+Initial balance   [$]: 1000.00
+Final balance   [$]: 987.70
+Net Performance [%]: -1.23
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 21000, 243.85, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 5
+Initial balance   [$]: 1000.00
+Final balance   [$]: 1243.85
+Net Performance [%]: 24.38
+=======================================================
+Entry: 2, SHORT, 1, 20000, 2023-01-03 19:00:00
+Exit: 2, SHORT_EXIT, None, 20000, 21000, -256.15, STAGE1
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 5
+Initial balance   [$]: 1000.00
+Final balance   [$]: 987.70
+Net Performance [%]: -1.23
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 21000, 146.31, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 1146.31
+Net Performance [%]: 14.63
+=======================================================
+Entry: 2, SHORT, 1, 20000, 2023-01-03 19:00:00
+Exit: 2, SHORT_EXIT, None, 20000, 21000, -153.69, STAGE1
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 992.62
+Net Performance [%]: -0.74
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 21000, 146.31, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 1146.31
+Net Performance [%]: 14.63
+=======================================================
+Entry: 2, SHORT, 1, 20000, 2023-01-03 19:00:00
+Exit: 2, SHORT_EXIT, None, 20000, 21000, -153.69, STAGE1
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 992.62
+Net Performance [%]: -0.74
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 21000, 146.31, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 1146.31
+Net Performance [%]: 14.63
+=======================================================
+Entry: 2, SHORT, 1, 20000, 2023-01-03 19:00:00
+Exit: 2, SHORT_EXIT, None, 20000, 21000, -153.69, STAGE1
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 992.62
+Net Performance [%]: -0.74
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 21000, 146.31, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 1146.31
+Net Performance [%]: 14.63
+=======================================================
+Entry: 2, SHORT, 1, 20000, 2023-01-03 19:00:00
+Exit: 2, SHORT_EXIT, None, 20000, 21000, -153.69, STAGE1
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 992.62
+Net Performance [%]: -0.74
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 21000, 146.31, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 1146.31
+Net Performance [%]: 14.63
+=======================================================
+Entry: 2, SHORT, 1, 20000, 2023-01-03 19:00:00
+Exit: 2, SHORT_EXIT, None, 20000, 21000, -153.69, STAGE1
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 992.62
+Net Performance [%]: -0.74
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19800.0, -33.58, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 966.42
+Net Performance [%]: -3.36
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19800.0, -33.58, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 966.42
+Net Performance [%]: -3.36
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19800.0, -33.58, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 966.42
+Net Performance [%]: -3.36
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19800.0, -33.58, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 966.42
+Net Performance [%]: -3.36
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19788.0, -35.38, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 964.62
+Net Performance [%]: -3.54
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19788.0, -35.38, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 964.62
+Net Performance [%]: -3.54
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19776.0, -37.18, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 962.82
+Net Performance [%]: -3.72
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 21000, 148.11, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 1148.11
+Net Performance [%]: 14.81
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19800, -31.78, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 968.22
+Net Performance [%]: -3.18
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 20000, -1.80, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 998.20
+Net Performance [%]: -0.18
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 20000, 1998.20, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 2998.20
+Net Performance [%]: 199.82
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 20000, 1998.20, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 2998.20
+Net Performance [%]: 199.82
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 20000, -1.80, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 998.20
+Net Performance [%]: -0.18
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19000, -151.71, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 848.29
+Net Performance [%]: -15.17
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 21000, 148.11, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 1148.11
+Net Performance [%]: 14.81
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19800, -31.78, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 968.22
+Net Performance [%]: -3.18
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19800.0, -31.78, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 968.22
+Net Performance [%]: -3.18
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19799.879927956776, -31.80, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 968.20
+Net Performance [%]: -3.18
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 20200.120072043224, 28.20, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 1028.20
+Net Performance [%]: 2.82
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 20200.120072043224, 28.20, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 1028.20
+Net Performance [%]: 2.82
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19799.879927956776, -31.80, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 968.20
+Net Performance [%]: -3.18
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19800.119928043176, -31.76, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 968.24
+Net Performance [%]: -3.18
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19799.879927956776, -31.80, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 968.20
+Net Performance [%]: -3.18
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19799.879927956776, -31.80, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 968.20
+Net Performance [%]: -3.18
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19800.879927956776, -31.65, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 968.35
+Net Performance [%]: -3.17
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19804.879927956776, -31.05, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 968.95
+Net Performance [%]: -3.11
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19805.119928043176, -31.01, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 968.99
+Net Performance [%]: -3.10
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19800.119928043176, -31.76, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 968.24
+Net Performance [%]: -3.18
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19800.12, -31.76, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 968.24
+Net Performance [%]: -3.18
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19799.88, -31.80, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 968.20
+Net Performance [%]: -3.18
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19799.88, -33.58, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 966.42
+Net Performance [%]: -3.36
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19799.879927956776, -33.58, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 966.42
+Net Performance [%]: -3.36
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19800.12, -33.54, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 966.46
+Net Performance [%]: -3.35
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19800.0, -33.56, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 966.44
+Net Performance [%]: -3.36
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19800.0, -33.56, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 966.44
+Net Performance [%]: -3.36
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19800.0, -33.56, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 966.44
+Net Performance [%]: -3.36
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19800.0, -33.56, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 966.44
+Net Performance [%]: -3.36
+=======================================================
+Entry: 2, SHORT, 1, 20000, 2023-01-03 19:00:00
+Exit: 2, SHORT_EXIT, None, 20000, 20200.0, -28.99, STAGE1
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 937.45
+Net Performance [%]: -6.26
+=======================================================
+Entry: 1, SHORT, 1, 20000, 2023-01-03 19:00:00
+Exit: 1, SHORT_EXIT, None, 20000, 20200.0, -30.00, STAGE1
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 970.00
+Net Performance [%]: -3.00
+=======================================================
+Entry: 1, SHORT, 1, 20000, 2023-01-03 19:00:00
+Exit: 1, SHORT_EXIT, None, 20000, 20333.333333333332, -50.00, STAGE1
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 950.00
+Net Performance [%]: -5.00
+=======================================================
+Entry: 1, SHORT, 1, 20000, 2023-01-03 19:00:00
+Exit: 1, SHORT_EXIT, None, 20000, 20333.333333333332, -50.00, STAGE1
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 950.00
+Net Performance [%]: -5.00
+=======================================================
+Entry: 1, SHORT, 1, 20000, 2023-01-03 19:00:00
+Exit: 1, SHORT_EXIT, None, 20000, 20333.333333333332, -50.00, STAGE1
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 950.00
+Net Performance [%]: -5.00
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19666.666666666668, -53.54, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 946.46
+Net Performance [%]: -5.35
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19666.666666666668, -50.00, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 950.00
+Net Performance [%]: -5.00
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19000, -150.00, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 850.00
+Net Performance [%]: -15.00
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19000, -153.42, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 846.58
+Net Performance [%]: -15.34
+=======================================================
+Entry: 1, LONG, 1, 20000, 2023-01-02 19:00:00
+Exit: 1, LONG_EXIT, None, 20000, 19000, -153.42, STAGE1
+=======================================================
+2023-01-02 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 846.58
+Net Performance [%]: -15.34
+=======================================================
+Entry: 1, SHORT, 1, 20000, 2023-01-03 19:00:00
+Exit: 1, SHORT_EXIT, None, 20000, 20333.333333333332, -50.00, STAGE1
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 950.00
+Net Performance [%]: -5.00
+=======================================================
+Entry: 1, SHORT, 1, 20000, 2023-01-03 19:00:00
+Exit: 1, SHORT_EXIT, None, 20000, 19000, 150.00, STAGE1
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 1150.00
+Net Performance [%]: 15.00
+=======================================================
+Entry: 1, SHORT, 1, 20000, 2023-01-03 19:00:00
+Exit: 1, SHORT_EXIT, None, 20000, 21000, -150.00, STAGE1
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 850.00
+Net Performance [%]: -15.00
+=======================================================
+Entry: 1, SHORT, 1, 20000, 2023-01-03 19:00:00
+Exit: 1, SHORT_EXIT, None, 20000, 21000, 146.22, STAGE1
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 1146.22
+Net Performance [%]: 14.62
+=======================================================
+Entry: 1, SHORT, 1, 20000, 2023-01-03 19:00:00
+Exit: 1, SHORT_EXIT, None, 20000, 21000, -148.11, STAGE1
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 851.89
+Net Performance [%]: -14.81
+=======================================================
+Entry: 1, SHORT, 1, 20000, 2023-01-03 19:00:00
+Exit: 1, SHORT_EXIT, None, 20000, 21000, -153.69, STAGE1
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 3
+Initial balance   [$]: 1000.00
+Final balance   [$]: 846.31
+Net Performance [%]: -15.37
+=======================================================
+Current balance: 1000.00
+=======================================================
+2023-1-12  01:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 1000.00
+Net Performance [%]: 0.00
+=======================================================
+Current balance: 1000.00
+=======================================================
+2023-1-12  01:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 1000.00
+Net Performance [%]: 0.00
+=======================================================
+Current balance: 1000.00
+=======================================================
+2023-1-12  01:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 1000.00
+Net Performance [%]: 0.00
+=======================================================
+Current balance: 1000.00
+=======================================================
+2023-1-12  01:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 1000.00
+Net Performance [%]: 0.00
+=======================================================
+Current balance: 1000.00
+=======================================================
+2023-1-12  01:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 1000.00
+Net Performance [%]: 0.00
+=======================================================
+Current balance: 1000.00
+=======================================================
+2023-1-12  01:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 1000.00
+Net Performance [%]: 0.00
+=======================================================
+Current balance: 1000.00
+=======================================================
+2023-1-12  01:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 1000.00
+Net Performance [%]: 0.00
+=======================================================
+Current balance: 1000.00
+=======================================================
+2023-1-12  01:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 1000.00
+Net Performance [%]: 0.00
+=======================================================
+Current balance: 1000.00
+=======================================================
+2023-1-12  01:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 1000.00
+Net Performance [%]: 0.00
+=======================================================
+Current balance: 1000.00
+=======================================================
+2023-1-12  01:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 1000.00
+Net Performance [%]: 0.00
+=======================================================
+Current balance: 1000.00
+=======================================================
+2023-1-12  01:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 1000.00
+Net Performance [%]: 0.00
+=======================================================
+Table 'BTCUSDT_account' created with columns: serial FLOAT, date TEXT, cash_in FLOAT, cash_out FLOAT, amount FLOAT, balance FLOAT
+Current balance: 1000.00
+=======================================================
+2023-1-12  01:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 1000.00
+Net Performance [%]: 0.00
+=======================================================
+Table 'btcusdt_30_market_data' created with columns: serial FLOAT, date TEXT, cash_in FLOAT, cash_out FLOAT, amount FLOAT, balance FLOAT
+Current balance: 1000.00
+=======================================================
+2023-1-12  01:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 1000.00
+Net Performance [%]: 0.00
+=======================================================
+Table 'BTCUSDT_account' created with columns: serial FLOAT, date TEXT, cash_in FLOAT, cash_out FLOAT, amount FLOAT, balance FLOAT
+Table 'BTCUSDT_account' created with columns: serial FLOAT, date TEXT, cash_in FLOAT, cash_out FLOAT, amount FLOAT, balance FLOAT
+Table 'BTCUSDT_account' created with columns: serial FLOAT, date TEXT, cash_in FLOAT, cash_out FLOAT, amount FLOAT, balance FLOAT
+Current balance: 1000.00
+=======================================================
+2023-1-12  01:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 1000.00
+Net Performance [%]: 0.00
+=======================================================
+Table 'BTCUSDT_account' created with columns: serial FLOAT, date TEXT, cash_in FLOAT, cash_out FLOAT, amount FLOAT, balance FLOAT
+Table 'BTCUSDT_account' created with columns: serial FLOAT, date TEXT, cash_in FLOAT, cash_out FLOAT, amount FLOAT, balance FLOAT
+Table 'BTCUSDT_account' created with columns: serial FLOAT, date TEXT, cash_in FLOAT, cash_out FLOAT, amount FLOAT, balance FLOAT
+Table 'BTCUSDT_account' created with columns: serial FLOAT, date TEXT, cash_in FLOAT, cash_out FLOAT, amount FLOAT, balance FLOAT
+Table 'BTCUSDT_account' created with columns: serial FLOAT, date TEXT, cash_in FLOAT, cash_out FLOAT, amount FLOAT, balance FLOAT
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+Table 'BTCUSDT_account' created with columns: serial FLOAT, date TEXT, cash_in FLOAT, cash_out FLOAT, amount FLOAT, balance FLOAT
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+Table 'BTCUSDT_account' created with columns: serial FLOAT, date TEXT, cash_in FLOAT, cash_out FLOAT, amount FLOAT, balance FLOAT
+Table 'BTCUSDT_fxtransaction' created with columns: serial FLOAT, init_equity FLOAT, equity FLOAT, leverage FLOAT, contract FLOAT, qty FLOAT, entry_price FLOAT, exit_price FLOAT, limit_price FLOAT, pl FLOAT, pred FLOAT, tradetype FLOAT, stage FLOAT, losscut FLOAT, entrytime FLOAT, exittime FLOAT, direction FLOAT
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+Table 'BTCUSDT_account' created with columns: serial FLOAT, date TEXT, cash_in FLOAT, cash_out FLOAT, amount FLOAT, balance FLOAT
+Table 'BTCUSDT_fxtransaction' created with columns: serial FLOAT, init_equity FLOAT, equity FLOAT, leverage FLOAT, contract FLOAT, qty FLOAT, entry_price FLOAT, losscut_price FLOAT, exit_price FLOAT, limit_price FLOAT, pl FLOAT, pred FLOAT, tradetype FLOAT, stage FLOAT, losscut FLOAT, entrytime FLOAT, exittime FLOAT, direction FLOAT
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+Table 'BTCUSDT_account' created with columns: serial FLOAT, date TEXT, cash_in FLOAT, cash_out FLOAT, amount FLOAT, balance FLOAT
+Table 'BTCUSDT_fxtransaction' created with columns: serial FLOAT, init_equity FLOAT, equity FLOAT, leverage FLOAT, contract FLOAT, qty FLOAT, entry_price FLOAT, losscut_price FLOAT, exit_price FLOAT, limit_price FLOAT, pl FLOAT, pred FLOAT, tradetype FLOAT, stage FLOAT, losscut FLOAT, entrytime FLOAT, exittime FLOAT, direction FLOAT
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+Table 'BTCUSDT_account' created with columns: serial FLOAT, date TEXT, cash_in FLOAT, cash_out FLOAT, amount FLOAT, balance FLOAT
+Table 'BTCUSDT_account' created with columns: serial FLOAT, date TEXT, cash_in FLOAT, cash_out FLOAT, amount FLOAT, balance FLOAT
+Table 'BTCUSDT_fxtransaction' created with columns: serial FLOAT, init_equity FLOAT, equity FLOAT, leverage FLOAT, contract FLOAT, qty FLOAT, entry_price FLOAT, losscut_price FLOAT, exit_price FLOAT, limit_price FLOAT, pl FLOAT, pred FLOAT, tradetype FLOAT, stage FLOAT, losscut FLOAT, entrytime FLOAT, exittime FLOAT, direction FLOAT
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+Table 'BTCUSDT_account' created with columns: serial FLOAT, date TEXT, cash_in FLOAT, cash_out FLOAT, amount FLOAT, balance FLOAT
+Table 'BTCUSDT_fxtransaction' created with columns: serial FLOAT, init_equity FLOAT, equity FLOAT, leverage FLOAT, contract FLOAT, qty FLOAT, entry_price FLOAT, losscut_price FLOAT, exit_price FLOAT, limit_price FLOAT, pl FLOAT, pred FLOAT, tradetype FLOAT, stage FLOAT, losscut FLOAT, entrytime FLOAT, exittime FLOAT, direction FLOAT
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+Table 'BTCUSDT_account' created with columns: serial FLOAT, date TEXT, cash_in FLOAT, cash_out FLOAT, amount FLOAT, balance FLOAT
+Table 'BTCUSDT_fxtransaction' created with columns: serial FLOAT, init_equity FLOAT, equity FLOAT, leverage FLOAT, contract FLOAT, qty FLOAT, entry_price FLOAT, losscut_price FLOAT, exit_price FLOAT, limit_price FLOAT, pl FLOAT, pred FLOAT, tradetype FLOAT, stage FLOAT, losscut FLOAT, entrytime FLOAT, exittime FLOAT, direction FLOAT
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+Table 'BTCUSDT_account' created with columns: serial FLOAT, date TEXT, cash_in FLOAT, cash_out FLOAT, amount FLOAT, balance FLOAT
+Table 'BTCUSDT_fxtransaction' created with columns: serial FLOAT, init_equity FLOAT, equity FLOAT, leverage FLOAT, contract FLOAT, qty FLOAT, entry_price FLOAT, losscut_price FLOAT, exit_price FLOAT, limit_price FLOAT, pl FLOAT, pred FLOAT, tradetype FLOAT, stage FLOAT, losscut FLOAT, entrytime FLOAT, exittime FLOAT, direction FLOAT
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+Current balance: 1000.00
+=======================================================
+2023-1-12  01:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 1000.00
+Net Performance [%]: 0.00
+=======================================================
+Current balance: 1000.00
+=======================================================
+2023-1-12  01:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 1000.00
+Net Performance [%]: 0.00
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, UPPER, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000.0, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000.0, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000.0, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000.0, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000.0, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000.0, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000.0, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 1, SHORT_EXIT, None, Entry_price:20000.0, Exit_price:21000,P%L: -204.92
+=======================================================
+2023-01-03 20:00:00: BTCUSDT Leverage: 4
+Initial balance [$]: 1000.00
+Final balance   [$]: 795.08
+Net Performance [%]: -20.49
+=======================================================
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message
+2021-01-01 03:00:00|test message: {i}
+2021-01-01 03:00:00|test message: {i}
+2021-01-01 03:00:00|test message: {i}
+2021-01-01 03:00:00|test message: {i}
+2021-01-01 03:00:00|test message: {i}
+2021-01-01 03:00:00|test message: {i}
+2021-01-01 03:00:00|test message: {i}
+2021-01-01 03:00:00|test message: {i}
+2021-01-01 03:00:00|test message: {i}
+2021-01-01 03:00:00|test message: {i}
+2021-01-01 03:00:00|test message: 0
+2021-01-01 03:00:00|test message: 1
+2021-01-01 03:00:00|test message: 2
+2021-01-01 03:00:00|test message: 3
+2021-01-01 03:00:00|test message: 4
+2021-01-01 03:00:00|test message: 5
+2021-01-01 03:00:00|test message: 6
+2021-01-01 03:00:00|test message: 7
+2021-01-01 03:00:00|test message: 8
+2021-01-01 03:00:00|test message: 9
+2021-01-01 03:00:00|test message: 0
+2021-01-01 03:00:00|test message: 1
+2021-01-01 03:00:00|test message: 2
+2021-01-01 03:00:00|test message: 3
+2021-01-01 03:00:00|test message: 4
+2021-01-01 03:00:00|test message: 5
+2021-01-01 03:00:00|test message: 6
+2021-01-01 03:00:00|test message: 7
+2021-01-01 03:00:00|test message: 8
+2021-01-01 03:00:00|test message: 9
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 7046, SHORT_EXIT, None, Entry_price:20000.0, Exit_price:21000,P%L: -153.38
+2023-01-03 20:00:00|=======================================================
+2023-01-03 20:00:00|2023-01-03 20:00:00: BTCUSDT Leverage: 3
+2023-01-03 20:00:00|Initial balance [$]: 1000.00
+2023-01-03 20:00:00|Final balance   [$]: 846.62
+2023-01-03 20:00:00|Net Performance [%]: -15.34
+2023-01-03 20:00:00|=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 7047, SHORT_EXIT, None, Entry_price:20000.0, Exit_price:20000,P%L: -3.30
+2023-01-03 20:00:00|=======================================================
+2023-01-03 20:00:00|2023-01-03 20:00:00: BTCUSDT Leverage: 3
+2023-01-03 20:00:00|Initial balance [$]: 1000.00
+2023-01-03 20:00:00|Final balance   [$]: 996.70
+2023-01-03 20:00:00|Net Performance [%]: -0.33
+2023-01-03 20:00:00|=======================================================
+2023-01-03 19:00:00|Entry: SHORT, pred:1, entry_price20000
+2023-01-03 20:00:00|Exit: 7048, SHORT_EXIT, None, Entry_price:20000.0, Exit_price:20000,P%L: -1.10
+2023-01-03 20:00:00|=======================================================
+2023-01-03 20:00:00|2023-01-03 20:00:00: BTCUSDT Leverage: 3
+2023-01-03 20:00:00|Initial balance [$]: 1000.00
+2023-01-03 20:00:00|Final balance   [$]: 998.90
+2023-01-03 20:00:00|Net Performance [%]: -0.11
+2023-01-03 20:00:00|=======================================================

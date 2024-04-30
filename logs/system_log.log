@@ -1,0 +1,76 @@
+2024-04-17 22:56:17,452 INFO: Table 'trading_log' dropped.
+2024-04-17 22:56:17,477 INFO: Sequence 'ETHUSDT_account_serial_seq' already exists. No action taken.
+2024-04-17 22:56:17,488 INFO: Table 'ETHUSDT_account_aggregated' created with existing sequence 'ETHUSDT_account_serial_seq'.
+2024-04-17 22:56:17,650 INFO: Table 'ETHUSDT_account' dropped.
+2024-04-17 22:56:17,676 INFO: Sequence 'ETHUSDT_fxtransaction_serial_seq' already exists. No action taken.
+2024-04-17 22:56:17,684 INFO: Table 'ETHUSDT_fxtransaction_aggregated' created.
+2024-04-17 22:56:18,804 INFO: Table 'ETHUSDT_fxtransaction' dropped.
+2024-04-17 23:07:38,421 INFO: Table 'trading_log' dropped.
+2024-04-17 23:07:38,464 INFO: Table 'ETHUSDT_account' dropped.
+2024-04-17 23:07:38,615 INFO: Table 'ETHUSDT_fxtransaction' dropped.
+2024-04-19 09:24:54,183 INFO: ByBit HTTP Access Error: Http status code is not 200. (ErrCode: 401) (ErrTime: 00:24:54).
+Request Å® GET https://api.bybit.com/v5/position/list: category=linear&symbol=ETHUSDT.
+2024-04-19 09:24:59,887 INFO: ByBit HTTP Access Error: Http status code is not 200. (ErrCode: 401) (ErrTime: 00:24:59).
+Request Å® GET https://api.bybit.com/v5/position/list: category=linear&symbol=ETHUSDT.
+2024-04-19 09:25:05,417 INFO: ByBit HTTP Access Error: Http status code is not 200. (ErrCode: 401) (ErrTime: 00:25:05).
+Request Å® GET https://api.bybit.com/v5/position/list: category=linear&symbol=ETHUSDT.
+2024-04-19 09:25:10,426 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-19 09:43:40,436 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 00:43:40).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "None", "triggerPrice": "None", "triggerBy": null, "triggerDirection": null, "reduceOnly": true}.
+2024-04-19 09:43:46,069 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 00:43:46).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "None", "triggerPrice": "None", "triggerBy": null, "triggerDirection": null, "reduceOnly": true}.
+2024-04-19 09:43:51,598 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 00:43:51).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "None", "triggerPrice": "None", "triggerBy": null, "triggerDirection": null, "reduceOnly": true}.
+2024-04-19 09:43:56,615 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-19 09:47:02,545 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 00:47:02).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "None", "triggerPrice": "None", "triggerBy": null, "triggerDirection": null, "reduceOnly": true}.
+2024-04-19 09:47:08,261 INFO: ByBit HTTP Access Error: TriggerPrice invalid (ErrCode: 10001) (ErrTime: 00:47:08).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "None", "triggerPrice": "None", "triggerBy": null, "triggerDirection": null, "reduceOnly": true}.
+2024-04-19 09:52:58,560 INFO: ByBit HTTP Access Error: stopLoss invalid (ErrCode: 10001) (ErrTime: 00:52:58).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "None", "reduceOnly": true}.
+2024-04-19 09:53:04,527 INFO: ByBit HTTP Access Error: stopLoss invalid (ErrCode: 10001) (ErrTime: 00:53:04).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "None", "reduceOnly": true}.
+2024-04-19 09:53:10,027 INFO: ByBit HTTP Access Error: stopLoss invalid (ErrCode: 10001) (ErrTime: 00:53:10).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "stopLoss": "None", "reduceOnly": true}.
+2024-04-19 09:53:15,038 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-19 09:56:01,217 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 00:56:01).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "reduceOnly": true}.
+2024-04-19 09:56:06,753 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 00:56:06).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "reduceOnly": true}.
+2024-04-19 09:56:12,324 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 00:56:12).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "price": "None", "timeInForce": "GTC", "reduceOnly": true}.
+2024-04-19 09:56:17,330 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-19 09:57:53,518 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 00:57:53).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "timeInForce": "GTC", "reduceOnly": true}.
+2024-04-19 09:57:59,030 INFO: ByBit HTTP Access Error: Qty invalid (ErrCode: 10001) (ErrTime: 00:57:59).
+Request Å® POST https://api-testnet.bybit.com/v5/order/create: {"category": "linear", "symbol": "ETHUSDT", "side": "Sell", "qty": "0.331", "marketUnit": "quoteCoin", "orderType": "Market", "timeInForce": "GTC", "reduceOnly": true}.
+2024-04-25 21:06:51,708 INFO: ByBit HTTP Access Error: Http status code is not 200. (ErrCode: 401) (ErrTime: 12:06:51).
+Request ‚Üí GET https://api.bybit.com/v5/position/list: category=linear&symbol=ETHUSDT.
+2024-04-25 21:06:56,841 INFO: ByBit HTTP Access Error: Http status code is not 200. (ErrCode: 401) (ErrTime: 12:06:56).
+Request ‚Üí GET https://api.bybit.com/v5/position/list: category=linear&symbol=ETHUSDT.
+2024-04-25 21:07:01,967 INFO: ByBit HTTP Access Error: Http status code is not 200. (ErrCode: 401) (ErrTime: 12:07:01).
+Request ‚Üí GET https://api.bybit.com/v5/position/list: category=linear&symbol=ETHUSDT.
+2024-04-25 21:07:06,975 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-25 21:08:08,644 INFO: ByBit HTTP Access Error: Http status code is not 200. (ErrCode: 401) (ErrTime: 12:08:08).
+Request ‚Üí GET https://api.bybit.com/v5/position/list: category=linear&symbol=ETHUSDT.
+2024-04-25 21:08:13,771 INFO: ByBit HTTP Access Error: Http status code is not 200. (ErrCode: 401) (ErrTime: 12:08:13).
+Request ‚Üí GET https://api.bybit.com/v5/position/list: category=linear&symbol=ETHUSDT.
+2024-04-25 21:08:18,903 INFO: ByBit HTTP Access Error: Http status code is not 200. (ErrCode: 401) (ErrTime: 12:08:18).
+Request ‚Üí GET https://api.bybit.com/v5/position/list: category=linear&symbol=ETHUSDT.
+2024-04-25 21:09:01,636 INFO: ByBit HTTP Access Error: Http status code is not 200. (ErrCode: 401) (ErrTime: 12:09:01).
+Request ‚Üí GET https://api.bybit.com/v5/position/list: category=linear&symbol=ETHUSDT.
+2024-04-25 21:09:06,772 INFO: ByBit HTTP Access Error: Http status code is not 200. (ErrCode: 401) (ErrTime: 12:09:06).
+Request ‚Üí GET https://api.bybit.com/v5/position/list: category=linear&symbol=ETHUSDT.
+2024-04-25 21:09:11,897 INFO: ByBit HTTP Access Error: Http status code is not 200. (ErrCode: 401) (ErrTime: 12:09:11).
+Request ‚Üí GET https://api.bybit.com/v5/position/list: category=linear&symbol=ETHUSDT.
+2024-04-25 21:09:16,902 INFO: <lambda>: MAX TRY OUT Error.
+2024-04-25 21:11:11,371 INFO: ByBit HTTP Access Error: Unmatched IP, please check your API key's bound IP addresses. (ErrCode: 10010) (ErrTime: 12:11:11).
+Request ‚Üí GET https://api-testnet.bybit.com/v5/position/list: category=linear&symbol=ETHUSDT.
+2024-04-25 21:11:16,503 INFO: ByBit HTTP Access Error: Unmatched IP, please check your API key's bound IP addresses. (ErrCode: 10010) (ErrTime: 12:11:16).
+Request ‚Üí GET https://api-testnet.bybit.com/v5/position/list: category=linear&symbol=ETHUSDT.
+2024-04-25 21:11:21,701 INFO: ByBit HTTP Access Error: Unmatched IP, please check your API key's bound IP addresses. (ErrCode: 10010) (ErrTime: 12:11:21).
+Request ‚Üí GET https://api-testnet.bybit.com/v5/position/list: category=linear&symbol=ETHUSDT.
+2024-04-26 00:12:43,065 INFO: ByBit HTTP Access Error: Unmatched IP, please check your API key's bound IP addresses. (ErrCode: 10010) (ErrTime: 15:12:43).
+Request ‚Üí GET https://api-testnet.bybit.com/v5/position/list: category=linear&symbol=ETHUSDT.
+2024-04-26 00:12:48,187 INFO: ByBit HTTP Access Error: Unmatched IP, please check your API key's bound IP addresses. (ErrCode: 10010) (ErrTime: 15:12:48).
+Request ‚Üí GET https://api-testnet.bybit.com/v5/position/list: category=linear&symbol=ETHUSDT.

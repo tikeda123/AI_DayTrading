@@ -1,0 +1,3 @@
+,serial,init_equity,equity,leverage,contract,qty,entry_price,losscut_price,exit_price,limit_price,pl,pred,tradetype,stage,losscut,entrytime,exittime,direction,startup_flag
+0,12191,1000.0,1000.0,3.0,ETHUSDT,0.97,3081.9064599999997,3061.360416933333,0.0,2050.978624948453,0.0,1,LONG_CANCEL,0,0.0,2024-04-17 04:00:00,2024-04-17 05:00:00,upper,1
+1,12192,1000.0,976.16347462,3.0,ETHUSDT,0.97,3086.1835899999996,3065.609032733333,3065.53,2055.255754948453,-23.83652538,1,LONG_EXIT,0,3065.53,2024-04-17 06:00:00,2024-04-17 08:00:00,upper,0

@@ -1,0 +1,1733 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>data_loader_db API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>data_loader_db</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import psycopg2
+from psycopg2 import extras
+import pandas as pd
+import decimal
+import os, sys
+
+
+# b.pyのディレクトリの絶対パスを取得
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)  # Aディレクトリーのパスを取得
+
+# Aディレクトリーのパスをsys.pathに追加
+sys.path.append(parent_dir)
+
+from common.data_loader import DataLoader
+from common.config_manager import ConfigManager
+from common.utils import configure_container
+
+
+def dtype_mapping(dtype, column_name):
+    &#34;&#34;&#34;
+    Pandasデータ型とカラム名をPostgreSQLのデータ型にマッピングする。
+    特に、&#39;start_at&#39; カラムは &#39;TIMESTAMP&#39; 型として扱う。
+    &#34;&#34;&#34;
+    print(f&#39;dtype_mapping: {dtype}, {column_name}&#39;)
+    if column_name == &#39;start_at&#39;:
+        return &#39;TIMESTAMP&#39;
+    if column_name == &#39;date&#39;:
+        return &#39;TEXT&#39;
+    elif dtype.startswith(&#39;int&#39;):
+        return &#39;INTEGER&#39;
+    elif dtype.startswith(&#39;float&#39;):
+        return &#39;FLOAT&#39;
+    elif dtype.startswith(&#39;datetime&#39;):
+        return &#39;TIMESTAMP&#39;
+    elif dtype.startswith(&#39;object&#39;):
+        return &#39;FLOAT&#39;
+    else:
+        return &#39;TEXT&#39;
+
+
+class DataLoaderDB(DataLoader):
+    &#34;&#34;&#34;
+    データベースからデータをロードするためのDataLoaderのサブクラスです。
+
+    Attributes:
+        config_manager (ConfigManager): 設定ファイルを管理するオブジェクト。
+        table_name (str): データをロードするデータベーステーブルの名前。
+        conn (psycopg2.connection): データベースへの接続。
+
+    Args:
+        config_fullpath (str): 設定ファイルのフルパス。
+        table_name (Optional[str]): データをロードするテーブルの名前。指定しない場合は、設定ファイルから生成されます。
+    &#34;&#34;&#34;
+
+    def __init__(self,config_fullpath, table_name=None):
+        &#34;&#34;&#34;
+        インスタンスを初期化し、データベース接続を確立します。
+        &#34;&#34;&#34;
+
+        self.config_manager = ConfigManager(config_fullpath)
+        conf = self.config_manager.get(&#39;DATA&#39;)
+        super().__init__(conf)
+        db_conf = self.config_manager.get(&#39;DATABASE&#39;)
+        self.table_name = table_name or self.make_table_name()
+
+        self.conn = psycopg2.connect(
+            dbname=db_conf[&#39;DBNAME&#39;],
+            user=db_conf[&#39;USER&#39;],
+            password=db_conf[&#39;PASSWORD&#39;],
+            host=db_conf[&#39;HOST&#39;]
+        )
+
+    def __del__(self):
+        &#34;&#34;&#34;
+        インスタンスの削除時にデータベース接続を閉じます。
+        &#34;&#34;&#34;
+        self.conn.close()
+
+    def make_table_name(self,table_name=None)-&gt;str:
+        &#34;&#34;&#34;
+        デフォルトのテーブル名を生成または設定します。
+
+        Args:
+            table_name (Optional[str]): テーブル名。指定しない場合は、設定ファイルからシンボルとインターバルを使用して生成されます。
+
+        Returns:
+            str: テーブル名。
+        &#34;&#34;&#34;
+        if table_name is None:
+            symbol = self.config_manager.get(&#34;ONLINE&#34;, &#34;SYMBOL&#34;)
+            interval = self.config_manager.get(&#34;ONLINE&#34;, &#34;INTERVAL&#34;)
+            self.table_name = f&#39;{symbol}_{interval}_market_data&#39;
+            return self.table_name
+        self.table_name = table_name
+        return self.table_name
+
+    def make_table_name_tech(self,table_name=None)-&gt;str:
+        &#34;&#34;&#34;
+        技術指標を含むデータを格納するテーブル名を生成または設定します。
+
+        Args:
+            table_name (Optional[str]): テーブル名。指定しない場合は、`make_table_name` メソッドで生成されたテーブル名に &#39;_tech&#39; を追加して使用されます。
+
+        Returns:
+            str: テーブル名。
+        &#34;&#34;&#34;
+        if table_name is None:
+            self.table_name = self.make_table_name() + &#39;_tech&#39;
+            return self.table_name
+        self.table_name = table_name
+        return self.table_name
+
+    def create_table(self):
+        &#34;&#34;&#34;
+        データベース内に新しいテーブルを作成します。テーブル名はインスタンス変数 `table_name` に基づきます。
+        テーブルが既に存在する場合は何もしません。テーブルの構造は市場データの記録に特化しています。
+
+        テーブル構造:
+        - start_at: データの開始時刻 (TIMESTAMP型)
+        - open: 始値 (FLOAT型)
+        - high: 高値 (FLOAT型)
+        - low: 安値 (FLOAT型)
+        - close: 終値 (FLOAT型)
+        - volume: 取引量 (FLOAT型)
+        - turnover: 売上高 (FLOAT型)
+        - date: 日付 (TEXT型)
+        - funding_rate: ファンディングレート (FLOAT型)
+        - p_close: プレミアムクローズ (FLOAT型)
+        - oi: オープンインタレスト (FLOAT型)
+
+        テーブル作成後、成功メッセージをログに記録します。失敗した場合は、エラーメッセージをログに記録し、トランザクションをロールバックします。
+        &#34;&#34;&#34;
+        with self.conn.cursor() as cursor:
+            try:
+                cursor.execute(f&#34;&#34;&#34;
+                    SELECT EXISTS (
+                        SELECT FROM information_schema.tables
+                        WHERE table_name = &#39;{self.table_name}&#39;
+                    );
+                &#34;&#34;&#34;)
+                exists = cursor.fetchone()[0]
+
+                if not exists:
+                    cursor.execute(f&#34;&#34;&#34;
+                        CREATE TABLE IF NOT EXISTS {self.table_name} (
+                            start_at TIMESTAMP,
+                            open FLOAT,
+                            high FLOAT,
+                            low FLOAT,
+                            close FLOAT,
+                            volume FLOAT,
+                            turnover FLOAT,
+                            date TEXT,
+                            funding_rate FLOAT,
+                            p_close FLOAT,
+                            oi FLOAT
+                        );
+                    &#34;&#34;&#34;)
+                    self.conn.commit()
+                    print(f&#34;Table &#39;{self.table_name}&#39; created.&#34;)
+            except psycopg2.Error as e:
+                self.logger.log_system_message(f&#34;Failed to create table &#39;{self.table_name}&#39;: {e}&#34;)
+                self.conn.rollback()
+
+    def load_data_for_db(self,csvfilename)-&gt;pd.DataFrame:
+        &#34;&#34;&#34;
+        指定されたCSVファイル名からデータをロードするか、既にロードされている生データを返します。
+
+        Args:
+            csvfilename (str): データをロードするCSVファイルの名前。Noneの場合、既にロードされている生データを返します。
+
+        Returns:
+            pd.DataFrame: ロードされた生データ。
+        &#34;&#34;&#34;
+        if csvfilename is None:
+            raw = self.get_raw()
+        else:
+            raw = self.load_data_from_csv(csvfilename)
+        return raw
+
+    def convert_decimal_to_float(self, df)-&gt;pd.DataFrame:
+        &#34;&#34;&#34;
+        DataFrame内のdecimal.Decimal型のデータをfloatに変換します。
+
+        Args:
+            df (pd.DataFrame): 変換するデータが含まれるDataFrame。
+
+        Returns:
+            pd.DataFrame: 変換後のDataFrame。
+        &#34;&#34;&#34;
+        for column, dtype in df.dtypes.items():
+            if dtype == object:
+                try:
+                    # decimal.Decimalを含む可能性のあるカラムをfloatに変換
+                    if isinstance(df[column].iloc[0], decimal.Decimal):
+                        df[column] = df[column].apply(float)
+                except IndexError:
+                    # カラムが空の場合は何もしない
+                    pass
+        return df
+
+    def load_data_from_period(self, start_date, end_date, table_name=None)-&gt;pd.DataFrame:
+        &#34;&#34;&#34;
+        指定された期間内のデータをデータベースからロードします。テーブル名も指定可能です。
+
+        Args:
+            start_date (str): データの開始日 (YYYY-MM-DD形式)。
+            end_date (str): データの終了日 (YYYY-MM-DD形式)。
+            table_name (Optional[str]): データをロードするテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。
+
+        Returns:
+            pd.DataFrame: ロードされたデータ。
+        &#34;&#34;&#34;
+        # テーブル名が指定されていない場合は、インスタンスのテーブル名を使用
+        target_table_name = table_name or self.table_name
+
+        # 指定された期間に対応するデータを選択するSQLクエリを定義
+        query = f&#34;&#34;&#34;
+        SELECT * FROM {target_table_name}
+        WHERE date &gt;= %s AND date &lt;= %s
+        ORDER BY start_at ASC;
+        &#34;&#34;&#34;
+
+        try:
+            with self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cursor:
+                cursor.execute(query, (start_date, end_date))
+                records = cursor.fetchall()
+                raw = pd.DataFrame(records, columns=[col.name for col in cursor.description])
+
+                # decimal.Decimal型のデータをfloatに変換
+                raw = self.convert_decimal_to_float(raw)
+
+                self.set_raw(raw)
+                return raw
+        except psycopg2.Error as e:
+            self.logger.log_system_message(f&#34;指定された期間 &#39;{start_date} から {end_date}&#39; のデータを {target_table_name} からロードするのに失敗しました: {e}&#34;)
+            return None
+
+    def load_data_from_datetime_period(self, start_datetime, end_datetime, table_name=None)-&gt;pd.DataFrame:
+        &#34;&#34;&#34;
+        指定された日時期間内のデータをデータベースからロードします。テーブル名も指定可能です。
+
+        Args:
+            start_datetime (str): データの開始日時 (YYYY-MM-DD HH:MM:SS形式)。
+            end_datetime (str): データの終了日時 (YYYY-MM-DD HH:MM:SS形式)。
+            table_name (Optional[str]): データをロードするテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。
+
+        Returns:
+            pd.DataFrame: ロードされたデータ。
+        &#34;&#34;&#34;
+        # テーブル名が指定されていない場合は、インスタンスのテーブル名を使用
+        target_table_name = table_name or self.table_name
+
+        # 指定された日時期間に対応するデータを選択するSQLクエリを定義
+        query = f&#34;&#34;&#34;
+        SELECT * FROM {target_table_name}
+        WHERE start_at &gt;= %s AND start_at &lt;= %s
+        ORDER BY start_at ASC;
+        &#34;&#34;&#34;
+
+        try:
+            with self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cursor:
+                cursor.execute(query, (start_datetime, end_datetime))
+                records = cursor.fetchall()
+                raw = pd.DataFrame(records, columns=[col.name for col in cursor.description])
+
+                # decimal.Decimal型のデータをfloatに変換
+                raw = self.convert_decimal_to_float(raw)
+
+                self.set_raw(raw)
+                return raw
+        except psycopg2.Error as e:
+            self.logger.log_system_message(f&#34;指定された日時期間 &#39;{start_datetime} から {end_datetime}&#39; のデータを {target_table_name} からロードするのに失敗しました: {e}&#34;)
+            return None
+
+    def load_data_from_db(self, table_name=None)-&gt;pd.DataFrame:
+        &#34;&#34;&#34;
+        データベースからデータを読み込み、&#39;start_at&#39;で昇順に並べ替えたデータを返します。
+
+        Args:
+            table_name (Optional[str]): データをロードするテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。
+
+        Returns:
+            pd.DataFrame: ロードされたデータ。
+        &#34;&#34;&#34;
+        self.table_name = table_name or self.table_name
+        try:
+            query = f&#34;SELECT * FROM {self.table_name} ORDER BY start_at ASC;&#34;
+            with self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cursor:
+                cursor.execute(query)
+                records = cursor.fetchall()
+                raw = pd.DataFrame(records, columns=[col.name for col in cursor.description])
+
+                # decimal.Decimal型のデータをfloatに変換
+                raw = self.convert_decimal_to_float(raw)
+
+                self.set_raw(raw)
+                return self.get_raw()
+        except psycopg2.Error as e:
+            self.logger.log_system_message(f&#34;テーブル &#39;{self.table_name}&#39; からデータを読み込むのに失敗しました: {e}&#34;)
+            return None
+
+
+    def write_data_to_db(self,csvfilename=None,df=None):
+        &#34;&#34;&#34;
+        指定されたCSVファイルまたはDataFrameからデータを読み込み、データベースに書き込みます。
+
+        Args:
+            csvfilename (Optional[str]): データをロードするCSVファイルの名前。Noneの場合、df引数を使用。
+            df (Optional[pd.DataFrame]): データベースに書き込むデータが含まれるDataFrame。Noneの場合、csvfilename引数を使用。
+
+        Raises:
+            ValueError: 書き込むデータが存在しない場合。
+        &#34;&#34;&#34;
+        if df is not None:
+            self.set_raw(df)
+            raw = df
+        else:
+            raw = self.load_data_for_db(csvfilename)
+
+        if raw is None:
+            raise ValueError(&#34;No data to write to database&#34;)
+        # start_atカラムがUnixタイムスタンプを含むと仮定して、datetimeに変換
+        if &#39;start_at&#39; in raw.columns:
+            raw[&#39;start_at&#39;] = pd.to_datetime(raw[&#39;start_at&#39;], unit=&#39;s&#39;)  # Unixタイムスタンプをdatetimeに変換
+
+        try:
+            with self.conn.cursor() as cursor:
+                df_columns = [&#39;&#34;&#39; + column.replace(&#39;&#34;&#39;, &#39;&#34;&#34;&#39;) + &#39;&#34;&#39; for column in raw.columns]
+                columns = &#39;, &#39;.join(df_columns)
+                values = [tuple(row) for row in raw.itertuples(index=False, name=None)]
+                insert_query = f&#34;INSERT INTO {self.table_name} ({columns}) VALUES %s&#34;
+                extras.execute_values(cursor, insert_query, values)
+                self.conn.commit()
+        except psycopg2.Error as e:
+            self.logger.log_system_message(f&#34;Failed to write data to table &#39;{self.table_name}&#39;: {e}&#34;)
+            self.conn.rollback()
+
+    def insert_new_data(self,csvfilename=None,df=None):
+        &#34;&#34;&#34;
+        &#39;start_at&#39;列の重複がない場合に新しいデータをデータベースに挿入します。
+
+        Args:
+            csvfilename (Optional[str]): データをロードするCSVファイルの名前。Noneの場合、df引数を使用。
+            df (Optional[pd.DataFrame]): データベースに挿入するデータが含まれるDataFrame。Noneの場合、csvfilename引数を使用。
+        &#34;&#34;&#34;
+        if df is not None:
+            self.set_raw(df)
+            new_data = df
+        else:
+            new_data = self.load_data_for_db(csvfilename)
+
+        # &#39;start_at&#39;が既にdatetimeでない場合はdatetimeに変換します
+        if &#39;start_at&#39; in new_data.columns and new_data[&#39;start_at&#39;].dtype == &#39;float64&#39;:
+            new_data[&#39;start_at&#39;] = pd.to_datetime(new_data[&#39;start_at&#39;], unit=&#39;s&#39;)
+
+        # 重複をチェックして新しいデータを挿入します
+        new_data_records = new_data.to_dict(&#39;records&#39;)
+        with self.conn.cursor() as cursor:
+            for record in new_data_records:
+                try:
+                    cursor.execute(f&#34;&#34;&#34;
+                        SELECT EXISTS (
+                            SELECT 1 FROM {self.table_name} WHERE start_at = %s
+                        )
+                    &#34;&#34;&#34;, (record[&#39;start_at&#39;],))
+                    exists = cursor.fetchone()[0]
+
+                    if not exists:
+                        columns = &#39;, &#39;.join([&#39;&#34;&#39; + col + &#39;&#34;&#39; for col in new_data.columns])
+                        placeholders = &#39;, &#39;.join([&#39;%s&#39;] * len(record))
+                        cursor.execute(f&#34;INSERT INTO {self.table_name} ({columns}) VALUES ({placeholders})&#34;, list(record.values()))
+                        print(f&#34;New data inserted: {record[&#39;date&#39;]} {record[&#39;start_at&#39;]}&#34;)
+                except psycopg2.Error as e:
+                    self.logger.log_system_message(f&#34;データ挿入に失敗しました: {e}&#34;)
+                    self.conn.rollback()
+        self.conn.commit()
+
+
+    def is_data_exist(self,table_name=None)-&gt;bool:
+        &#34;&#34;&#34;
+        指定されたテーブルがデータベース内に存在するかどうかを確認します。
+
+        Args:
+            table_name (Optional[str]): 確認するテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。
+
+        Returns:
+            bool: テーブルが存在する場合はTrue、存在しない場合はFalse。
+        &#34;&#34;&#34;
+        if table_name is not None:
+            self.make_table_name(table_name)
+
+        with self.conn.cursor() as cursor:
+            cursor.execute(&#34;&#34;&#34;
+                    SELECT EXISTS (
+                        SELECT 1 FROM information_schema.tables
+                        WHERE table_schema = &#39;public&#39;
+                        AND table_name = lower(%s)
+                    );
+                &#34;&#34;&#34;, (self.table_name,))
+            exists = cursor.fetchone()[0]
+            return exists == True or exists == &#39;t&#39;  # PostgreSQLの戻り値に合わせて適宜調整
+
+
+    def import_to_db(self,csvfilename=None,dataframe=None,table_name=None):
+        &#34;&#34;&#34;
+        CSVファイルまたはDataFrameからデータをインポートし、データベースに挿入します。テーブルが存在しない場合は、新たに作成します。
+
+        Args:
+            csvfilename (Optional[str]): データをロードするCSVファイルの名前。Noneの場合、dataframe引数を使用。
+            dataframe (Optional[pd.DataFrame]): データベースに挿入するデータが含まれるDataFrame。Noneの場合、csvfilename引数を使用。
+            table_name (Optional[str]): データを挿入するテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。
+        &#34;&#34;&#34;
+        if self.is_data_exist(table_name):
+            self.insert_new_data(csvfilename,dataframe)
+        else:
+            self.create_table_from_df(dataframe, table_name)
+            self.write_data_to_db(csvfilename,dataframe)
+
+    def create_table_from_df(self, df, table_name=None):
+        &#34;&#34;&#34;
+        DataFrameのカラム情報からデータベースのテーブルを作成します。&#39;start_at&#39;カラムは&#39;TIMESTAMP&#39;型として扱います。
+
+        Args:
+            df (pd.DataFrame): テーブル作成の基になるデータが含まれるDataFrame。
+            table_name (Optional[str]): 作成するテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。
+        &#34;&#34;&#34;
+        if table_name is not None:
+            self.table_name = table_name
+
+        column_definitions = []
+        for column, dtype in df.dtypes.items():
+            sql_dtype = dtype_mapping(str(dtype), column)  # カラム名も渡す
+            column_definitions.append(f&#34;{column} {sql_dtype}&#34;)
+        columns_sql = &#39;, &#39;.join(column_definitions)
+
+        create_table_sql = f&#34;CREATE TABLE IF NOT EXISTS {self.table_name} ({columns_sql});&#34;
+
+        with self.conn.cursor() as cursor:
+            try:
+                cursor.execute(create_table_sql)
+                self.conn.commit()
+                print(f&#34;Table &#39;{self.table_name}&#39; created with columns: {&#39;, &#39;.join(column_definitions)}&#34;)
+            except psycopg2.Error as e:
+                print(f&#34;Failed to create table &#39;{self.table_name}&#39;: {e}&#34;)
+                self.conn.rollback()
+
+
+def main():
+
+    container = configure_container(name=__name__)
+    from common.init_common_module import init_common_module
+    init_common_module()
+    db_loader = container.data_loader_db()
+
+    &#34;&#34;&#34;
+    db_loader.make_table_name(&#39;BTCUSDT_240_market_data&#39;)
+    db_loader.import_to_db(&#39;BTCUSDT_20210101000_20240212000_240_price.csv&#39;)
+    db_loader.make_table_name(&#39;BTCUSDT_60_market_data&#39;)
+    db_loader.import_to_db(&#39;BTCUSDT_20210101000_20240214000_60_price.csv&#39;)
+    #table_name = &#39;BTCUSDT_60_market_data&#39;
+    table_name = &#39;BTCUSDT_240_market_data&#39;
+    df240 = db_loader.load_data_from_period(&#39;2021-08-01&#39;, &#39;2023-08-31&#39;,table_name)
+
+    table_name = &#39;BTCUSDT_240_market_data&#39;
+    db_loader.make_table_name(table_name)
+    db_loader.import_to_db(&#39;BTCUSDT_20210101000_20240212000_240_price.csv&#39;)
+
+    #table_name = &#39;BTCUSDT_60_market_data&#39;
+    #df = db_loader.load_data_from_period(&#39;2021-01-01&#39;, &#39;2024-02-14&#39;,table_name)
+    df = db_loader.get_raw()
+    from trading_analysis_kit.technical_analyzer import TechnicalAnalyzer
+    ta = TechnicalAnalyzer(df)
+    df = ta.analize()
+
+    table_name_tech = &#39;BTCUSDT_240_market_data_tech&#39;
+    db_loader.create_table_from_df(df, table_name=table_name_tech)
+    db_loader.import_to_db(dataframe=df, table_name=table_name_tech)
+    &#34;&#34;&#34;
+    table_name_tech = &#39;BTCUSDT_60_market_data_tech&#39;
+    #df = db_loader.load_data_from_datetime_period(&#39;2024-02-10 04:00:00&#39;, &#39;2024-02-12 12:00:00&#39;,table_name_tech)
+    df = db_loader.load_data_from_db(table_name_tech)
+    print(df)
+
+    #df240 = db_loader.load_data_from_period(&#39;2023-08-01&#39;, &#39;2023-08-31&#39;,table_name240)
+    #print(df240)
+
+if __name__ == &#39;__main__&#39;:
+    main()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="data_loader_db.dtype_mapping"><code class="name flex">
+<span>def <span class="ident">dtype_mapping</span></span>(<span>dtype, column_name)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Pandasデータ型とカラム名をPostgreSQLのデータ型にマッピングする。
+特に、'start_at' カラムは 'TIMESTAMP' 型として扱う。</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def dtype_mapping(dtype, column_name):
+    &#34;&#34;&#34;
+    Pandasデータ型とカラム名をPostgreSQLのデータ型にマッピングする。
+    特に、&#39;start_at&#39; カラムは &#39;TIMESTAMP&#39; 型として扱う。
+    &#34;&#34;&#34;
+    print(f&#39;dtype_mapping: {dtype}, {column_name}&#39;)
+    if column_name == &#39;start_at&#39;:
+        return &#39;TIMESTAMP&#39;
+    if column_name == &#39;date&#39;:
+        return &#39;TEXT&#39;
+    elif dtype.startswith(&#39;int&#39;):
+        return &#39;INTEGER&#39;
+    elif dtype.startswith(&#39;float&#39;):
+        return &#39;FLOAT&#39;
+    elif dtype.startswith(&#39;datetime&#39;):
+        return &#39;TIMESTAMP&#39;
+    elif dtype.startswith(&#39;object&#39;):
+        return &#39;FLOAT&#39;
+    else:
+        return &#39;TEXT&#39;</code></pre>
+</details>
+</dd>
+<dt id="data_loader_db.main"><code class="name flex">
+<span>def <span class="ident">main</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def main():
+
+    container = configure_container(name=__name__)
+    from common.init_common_module import init_common_module
+    init_common_module()
+    db_loader = container.data_loader_db()
+
+    &#34;&#34;&#34;
+    db_loader.make_table_name(&#39;BTCUSDT_240_market_data&#39;)
+    db_loader.import_to_db(&#39;BTCUSDT_20210101000_20240212000_240_price.csv&#39;)
+    db_loader.make_table_name(&#39;BTCUSDT_60_market_data&#39;)
+    db_loader.import_to_db(&#39;BTCUSDT_20210101000_20240214000_60_price.csv&#39;)
+    #table_name = &#39;BTCUSDT_60_market_data&#39;
+    table_name = &#39;BTCUSDT_240_market_data&#39;
+    df240 = db_loader.load_data_from_period(&#39;2021-08-01&#39;, &#39;2023-08-31&#39;,table_name)
+
+    table_name = &#39;BTCUSDT_240_market_data&#39;
+    db_loader.make_table_name(table_name)
+    db_loader.import_to_db(&#39;BTCUSDT_20210101000_20240212000_240_price.csv&#39;)
+
+    #table_name = &#39;BTCUSDT_60_market_data&#39;
+    #df = db_loader.load_data_from_period(&#39;2021-01-01&#39;, &#39;2024-02-14&#39;,table_name)
+    df = db_loader.get_raw()
+    from trading_analysis_kit.technical_analyzer import TechnicalAnalyzer
+    ta = TechnicalAnalyzer(df)
+    df = ta.analize()
+
+    table_name_tech = &#39;BTCUSDT_240_market_data_tech&#39;
+    db_loader.create_table_from_df(df, table_name=table_name_tech)
+    db_loader.import_to_db(dataframe=df, table_name=table_name_tech)
+    &#34;&#34;&#34;
+    table_name_tech = &#39;BTCUSDT_60_market_data_tech&#39;
+    #df = db_loader.load_data_from_datetime_period(&#39;2024-02-10 04:00:00&#39;, &#39;2024-02-12 12:00:00&#39;,table_name_tech)
+    df = db_loader.load_data_from_db(table_name_tech)
+    print(df)
+
+    #df240 = db_loader.load_data_from_period(&#39;2023-08-01&#39;, &#39;2023-08-31&#39;,table_name240)
+    #print(df240)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="data_loader_db.DataLoaderDB"><code class="flex name class">
+<span>class <span class="ident">DataLoaderDB</span></span>
+<span>(</span><span>config_fullpath, table_name=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>データベースからデータをロードするためのDataLoaderのサブクラスです。</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>config_manager</code></strong> :&ensp;<code>ConfigManager</code></dt>
+<dd>設定ファイルを管理するオブジェクト。</dd>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>データをロードするデータベーステーブルの名前。</dd>
+<dt><strong><code>conn</code></strong> :&ensp;<code>psycopg2.connection</code></dt>
+<dd>データベースへの接続。</dd>
+</dl>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>config_fullpath</code></strong> :&ensp;<code>str</code></dt>
+<dd>設定ファイルのフルパス。</dd>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>Optional[str]</code></dt>
+<dd>データをロードするテーブルの名前。指定しない場合は、設定ファイルから生成されます。</dd>
+</dl>
+<p>インスタンスを初期化し、データベース接続を確立します。</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DataLoaderDB(DataLoader):
+    &#34;&#34;&#34;
+    データベースからデータをロードするためのDataLoaderのサブクラスです。
+
+    Attributes:
+        config_manager (ConfigManager): 設定ファイルを管理するオブジェクト。
+        table_name (str): データをロードするデータベーステーブルの名前。
+        conn (psycopg2.connection): データベースへの接続。
+
+    Args:
+        config_fullpath (str): 設定ファイルのフルパス。
+        table_name (Optional[str]): データをロードするテーブルの名前。指定しない場合は、設定ファイルから生成されます。
+    &#34;&#34;&#34;
+
+    def __init__(self,config_fullpath, table_name=None):
+        &#34;&#34;&#34;
+        インスタンスを初期化し、データベース接続を確立します。
+        &#34;&#34;&#34;
+
+        self.config_manager = ConfigManager(config_fullpath)
+        conf = self.config_manager.get(&#39;DATA&#39;)
+        super().__init__(conf)
+        db_conf = self.config_manager.get(&#39;DATABASE&#39;)
+        self.table_name = table_name or self.make_table_name()
+
+        self.conn = psycopg2.connect(
+            dbname=db_conf[&#39;DBNAME&#39;],
+            user=db_conf[&#39;USER&#39;],
+            password=db_conf[&#39;PASSWORD&#39;],
+            host=db_conf[&#39;HOST&#39;]
+        )
+
+    def __del__(self):
+        &#34;&#34;&#34;
+        インスタンスの削除時にデータベース接続を閉じます。
+        &#34;&#34;&#34;
+        self.conn.close()
+
+    def make_table_name(self,table_name=None)-&gt;str:
+        &#34;&#34;&#34;
+        デフォルトのテーブル名を生成または設定します。
+
+        Args:
+            table_name (Optional[str]): テーブル名。指定しない場合は、設定ファイルからシンボルとインターバルを使用して生成されます。
+
+        Returns:
+            str: テーブル名。
+        &#34;&#34;&#34;
+        if table_name is None:
+            symbol = self.config_manager.get(&#34;ONLINE&#34;, &#34;SYMBOL&#34;)
+            interval = self.config_manager.get(&#34;ONLINE&#34;, &#34;INTERVAL&#34;)
+            self.table_name = f&#39;{symbol}_{interval}_market_data&#39;
+            return self.table_name
+        self.table_name = table_name
+        return self.table_name
+
+    def make_table_name_tech(self,table_name=None)-&gt;str:
+        &#34;&#34;&#34;
+        技術指標を含むデータを格納するテーブル名を生成または設定します。
+
+        Args:
+            table_name (Optional[str]): テーブル名。指定しない場合は、`make_table_name` メソッドで生成されたテーブル名に &#39;_tech&#39; を追加して使用されます。
+
+        Returns:
+            str: テーブル名。
+        &#34;&#34;&#34;
+        if table_name is None:
+            self.table_name = self.make_table_name() + &#39;_tech&#39;
+            return self.table_name
+        self.table_name = table_name
+        return self.table_name
+
+    def create_table(self):
+        &#34;&#34;&#34;
+        データベース内に新しいテーブルを作成します。テーブル名はインスタンス変数 `table_name` に基づきます。
+        テーブルが既に存在する場合は何もしません。テーブルの構造は市場データの記録に特化しています。
+
+        テーブル構造:
+        - start_at: データの開始時刻 (TIMESTAMP型)
+        - open: 始値 (FLOAT型)
+        - high: 高値 (FLOAT型)
+        - low: 安値 (FLOAT型)
+        - close: 終値 (FLOAT型)
+        - volume: 取引量 (FLOAT型)
+        - turnover: 売上高 (FLOAT型)
+        - date: 日付 (TEXT型)
+        - funding_rate: ファンディングレート (FLOAT型)
+        - p_close: プレミアムクローズ (FLOAT型)
+        - oi: オープンインタレスト (FLOAT型)
+
+        テーブル作成後、成功メッセージをログに記録します。失敗した場合は、エラーメッセージをログに記録し、トランザクションをロールバックします。
+        &#34;&#34;&#34;
+        with self.conn.cursor() as cursor:
+            try:
+                cursor.execute(f&#34;&#34;&#34;
+                    SELECT EXISTS (
+                        SELECT FROM information_schema.tables
+                        WHERE table_name = &#39;{self.table_name}&#39;
+                    );
+                &#34;&#34;&#34;)
+                exists = cursor.fetchone()[0]
+
+                if not exists:
+                    cursor.execute(f&#34;&#34;&#34;
+                        CREATE TABLE IF NOT EXISTS {self.table_name} (
+                            start_at TIMESTAMP,
+                            open FLOAT,
+                            high FLOAT,
+                            low FLOAT,
+                            close FLOAT,
+                            volume FLOAT,
+                            turnover FLOAT,
+                            date TEXT,
+                            funding_rate FLOAT,
+                            p_close FLOAT,
+                            oi FLOAT
+                        );
+                    &#34;&#34;&#34;)
+                    self.conn.commit()
+                    print(f&#34;Table &#39;{self.table_name}&#39; created.&#34;)
+            except psycopg2.Error as e:
+                self.logger.log_system_message(f&#34;Failed to create table &#39;{self.table_name}&#39;: {e}&#34;)
+                self.conn.rollback()
+
+    def load_data_for_db(self,csvfilename)-&gt;pd.DataFrame:
+        &#34;&#34;&#34;
+        指定されたCSVファイル名からデータをロードするか、既にロードされている生データを返します。
+
+        Args:
+            csvfilename (str): データをロードするCSVファイルの名前。Noneの場合、既にロードされている生データを返します。
+
+        Returns:
+            pd.DataFrame: ロードされた生データ。
+        &#34;&#34;&#34;
+        if csvfilename is None:
+            raw = self.get_raw()
+        else:
+            raw = self.load_data_from_csv(csvfilename)
+        return raw
+
+    def convert_decimal_to_float(self, df)-&gt;pd.DataFrame:
+        &#34;&#34;&#34;
+        DataFrame内のdecimal.Decimal型のデータをfloatに変換します。
+
+        Args:
+            df (pd.DataFrame): 変換するデータが含まれるDataFrame。
+
+        Returns:
+            pd.DataFrame: 変換後のDataFrame。
+        &#34;&#34;&#34;
+        for column, dtype in df.dtypes.items():
+            if dtype == object:
+                try:
+                    # decimal.Decimalを含む可能性のあるカラムをfloatに変換
+                    if isinstance(df[column].iloc[0], decimal.Decimal):
+                        df[column] = df[column].apply(float)
+                except IndexError:
+                    # カラムが空の場合は何もしない
+                    pass
+        return df
+
+    def load_data_from_period(self, start_date, end_date, table_name=None)-&gt;pd.DataFrame:
+        &#34;&#34;&#34;
+        指定された期間内のデータをデータベースからロードします。テーブル名も指定可能です。
+
+        Args:
+            start_date (str): データの開始日 (YYYY-MM-DD形式)。
+            end_date (str): データの終了日 (YYYY-MM-DD形式)。
+            table_name (Optional[str]): データをロードするテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。
+
+        Returns:
+            pd.DataFrame: ロードされたデータ。
+        &#34;&#34;&#34;
+        # テーブル名が指定されていない場合は、インスタンスのテーブル名を使用
+        target_table_name = table_name or self.table_name
+
+        # 指定された期間に対応するデータを選択するSQLクエリを定義
+        query = f&#34;&#34;&#34;
+        SELECT * FROM {target_table_name}
+        WHERE date &gt;= %s AND date &lt;= %s
+        ORDER BY start_at ASC;
+        &#34;&#34;&#34;
+
+        try:
+            with self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cursor:
+                cursor.execute(query, (start_date, end_date))
+                records = cursor.fetchall()
+                raw = pd.DataFrame(records, columns=[col.name for col in cursor.description])
+
+                # decimal.Decimal型のデータをfloatに変換
+                raw = self.convert_decimal_to_float(raw)
+
+                self.set_raw(raw)
+                return raw
+        except psycopg2.Error as e:
+            self.logger.log_system_message(f&#34;指定された期間 &#39;{start_date} から {end_date}&#39; のデータを {target_table_name} からロードするのに失敗しました: {e}&#34;)
+            return None
+
+    def load_data_from_datetime_period(self, start_datetime, end_datetime, table_name=None)-&gt;pd.DataFrame:
+        &#34;&#34;&#34;
+        指定された日時期間内のデータをデータベースからロードします。テーブル名も指定可能です。
+
+        Args:
+            start_datetime (str): データの開始日時 (YYYY-MM-DD HH:MM:SS形式)。
+            end_datetime (str): データの終了日時 (YYYY-MM-DD HH:MM:SS形式)。
+            table_name (Optional[str]): データをロードするテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。
+
+        Returns:
+            pd.DataFrame: ロードされたデータ。
+        &#34;&#34;&#34;
+        # テーブル名が指定されていない場合は、インスタンスのテーブル名を使用
+        target_table_name = table_name or self.table_name
+
+        # 指定された日時期間に対応するデータを選択するSQLクエリを定義
+        query = f&#34;&#34;&#34;
+        SELECT * FROM {target_table_name}
+        WHERE start_at &gt;= %s AND start_at &lt;= %s
+        ORDER BY start_at ASC;
+        &#34;&#34;&#34;
+
+        try:
+            with self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cursor:
+                cursor.execute(query, (start_datetime, end_datetime))
+                records = cursor.fetchall()
+                raw = pd.DataFrame(records, columns=[col.name for col in cursor.description])
+
+                # decimal.Decimal型のデータをfloatに変換
+                raw = self.convert_decimal_to_float(raw)
+
+                self.set_raw(raw)
+                return raw
+        except psycopg2.Error as e:
+            self.logger.log_system_message(f&#34;指定された日時期間 &#39;{start_datetime} から {end_datetime}&#39; のデータを {target_table_name} からロードするのに失敗しました: {e}&#34;)
+            return None
+
+    def load_data_from_db(self, table_name=None)-&gt;pd.DataFrame:
+        &#34;&#34;&#34;
+        データベースからデータを読み込み、&#39;start_at&#39;で昇順に並べ替えたデータを返します。
+
+        Args:
+            table_name (Optional[str]): データをロードするテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。
+
+        Returns:
+            pd.DataFrame: ロードされたデータ。
+        &#34;&#34;&#34;
+        self.table_name = table_name or self.table_name
+        try:
+            query = f&#34;SELECT * FROM {self.table_name} ORDER BY start_at ASC;&#34;
+            with self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cursor:
+                cursor.execute(query)
+                records = cursor.fetchall()
+                raw = pd.DataFrame(records, columns=[col.name for col in cursor.description])
+
+                # decimal.Decimal型のデータをfloatに変換
+                raw = self.convert_decimal_to_float(raw)
+
+                self.set_raw(raw)
+                return self.get_raw()
+        except psycopg2.Error as e:
+            self.logger.log_system_message(f&#34;テーブル &#39;{self.table_name}&#39; からデータを読み込むのに失敗しました: {e}&#34;)
+            return None
+
+
+    def write_data_to_db(self,csvfilename=None,df=None):
+        &#34;&#34;&#34;
+        指定されたCSVファイルまたはDataFrameからデータを読み込み、データベースに書き込みます。
+
+        Args:
+            csvfilename (Optional[str]): データをロードするCSVファイルの名前。Noneの場合、df引数を使用。
+            df (Optional[pd.DataFrame]): データベースに書き込むデータが含まれるDataFrame。Noneの場合、csvfilename引数を使用。
+
+        Raises:
+            ValueError: 書き込むデータが存在しない場合。
+        &#34;&#34;&#34;
+        if df is not None:
+            self.set_raw(df)
+            raw = df
+        else:
+            raw = self.load_data_for_db(csvfilename)
+
+        if raw is None:
+            raise ValueError(&#34;No data to write to database&#34;)
+        # start_atカラムがUnixタイムスタンプを含むと仮定して、datetimeに変換
+        if &#39;start_at&#39; in raw.columns:
+            raw[&#39;start_at&#39;] = pd.to_datetime(raw[&#39;start_at&#39;], unit=&#39;s&#39;)  # Unixタイムスタンプをdatetimeに変換
+
+        try:
+            with self.conn.cursor() as cursor:
+                df_columns = [&#39;&#34;&#39; + column.replace(&#39;&#34;&#39;, &#39;&#34;&#34;&#39;) + &#39;&#34;&#39; for column in raw.columns]
+                columns = &#39;, &#39;.join(df_columns)
+                values = [tuple(row) for row in raw.itertuples(index=False, name=None)]
+                insert_query = f&#34;INSERT INTO {self.table_name} ({columns}) VALUES %s&#34;
+                extras.execute_values(cursor, insert_query, values)
+                self.conn.commit()
+        except psycopg2.Error as e:
+            self.logger.log_system_message(f&#34;Failed to write data to table &#39;{self.table_name}&#39;: {e}&#34;)
+            self.conn.rollback()
+
+    def insert_new_data(self,csvfilename=None,df=None):
+        &#34;&#34;&#34;
+        &#39;start_at&#39;列の重複がない場合に新しいデータをデータベースに挿入します。
+
+        Args:
+            csvfilename (Optional[str]): データをロードするCSVファイルの名前。Noneの場合、df引数を使用。
+            df (Optional[pd.DataFrame]): データベースに挿入するデータが含まれるDataFrame。Noneの場合、csvfilename引数を使用。
+        &#34;&#34;&#34;
+        if df is not None:
+            self.set_raw(df)
+            new_data = df
+        else:
+            new_data = self.load_data_for_db(csvfilename)
+
+        # &#39;start_at&#39;が既にdatetimeでない場合はdatetimeに変換します
+        if &#39;start_at&#39; in new_data.columns and new_data[&#39;start_at&#39;].dtype == &#39;float64&#39;:
+            new_data[&#39;start_at&#39;] = pd.to_datetime(new_data[&#39;start_at&#39;], unit=&#39;s&#39;)
+
+        # 重複をチェックして新しいデータを挿入します
+        new_data_records = new_data.to_dict(&#39;records&#39;)
+        with self.conn.cursor() as cursor:
+            for record in new_data_records:
+                try:
+                    cursor.execute(f&#34;&#34;&#34;
+                        SELECT EXISTS (
+                            SELECT 1 FROM {self.table_name} WHERE start_at = %s
+                        )
+                    &#34;&#34;&#34;, (record[&#39;start_at&#39;],))
+                    exists = cursor.fetchone()[0]
+
+                    if not exists:
+                        columns = &#39;, &#39;.join([&#39;&#34;&#39; + col + &#39;&#34;&#39; for col in new_data.columns])
+                        placeholders = &#39;, &#39;.join([&#39;%s&#39;] * len(record))
+                        cursor.execute(f&#34;INSERT INTO {self.table_name} ({columns}) VALUES ({placeholders})&#34;, list(record.values()))
+                        print(f&#34;New data inserted: {record[&#39;date&#39;]} {record[&#39;start_at&#39;]}&#34;)
+                except psycopg2.Error as e:
+                    self.logger.log_system_message(f&#34;データ挿入に失敗しました: {e}&#34;)
+                    self.conn.rollback()
+        self.conn.commit()
+
+
+    def is_data_exist(self,table_name=None)-&gt;bool:
+        &#34;&#34;&#34;
+        指定されたテーブルがデータベース内に存在するかどうかを確認します。
+
+        Args:
+            table_name (Optional[str]): 確認するテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。
+
+        Returns:
+            bool: テーブルが存在する場合はTrue、存在しない場合はFalse。
+        &#34;&#34;&#34;
+        if table_name is not None:
+            self.make_table_name(table_name)
+
+        with self.conn.cursor() as cursor:
+            cursor.execute(&#34;&#34;&#34;
+                    SELECT EXISTS (
+                        SELECT 1 FROM information_schema.tables
+                        WHERE table_schema = &#39;public&#39;
+                        AND table_name = lower(%s)
+                    );
+                &#34;&#34;&#34;, (self.table_name,))
+            exists = cursor.fetchone()[0]
+            return exists == True or exists == &#39;t&#39;  # PostgreSQLの戻り値に合わせて適宜調整
+
+
+    def import_to_db(self,csvfilename=None,dataframe=None,table_name=None):
+        &#34;&#34;&#34;
+        CSVファイルまたはDataFrameからデータをインポートし、データベースに挿入します。テーブルが存在しない場合は、新たに作成します。
+
+        Args:
+            csvfilename (Optional[str]): データをロードするCSVファイルの名前。Noneの場合、dataframe引数を使用。
+            dataframe (Optional[pd.DataFrame]): データベースに挿入するデータが含まれるDataFrame。Noneの場合、csvfilename引数を使用。
+            table_name (Optional[str]): データを挿入するテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。
+        &#34;&#34;&#34;
+        if self.is_data_exist(table_name):
+            self.insert_new_data(csvfilename,dataframe)
+        else:
+            self.create_table_from_df(dataframe, table_name)
+            self.write_data_to_db(csvfilename,dataframe)
+
+    def create_table_from_df(self, df, table_name=None):
+        &#34;&#34;&#34;
+        DataFrameのカラム情報からデータベースのテーブルを作成します。&#39;start_at&#39;カラムは&#39;TIMESTAMP&#39;型として扱います。
+
+        Args:
+            df (pd.DataFrame): テーブル作成の基になるデータが含まれるDataFrame。
+            table_name (Optional[str]): 作成するテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。
+        &#34;&#34;&#34;
+        if table_name is not None:
+            self.table_name = table_name
+
+        column_definitions = []
+        for column, dtype in df.dtypes.items():
+            sql_dtype = dtype_mapping(str(dtype), column)  # カラム名も渡す
+            column_definitions.append(f&#34;{column} {sql_dtype}&#34;)
+        columns_sql = &#39;, &#39;.join(column_definitions)
+
+        create_table_sql = f&#34;CREATE TABLE IF NOT EXISTS {self.table_name} ({columns_sql});&#34;
+
+        with self.conn.cursor() as cursor:
+            try:
+                cursor.execute(create_table_sql)
+                self.conn.commit()
+                print(f&#34;Table &#39;{self.table_name}&#39; created with columns: {&#39;, &#39;.join(column_definitions)}&#34;)
+            except psycopg2.Error as e:
+                print(f&#34;Failed to create table &#39;{self.table_name}&#39;: {e}&#34;)
+                self.conn.rollback()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>common.data_loader.DataLoader</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="data_loader_db.DataLoaderDB.convert_decimal_to_float"><code class="name flex">
+<span>def <span class="ident">convert_decimal_to_float</span></span>(<span>self, df) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>DataFrame内のdecimal.Decimal型のデータをfloatに変換します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>変換するデータが含まれるDataFrame。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>変換後のDataFrame。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def convert_decimal_to_float(self, df)-&gt;pd.DataFrame:
+    &#34;&#34;&#34;
+    DataFrame内のdecimal.Decimal型のデータをfloatに変換します。
+
+    Args:
+        df (pd.DataFrame): 変換するデータが含まれるDataFrame。
+
+    Returns:
+        pd.DataFrame: 変換後のDataFrame。
+    &#34;&#34;&#34;
+    for column, dtype in df.dtypes.items():
+        if dtype == object:
+            try:
+                # decimal.Decimalを含む可能性のあるカラムをfloatに変換
+                if isinstance(df[column].iloc[0], decimal.Decimal):
+                    df[column] = df[column].apply(float)
+            except IndexError:
+                # カラムが空の場合は何もしない
+                pass
+    return df</code></pre>
+</details>
+</dd>
+<dt id="data_loader_db.DataLoaderDB.create_table"><code class="name flex">
+<span>def <span class="ident">create_table</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>データベース内に新しいテーブルを作成します。テーブル名はインスタンス変数 <code>table_name</code> に基づきます。
+テーブルが既に存在する場合は何もしません。テーブルの構造は市場データの記録に特化しています。</p>
+<p>テーブル構造:
+- start_at: データの開始時刻 (TIMESTAMP型)
+- open: 始値 (FLOAT型)
+- high: 高値 (FLOAT型)
+- low: 安値 (FLOAT型)
+- close: 終値 (FLOAT型)
+- volume: 取引量 (FLOAT型)
+- turnover: 売上高 (FLOAT型)
+- date: 日付 (TEXT型)
+- funding_rate: ファンディングレート (FLOAT型)
+- p_close: プレミアムクローズ (FLOAT型)
+- oi: オープンインタレスト (FLOAT型)</p>
+<p>テーブル作成後、成功メッセージをログに記録します。失敗した場合は、エラーメッセージをログに記録し、トランザクションをロールバックします。</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_table(self):
+    &#34;&#34;&#34;
+    データベース内に新しいテーブルを作成します。テーブル名はインスタンス変数 `table_name` に基づきます。
+    テーブルが既に存在する場合は何もしません。テーブルの構造は市場データの記録に特化しています。
+
+    テーブル構造:
+    - start_at: データの開始時刻 (TIMESTAMP型)
+    - open: 始値 (FLOAT型)
+    - high: 高値 (FLOAT型)
+    - low: 安値 (FLOAT型)
+    - close: 終値 (FLOAT型)
+    - volume: 取引量 (FLOAT型)
+    - turnover: 売上高 (FLOAT型)
+    - date: 日付 (TEXT型)
+    - funding_rate: ファンディングレート (FLOAT型)
+    - p_close: プレミアムクローズ (FLOAT型)
+    - oi: オープンインタレスト (FLOAT型)
+
+    テーブル作成後、成功メッセージをログに記録します。失敗した場合は、エラーメッセージをログに記録し、トランザクションをロールバックします。
+    &#34;&#34;&#34;
+    with self.conn.cursor() as cursor:
+        try:
+            cursor.execute(f&#34;&#34;&#34;
+                SELECT EXISTS (
+                    SELECT FROM information_schema.tables
+                    WHERE table_name = &#39;{self.table_name}&#39;
+                );
+            &#34;&#34;&#34;)
+            exists = cursor.fetchone()[0]
+
+            if not exists:
+                cursor.execute(f&#34;&#34;&#34;
+                    CREATE TABLE IF NOT EXISTS {self.table_name} (
+                        start_at TIMESTAMP,
+                        open FLOAT,
+                        high FLOAT,
+                        low FLOAT,
+                        close FLOAT,
+                        volume FLOAT,
+                        turnover FLOAT,
+                        date TEXT,
+                        funding_rate FLOAT,
+                        p_close FLOAT,
+                        oi FLOAT
+                    );
+                &#34;&#34;&#34;)
+                self.conn.commit()
+                print(f&#34;Table &#39;{self.table_name}&#39; created.&#34;)
+        except psycopg2.Error as e:
+            self.logger.log_system_message(f&#34;Failed to create table &#39;{self.table_name}&#39;: {e}&#34;)
+            self.conn.rollback()</code></pre>
+</details>
+</dd>
+<dt id="data_loader_db.DataLoaderDB.create_table_from_df"><code class="name flex">
+<span>def <span class="ident">create_table_from_df</span></span>(<span>self, df, table_name=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>DataFrameのカラム情報からデータベースのテーブルを作成します。'start_at'カラムは'TIMESTAMP'型として扱います。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>テーブル作成の基になるデータが含まれるDataFrame。</dd>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>Optional[str]</code></dt>
+<dd>作成するテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_table_from_df(self, df, table_name=None):
+    &#34;&#34;&#34;
+    DataFrameのカラム情報からデータベースのテーブルを作成します。&#39;start_at&#39;カラムは&#39;TIMESTAMP&#39;型として扱います。
+
+    Args:
+        df (pd.DataFrame): テーブル作成の基になるデータが含まれるDataFrame。
+        table_name (Optional[str]): 作成するテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。
+    &#34;&#34;&#34;
+    if table_name is not None:
+        self.table_name = table_name
+
+    column_definitions = []
+    for column, dtype in df.dtypes.items():
+        sql_dtype = dtype_mapping(str(dtype), column)  # カラム名も渡す
+        column_definitions.append(f&#34;{column} {sql_dtype}&#34;)
+    columns_sql = &#39;, &#39;.join(column_definitions)
+
+    create_table_sql = f&#34;CREATE TABLE IF NOT EXISTS {self.table_name} ({columns_sql});&#34;
+
+    with self.conn.cursor() as cursor:
+        try:
+            cursor.execute(create_table_sql)
+            self.conn.commit()
+            print(f&#34;Table &#39;{self.table_name}&#39; created with columns: {&#39;, &#39;.join(column_definitions)}&#34;)
+        except psycopg2.Error as e:
+            print(f&#34;Failed to create table &#39;{self.table_name}&#39;: {e}&#34;)
+            self.conn.rollback()</code></pre>
+</details>
+</dd>
+<dt id="data_loader_db.DataLoaderDB.import_to_db"><code class="name flex">
+<span>def <span class="ident">import_to_db</span></span>(<span>self, csvfilename=None, dataframe=None, table_name=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>CSVファイルまたはDataFrameからデータをインポートし、データベースに挿入します。テーブルが存在しない場合は、新たに作成します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>csvfilename</code></strong> :&ensp;<code>Optional[str]</code></dt>
+<dd>データをロードするCSVファイルの名前。Noneの場合、dataframe引数を使用。</dd>
+<dt><strong><code>dataframe</code></strong> :&ensp;<code>Optional[pd.DataFrame]</code></dt>
+<dd>データベースに挿入するデータが含まれるDataFrame。Noneの場合、csvfilename引数を使用。</dd>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>Optional[str]</code></dt>
+<dd>データを挿入するテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def import_to_db(self,csvfilename=None,dataframe=None,table_name=None):
+    &#34;&#34;&#34;
+    CSVファイルまたはDataFrameからデータをインポートし、データベースに挿入します。テーブルが存在しない場合は、新たに作成します。
+
+    Args:
+        csvfilename (Optional[str]): データをロードするCSVファイルの名前。Noneの場合、dataframe引数を使用。
+        dataframe (Optional[pd.DataFrame]): データベースに挿入するデータが含まれるDataFrame。Noneの場合、csvfilename引数を使用。
+        table_name (Optional[str]): データを挿入するテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。
+    &#34;&#34;&#34;
+    if self.is_data_exist(table_name):
+        self.insert_new_data(csvfilename,dataframe)
+    else:
+        self.create_table_from_df(dataframe, table_name)
+        self.write_data_to_db(csvfilename,dataframe)</code></pre>
+</details>
+</dd>
+<dt id="data_loader_db.DataLoaderDB.insert_new_data"><code class="name flex">
+<span>def <span class="ident">insert_new_data</span></span>(<span>self, csvfilename=None, df=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>'start_at'列の重複がない場合に新しいデータをデータベースに挿入します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>csvfilename</code></strong> :&ensp;<code>Optional[str]</code></dt>
+<dd>データをロードするCSVファイルの名前。Noneの場合、df引数を使用。</dd>
+<dt><strong><code>df</code></strong> :&ensp;<code>Optional[pd.DataFrame]</code></dt>
+<dd>データベースに挿入するデータが含まれるDataFrame。Noneの場合、csvfilename引数を使用。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def insert_new_data(self,csvfilename=None,df=None):
+    &#34;&#34;&#34;
+    &#39;start_at&#39;列の重複がない場合に新しいデータをデータベースに挿入します。
+
+    Args:
+        csvfilename (Optional[str]): データをロードするCSVファイルの名前。Noneの場合、df引数を使用。
+        df (Optional[pd.DataFrame]): データベースに挿入するデータが含まれるDataFrame。Noneの場合、csvfilename引数を使用。
+    &#34;&#34;&#34;
+    if df is not None:
+        self.set_raw(df)
+        new_data = df
+    else:
+        new_data = self.load_data_for_db(csvfilename)
+
+    # &#39;start_at&#39;が既にdatetimeでない場合はdatetimeに変換します
+    if &#39;start_at&#39; in new_data.columns and new_data[&#39;start_at&#39;].dtype == &#39;float64&#39;:
+        new_data[&#39;start_at&#39;] = pd.to_datetime(new_data[&#39;start_at&#39;], unit=&#39;s&#39;)
+
+    # 重複をチェックして新しいデータを挿入します
+    new_data_records = new_data.to_dict(&#39;records&#39;)
+    with self.conn.cursor() as cursor:
+        for record in new_data_records:
+            try:
+                cursor.execute(f&#34;&#34;&#34;
+                    SELECT EXISTS (
+                        SELECT 1 FROM {self.table_name} WHERE start_at = %s
+                    )
+                &#34;&#34;&#34;, (record[&#39;start_at&#39;],))
+                exists = cursor.fetchone()[0]
+
+                if not exists:
+                    columns = &#39;, &#39;.join([&#39;&#34;&#39; + col + &#39;&#34;&#39; for col in new_data.columns])
+                    placeholders = &#39;, &#39;.join([&#39;%s&#39;] * len(record))
+                    cursor.execute(f&#34;INSERT INTO {self.table_name} ({columns}) VALUES ({placeholders})&#34;, list(record.values()))
+                    print(f&#34;New data inserted: {record[&#39;date&#39;]} {record[&#39;start_at&#39;]}&#34;)
+            except psycopg2.Error as e:
+                self.logger.log_system_message(f&#34;データ挿入に失敗しました: {e}&#34;)
+                self.conn.rollback()
+    self.conn.commit()</code></pre>
+</details>
+</dd>
+<dt id="data_loader_db.DataLoaderDB.is_data_exist"><code class="name flex">
+<span>def <span class="ident">is_data_exist</span></span>(<span>self, table_name=None) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定されたテーブルがデータベース内に存在するかどうかを確認します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>Optional[str]</code></dt>
+<dd>確認するテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>テーブルが存在する場合はTrue、存在しない場合はFalse。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_data_exist(self,table_name=None)-&gt;bool:
+    &#34;&#34;&#34;
+    指定されたテーブルがデータベース内に存在するかどうかを確認します。
+
+    Args:
+        table_name (Optional[str]): 確認するテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。
+
+    Returns:
+        bool: テーブルが存在する場合はTrue、存在しない場合はFalse。
+    &#34;&#34;&#34;
+    if table_name is not None:
+        self.make_table_name(table_name)
+
+    with self.conn.cursor() as cursor:
+        cursor.execute(&#34;&#34;&#34;
+                SELECT EXISTS (
+                    SELECT 1 FROM information_schema.tables
+                    WHERE table_schema = &#39;public&#39;
+                    AND table_name = lower(%s)
+                );
+            &#34;&#34;&#34;, (self.table_name,))
+        exists = cursor.fetchone()[0]
+        return exists == True or exists == &#39;t&#39;  # PostgreSQLの戻り値に合わせて適宜調整</code></pre>
+</details>
+</dd>
+<dt id="data_loader_db.DataLoaderDB.load_data_for_db"><code class="name flex">
+<span>def <span class="ident">load_data_for_db</span></span>(<span>self, csvfilename) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定されたCSVファイル名からデータをロードするか、既にロードされている生データを返します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>csvfilename</code></strong> :&ensp;<code>str</code></dt>
+<dd>データをロードするCSVファイルの名前。Noneの場合、既にロードされている生データを返します。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>ロードされた生データ。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_data_for_db(self,csvfilename)-&gt;pd.DataFrame:
+    &#34;&#34;&#34;
+    指定されたCSVファイル名からデータをロードするか、既にロードされている生データを返します。
+
+    Args:
+        csvfilename (str): データをロードするCSVファイルの名前。Noneの場合、既にロードされている生データを返します。
+
+    Returns:
+        pd.DataFrame: ロードされた生データ。
+    &#34;&#34;&#34;
+    if csvfilename is None:
+        raw = self.get_raw()
+    else:
+        raw = self.load_data_from_csv(csvfilename)
+    return raw</code></pre>
+</details>
+</dd>
+<dt id="data_loader_db.DataLoaderDB.load_data_from_datetime_period"><code class="name flex">
+<span>def <span class="ident">load_data_from_datetime_period</span></span>(<span>self, start_datetime, end_datetime, table_name=None) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定された日時期間内のデータをデータベースからロードします。テーブル名も指定可能です。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>start_datetime</code></strong> :&ensp;<code>str</code></dt>
+<dd>データの開始日時 (YYYY-MM-DD HH:MM:SS形式)。</dd>
+<dt><strong><code>end_datetime</code></strong> :&ensp;<code>str</code></dt>
+<dd>データの終了日時 (YYYY-MM-DD HH:MM:SS形式)。</dd>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>Optional[str]</code></dt>
+<dd>データをロードするテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>ロードされたデータ。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_data_from_datetime_period(self, start_datetime, end_datetime, table_name=None)-&gt;pd.DataFrame:
+    &#34;&#34;&#34;
+    指定された日時期間内のデータをデータベースからロードします。テーブル名も指定可能です。
+
+    Args:
+        start_datetime (str): データの開始日時 (YYYY-MM-DD HH:MM:SS形式)。
+        end_datetime (str): データの終了日時 (YYYY-MM-DD HH:MM:SS形式)。
+        table_name (Optional[str]): データをロードするテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。
+
+    Returns:
+        pd.DataFrame: ロードされたデータ。
+    &#34;&#34;&#34;
+    # テーブル名が指定されていない場合は、インスタンスのテーブル名を使用
+    target_table_name = table_name or self.table_name
+
+    # 指定された日時期間に対応するデータを選択するSQLクエリを定義
+    query = f&#34;&#34;&#34;
+    SELECT * FROM {target_table_name}
+    WHERE start_at &gt;= %s AND start_at &lt;= %s
+    ORDER BY start_at ASC;
+    &#34;&#34;&#34;
+
+    try:
+        with self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cursor:
+            cursor.execute(query, (start_datetime, end_datetime))
+            records = cursor.fetchall()
+            raw = pd.DataFrame(records, columns=[col.name for col in cursor.description])
+
+            # decimal.Decimal型のデータをfloatに変換
+            raw = self.convert_decimal_to_float(raw)
+
+            self.set_raw(raw)
+            return raw
+    except psycopg2.Error as e:
+        self.logger.log_system_message(f&#34;指定された日時期間 &#39;{start_datetime} から {end_datetime}&#39; のデータを {target_table_name} からロードするのに失敗しました: {e}&#34;)
+        return None</code></pre>
+</details>
+</dd>
+<dt id="data_loader_db.DataLoaderDB.load_data_from_db"><code class="name flex">
+<span>def <span class="ident">load_data_from_db</span></span>(<span>self, table_name=None) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>データベースからデータを読み込み、'start_at'で昇順に並べ替えたデータを返します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>Optional[str]</code></dt>
+<dd>データをロードするテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>ロードされたデータ。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_data_from_db(self, table_name=None)-&gt;pd.DataFrame:
+    &#34;&#34;&#34;
+    データベースからデータを読み込み、&#39;start_at&#39;で昇順に並べ替えたデータを返します。
+
+    Args:
+        table_name (Optional[str]): データをロードするテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。
+
+    Returns:
+        pd.DataFrame: ロードされたデータ。
+    &#34;&#34;&#34;
+    self.table_name = table_name or self.table_name
+    try:
+        query = f&#34;SELECT * FROM {self.table_name} ORDER BY start_at ASC;&#34;
+        with self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cursor:
+            cursor.execute(query)
+            records = cursor.fetchall()
+            raw = pd.DataFrame(records, columns=[col.name for col in cursor.description])
+
+            # decimal.Decimal型のデータをfloatに変換
+            raw = self.convert_decimal_to_float(raw)
+
+            self.set_raw(raw)
+            return self.get_raw()
+    except psycopg2.Error as e:
+        self.logger.log_system_message(f&#34;テーブル &#39;{self.table_name}&#39; からデータを読み込むのに失敗しました: {e}&#34;)
+        return None</code></pre>
+</details>
+</dd>
+<dt id="data_loader_db.DataLoaderDB.load_data_from_period"><code class="name flex">
+<span>def <span class="ident">load_data_from_period</span></span>(<span>self, start_date, end_date, table_name=None) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定された期間内のデータをデータベースからロードします。テーブル名も指定可能です。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>start_date</code></strong> :&ensp;<code>str</code></dt>
+<dd>データの開始日 (YYYY-MM-DD形式)。</dd>
+<dt><strong><code>end_date</code></strong> :&ensp;<code>str</code></dt>
+<dd>データの終了日 (YYYY-MM-DD形式)。</dd>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>Optional[str]</code></dt>
+<dd>データをロードするテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>ロードされたデータ。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_data_from_period(self, start_date, end_date, table_name=None)-&gt;pd.DataFrame:
+    &#34;&#34;&#34;
+    指定された期間内のデータをデータベースからロードします。テーブル名も指定可能です。
+
+    Args:
+        start_date (str): データの開始日 (YYYY-MM-DD形式)。
+        end_date (str): データの終了日 (YYYY-MM-DD形式)。
+        table_name (Optional[str]): データをロードするテーブル名。指定されていない場合、インスタンス変数のテーブル名を使用。
+
+    Returns:
+        pd.DataFrame: ロードされたデータ。
+    &#34;&#34;&#34;
+    # テーブル名が指定されていない場合は、インスタンスのテーブル名を使用
+    target_table_name = table_name or self.table_name
+
+    # 指定された期間に対応するデータを選択するSQLクエリを定義
+    query = f&#34;&#34;&#34;
+    SELECT * FROM {target_table_name}
+    WHERE date &gt;= %s AND date &lt;= %s
+    ORDER BY start_at ASC;
+    &#34;&#34;&#34;
+
+    try:
+        with self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cursor:
+            cursor.execute(query, (start_date, end_date))
+            records = cursor.fetchall()
+            raw = pd.DataFrame(records, columns=[col.name for col in cursor.description])
+
+            # decimal.Decimal型のデータをfloatに変換
+            raw = self.convert_decimal_to_float(raw)
+
+            self.set_raw(raw)
+            return raw
+    except psycopg2.Error as e:
+        self.logger.log_system_message(f&#34;指定された期間 &#39;{start_date} から {end_date}&#39; のデータを {target_table_name} からロードするのに失敗しました: {e}&#34;)
+        return None</code></pre>
+</details>
+</dd>
+<dt id="data_loader_db.DataLoaderDB.make_table_name"><code class="name flex">
+<span>def <span class="ident">make_table_name</span></span>(<span>self, table_name=None) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>デフォルトのテーブル名を生成または設定します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>Optional[str]</code></dt>
+<dd>テーブル名。指定しない場合は、設定ファイルからシンボルとインターバルを使用して生成されます。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>テーブル名。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def make_table_name(self,table_name=None)-&gt;str:
+    &#34;&#34;&#34;
+    デフォルトのテーブル名を生成または設定します。
+
+    Args:
+        table_name (Optional[str]): テーブル名。指定しない場合は、設定ファイルからシンボルとインターバルを使用して生成されます。
+
+    Returns:
+        str: テーブル名。
+    &#34;&#34;&#34;
+    if table_name is None:
+        symbol = self.config_manager.get(&#34;ONLINE&#34;, &#34;SYMBOL&#34;)
+        interval = self.config_manager.get(&#34;ONLINE&#34;, &#34;INTERVAL&#34;)
+        self.table_name = f&#39;{symbol}_{interval}_market_data&#39;
+        return self.table_name
+    self.table_name = table_name
+    return self.table_name</code></pre>
+</details>
+</dd>
+<dt id="data_loader_db.DataLoaderDB.make_table_name_tech"><code class="name flex">
+<span>def <span class="ident">make_table_name_tech</span></span>(<span>self, table_name=None) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>技術指標を含むデータを格納するテーブル名を生成または設定します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>Optional[str]</code></dt>
+<dd>テーブル名。指定しない場合は、<code>make_table_name</code> メソッドで生成されたテーブル名に '_tech' を追加して使用されます。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>テーブル名。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def make_table_name_tech(self,table_name=None)-&gt;str:
+    &#34;&#34;&#34;
+    技術指標を含むデータを格納するテーブル名を生成または設定します。
+
+    Args:
+        table_name (Optional[str]): テーブル名。指定しない場合は、`make_table_name` メソッドで生成されたテーブル名に &#39;_tech&#39; を追加して使用されます。
+
+    Returns:
+        str: テーブル名。
+    &#34;&#34;&#34;
+    if table_name is None:
+        self.table_name = self.make_table_name() + &#39;_tech&#39;
+        return self.table_name
+    self.table_name = table_name
+    return self.table_name</code></pre>
+</details>
+</dd>
+<dt id="data_loader_db.DataLoaderDB.write_data_to_db"><code class="name flex">
+<span>def <span class="ident">write_data_to_db</span></span>(<span>self, csvfilename=None, df=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定されたCSVファイルまたはDataFrameからデータを読み込み、データベースに書き込みます。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>csvfilename</code></strong> :&ensp;<code>Optional[str]</code></dt>
+<dd>データをロードするCSVファイルの名前。Noneの場合、df引数を使用。</dd>
+<dt><strong><code>df</code></strong> :&ensp;<code>Optional[pd.DataFrame]</code></dt>
+<dd>データベースに書き込むデータが含まれるDataFrame。Noneの場合、csvfilename引数を使用。</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>書き込むデータが存在しない場合。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def write_data_to_db(self,csvfilename=None,df=None):
+    &#34;&#34;&#34;
+    指定されたCSVファイルまたはDataFrameからデータを読み込み、データベースに書き込みます。
+
+    Args:
+        csvfilename (Optional[str]): データをロードするCSVファイルの名前。Noneの場合、df引数を使用。
+        df (Optional[pd.DataFrame]): データベースに書き込むデータが含まれるDataFrame。Noneの場合、csvfilename引数を使用。
+
+    Raises:
+        ValueError: 書き込むデータが存在しない場合。
+    &#34;&#34;&#34;
+    if df is not None:
+        self.set_raw(df)
+        raw = df
+    else:
+        raw = self.load_data_for_db(csvfilename)
+
+    if raw is None:
+        raise ValueError(&#34;No data to write to database&#34;)
+    # start_atカラムがUnixタイムスタンプを含むと仮定して、datetimeに変換
+    if &#39;start_at&#39; in raw.columns:
+        raw[&#39;start_at&#39;] = pd.to_datetime(raw[&#39;start_at&#39;], unit=&#39;s&#39;)  # Unixタイムスタンプをdatetimeに変換
+
+    try:
+        with self.conn.cursor() as cursor:
+            df_columns = [&#39;&#34;&#39; + column.replace(&#39;&#34;&#39;, &#39;&#34;&#34;&#39;) + &#39;&#34;&#39; for column in raw.columns]
+            columns = &#39;, &#39;.join(df_columns)
+            values = [tuple(row) for row in raw.itertuples(index=False, name=None)]
+            insert_query = f&#34;INSERT INTO {self.table_name} ({columns}) VALUES %s&#34;
+            extras.execute_values(cursor, insert_query, values)
+            self.conn.commit()
+    except psycopg2.Error as e:
+        self.logger.log_system_message(f&#34;Failed to write data to table &#39;{self.table_name}&#39;: {e}&#34;)
+        self.conn.rollback()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="data_loader_db.dtype_mapping" href="#data_loader_db.dtype_mapping">dtype_mapping</a></code></li>
+<li><code><a title="data_loader_db.main" href="#data_loader_db.main">main</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="data_loader_db.DataLoaderDB" href="#data_loader_db.DataLoaderDB">DataLoaderDB</a></code></h4>
+<ul class="">
+<li><code><a title="data_loader_db.DataLoaderDB.convert_decimal_to_float" href="#data_loader_db.DataLoaderDB.convert_decimal_to_float">convert_decimal_to_float</a></code></li>
+<li><code><a title="data_loader_db.DataLoaderDB.create_table" href="#data_loader_db.DataLoaderDB.create_table">create_table</a></code></li>
+<li><code><a title="data_loader_db.DataLoaderDB.create_table_from_df" href="#data_loader_db.DataLoaderDB.create_table_from_df">create_table_from_df</a></code></li>
+<li><code><a title="data_loader_db.DataLoaderDB.import_to_db" href="#data_loader_db.DataLoaderDB.import_to_db">import_to_db</a></code></li>
+<li><code><a title="data_loader_db.DataLoaderDB.insert_new_data" href="#data_loader_db.DataLoaderDB.insert_new_data">insert_new_data</a></code></li>
+<li><code><a title="data_loader_db.DataLoaderDB.is_data_exist" href="#data_loader_db.DataLoaderDB.is_data_exist">is_data_exist</a></code></li>
+<li><code><a title="data_loader_db.DataLoaderDB.load_data_for_db" href="#data_loader_db.DataLoaderDB.load_data_for_db">load_data_for_db</a></code></li>
+<li><code><a title="data_loader_db.DataLoaderDB.load_data_from_datetime_period" href="#data_loader_db.DataLoaderDB.load_data_from_datetime_period">load_data_from_datetime_period</a></code></li>
+<li><code><a title="data_loader_db.DataLoaderDB.load_data_from_db" href="#data_loader_db.DataLoaderDB.load_data_from_db">load_data_from_db</a></code></li>
+<li><code><a title="data_loader_db.DataLoaderDB.load_data_from_period" href="#data_loader_db.DataLoaderDB.load_data_from_period">load_data_from_period</a></code></li>
+<li><code><a title="data_loader_db.DataLoaderDB.make_table_name" href="#data_loader_db.DataLoaderDB.make_table_name">make_table_name</a></code></li>
+<li><code><a title="data_loader_db.DataLoaderDB.make_table_name_tech" href="#data_loader_db.DataLoaderDB.make_table_name_tech">make_table_name_tech</a></code></li>
+<li><code><a title="data_loader_db.DataLoaderDB.write_data_to_db" href="#data_loader_db.DataLoaderDB.write_data_to_db">write_data_to_db</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

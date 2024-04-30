@@ -1,0 +1,426 @@
+Fold 1: Accuracy = 0.5324675440788269
+Fold 2: Accuracy = 0.5064935088157654
+Fold 3: Accuracy = 0.5714285969734192
+Fold 4: Accuracy = 0.5974025726318359
+Fold 5: Accuracy = 0.5844155550003052
+Fold 1: Accuracy = 0.6329113841056824
+Fold 2: Accuracy = 0.5822784900665283
+Fold 3: Accuracy = 0.6202531456947327
+Fold 4: Accuracy = 0.6962025165557861
+Fold 5: Accuracy = 0.4810126721858978
+Training for fold 1 ...
+Training for fold 1 ...
+Training for fold 2 ...
+Training for fold 3 ...
+Training for fold 4 ...
+Training for fold 5 ...
+C:\Users\ikeda\workspace\btctrading_wk\offline\algorithmic_trading/data/data_rolling/BTCUSDT_60_ema_model.keras
+C:\Users\ikeda\workspace\btctrading_wk\offline\algorithmic_trading/data/data_rolling/BTCUSDT_60_ema_model.scaler
+Training for fold 1 ...
+Training for fold 2 ...
+Training for fold 3 ...
+C:\Users\ikeda\workspace\btctrading_wk\offline\algorithmic_trading/data/data_rolling/ETHUSDT_60_ema_model.keras
+C:\Users\ikeda\workspace\btctrading_wk\offline\algorithmic_trading/data/data_rolling/ETHUSDT_60_ema_model.scaler
+upper Model, Accuracy: 0.5185185185185185
+              precision    recall  f1-score   support
+
+       False       0.53      0.64      0.58        14
+        True       0.50      0.38      0.43        13
+
+    accuracy                           0.52        27
+   macro avg       0.51      0.51      0.51        27
+weighted avg       0.52      0.52      0.51        27
+
+[[9 5]
+ [8 5]]
+lower Model, Accuracy: 0.43333333333333335
+              precision    recall  f1-score   support
+
+       False       0.65      0.50      0.56        22
+        True       0.15      0.25      0.19         8
+
+    accuracy                           0.43        30
+   macro avg       0.40      0.38      0.38        30
+weighted avg       0.52      0.43      0.46        30
+
+[[11 11]
+ [ 6  2]]
+upper Model, Accuracy: 0.5555555555555556
+              precision    recall  f1-score   support
+
+       False       0.65      0.65      0.65        17
+        True       0.40      0.40      0.40        10
+
+    accuracy                           0.56        27
+   macro avg       0.52      0.52      0.52        27
+weighted avg       0.56      0.56      0.56        27
+
+[[11  6]
+ [ 6  4]]
+lower Model, Accuracy: 0.5666666666666667
+              precision    recall  f1-score   support
+
+       False       0.71      0.68      0.70        22
+        True       0.22      0.25      0.24         8
+
+    accuracy                           0.57        30
+   macro avg       0.47      0.47      0.47        30
+weighted avg       0.58      0.57      0.57        30
+
+[[15  7]
+ [ 6  2]]
+upper Model, Accuracy: 0.5925925925925926
+              precision    recall  f1-score   support
+
+       False       0.65      0.69      0.67        16
+        True       0.50      0.45      0.48        11
+
+    accuracy                           0.59        27
+   macro avg       0.57      0.57      0.57        27
+weighted avg       0.59      0.59      0.59        27
+
+[[11  5]
+ [ 6  5]]
+lower Model, Accuracy: 0.5333333333333333
+              precision    recall  f1-score   support
+
+       False       0.70      0.64      0.67        22
+        True       0.20      0.25      0.22         8
+
+    accuracy                           0.53        30
+   macro avg       0.45      0.44      0.44        30
+weighted avg       0.57      0.53      0.55        30
+
+[[14  8]
+ [ 6  2]]
+upper Model, Accuracy: 0.5925925925925926
+              precision    recall  f1-score   support
+
+       False       0.63      0.75      0.69        16
+        True       0.50      0.36      0.42        11
+
+    accuracy                           0.59        27
+   macro avg       0.57      0.56      0.55        27
+weighted avg       0.58      0.59      0.58        27
+
+[[12  4]
+ [ 7  4]]
+lower Model, Accuracy: 0.5333333333333333
+              precision    recall  f1-score   support
+
+       False       0.70      0.64      0.67        22
+        True       0.20      0.25      0.22         8
+
+    accuracy                           0.53        30
+   macro avg       0.45      0.44      0.44        30
+weighted avg       0.57      0.53      0.55        30
+
+[[14  8]
+ [ 6  2]]
+upper Model, Accuracy: 0.48148148148148145
+              precision    recall  f1-score   support
+
+       False       0.53      0.60      0.56        15
+        True       0.40      0.33      0.36        12
+
+    accuracy                           0.48        27
+   macro avg       0.46      0.47      0.46        27
+weighted avg       0.47      0.48      0.47        27
+
+[[9 6]
+ [8 4]]
+lower Model, Accuracy: 0.5
+              precision    recall  f1-score   support
+
+       False       0.70      0.61      0.65        23
+        True       0.10      0.14      0.12         7
+
+    accuracy                           0.50        30
+   macro avg       0.40      0.38      0.38        30
+weighted avg       0.56      0.50      0.53        30
+
+[[14  9]
+ [ 6  1]]
+upper Model, Accuracy: 0.5555555555555556
+              precision    recall  f1-score   support
+
+       False       0.61      0.69      0.65        16
+        True       0.44      0.36      0.40        11
+
+    accuracy                           0.56        27
+   macro avg       0.53      0.53      0.52        27
+weighted avg       0.54      0.56      0.55        27
+
+[[11  5]
+ [ 7  4]]
+lower Model, Accuracy: 0.5666666666666667
+              precision    recall  f1-score   support
+
+       False       0.79      0.62      0.70        24
+        True       0.18      0.33      0.24         6
+
+    accuracy                           0.57        30
+   macro avg       0.49      0.48      0.47        30
+weighted avg       0.67      0.57      0.61        30
+
+[[15  9]
+ [ 4  2]]
+upper Model, Accuracy: 0.5555555555555556
+              precision    recall  f1-score   support
+
+       False       0.61      0.69      0.65        16
+        True       0.44      0.36      0.40        11
+
+    accuracy                           0.56        27
+   macro avg       0.53      0.53      0.52        27
+weighted avg       0.54      0.56      0.55        27
+
+[[11  5]
+ [ 7  4]]
+lower Model, Accuracy: 0.5333333333333333
+              precision    recall  f1-score   support
+
+       False       0.78      0.58      0.67        24
+        True       0.17      0.33      0.22         6
+
+    accuracy                           0.53        30
+   macro avg       0.47      0.46      0.44        30
+weighted avg       0.66      0.53      0.58        30
+
+[[14 10]
+ [ 4  2]]
+upper Model, Accuracy: 0.5185185185185185
+              precision    recall  f1-score   support
+
+       False       0.56      0.67      0.61        15
+        True       0.44      0.33      0.38        12
+
+    accuracy                           0.52        27
+   macro avg       0.50      0.50      0.49        27
+weighted avg       0.51      0.52      0.51        27
+
+[[10  5]
+ [ 8  4]]
+lower Model, Accuracy: 0.4666666666666667
+              precision    recall  f1-score   support
+
+       False       0.68      0.57      0.62        23
+        True       0.09      0.14      0.11         7
+
+    accuracy                           0.47        30
+   macro avg       0.39      0.35      0.37        30
+weighted avg       0.55      0.47      0.50        30
+
+[[13 10]
+ [ 6  1]]
+upper Model, Accuracy: 0.5925925925925926
+              precision    recall  f1-score   support
+
+       False       0.57      0.86      0.69        14
+        True       0.67      0.31      0.42        13
+
+    accuracy                           0.59        27
+   macro avg       0.62      0.58      0.55        27
+weighted avg       0.62      0.59      0.56        27
+
+[[12  2]
+ [ 9  4]]
+lower Model, Accuracy: 0.5
+              precision    recall  f1-score   support
+
+       False       0.74      0.58      0.65        24
+        True       0.09      0.17      0.12         6
+
+    accuracy                           0.50        30
+   macro avg       0.41      0.38      0.38        30
+weighted avg       0.61      0.50      0.54        30
+
+[[14 10]
+ [ 5  1]]
+upper Model, Accuracy: 0.5555555555555556
+              precision    recall  f1-score   support
+
+       False       0.59      0.67      0.62        15
+        True       0.50      0.42      0.45        12
+
+    accuracy                           0.56        27
+   macro avg       0.54      0.54      0.54        27
+weighted avg       0.55      0.56      0.55        27
+
+[[10  5]
+ [ 7  5]]
+lower Model, Accuracy: 0.6333333333333333
+              precision    recall  f1-score   support
+
+       False       0.81      0.71      0.76        24
+        True       0.22      0.33      0.27         6
+
+    accuracy                           0.63        30
+   macro avg       0.52      0.52      0.51        30
+weighted avg       0.69      0.63      0.66        30
+
+[[17  7]
+ [ 4  2]]
+upper Model, Accuracy: 0.8888888888888888
+              precision    recall  f1-score   support
+
+       False       0.90      0.96      0.93        27
+        True       0.86      0.67      0.75         9
+
+    accuracy                           0.89        36
+   macro avg       0.88      0.81      0.84        36
+weighted avg       0.89      0.89      0.88        36
+
+[[26  1]
+ [ 3  6]]
+lower Model, Accuracy: 0.8846153846153846
+              precision    recall  f1-score   support
+
+       False       0.90      0.95      0.92        19
+        True       0.83      0.71      0.77         7
+
+    accuracy                           0.88        26
+   macro avg       0.87      0.83      0.85        26
+weighted avg       0.88      0.88      0.88        26
+
+[[18  1]
+ [ 2  5]]
+upper Model, Accuracy: 0.8055555555555556
+              precision    recall  f1-score   support
+
+       False       0.81      0.91      0.86        23
+        True       0.80      0.62      0.70        13
+
+    accuracy                           0.81        36
+   macro avg       0.80      0.76      0.78        36
+weighted avg       0.80      0.81      0.80        36
+
+[[21  2]
+ [ 5  8]]
+lower Model, Accuracy: 0.8461538461538461
+              precision    recall  f1-score   support
+
+       False       0.90      0.90      0.90        20
+        True       0.67      0.67      0.67         6
+
+    accuracy                           0.85        26
+   macro avg       0.78      0.78      0.78        26
+weighted avg       0.85      0.85      0.85        26
+
+[[18  2]
+ [ 2  4]]
+upper Model, Accuracy: 0.8333333333333334
+              precision    recall  f1-score   support
+
+       False       0.85      0.92      0.88        25
+        True       0.78      0.64      0.70        11
+
+    accuracy                           0.83        36
+   macro avg       0.81      0.78      0.79        36
+weighted avg       0.83      0.83      0.83        36
+
+[[23  2]
+ [ 4  7]]
+lower Model, Accuracy: 0.8076923076923077
+              precision    recall  f1-score   support
+
+       False       0.89      0.84      0.86        19
+        True       0.62      0.71      0.67         7
+
+    accuracy                           0.81        26
+   macro avg       0.76      0.78      0.77        26
+weighted avg       0.82      0.81      0.81        26
+
+[[16  3]
+ [ 2  5]]
+upper Model, Accuracy: 0.8333333333333334
+              precision    recall  f1-score   support
+
+       False       0.85      0.92      0.88        25
+        True       0.78      0.64      0.70        11
+
+    accuracy                           0.83        36
+   macro avg       0.81      0.78      0.79        36
+weighted avg       0.83      0.83      0.83        36
+
+[[23  2]
+ [ 4  7]]
+lower Model, Accuracy: 0.7692307692307693
+              precision    recall  f1-score   support
+
+       False       0.83      0.83      0.83        18
+        True       0.62      0.62      0.62         8
+
+    accuracy                           0.77        26
+   macro avg       0.73      0.73      0.73        26
+weighted avg       0.77      0.77      0.77        26
+
+[[15  3]
+ [ 3  5]]
+upper Model, Accuracy: 0.8333333333333334
+              precision    recall  f1-score   support
+
+       False       0.82      0.96      0.88        24
+        True       0.88      0.58      0.70        12
+
+    accuracy                           0.83        36
+   macro avg       0.85      0.77      0.79        36
+weighted avg       0.84      0.83      0.82        36
+
+[[23  1]
+ [ 5  7]]
+lower Model, Accuracy: 0.7692307692307693
+              precision    recall  f1-score   support
+
+       False       0.82      0.82      0.82        17
+        True       0.67      0.67      0.67         9
+
+    accuracy                           0.77        26
+   macro avg       0.75      0.75      0.75        26
+weighted avg       0.77      0.77      0.77        26
+
+[[14  3]
+ [ 3  6]]
+Fold 1: Accuracy = 0.6145251393318176
+Fold 2: Accuracy = 0.5921787619590759
+Fold 3: Accuracy = 0.6573033928871155
+Fold 1: Accuracy = 0.6220930218696594
+Fold 2: Accuracy = 0.5523256063461304
+Fold 3: Accuracy = 0.6081871390342712
+Fold 1: Accuracy = 0.6368715167045593
+Fold 2: Accuracy = 0.6089385747909546
+Fold 3: Accuracy = 0.6404494643211365
+Fold 1: Accuracy = 0.7383720874786377
+Fold 2: Accuracy = 0.6220930218696594
+Fold 3: Accuracy = 0.5789473652839661
+Fold 1: Accuracy = 0.5977653861045837
+Fold 2: Accuracy = 0.6089385747909546
+Fold 3: Accuracy = 0.5955055952072144
+Fold 1: Accuracy = 0.5813953280448914
+Fold 2: Accuracy = 0.6627907156944275
+Fold 3: Accuracy = 0.5964912176132202
+Fold 1: Accuracy = 0.5740740895271301
+Fold 2: Accuracy = 0.672897219657898
+Fold 3: Accuracy = 0.6168224215507507
+Fold 4: Accuracy = 0.514018714427948
+Fold 5: Accuracy = 0.5794392228126526
+Fold 1: Accuracy = 0.6699029207229614
+Fold 2: Accuracy = 0.5728155374526978
+Fold 3: Accuracy = 0.5436893105506897
+Fold 4: Accuracy = 0.6699029207229614
+Fold 5: Accuracy = 0.6407766938209534
+Fold 1: Accuracy = 0.6399999856948853
+Fold 2: Accuracy = 0.6399999856948853
+Fold 3: Accuracy = 0.47999998927116394
+Fold 4: Accuracy = 0.4000000059604645
+Fold 5: Accuracy = 0.6000000238418579
+Fold 1: Accuracy = 0.6153846383094788
+Fold 2: Accuracy = 0.6538461446762085
+Fold 3: Accuracy = 0.7307692170143127
+Fold 4: Accuracy = 0.7692307829856873
+Fold 5: Accuracy = 0.5600000023841858
+Training for fold 1 ...
+Training for fold 2 ...
+Training for fold 3 ...
+C:\Users\ikeda\workspace\btctrading_wk\offline\algorithmic_trading/data/data_rolling/BTCUSDT_240_ema_model.keras
+C:\Users\ikeda\workspace\btctrading_wk\offline\algorithmic_trading/data/data_rolling/BTCUSDT_240_ema_model.scaler

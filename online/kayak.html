@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Custom Kayak Widget Demo</title>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	// called whenever a keyup event happens on relevant input.  triggers autocomplete update when appropriate.
+	function smartyPants(e) {
+		var $input = $(e.target);
+
+		// don't update the list unless the input value has changed
+		if ($input.val() == $input.data('lastVal'))
+			return;
+
+		// save the current value
+		$input.data('lastVal', $input.val());
+
+		var $list = $('#' + $input.attr('list'));
+
+		var params = {
+			'f': 'p',	// jsonp
+			'lc': 'en',
+			'lc_cc': 'US',
+			's': $input.data('smartyS'),
+			'where': $input.val()
+		}
+
+		$.ajax('http://www.kayak.com/f/smarty',
+					{
+						'dataType': 'jsonp',
+						'data': params,
+						'success': function(data, textStatus, jqXHR) {return fancyPants($list, data, textStatus, jqXHR);}
+					});
+	}
+
+	// updates the datalist
+	function fancyPants($list, data, textStatus, jqXHR)
+	{
+		var $data = $(data);
+
+		// clear it out
+		$list.empty();
+
+		// repopulate
+		$data.each(function(index, value) {
+			var decorator = "&nbsp;";
+
+			switch (value.loctype) {
+				case 'ap': decorator = '&#9992;'; break;
+				case 'reg': decorator = '&#10168;'; break;
+				case 'ctry': decorator = '&#9872;'; break;
+				case 'city': decorator = '&#10070;'; break;
+				case 'hotel': decorator = '&#8962;'; break;
+			}
+
+			var label = decorator + '&nbsp;' + value.displayname;
+
+			$list.append('<option label="'+label+'">' + value.displayname + '</option>');
+		});
+	}
+
+	// init
+	$(function()
+	{
+		$('input[data-smarty-s]').each(
+			function(index, input) {
+				var $input = $(input);
+
+				// generate (hopefully) unique ID for datalist
+				var listId = $input.attr('name') + "-" + $input.data('smartyS') + "-list";
+
+				// create datalist and associate with this input
+				$input.after('<datalist id="'+listId+'"></datalist>');
+				$input.attr('list', listId);
+
+				// updates the datalist
+				$input.on('keyup', smartyPants);
+			});
+	});
+	</script>
+</head>
+<body>
+
+	<aside>As much as it pains me to say, this page is best viewed in Chrome.  Safari, Firefox, and Opera only support bits and pieces.</aside>
+
+	<article>
+		<h1>Custom Kayak Widget Demo</h1>
+
+		<section>
+			<h1>Hotels</h1>
+
+			<form action="http://www.kayak.com/s/search/air" method="GET">
+				<fieldset>
+					<legend>Origin</legend>
+
+					<label>From
+						<input type="search" name="l1" data-smarty-s="1" size="50" autocomplete="off"></label>
+
+					<label>Depart
+						<input type="date" name="t1"></label>
+				</fieldset>
+
+				<fieldset>
+					<legend>Destination</legend>
+
+					<label>To
+						<input type="search" name="l2" data-smarty-s="1" size="50" autocomplete="off" required></label>
+
+					<label>Return
+						<input type="date" name="t2"></label>
+				</fieldset>
+
+				<button type="submit">Search</button>
+
+			</form>
+		</section>
+
+		<section>
+			<h1>Flights</h1>
+
+			<form action="http://www.kayak.com/s/search/hotel" method="GET">
+				<fieldset>
+					<label>Where
+						<input type="search" name="crc" data-smarty-s="12" size="50" autocomplete="off" required></label>
+
+					<label>Depart
+						<input type="date" name="d1"></label>
+
+					<label>Return
+						<input type="date" name="d2"></label>
+				</fieldset>
+
+				<button type="submit">Search</button>
+
+			</form>
+		</section>
+	</article>
+
+</body>
+</html>

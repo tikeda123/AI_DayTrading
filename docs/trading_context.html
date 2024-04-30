@@ -1,0 +1,1767 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>trading_context API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>trading_context</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import pandas as pd
+from dependency_injector.wiring import inject, Provide
+
+
+import os,sys
+
+
+from common.trading_logger import TradingLogger
+from common.config_manager import ConfigManager
+from common.data_loader_db import DataLoaderDB
+from common.container import Container
+from common.constants import *
+
+from trading_analysis_kit.trading_state import IdleState
+
+
+class TradingContext:
+    &#34;&#34;&#34;
+    トレーディングのコンテキストを管理するクラスです。取引に関連する各種コンポーネントとの連携を担います。
+
+    Attributes:
+        _state (IdleState): 現在の取引状態。
+        config_manager (ConfigManager): 設定管理コンポーネント。
+        trading_logger (TradingLogger): 取引ログ記録用コンポーネント。
+        dataloader (DataLoaderDB): データロード用コンポーネント。
+        strategy (Any): 取引戦略コンテキスト。
+
+    Args:
+        strategy_context (Any): 取引戦略コンテキスト。
+        config_manager (ConfigManager): 設定管理コンポーネント。デフォルトで依存性注入されます。
+        trading_logger (TradingLogger): 取引ログ記録用コンポーネント。デフォルトで依存性注入されます。
+        dataloader (DataLoaderDB): データロード用コンポーネント。デフォルトで依存性注入されます。
+    &#34;&#34;&#34;
+
+    @inject
+    def __init__(self,
+                strategy_context,
+                config_manager: ConfigManager = Provide[Container.config_manager],
+                trading_logger: TradingLogger = Provide[Container.trading_logger_singleton],
+                dataloader: DataLoaderDB = Provide[Container.data_loader_db]
+                ):
+
+        self._state = IdleState()
+        self.config_manager = config_manager
+        self.trading_logger = trading_logger
+        self.dataloader = dataloader
+        self.strategy = strategy_context
+        #self.add_data_columns()
+
+    def load_data_from_datetime_period(self, start_datetime, end_datetime, table_name=None):
+        &#34;&#34;&#34;
+        指定された期間とテーブル名に基づいてデータをロードします。
+
+        Args:
+            start_datetime (datetime): データロードの開始日時。
+            end_datetime (datetime): データロードの終了日時。
+            table_name (str, optional): データをロードするテーブル名。デフォルトはNoneです。
+        &#34;&#34;&#34;
+        table_name = self.dataloader.make_table_name_tech(table_name)
+        self.dataloader.load_data_from_datetime_period(start_datetime, end_datetime, table_name)
+        self.reset_index()
+        self.add_data_columns()
+
+
+    def reset_index(self):
+        &#34;&#34;&#34;
+        現在のインデックス、エントリーインデックス、エグジットインデックス、およびFXシリアル番号をリセットします。
+        &#34;&#34;&#34;
+        self.current_index = 0
+        self.entry_index = 0
+        self.exit_index = 0
+        self.fx_serial = 0
+
+    def add_data_columns(self):
+        &#34;&#34;&#34;
+        データフレームに取引分析用の新しいカラムを追加します。
+        &#34;&#34;&#34;
+        self.dataloader.df_new_column(COLUMN_STATE, None,str)
+        self.dataloader.df_new_column(COLUMN_BB_DIRECTION, None,str)
+        self.dataloader.df_new_column(COLUMN_ENTRY_PRICE, 0.0,float)
+        self.dataloader.df_new_column(COLUMN_EXIT_PRICE,0.0,float)
+        self.dataloader.df_new_column(COLUMN_CURRENT_PROFIT, 0.0,float)
+        self.dataloader.df_new_column(COLUMN_BB_PROFIT, 0.0,float)
+        self.dataloader.df_new_column(COLUMN_PROFIT_MAX, 0.0,float)
+        self.dataloader.df_new_column(COLUMN_PROFIT_MIN, 0.0,float)
+        self.dataloader.df_new_column(COLUMN_PROFIT_MEAN, 0.0,float)
+        self.dataloader.df_new_column(COLUMN_PREDICTION, 0,int)
+        self.dataloader.df_new_column(COLUMN_PROFIT_MA, 0.0,float)
+        self.dataloader.df_new_column(COLUMN_ENTRY_TYPE,  None,str)
+
+    def get_current_index(self) -&gt; int:
+        &#34;&#34;&#34;
+        現在のインデックスを取得します。
+
+        Returns:
+            int: 現在のインデックス番号。
+        &#34;&#34;&#34;
+        return self.current_index
+
+    def set_current_index(self, index: int):
+        &#34;&#34;&#34;
+        現在のデータインデックスを設定します。
+
+        Args:
+            index (int): 設定するインデックスの値。
+        &#34;&#34;&#34;
+        self.current_index = index
+
+    def get_entry_counter(self) -&gt; int:
+        &#34;&#34;&#34;
+        エントリーのカウンターを取得します。
+
+        Returns:
+            int: 現在のエントリーのカウンター値。
+        &#34;&#34;&#34;
+        return self.entry_counter
+
+    def set_entry_counter(self, counter: int):
+        &#34;&#34;&#34;
+        エントリーのカウンターを設定します。
+
+        Args:
+            counter (int): 設定するカウンターの値。
+        &#34;&#34;&#34;
+        self.entry_counter = counter
+
+    def event_handle(self, index: int):
+        &#34;&#34;&#34;
+        指定されたインデックスに基づいてイベントを処理します。
+
+        Args:
+            index (int): イベントを処理するデータのインデックス。
+        &#34;&#34;&#34;
+        self.current_index = index
+        self._state.event_handle(self, index)
+
+    def set_state(self, new_state):
+        &#34;&#34;&#34;
+        トレーディングの状態を設定します。
+
+        Args:
+            new_state (State): 新しい状態オブジェクト。
+        &#34;&#34;&#34;
+        self._state = new_state
+
+    def set_entry_type(self, entry_type: str):
+        &#34;&#34;&#34;
+        エントリーのタイプを設定します。
+
+        Args:
+            entry_type (str): 設定するエントリータイプ。
+        &#34;&#34;&#34;
+        self.dataloader.set_df(self.current_index, COLUMN_ENTRY_TYPE, entry_type)
+
+    def get_entry_type(self,index=None) -&gt; str:
+        &#34;&#34;&#34;
+        指定されたインデックス、または現在のエントリーインデックスのエントリータイプを取得します。
+
+        Args:
+            index (int, optional): エントリータイプを取得するインデックス。指定されていない場合は、現在のエントリーインデックスが使用されます。
+
+        Returns:
+            str: エントリータイプ。
+        &#34;&#34;&#34;
+        if index is None:
+            index = self.get_entry_index()
+        return self.dataloader.get_df(index, COLUMN_ENTRY_TYPE)
+
+    def set_prediction(self, prediction: int):
+        &#34;&#34;&#34;
+        予測値を設定します。
+
+        Args:
+            prediction (int): 設定する予測値。
+        &#34;&#34;&#34;
+        self.dataloader.set_df(self.current_index, COLUMN_PREDICTION, prediction)
+
+    def get_prediction(self, index=None) -&gt; int:
+        &#34;&#34;&#34;
+        指定されたインデックス、または現在のエントリーインデックスの予測値を取得します。
+
+        Args:
+            index (int, optional): 予測値を取得するインデックス。指定されていない場合は、現在のエントリーインデックスが使用されます。
+
+        Returns:
+            int: 予測値。
+        &#34;&#34;&#34;
+        if index is None:
+            index = self.get_entry_index()
+        return self.dataloader.get_df(index, COLUMN_PREDICTION)
+
+    def get_current_profit(self,index=None) -&gt; float:
+        &#34;&#34;&#34;
+        現在の利益を取得します。指定されたインデックス、または現在のデータインデックスの一つ前の利益が返されます。
+
+        Args:
+            index (int, optional): 利益を取得するインデックス。指定されていない場合は、現在のデータインデックスが使用されます。
+
+        Returns:
+            float: 現在の利益。
+        &#34;&#34;&#34;
+        if index is None:
+            index = self.get_current_index()
+        return self.dataloader.get_df(index-1, COLUMN_CURRENT_PROFIT)
+
+    def get_sell_price(self) -&gt; float:
+        &#34;&#34;&#34;
+        現在のインデックスでの売却価格を取得します。
+
+        Returns:
+            float: 現在のインデックスでの売却価格。
+        &#34;&#34;&#34;
+        return self.dataloader.get_close(self.current_index)
+
+    def log_transaction(self, message):
+        &#34;&#34;&#34;
+        トランザクションログを記録します。
+
+        Args:
+            message (str): ログに記録するメッセージ。
+        &#34;&#34;&#34;
+        date = self.get_current_date()
+        self.trading_logger.log_transaction(date, message)
+
+    def get_close(self, index) -&gt; float:
+        &#34;&#34;&#34;
+        指定したインデックスでの終値を取得します。
+
+        Args:
+            index (int): 終値を取得するインデックス。
+
+        Returns:
+            float: 指定されたインデックスでの終値。
+        &#34;&#34;&#34;
+        return self.dataloader.get_df(index, COLUMN_CLOSE)
+
+    def get_current_price(self) -&gt; float:
+        &#34;&#34;&#34;
+        現在のインデックスでの終値を取得します。
+
+        Returns:
+            float: 現在のインデックスでの終値。
+        &#34;&#34;&#34;
+        return self.dataloader.get_df(self.current_index, COLUMN_CLOSE)
+
+    def get_current_date(self) -&gt; str:
+        &#34;&#34;&#34;
+        現在のインデックスでの日付を取得します。
+
+        Returns:
+            str: 現在のインデックスでの日付。
+        &#34;&#34;&#34;
+        return self.dataloader.get_df(self.current_index, COLUMN_DATE)
+
+    def set_entry_index(self, index: int):
+        &#34;&#34;&#34;
+        エントリーしたトレードのインデックスを取得します。
+
+        Returns:
+            int: トレードのエントリーインデックス。
+        &#34;&#34;&#34;
+        self.entry_index = index
+
+    def get_entry_index(self) -&gt; int:
+        &#34;&#34;&#34;
+        エントリーしたトレードのインデックスを取得します。
+
+        Returns:
+            int: トレードのエントリーインデックス。
+        &#34;&#34;&#34;
+        return self.entry_index
+
+    def get_data(self) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        トレーディングデータの生データフレームを取得します。
+
+        Returns:
+            pd.DataFrame: トレーディングデータの生データ。
+        &#34;&#34;&#34;
+        return self.dataloader.get_raw()
+
+    def set_entry_price(self, price: float):
+        &#34;&#34;&#34;
+        エントリー価格を設定します。
+
+        Args:
+            price (float): エントリーする価格。
+        &#34;&#34;&#34;
+        self.entry_index = self.current_index
+        self.dataloader.set_df(self.current_index, COLUMN_ENTRY_PRICE, price)
+
+    def get_entry_price(self) -&gt; float:
+        &#34;&#34;&#34;
+        設定されたエントリー価格を取得します。
+
+        Returns:
+            float: エントリー価格。
+        &#34;&#34;&#34;
+        return self.dataloader.get_df(self.entry_index, COLUMN_ENTRY_PRICE)
+
+    def set_exit_price(self, price: float):
+        &#34;&#34;&#34;
+        エグジット価格を設定します。
+
+        Args:
+            price (float): エグジットする価格。
+        &#34;&#34;&#34;
+        self.exit_index = self.current_index
+        self.dataloader.set_df(self.exit_index, COLUMN_EXIT_PRICE, price)
+
+    def get_exit_price(self) -&gt; float:
+        &#34;&#34;&#34;
+        設定されたエグジット価格を取得します。
+
+        Returns:
+            float: エグジット価格。
+        &#34;&#34;&#34;
+        return self.dataloader.get_df(self.exit_index, COLUMN_EXIT_PRICE)
+
+    def record_state(self, state: str):
+        &#34;&#34;&#34;
+        トレードの状態を記録します。
+
+        Args:
+            state (str): トレードの状態。
+        &#34;&#34;&#34;
+        self.dataloader.set_df(self.current_index, COLUMN_STATE, state)
+
+    def save_data(self):
+        &#34;&#34;&#34;
+        トレードデータをCSVファイルに保存します。
+        &#34;&#34;&#34;
+        self.data.to_csv(FILENAME_RESULT_CSV)
+
+    def is_first_column_less_than_second(self, index, col1, col2) -&gt; bool:
+        &#34;&#34;&#34;
+        指定されたインデックスの2つのカラム値を比較し、最初のカラムの値が2番目のカラムの値より小さいかどうかを判断します。
+
+        Args:
+            index (int): データフレームのインデックス。
+            col1 (str): 最初のカラム名。
+            col2 (str): 2番目のカラム名。
+
+        Returns:
+            bool: 最初のカラムの値が2番目のカラムの値より小さい場合はTrue、そうでない場合はFalse。
+        &#34;&#34;&#34;
+        return self.dataloader.is_first_column_less_than_second(index, col1, col2)
+
+    def is_first_column_greater_than_second(self, index, col1, col2) -&gt; bool:
+        &#34;&#34;&#34;
+        指定されたインデックスの2つのカラム値を比較し、最初のカラムの値が2番目のカラムの値より大きいかどうかを判断します。
+
+        Args:
+            index (int): データフレームのインデックス。
+            col1 (str): 最初のカラム名。
+            col2 (str): 2番目のカラム名。
+
+        Returns:
+            bool: 最初のカラムの値が2番目のカラムの値より大きい場合はTrue、そうでない場合はFalse。
+        &#34;&#34;&#34;
+        return self.dataloader.is_first_column_greater_than_second(index, col1, col2)
+
+    def get_fx_serial(self) -&gt; int:
+        &#34;&#34;&#34;
+        FX取引のシリアル番号を取得します。
+
+        Returns:
+            int: FX取引のシリアル番号。
+        &#34;&#34;&#34;
+        return self.fx_serial
+
+    def set_fx_serial(self, serial: int):
+        &#34;&#34;&#34;
+        FX取引のシリアル番号を設定します。
+
+        Args:
+            serial (int): 設定するシリアル番号。
+        &#34;&#34;&#34;
+        self.fx_serial = serial
+
+    def run_trading(self,context):
+        &#34;&#34;&#34;
+        取引プロセスを実行します。指定されたコンテキストに基づき、データを分析し、取引イベントを生成します。
+
+        Args:
+            context (TradingContext): 実行する取引コンテキスト。
+        &#34;&#34;&#34;
+        data = context.get_data()
+        # Iterate over the analyzed data and generate events based on the data
+        for index in range(len(data)):
+            context.event_handle(index)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="trading_context.TradingContext"><code class="flex name class">
+<span>class <span class="ident">TradingContext</span></span>
+<span>(</span><span>strategy_context, config_manager: common.config_manager.ConfigManager = &lt;dependency_injector.wiring.Provide object&gt;, trading_logger: common.trading_logger.TradingLogger = &lt;dependency_injector.wiring.Provide object&gt;, dataloader: common.data_loader_db.DataLoaderDB = &lt;dependency_injector.wiring.Provide object&gt;)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>トレーディングのコンテキストを管理するクラスです。取引に関連する各種コンポーネントとの連携を担います。</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>_state</code></strong> :&ensp;<code>IdleState</code></dt>
+<dd>現在の取引状態。</dd>
+<dt><strong><code>config_manager</code></strong> :&ensp;<code>ConfigManager</code></dt>
+<dd>設定管理コンポーネント。</dd>
+<dt><strong><code>trading_logger</code></strong> :&ensp;<code>TradingLogger</code></dt>
+<dd>取引ログ記録用コンポーネント。</dd>
+<dt><strong><code>dataloader</code></strong> :&ensp;<code>DataLoaderDB</code></dt>
+<dd>データロード用コンポーネント。</dd>
+<dt><strong><code>strategy</code></strong> :&ensp;<code>Any</code></dt>
+<dd>取引戦略コンテキスト。</dd>
+</dl>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>strategy_context</code></strong> :&ensp;<code>Any</code></dt>
+<dd>取引戦略コンテキスト。</dd>
+<dt><strong><code>config_manager</code></strong> :&ensp;<code>ConfigManager</code></dt>
+<dd>設定管理コンポーネント。デフォルトで依存性注入されます。</dd>
+<dt><strong><code>trading_logger</code></strong> :&ensp;<code>TradingLogger</code></dt>
+<dd>取引ログ記録用コンポーネント。デフォルトで依存性注入されます。</dd>
+<dt><strong><code>dataloader</code></strong> :&ensp;<code>DataLoaderDB</code></dt>
+<dd>データロード用コンポーネント。デフォルトで依存性注入されます。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TradingContext:
+    &#34;&#34;&#34;
+    トレーディングのコンテキストを管理するクラスです。取引に関連する各種コンポーネントとの連携を担います。
+
+    Attributes:
+        _state (IdleState): 現在の取引状態。
+        config_manager (ConfigManager): 設定管理コンポーネント。
+        trading_logger (TradingLogger): 取引ログ記録用コンポーネント。
+        dataloader (DataLoaderDB): データロード用コンポーネント。
+        strategy (Any): 取引戦略コンテキスト。
+
+    Args:
+        strategy_context (Any): 取引戦略コンテキスト。
+        config_manager (ConfigManager): 設定管理コンポーネント。デフォルトで依存性注入されます。
+        trading_logger (TradingLogger): 取引ログ記録用コンポーネント。デフォルトで依存性注入されます。
+        dataloader (DataLoaderDB): データロード用コンポーネント。デフォルトで依存性注入されます。
+    &#34;&#34;&#34;
+
+    @inject
+    def __init__(self,
+                strategy_context,
+                config_manager: ConfigManager = Provide[Container.config_manager],
+                trading_logger: TradingLogger = Provide[Container.trading_logger_singleton],
+                dataloader: DataLoaderDB = Provide[Container.data_loader_db]
+                ):
+
+        self._state = IdleState()
+        self.config_manager = config_manager
+        self.trading_logger = trading_logger
+        self.dataloader = dataloader
+        self.strategy = strategy_context
+        #self.add_data_columns()
+
+    def load_data_from_datetime_period(self, start_datetime, end_datetime, table_name=None):
+        &#34;&#34;&#34;
+        指定された期間とテーブル名に基づいてデータをロードします。
+
+        Args:
+            start_datetime (datetime): データロードの開始日時。
+            end_datetime (datetime): データロードの終了日時。
+            table_name (str, optional): データをロードするテーブル名。デフォルトはNoneです。
+        &#34;&#34;&#34;
+        table_name = self.dataloader.make_table_name_tech(table_name)
+        self.dataloader.load_data_from_datetime_period(start_datetime, end_datetime, table_name)
+        self.reset_index()
+        self.add_data_columns()
+
+
+    def reset_index(self):
+        &#34;&#34;&#34;
+        現在のインデックス、エントリーインデックス、エグジットインデックス、およびFXシリアル番号をリセットします。
+        &#34;&#34;&#34;
+        self.current_index = 0
+        self.entry_index = 0
+        self.exit_index = 0
+        self.fx_serial = 0
+
+    def add_data_columns(self):
+        &#34;&#34;&#34;
+        データフレームに取引分析用の新しいカラムを追加します。
+        &#34;&#34;&#34;
+        self.dataloader.df_new_column(COLUMN_STATE, None,str)
+        self.dataloader.df_new_column(COLUMN_BB_DIRECTION, None,str)
+        self.dataloader.df_new_column(COLUMN_ENTRY_PRICE, 0.0,float)
+        self.dataloader.df_new_column(COLUMN_EXIT_PRICE,0.0,float)
+        self.dataloader.df_new_column(COLUMN_CURRENT_PROFIT, 0.0,float)
+        self.dataloader.df_new_column(COLUMN_BB_PROFIT, 0.0,float)
+        self.dataloader.df_new_column(COLUMN_PROFIT_MAX, 0.0,float)
+        self.dataloader.df_new_column(COLUMN_PROFIT_MIN, 0.0,float)
+        self.dataloader.df_new_column(COLUMN_PROFIT_MEAN, 0.0,float)
+        self.dataloader.df_new_column(COLUMN_PREDICTION, 0,int)
+        self.dataloader.df_new_column(COLUMN_PROFIT_MA, 0.0,float)
+        self.dataloader.df_new_column(COLUMN_ENTRY_TYPE,  None,str)
+
+    def get_current_index(self) -&gt; int:
+        &#34;&#34;&#34;
+        現在のインデックスを取得します。
+
+        Returns:
+            int: 現在のインデックス番号。
+        &#34;&#34;&#34;
+        return self.current_index
+
+    def set_current_index(self, index: int):
+        &#34;&#34;&#34;
+        現在のデータインデックスを設定します。
+
+        Args:
+            index (int): 設定するインデックスの値。
+        &#34;&#34;&#34;
+        self.current_index = index
+
+    def get_entry_counter(self) -&gt; int:
+        &#34;&#34;&#34;
+        エントリーのカウンターを取得します。
+
+        Returns:
+            int: 現在のエントリーのカウンター値。
+        &#34;&#34;&#34;
+        return self.entry_counter
+
+    def set_entry_counter(self, counter: int):
+        &#34;&#34;&#34;
+        エントリーのカウンターを設定します。
+
+        Args:
+            counter (int): 設定するカウンターの値。
+        &#34;&#34;&#34;
+        self.entry_counter = counter
+
+    def event_handle(self, index: int):
+        &#34;&#34;&#34;
+        指定されたインデックスに基づいてイベントを処理します。
+
+        Args:
+            index (int): イベントを処理するデータのインデックス。
+        &#34;&#34;&#34;
+        self.current_index = index
+        self._state.event_handle(self, index)
+
+    def set_state(self, new_state):
+        &#34;&#34;&#34;
+        トレーディングの状態を設定します。
+
+        Args:
+            new_state (State): 新しい状態オブジェクト。
+        &#34;&#34;&#34;
+        self._state = new_state
+
+    def set_entry_type(self, entry_type: str):
+        &#34;&#34;&#34;
+        エントリーのタイプを設定します。
+
+        Args:
+            entry_type (str): 設定するエントリータイプ。
+        &#34;&#34;&#34;
+        self.dataloader.set_df(self.current_index, COLUMN_ENTRY_TYPE, entry_type)
+
+    def get_entry_type(self,index=None) -&gt; str:
+        &#34;&#34;&#34;
+        指定されたインデックス、または現在のエントリーインデックスのエントリータイプを取得します。
+
+        Args:
+            index (int, optional): エントリータイプを取得するインデックス。指定されていない場合は、現在のエントリーインデックスが使用されます。
+
+        Returns:
+            str: エントリータイプ。
+        &#34;&#34;&#34;
+        if index is None:
+            index = self.get_entry_index()
+        return self.dataloader.get_df(index, COLUMN_ENTRY_TYPE)
+
+    def set_prediction(self, prediction: int):
+        &#34;&#34;&#34;
+        予測値を設定します。
+
+        Args:
+            prediction (int): 設定する予測値。
+        &#34;&#34;&#34;
+        self.dataloader.set_df(self.current_index, COLUMN_PREDICTION, prediction)
+
+    def get_prediction(self, index=None) -&gt; int:
+        &#34;&#34;&#34;
+        指定されたインデックス、または現在のエントリーインデックスの予測値を取得します。
+
+        Args:
+            index (int, optional): 予測値を取得するインデックス。指定されていない場合は、現在のエントリーインデックスが使用されます。
+
+        Returns:
+            int: 予測値。
+        &#34;&#34;&#34;
+        if index is None:
+            index = self.get_entry_index()
+        return self.dataloader.get_df(index, COLUMN_PREDICTION)
+
+    def get_current_profit(self,index=None) -&gt; float:
+        &#34;&#34;&#34;
+        現在の利益を取得します。指定されたインデックス、または現在のデータインデックスの一つ前の利益が返されます。
+
+        Args:
+            index (int, optional): 利益を取得するインデックス。指定されていない場合は、現在のデータインデックスが使用されます。
+
+        Returns:
+            float: 現在の利益。
+        &#34;&#34;&#34;
+        if index is None:
+            index = self.get_current_index()
+        return self.dataloader.get_df(index-1, COLUMN_CURRENT_PROFIT)
+
+    def get_sell_price(self) -&gt; float:
+        &#34;&#34;&#34;
+        現在のインデックスでの売却価格を取得します。
+
+        Returns:
+            float: 現在のインデックスでの売却価格。
+        &#34;&#34;&#34;
+        return self.dataloader.get_close(self.current_index)
+
+    def log_transaction(self, message):
+        &#34;&#34;&#34;
+        トランザクションログを記録します。
+
+        Args:
+            message (str): ログに記録するメッセージ。
+        &#34;&#34;&#34;
+        date = self.get_current_date()
+        self.trading_logger.log_transaction(date, message)
+
+    def get_close(self, index) -&gt; float:
+        &#34;&#34;&#34;
+        指定したインデックスでの終値を取得します。
+
+        Args:
+            index (int): 終値を取得するインデックス。
+
+        Returns:
+            float: 指定されたインデックスでの終値。
+        &#34;&#34;&#34;
+        return self.dataloader.get_df(index, COLUMN_CLOSE)
+
+    def get_current_price(self) -&gt; float:
+        &#34;&#34;&#34;
+        現在のインデックスでの終値を取得します。
+
+        Returns:
+            float: 現在のインデックスでの終値。
+        &#34;&#34;&#34;
+        return self.dataloader.get_df(self.current_index, COLUMN_CLOSE)
+
+    def get_current_date(self) -&gt; str:
+        &#34;&#34;&#34;
+        現在のインデックスでの日付を取得します。
+
+        Returns:
+            str: 現在のインデックスでの日付。
+        &#34;&#34;&#34;
+        return self.dataloader.get_df(self.current_index, COLUMN_DATE)
+
+    def set_entry_index(self, index: int):
+        &#34;&#34;&#34;
+        エントリーしたトレードのインデックスを取得します。
+
+        Returns:
+            int: トレードのエントリーインデックス。
+        &#34;&#34;&#34;
+        self.entry_index = index
+
+    def get_entry_index(self) -&gt; int:
+        &#34;&#34;&#34;
+        エントリーしたトレードのインデックスを取得します。
+
+        Returns:
+            int: トレードのエントリーインデックス。
+        &#34;&#34;&#34;
+        return self.entry_index
+
+    def get_data(self) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        トレーディングデータの生データフレームを取得します。
+
+        Returns:
+            pd.DataFrame: トレーディングデータの生データ。
+        &#34;&#34;&#34;
+        return self.dataloader.get_raw()
+
+    def set_entry_price(self, price: float):
+        &#34;&#34;&#34;
+        エントリー価格を設定します。
+
+        Args:
+            price (float): エントリーする価格。
+        &#34;&#34;&#34;
+        self.entry_index = self.current_index
+        self.dataloader.set_df(self.current_index, COLUMN_ENTRY_PRICE, price)
+
+    def get_entry_price(self) -&gt; float:
+        &#34;&#34;&#34;
+        設定されたエントリー価格を取得します。
+
+        Returns:
+            float: エントリー価格。
+        &#34;&#34;&#34;
+        return self.dataloader.get_df(self.entry_index, COLUMN_ENTRY_PRICE)
+
+    def set_exit_price(self, price: float):
+        &#34;&#34;&#34;
+        エグジット価格を設定します。
+
+        Args:
+            price (float): エグジットする価格。
+        &#34;&#34;&#34;
+        self.exit_index = self.current_index
+        self.dataloader.set_df(self.exit_index, COLUMN_EXIT_PRICE, price)
+
+    def get_exit_price(self) -&gt; float:
+        &#34;&#34;&#34;
+        設定されたエグジット価格を取得します。
+
+        Returns:
+            float: エグジット価格。
+        &#34;&#34;&#34;
+        return self.dataloader.get_df(self.exit_index, COLUMN_EXIT_PRICE)
+
+    def record_state(self, state: str):
+        &#34;&#34;&#34;
+        トレードの状態を記録します。
+
+        Args:
+            state (str): トレードの状態。
+        &#34;&#34;&#34;
+        self.dataloader.set_df(self.current_index, COLUMN_STATE, state)
+
+    def save_data(self):
+        &#34;&#34;&#34;
+        トレードデータをCSVファイルに保存します。
+        &#34;&#34;&#34;
+        self.data.to_csv(FILENAME_RESULT_CSV)
+
+    def is_first_column_less_than_second(self, index, col1, col2) -&gt; bool:
+        &#34;&#34;&#34;
+        指定されたインデックスの2つのカラム値を比較し、最初のカラムの値が2番目のカラムの値より小さいかどうかを判断します。
+
+        Args:
+            index (int): データフレームのインデックス。
+            col1 (str): 最初のカラム名。
+            col2 (str): 2番目のカラム名。
+
+        Returns:
+            bool: 最初のカラムの値が2番目のカラムの値より小さい場合はTrue、そうでない場合はFalse。
+        &#34;&#34;&#34;
+        return self.dataloader.is_first_column_less_than_second(index, col1, col2)
+
+    def is_first_column_greater_than_second(self, index, col1, col2) -&gt; bool:
+        &#34;&#34;&#34;
+        指定されたインデックスの2つのカラム値を比較し、最初のカラムの値が2番目のカラムの値より大きいかどうかを判断します。
+
+        Args:
+            index (int): データフレームのインデックス。
+            col1 (str): 最初のカラム名。
+            col2 (str): 2番目のカラム名。
+
+        Returns:
+            bool: 最初のカラムの値が2番目のカラムの値より大きい場合はTrue、そうでない場合はFalse。
+        &#34;&#34;&#34;
+        return self.dataloader.is_first_column_greater_than_second(index, col1, col2)
+
+    def get_fx_serial(self) -&gt; int:
+        &#34;&#34;&#34;
+        FX取引のシリアル番号を取得します。
+
+        Returns:
+            int: FX取引のシリアル番号。
+        &#34;&#34;&#34;
+        return self.fx_serial
+
+    def set_fx_serial(self, serial: int):
+        &#34;&#34;&#34;
+        FX取引のシリアル番号を設定します。
+
+        Args:
+            serial (int): 設定するシリアル番号。
+        &#34;&#34;&#34;
+        self.fx_serial = serial
+
+    def run_trading(self,context):
+        &#34;&#34;&#34;
+        取引プロセスを実行します。指定されたコンテキストに基づき、データを分析し、取引イベントを生成します。
+
+        Args:
+            context (TradingContext): 実行する取引コンテキスト。
+        &#34;&#34;&#34;
+        data = context.get_data()
+        # Iterate over the analyzed data and generate events based on the data
+        for index in range(len(data)):
+            context.event_handle(index)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="trading_context.TradingContext.add_data_columns"><code class="name flex">
+<span>def <span class="ident">add_data_columns</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>データフレームに取引分析用の新しいカラムを追加します。</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_data_columns(self):
+    &#34;&#34;&#34;
+    データフレームに取引分析用の新しいカラムを追加します。
+    &#34;&#34;&#34;
+    self.dataloader.df_new_column(COLUMN_STATE, None,str)
+    self.dataloader.df_new_column(COLUMN_BB_DIRECTION, None,str)
+    self.dataloader.df_new_column(COLUMN_ENTRY_PRICE, 0.0,float)
+    self.dataloader.df_new_column(COLUMN_EXIT_PRICE,0.0,float)
+    self.dataloader.df_new_column(COLUMN_CURRENT_PROFIT, 0.0,float)
+    self.dataloader.df_new_column(COLUMN_BB_PROFIT, 0.0,float)
+    self.dataloader.df_new_column(COLUMN_PROFIT_MAX, 0.0,float)
+    self.dataloader.df_new_column(COLUMN_PROFIT_MIN, 0.0,float)
+    self.dataloader.df_new_column(COLUMN_PROFIT_MEAN, 0.0,float)
+    self.dataloader.df_new_column(COLUMN_PREDICTION, 0,int)
+    self.dataloader.df_new_column(COLUMN_PROFIT_MA, 0.0,float)
+    self.dataloader.df_new_column(COLUMN_ENTRY_TYPE,  None,str)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.event_handle"><code class="name flex">
+<span>def <span class="ident">event_handle</span></span>(<span>self, index: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定されたインデックスに基づいてイベントを処理します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>index</code></strong> :&ensp;<code>int</code></dt>
+<dd>イベントを処理するデータのインデックス。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def event_handle(self, index: int):
+    &#34;&#34;&#34;
+    指定されたインデックスに基づいてイベントを処理します。
+
+    Args:
+        index (int): イベントを処理するデータのインデックス。
+    &#34;&#34;&#34;
+    self.current_index = index
+    self._state.event_handle(self, index)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.get_close"><code class="name flex">
+<span>def <span class="ident">get_close</span></span>(<span>self, index) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定したインデックスでの終値を取得します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>index</code></strong> :&ensp;<code>int</code></dt>
+<dd>終値を取得するインデックス。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float</code></dt>
+<dd>指定されたインデックスでの終値。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_close(self, index) -&gt; float:
+    &#34;&#34;&#34;
+    指定したインデックスでの終値を取得します。
+
+    Args:
+        index (int): 終値を取得するインデックス。
+
+    Returns:
+        float: 指定されたインデックスでの終値。
+    &#34;&#34;&#34;
+    return self.dataloader.get_df(index, COLUMN_CLOSE)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.get_current_date"><code class="name flex">
+<span>def <span class="ident">get_current_date</span></span>(<span>self) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>現在のインデックスでの日付を取得します。</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>現在のインデックスでの日付。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_current_date(self) -&gt; str:
+    &#34;&#34;&#34;
+    現在のインデックスでの日付を取得します。
+
+    Returns:
+        str: 現在のインデックスでの日付。
+    &#34;&#34;&#34;
+    return self.dataloader.get_df(self.current_index, COLUMN_DATE)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.get_current_index"><code class="name flex">
+<span>def <span class="ident">get_current_index</span></span>(<span>self) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>現在のインデックスを取得します。</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>現在のインデックス番号。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_current_index(self) -&gt; int:
+    &#34;&#34;&#34;
+    現在のインデックスを取得します。
+
+    Returns:
+        int: 現在のインデックス番号。
+    &#34;&#34;&#34;
+    return self.current_index</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.get_current_price"><code class="name flex">
+<span>def <span class="ident">get_current_price</span></span>(<span>self) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>現在のインデックスでの終値を取得します。</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float</code></dt>
+<dd>現在のインデックスでの終値。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_current_price(self) -&gt; float:
+    &#34;&#34;&#34;
+    現在のインデックスでの終値を取得します。
+
+    Returns:
+        float: 現在のインデックスでの終値。
+    &#34;&#34;&#34;
+    return self.dataloader.get_df(self.current_index, COLUMN_CLOSE)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.get_current_profit"><code class="name flex">
+<span>def <span class="ident">get_current_profit</span></span>(<span>self, index=None) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>現在の利益を取得します。指定されたインデックス、または現在のデータインデックスの一つ前の利益が返されます。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>index</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>利益を取得するインデックス。指定されていない場合は、現在のデータインデックスが使用されます。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float</code></dt>
+<dd>現在の利益。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_current_profit(self,index=None) -&gt; float:
+    &#34;&#34;&#34;
+    現在の利益を取得します。指定されたインデックス、または現在のデータインデックスの一つ前の利益が返されます。
+
+    Args:
+        index (int, optional): 利益を取得するインデックス。指定されていない場合は、現在のデータインデックスが使用されます。
+
+    Returns:
+        float: 現在の利益。
+    &#34;&#34;&#34;
+    if index is None:
+        index = self.get_current_index()
+    return self.dataloader.get_df(index-1, COLUMN_CURRENT_PROFIT)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.get_data"><code class="name flex">
+<span>def <span class="ident">get_data</span></span>(<span>self) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>トレーディングデータの生データフレームを取得します。</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>トレーディングデータの生データ。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_data(self) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    トレーディングデータの生データフレームを取得します。
+
+    Returns:
+        pd.DataFrame: トレーディングデータの生データ。
+    &#34;&#34;&#34;
+    return self.dataloader.get_raw()</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.get_entry_counter"><code class="name flex">
+<span>def <span class="ident">get_entry_counter</span></span>(<span>self) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>エントリーのカウンターを取得します。</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>現在のエントリーのカウンター値。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_entry_counter(self) -&gt; int:
+    &#34;&#34;&#34;
+    エントリーのカウンターを取得します。
+
+    Returns:
+        int: 現在のエントリーのカウンター値。
+    &#34;&#34;&#34;
+    return self.entry_counter</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.get_entry_index"><code class="name flex">
+<span>def <span class="ident">get_entry_index</span></span>(<span>self) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>エントリーしたトレードのインデックスを取得します。</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>トレードのエントリーインデックス。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_entry_index(self) -&gt; int:
+    &#34;&#34;&#34;
+    エントリーしたトレードのインデックスを取得します。
+
+    Returns:
+        int: トレードのエントリーインデックス。
+    &#34;&#34;&#34;
+    return self.entry_index</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.get_entry_price"><code class="name flex">
+<span>def <span class="ident">get_entry_price</span></span>(<span>self) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>設定されたエントリー価格を取得します。</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float</code></dt>
+<dd>エントリー価格。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_entry_price(self) -&gt; float:
+    &#34;&#34;&#34;
+    設定されたエントリー価格を取得します。
+
+    Returns:
+        float: エントリー価格。
+    &#34;&#34;&#34;
+    return self.dataloader.get_df(self.entry_index, COLUMN_ENTRY_PRICE)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.get_entry_type"><code class="name flex">
+<span>def <span class="ident">get_entry_type</span></span>(<span>self, index=None) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定されたインデックス、または現在のエントリーインデックスのエントリータイプを取得します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>index</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>エントリータイプを取得するインデックス。指定されていない場合は、現在のエントリーインデックスが使用されます。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>エントリータイプ。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_entry_type(self,index=None) -&gt; str:
+    &#34;&#34;&#34;
+    指定されたインデックス、または現在のエントリーインデックスのエントリータイプを取得します。
+
+    Args:
+        index (int, optional): エントリータイプを取得するインデックス。指定されていない場合は、現在のエントリーインデックスが使用されます。
+
+    Returns:
+        str: エントリータイプ。
+    &#34;&#34;&#34;
+    if index is None:
+        index = self.get_entry_index()
+    return self.dataloader.get_df(index, COLUMN_ENTRY_TYPE)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.get_exit_price"><code class="name flex">
+<span>def <span class="ident">get_exit_price</span></span>(<span>self) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>設定されたエグジット価格を取得します。</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float</code></dt>
+<dd>エグジット価格。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_exit_price(self) -&gt; float:
+    &#34;&#34;&#34;
+    設定されたエグジット価格を取得します。
+
+    Returns:
+        float: エグジット価格。
+    &#34;&#34;&#34;
+    return self.dataloader.get_df(self.exit_index, COLUMN_EXIT_PRICE)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.get_fx_serial"><code class="name flex">
+<span>def <span class="ident">get_fx_serial</span></span>(<span>self) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>FX取引のシリアル番号を取得します。</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>FX取引のシリアル番号。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_fx_serial(self) -&gt; int:
+    &#34;&#34;&#34;
+    FX取引のシリアル番号を取得します。
+
+    Returns:
+        int: FX取引のシリアル番号。
+    &#34;&#34;&#34;
+    return self.fx_serial</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.get_prediction"><code class="name flex">
+<span>def <span class="ident">get_prediction</span></span>(<span>self, index=None) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定されたインデックス、または現在のエントリーインデックスの予測値を取得します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>index</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>予測値を取得するインデックス。指定されていない場合は、現在のエントリーインデックスが使用されます。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>予測値。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_prediction(self, index=None) -&gt; int:
+    &#34;&#34;&#34;
+    指定されたインデックス、または現在のエントリーインデックスの予測値を取得します。
+
+    Args:
+        index (int, optional): 予測値を取得するインデックス。指定されていない場合は、現在のエントリーインデックスが使用されます。
+
+    Returns:
+        int: 予測値。
+    &#34;&#34;&#34;
+    if index is None:
+        index = self.get_entry_index()
+    return self.dataloader.get_df(index, COLUMN_PREDICTION)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.get_sell_price"><code class="name flex">
+<span>def <span class="ident">get_sell_price</span></span>(<span>self) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>現在のインデックスでの売却価格を取得します。</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float</code></dt>
+<dd>現在のインデックスでの売却価格。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_sell_price(self) -&gt; float:
+    &#34;&#34;&#34;
+    現在のインデックスでの売却価格を取得します。
+
+    Returns:
+        float: 現在のインデックスでの売却価格。
+    &#34;&#34;&#34;
+    return self.dataloader.get_close(self.current_index)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.is_first_column_greater_than_second"><code class="name flex">
+<span>def <span class="ident">is_first_column_greater_than_second</span></span>(<span>self, index, col1, col2) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定されたインデックスの2つのカラム値を比較し、最初のカラムの値が2番目のカラムの値より大きいかどうかを判断します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>index</code></strong> :&ensp;<code>int</code></dt>
+<dd>データフレームのインデックス。</dd>
+<dt><strong><code>col1</code></strong> :&ensp;<code>str</code></dt>
+<dd>最初のカラム名。</dd>
+<dt><strong><code>col2</code></strong> :&ensp;<code>str</code></dt>
+<dd>2番目のカラム名。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>最初のカラムの値が2番目のカラムの値より大きい場合はTrue、そうでない場合はFalse。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_first_column_greater_than_second(self, index, col1, col2) -&gt; bool:
+    &#34;&#34;&#34;
+    指定されたインデックスの2つのカラム値を比較し、最初のカラムの値が2番目のカラムの値より大きいかどうかを判断します。
+
+    Args:
+        index (int): データフレームのインデックス。
+        col1 (str): 最初のカラム名。
+        col2 (str): 2番目のカラム名。
+
+    Returns:
+        bool: 最初のカラムの値が2番目のカラムの値より大きい場合はTrue、そうでない場合はFalse。
+    &#34;&#34;&#34;
+    return self.dataloader.is_first_column_greater_than_second(index, col1, col2)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.is_first_column_less_than_second"><code class="name flex">
+<span>def <span class="ident">is_first_column_less_than_second</span></span>(<span>self, index, col1, col2) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定されたインデックスの2つのカラム値を比較し、最初のカラムの値が2番目のカラムの値より小さいかどうかを判断します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>index</code></strong> :&ensp;<code>int</code></dt>
+<dd>データフレームのインデックス。</dd>
+<dt><strong><code>col1</code></strong> :&ensp;<code>str</code></dt>
+<dd>最初のカラム名。</dd>
+<dt><strong><code>col2</code></strong> :&ensp;<code>str</code></dt>
+<dd>2番目のカラム名。</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>最初のカラムの値が2番目のカラムの値より小さい場合はTrue、そうでない場合はFalse。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_first_column_less_than_second(self, index, col1, col2) -&gt; bool:
+    &#34;&#34;&#34;
+    指定されたインデックスの2つのカラム値を比較し、最初のカラムの値が2番目のカラムの値より小さいかどうかを判断します。
+
+    Args:
+        index (int): データフレームのインデックス。
+        col1 (str): 最初のカラム名。
+        col2 (str): 2番目のカラム名。
+
+    Returns:
+        bool: 最初のカラムの値が2番目のカラムの値より小さい場合はTrue、そうでない場合はFalse。
+    &#34;&#34;&#34;
+    return self.dataloader.is_first_column_less_than_second(index, col1, col2)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.load_data_from_datetime_period"><code class="name flex">
+<span>def <span class="ident">load_data_from_datetime_period</span></span>(<span>self, start_datetime, end_datetime, table_name=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>指定された期間とテーブル名に基づいてデータをロードします。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>start_datetime</code></strong> :&ensp;<code>datetime</code></dt>
+<dd>データロードの開始日時。</dd>
+<dt><strong><code>end_datetime</code></strong> :&ensp;<code>datetime</code></dt>
+<dd>データロードの終了日時。</dd>
+<dt><strong><code>table_name</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>データをロードするテーブル名。デフォルトはNoneです。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_data_from_datetime_period(self, start_datetime, end_datetime, table_name=None):
+    &#34;&#34;&#34;
+    指定された期間とテーブル名に基づいてデータをロードします。
+
+    Args:
+        start_datetime (datetime): データロードの開始日時。
+        end_datetime (datetime): データロードの終了日時。
+        table_name (str, optional): データをロードするテーブル名。デフォルトはNoneです。
+    &#34;&#34;&#34;
+    table_name = self.dataloader.make_table_name_tech(table_name)
+    self.dataloader.load_data_from_datetime_period(start_datetime, end_datetime, table_name)
+    self.reset_index()
+    self.add_data_columns()</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.log_transaction"><code class="name flex">
+<span>def <span class="ident">log_transaction</span></span>(<span>self, message)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>トランザクションログを記録します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>message</code></strong> :&ensp;<code>str</code></dt>
+<dd>ログに記録するメッセージ。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def log_transaction(self, message):
+    &#34;&#34;&#34;
+    トランザクションログを記録します。
+
+    Args:
+        message (str): ログに記録するメッセージ。
+    &#34;&#34;&#34;
+    date = self.get_current_date()
+    self.trading_logger.log_transaction(date, message)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.record_state"><code class="name flex">
+<span>def <span class="ident">record_state</span></span>(<span>self, state: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>トレードの状態を記録します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>state</code></strong> :&ensp;<code>str</code></dt>
+<dd>トレードの状態。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def record_state(self, state: str):
+    &#34;&#34;&#34;
+    トレードの状態を記録します。
+
+    Args:
+        state (str): トレードの状態。
+    &#34;&#34;&#34;
+    self.dataloader.set_df(self.current_index, COLUMN_STATE, state)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.reset_index"><code class="name flex">
+<span>def <span class="ident">reset_index</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>現在のインデックス、エントリーインデックス、エグジットインデックス、およびFXシリアル番号をリセットします。</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def reset_index(self):
+    &#34;&#34;&#34;
+    現在のインデックス、エントリーインデックス、エグジットインデックス、およびFXシリアル番号をリセットします。
+    &#34;&#34;&#34;
+    self.current_index = 0
+    self.entry_index = 0
+    self.exit_index = 0
+    self.fx_serial = 0</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.run_trading"><code class="name flex">
+<span>def <span class="ident">run_trading</span></span>(<span>self, context)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>取引プロセスを実行します。指定されたコンテキストに基づき、データを分析し、取引イベントを生成します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>context</code></strong> :&ensp;<code><a title="trading_context.TradingContext" href="#trading_context.TradingContext">TradingContext</a></code></dt>
+<dd>実行する取引コンテキスト。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run_trading(self,context):
+    &#34;&#34;&#34;
+    取引プロセスを実行します。指定されたコンテキストに基づき、データを分析し、取引イベントを生成します。
+
+    Args:
+        context (TradingContext): 実行する取引コンテキスト。
+    &#34;&#34;&#34;
+    data = context.get_data()
+    # Iterate over the analyzed data and generate events based on the data
+    for index in range(len(data)):
+        context.event_handle(index)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.save_data"><code class="name flex">
+<span>def <span class="ident">save_data</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>トレードデータをCSVファイルに保存します。</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_data(self):
+    &#34;&#34;&#34;
+    トレードデータをCSVファイルに保存します。
+    &#34;&#34;&#34;
+    self.data.to_csv(FILENAME_RESULT_CSV)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.set_current_index"><code class="name flex">
+<span>def <span class="ident">set_current_index</span></span>(<span>self, index: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>現在のデータインデックスを設定します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>index</code></strong> :&ensp;<code>int</code></dt>
+<dd>設定するインデックスの値。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_current_index(self, index: int):
+    &#34;&#34;&#34;
+    現在のデータインデックスを設定します。
+
+    Args:
+        index (int): 設定するインデックスの値。
+    &#34;&#34;&#34;
+    self.current_index = index</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.set_entry_counter"><code class="name flex">
+<span>def <span class="ident">set_entry_counter</span></span>(<span>self, counter: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>エントリーのカウンターを設定します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>counter</code></strong> :&ensp;<code>int</code></dt>
+<dd>設定するカウンターの値。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_entry_counter(self, counter: int):
+    &#34;&#34;&#34;
+    エントリーのカウンターを設定します。
+
+    Args:
+        counter (int): 設定するカウンターの値。
+    &#34;&#34;&#34;
+    self.entry_counter = counter</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.set_entry_index"><code class="name flex">
+<span>def <span class="ident">set_entry_index</span></span>(<span>self, index: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>エントリーしたトレードのインデックスを取得します。</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>トレードのエントリーインデックス。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_entry_index(self, index: int):
+    &#34;&#34;&#34;
+    エントリーしたトレードのインデックスを取得します。
+
+    Returns:
+        int: トレードのエントリーインデックス。
+    &#34;&#34;&#34;
+    self.entry_index = index</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.set_entry_price"><code class="name flex">
+<span>def <span class="ident">set_entry_price</span></span>(<span>self, price: float)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>エントリー価格を設定します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>price</code></strong> :&ensp;<code>float</code></dt>
+<dd>エントリーする価格。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_entry_price(self, price: float):
+    &#34;&#34;&#34;
+    エントリー価格を設定します。
+
+    Args:
+        price (float): エントリーする価格。
+    &#34;&#34;&#34;
+    self.entry_index = self.current_index
+    self.dataloader.set_df(self.current_index, COLUMN_ENTRY_PRICE, price)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.set_entry_type"><code class="name flex">
+<span>def <span class="ident">set_entry_type</span></span>(<span>self, entry_type: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>エントリーのタイプを設定します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>entry_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>設定するエントリータイプ。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_entry_type(self, entry_type: str):
+    &#34;&#34;&#34;
+    エントリーのタイプを設定します。
+
+    Args:
+        entry_type (str): 設定するエントリータイプ。
+    &#34;&#34;&#34;
+    self.dataloader.set_df(self.current_index, COLUMN_ENTRY_TYPE, entry_type)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.set_exit_price"><code class="name flex">
+<span>def <span class="ident">set_exit_price</span></span>(<span>self, price: float)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>エグジット価格を設定します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>price</code></strong> :&ensp;<code>float</code></dt>
+<dd>エグジットする価格。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_exit_price(self, price: float):
+    &#34;&#34;&#34;
+    エグジット価格を設定します。
+
+    Args:
+        price (float): エグジットする価格。
+    &#34;&#34;&#34;
+    self.exit_index = self.current_index
+    self.dataloader.set_df(self.exit_index, COLUMN_EXIT_PRICE, price)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.set_fx_serial"><code class="name flex">
+<span>def <span class="ident">set_fx_serial</span></span>(<span>self, serial: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>FX取引のシリアル番号を設定します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>serial</code></strong> :&ensp;<code>int</code></dt>
+<dd>設定するシリアル番号。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_fx_serial(self, serial: int):
+    &#34;&#34;&#34;
+    FX取引のシリアル番号を設定します。
+
+    Args:
+        serial (int): 設定するシリアル番号。
+    &#34;&#34;&#34;
+    self.fx_serial = serial</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.set_prediction"><code class="name flex">
+<span>def <span class="ident">set_prediction</span></span>(<span>self, prediction: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>予測値を設定します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>prediction</code></strong> :&ensp;<code>int</code></dt>
+<dd>設定する予測値。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_prediction(self, prediction: int):
+    &#34;&#34;&#34;
+    予測値を設定します。
+
+    Args:
+        prediction (int): 設定する予測値。
+    &#34;&#34;&#34;
+    self.dataloader.set_df(self.current_index, COLUMN_PREDICTION, prediction)</code></pre>
+</details>
+</dd>
+<dt id="trading_context.TradingContext.set_state"><code class="name flex">
+<span>def <span class="ident">set_state</span></span>(<span>self, new_state)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>トレーディングの状態を設定します。</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>new_state</code></strong> :&ensp;<code>State</code></dt>
+<dd>新しい状態オブジェクト。</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_state(self, new_state):
+    &#34;&#34;&#34;
+    トレーディングの状態を設定します。
+
+    Args:
+        new_state (State): 新しい状態オブジェクト。
+    &#34;&#34;&#34;
+    self._state = new_state</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="trading_context.TradingContext" href="#trading_context.TradingContext">TradingContext</a></code></h4>
+<ul class="">
+<li><code><a title="trading_context.TradingContext.add_data_columns" href="#trading_context.TradingContext.add_data_columns">add_data_columns</a></code></li>
+<li><code><a title="trading_context.TradingContext.event_handle" href="#trading_context.TradingContext.event_handle">event_handle</a></code></li>
+<li><code><a title="trading_context.TradingContext.get_close" href="#trading_context.TradingContext.get_close">get_close</a></code></li>
+<li><code><a title="trading_context.TradingContext.get_current_date" href="#trading_context.TradingContext.get_current_date">get_current_date</a></code></li>
+<li><code><a title="trading_context.TradingContext.get_current_index" href="#trading_context.TradingContext.get_current_index">get_current_index</a></code></li>
+<li><code><a title="trading_context.TradingContext.get_current_price" href="#trading_context.TradingContext.get_current_price">get_current_price</a></code></li>
+<li><code><a title="trading_context.TradingContext.get_current_profit" href="#trading_context.TradingContext.get_current_profit">get_current_profit</a></code></li>
+<li><code><a title="trading_context.TradingContext.get_data" href="#trading_context.TradingContext.get_data">get_data</a></code></li>
+<li><code><a title="trading_context.TradingContext.get_entry_counter" href="#trading_context.TradingContext.get_entry_counter">get_entry_counter</a></code></li>
+<li><code><a title="trading_context.TradingContext.get_entry_index" href="#trading_context.TradingContext.get_entry_index">get_entry_index</a></code></li>
+<li><code><a title="trading_context.TradingContext.get_entry_price" href="#trading_context.TradingContext.get_entry_price">get_entry_price</a></code></li>
+<li><code><a title="trading_context.TradingContext.get_entry_type" href="#trading_context.TradingContext.get_entry_type">get_entry_type</a></code></li>
+<li><code><a title="trading_context.TradingContext.get_exit_price" href="#trading_context.TradingContext.get_exit_price">get_exit_price</a></code></li>
+<li><code><a title="trading_context.TradingContext.get_fx_serial" href="#trading_context.TradingContext.get_fx_serial">get_fx_serial</a></code></li>
+<li><code><a title="trading_context.TradingContext.get_prediction" href="#trading_context.TradingContext.get_prediction">get_prediction</a></code></li>
+<li><code><a title="trading_context.TradingContext.get_sell_price" href="#trading_context.TradingContext.get_sell_price">get_sell_price</a></code></li>
+<li><code><a title="trading_context.TradingContext.is_first_column_greater_than_second" href="#trading_context.TradingContext.is_first_column_greater_than_second">is_first_column_greater_than_second</a></code></li>
+<li><code><a title="trading_context.TradingContext.is_first_column_less_than_second" href="#trading_context.TradingContext.is_first_column_less_than_second">is_first_column_less_than_second</a></code></li>
+<li><code><a title="trading_context.TradingContext.load_data_from_datetime_period" href="#trading_context.TradingContext.load_data_from_datetime_period">load_data_from_datetime_period</a></code></li>
+<li><code><a title="trading_context.TradingContext.log_transaction" href="#trading_context.TradingContext.log_transaction">log_transaction</a></code></li>
+<li><code><a title="trading_context.TradingContext.record_state" href="#trading_context.TradingContext.record_state">record_state</a></code></li>
+<li><code><a title="trading_context.TradingContext.reset_index" href="#trading_context.TradingContext.reset_index">reset_index</a></code></li>
+<li><code><a title="trading_context.TradingContext.run_trading" href="#trading_context.TradingContext.run_trading">run_trading</a></code></li>
+<li><code><a title="trading_context.TradingContext.save_data" href="#trading_context.TradingContext.save_data">save_data</a></code></li>
+<li><code><a title="trading_context.TradingContext.set_current_index" href="#trading_context.TradingContext.set_current_index">set_current_index</a></code></li>
+<li><code><a title="trading_context.TradingContext.set_entry_counter" href="#trading_context.TradingContext.set_entry_counter">set_entry_counter</a></code></li>
+<li><code><a title="trading_context.TradingContext.set_entry_index" href="#trading_context.TradingContext.set_entry_index">set_entry_index</a></code></li>
+<li><code><a title="trading_context.TradingContext.set_entry_price" href="#trading_context.TradingContext.set_entry_price">set_entry_price</a></code></li>
+<li><code><a title="trading_context.TradingContext.set_entry_type" href="#trading_context.TradingContext.set_entry_type">set_entry_type</a></code></li>
+<li><code><a title="trading_context.TradingContext.set_exit_price" href="#trading_context.TradingContext.set_exit_price">set_exit_price</a></code></li>
+<li><code><a title="trading_context.TradingContext.set_fx_serial" href="#trading_context.TradingContext.set_fx_serial">set_fx_serial</a></code></li>
+<li><code><a title="trading_context.TradingContext.set_prediction" href="#trading_context.TradingContext.set_prediction">set_prediction</a></code></li>
+<li><code><a title="trading_context.TradingContext.set_state" href="#trading_context.TradingContext.set_state">set_state</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
