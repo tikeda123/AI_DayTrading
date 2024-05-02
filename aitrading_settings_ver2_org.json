@@ -62,6 +62,9 @@
     "AIML_ROLLING":
     {
         "DATAPATH"          :"data/data_rolling/",
+		"LEARN_DATAPATH"    :"data/data_ml/",
+		"LOWERDATA_FILE"    :"BTCUSDT_20200101_20230101_60_price_lower_mlts.csv",
+		"UPPERDATA_FILE"    :"BTCUSDT_20200101_20230101_60_price_upper_mlts.csv",
         "SYMBOL"            :"ETHUSDT",
         "INTERVAL"          :30,
         "TARGET_COLUMN"     :["close","ema"],

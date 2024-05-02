@@ -115,7 +115,7 @@ class SimulationStrategy(TradingStrategy):
         return high_price > entry_price > low_price
 
 
-    def EntryPreparation_execute(self, context):
+    def EntryPreparation_event_execute(self, context):
         """
         エントリー準備状態でカウンターが閾値を超えた場合のイベントを実行します。
         エントリー判断を行い、エントリーする場合はポジション状態に遷移し、トレードのエントリーと

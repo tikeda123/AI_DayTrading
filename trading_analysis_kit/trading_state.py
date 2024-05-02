@@ -71,6 +71,8 @@ class IdleState(State):
 
         対応するトレードの実行処理を行います。
         """
+        if context.is_first_column_greater_than_second(context.get_current_index(), COLUMN_CLOSE, COLUMN_UPPER_BAND2):
+            context.strategy.Idel_event_execute(context)
         #if index < TIME_SERIES_PERIOD:
         #    return None
         context.strategy.Idel_event_execute(context)
@@ -107,7 +109,7 @@ class EntryPreparationState(State):
         """
         状態に応じたイベント処理メソッド:
         """
-        context.strategy.EntryPreparation_execute(context)
+        context.strategy.EntryPreparation_event_execute(context)
 
 
 

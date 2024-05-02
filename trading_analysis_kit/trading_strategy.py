@@ -18,7 +18,7 @@ class TradingStrategy(ABC):
         pass
 
     @abstractmethod
-    def EntryPreparation_execute(self, context):
+    def EntryPreparation_event_execute(self, context):
         """
         エントリー準備状態で、カウンターが設定閾値を超えた際に実行されるメソッドです。
 

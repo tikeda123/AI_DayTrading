@@ -1,6 +1,6 @@
 {
     "SYMBOL"            :"ETHUSDT",
-    "INTERVAL"          :30,
+    "INTERVAL"          :15,
     "ONLINE":
     {
         "DBNAME"        :"trading",
@@ -53,8 +53,8 @@
     "AIML_ROLLING":
     {
         "DATAPATH"          :"data/data_rolling/",
-        "TARGET_COLUMN"     :["close","ema"],
-        "FEATURE_COLUMNS"   :["ema","sma","close","macdhist","macd_diff","macdsignal","macd","rsi","upper_diff","lower_diff","middle_diff","volume_ma","dmi_diff"]
+        "TARGET_COLUMN"     :["bb_profit","bb_profit"],
+		"FEATURE_COLUMNS"   :["ema","sma","close","macdhist","macd_diff","macdsignal","macd","rsi","upper_diff","lower_diff","middle_diff","volume_ma","dmi_diff"]
     },
     "TECHNICAL" :
     {

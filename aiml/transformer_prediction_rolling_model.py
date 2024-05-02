@@ -1,18 +1,17 @@
 
 import os,sys
-from typing import Dict, Tuple
+from typing import Tuple
 import numpy as np
 import tensorflow as tf
+import pandas as pd
 from sklearn.model_selection import train_test_split, KFold
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, LayerNormalization, MultiHeadAttention, Input, Flatten
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.regularizers import l2
-from sklearn.decomposition import PCA
-import joblib
 
+import joblib
 
 
 # b.pyのディレクトリの絶対パスを取得
@@ -28,85 +27,15 @@ from common.utils import get_config
 from common.constants import *
 
 from aiml.prediction_model import PredictionModel
-
+from aiml.transformerblock import TransformerBlock
 
 # ハイパーパラメータの設定
 PARAM_LEARNING_RATE = 0.001
-PARAM_EPOCHS = 100
+PARAM_EPOCHS = 1100
 
-POSITIVE_THRESHOLD = 0
+N_SPLITS=4
+POSITIVE_THRESHOLD = 100
 
-def step_decay(epoch):
-    """学習率を段階的に減少させる関数です。
-
-    Args:
-        epoch (int): 現在のエポック数。
-
-    Returns:
-        float: 新しい学習率。
-    """
-    initial_lr = 0.001
-    drop = 0.5
-    epochs_drop = 20.0
-    lr = initial_lr * (drop ** np.floor((1+epoch)/epochs_drop))
-    return lr
-
-class TransformerBlock(tf.keras.layers.Layer):
-    """Transformerモデルのブロックを表すクラスです。
-
-    Args:
-        d_model (int): 埋め込みの次元数。
-        num_heads (int): アテンション機構のヘッド数。
-        dff (int): フィードフォワードネットワークの次元数。
-        rate (float): ドロップアウト率。
-        l2_reg (float): L2正則化の係数。
-
-    Attributes:
-        mha (MultiHeadAttention): マルチヘッドアテンション層。
-        ffn (Sequential): フィードフォワードネットワーク層。
-        layernorm1 (LayerNormalization): 最初のレイヤー正規化層。
-        layernorm2 (LayerNormalization): 二番目のレイヤー正規化層。
-        dropout1 (Dropout): 最初のドロップアウト層。
-        dropout2 (Dropout): 二番目のドロップアウト層。
-    """
-    def __init__(self, d_model, num_heads, dff, rate=0.1, l2_reg=0.01):
-        """モデルの実行を行います。
-
-        Args:
-            x (Tensor): 入力テンソル。
-            training (bool): トレーニングモードかどうか。
-
-        Returns:
-            Tensor: 出力テンソル。
-        """
-        super().__init__()
-        self.mha = MultiHeadAttention(key_dim=d_model, num_heads=num_heads)
-        # L2正規化をDense層に適用
-        self.ffn = Sequential([
-            Dense(dff, activation='relu', kernel_regularizer=l2(l2_reg)),
-            Dense(d_model, kernel_regularizer=l2(l2_reg))
-        ])
-        self.layernorm1 = LayerNormalization(epsilon=1e-6)
-        self.layernorm2 = LayerNormalization(epsilon=1e-6)
-        self.dropout1 = Dropout(rate)
-        self.dropout2 = Dropout(rate)
-
-    def call(self, x, training=False):
-        """モデルの実行を行います。
-
-        Args:
-            x (Tensor): 入力テンソル。
-            training (bool): トレーニングモードかどうか。
-
-        Returns:
-            Tensor: 出力テンソル。
-        """
-        attn_output = self.mha(x, x, x)
-        attn_output = self.dropout1(attn_output, training=training)
-        out1 = self.layernorm1(x + attn_output)
-        ffn_output = self.ffn(out1)
-        ffn_output = self.dropout2(ffn_output, training=training)
-        return self.layernorm2(out1 + ffn_output)
 
 class TransformerPredictionRollingModel(PredictionModel):
     """
@@ -137,34 +66,34 @@ class TransformerPredictionRollingModel(PredictionModel):
         Args:
             config (Dict[str, Any]): モデルの設定値のディクショナリ。
         """
-        self.__logger = TradingLogger()
-        self.__data_loader = DataLoaderDB()
-        self.__config = get_config("AIML_ROLLING")
+        self.logger = TradingLogger()
+        self.data_loader = DataLoaderDB()
+        self.config = get_config("AIML_ROLLING")
 
         if symbol is None:
-            self.__symbol =  get_config("SYMBOL")
+            self.symbol =  get_config("SYMBOL")
         else:
-            self.__symbol = symbol
+            self.symbol = symbol
 
         if interval is None:
-            self.__interval =  get_config("INTERVAL")
+            self.interval =  get_config("INTERVAL")
         else:
-            self.__interval = interval
+            self.interval = interval
 
 
-        self.__initialize_paths()
-        self.__scaler = MinMaxScaler(feature_range=(0, 1))
+        self.initialize_paths()
+        self.scaler = MinMaxScaler(feature_range=(0, 1))
         self.create_table_name()
-        self.__model = None
+        self.model = None
 
-    def __initialize_paths(self):
+    def initialize_paths(self):
         """
         パス関連の初期化を行う。
         """
-        self.__datapath = parent_dir + '/' + self.__config['DATAPATH']
-        self.__feature_columns = self.__config['FEATURE_COLUMNS']
-        self.__target_column = self.__config["TARGET_COLUMN"]
-        self.__filename = f'{self.__symbol}_{self.__interval}_{self.__target_column}_model'
+        self.datapath = parent_dir + '/' + self.config['DATAPATH']
+        self.feature_columns = self.config['FEATURE_COLUMNS']
+        self.target_column = self.config["TARGET_COLUMN"]
+        self.filename = f'{self.symbol}_{self.interval}_{self.target_column}_model'
 
     def get_data_loader(self) -> DataLoaderDB:
         """
@@ -173,7 +102,7 @@ class TransformerPredictionRollingModel(PredictionModel):
         Returns:
             DataLoaderDB: データローダーのインスタンス。
         """
-        return self.__data_loader
+        return self.data_loader
 
     def get_feature_columns(self) -> list:
         """
@@ -182,7 +111,7 @@ class TransformerPredictionRollingModel(PredictionModel):
         Returns:
             list: 特徴量カラムのリスト。
         """
-        return self.__feature_columns
+        return self.feature_columns
 
     def create_table_name(self) -> str:
         """
@@ -191,39 +120,68 @@ class TransformerPredictionRollingModel(PredictionModel):
         Returns:
             str: 作成されたテーブル名。
         """
-        self.__table_name = f'{self.__symbol}_{self.__interval}_market_data_tech'
-        return self.__table_name
+        self.table_name = f'{self.symbol}_{self.interval}_market_data_tech'
+        return self.table_name
 
-    def load_and_prepare_data(self, start_datetime, end_datetime, test_size=0.5, random_state=None):
-        """指定された期間のデータをロードし、前処理を行った後に訓練データとテストデータに分割します。
+    def load_data_from_csv(self, learning_datafile: str):
+        """
+        指定されたCSVファイルからデータを読み込み、pandas DataFrameとして返します。
+
+        このメソッドは、学習データファイルのパスを組み立て、pandasを使用してCSVファイルを読み込みます。
+        ファイルが存在しない場合、FileNotFoundErrorをキャッチし、ログに記録した後に例外を再発生させます。
 
         Args:
-            start_datetime (str): データの開始日時 (YYYY-MM-DD HH:MM:SS形式)。
-            end_datetime (str): データの終了日時 (YYYY-MM-DD HH:MM:SS形式)。
-            test_size (float): テストデータセットの割合。
-            random_state (int, optional): データ分割時のランダムシード。
+            learning_datafile (str): 読み込む学習データのCSVファイル名。このファイル名は、内部で保持されているデータパスに追加されます。
 
         Returns:
-            tuple: 訓練用データセットとテスト用データセット。
+            pd.DataFrame: 読み込まれたデータを含むDataFrame。
+
+        Raises:
+            FileNotFoundError: 指定されたCSVファイルが見つからない場合に発生します。
         """
-        #start_datetime (str): データの開始日時 (YYYY-MM-DD HH:MM:SS形式)
-        #end_datetime (str): データの終了日時 (YYYY-MM-DD HH:MM:SS形式)
-        data = self.__data_loader.load_data_from_datetime_period(start_datetime, end_datetime,self.__table_name)
-        sequences = []
-        targets = []
+        data_path = self.datapath + learning_datafile
+        try:
+            df = pd.read_csv(data_path)
+        except FileNotFoundError as e:
+            self.logger.log_system_message(f"FileNotFoundError: {e}")
+            raise
+        return df
 
-        for i in range(len(data) - (TIME_SERIES_PERIOD +1)):
-            sequence = data.loc[i:i+TIME_SERIES_PERIOD-1, self.__feature_columns].values  # 7日間のデータ
-            target = int(data.loc[i+TIME_SERIES_PERIOD, self.__target_column[0]] > data.loc[i+TIME_SERIES_PERIOD-1, self.__target_column[1]])  # 8日目のcloseが7日目より高ければ1、そうでなければ0
-            sequences.append(sequence)
-            targets.append(target)
 
-        sequences = np.array(sequences)
-        targets = np.array(targets)
+    def load_and_prepare_data_from_csv(self, csv_file_path, test_size=0.5, random_state=None):
+       data = self.load_data_from_csv(csv_file_path)
+       scaled_sequences, targets = self._prepare_sequences(data)
+       return train_test_split(scaled_sequences, targets, test_size=test_size, random_state=random_state)
 
-        # 特徴量のスケーリング
-        scaled_sequences = np.array([self.__scaler.fit_transform(seq) for seq in sequences])
-        return train_test_split(scaled_sequences, targets, test_size=test_size, random_state=random_state)
+    def load_and_prepare_data(self, start_datetime, end_datetime, test_size=0.5, random_state=None):
+       data = self.data_loader.load_data_from_datetime_period(start_datetime, end_datetime, self.table_name)
+       scaled_sequences, targets = self._prepare_sequences(data)
+       return train_test_split(scaled_sequences, targets, test_size=test_size, random_state=random_state)
+
+    def _prepare_sequences(self, data):
+       """データからシーケンスとターゲットを準備します。
+
+       Args:
+           data (pd.DataFrame): 入力データのDataFrame。
+
+       Returns:
+           tuple: シーケンスとターゲットのNumPy配列のタプル。
+       """
+       sequences = []
+       targets = []
+
+       for i in range(len(data) - (TIME_SERIES_PERIOD + 1)):
+           sequence = data.iloc[i:i+TIME_SERIES_PERIOD, data.columns.get_indexer(self.feature_columns)].values
+           target = int(data.iloc[i+TIME_SERIES_PERIOD][self.target_column[0]] > data.iloc[i+TIME_SERIES_PERIOD-1][self.target_column[1]])
+           sequences.append(sequence)
+           targets.append(target)
+
+       sequences = np.array(sequences)
+       targets = np.array(targets)
+
+       # 特徴量のスケーリング
+       scaled_sequences = np.array([self.scaler.fit_transform(seq) for seq in sequences])
+       return scaled_sequences, targets
 
 
 
@@ -252,7 +210,7 @@ class TransformerPredictionRollingModel(PredictionModel):
         model = tf.keras.Model(inputs=inputs, outputs=outputs)
         return model
 
-    def train(self, x_train, y_train, epochs=200, batch_size=32):
+    def train(self, x_train, y_train, epochs=1200, batch_size=32):
         """モデルを訓練します。
 
         Args:
@@ -262,9 +220,9 @@ class TransformerPredictionRollingModel(PredictionModel):
             batch_size (int): バッチサイズ。
         """
         # モデルのトレーニング
-        self.__model = self.create_transformer_model((x_train.shape[1], x_train.shape[2]))
-        self.__model.compile(optimizer=Adam(learning_rate=PARAM_LEARNING_RATE), loss='binary_crossentropy', metrics=['accuracy'])
-        self.__model.fit(x_train, y_train, epochs=epochs, batch_size=batch_size)
+        self.model = self.create_transformer_model((x_train.shape[1], x_train.shape[2]))
+        self.model.compile(optimizer=Adam(learning_rate=PARAM_LEARNING_RATE), loss='binary_crossentropy', metrics=['accuracy'])
+        self.model.fit(x_train, y_train, epochs=epochs, batch_size=batch_size)
 
 
     def train_with_cross_validation(self, data: np.ndarray, targets: np.ndarray, epochs: int = PARAM_EPOCHS, batch_size: int = 32, n_splits: int = 2) -> list:
@@ -290,15 +248,15 @@ class TransformerPredictionRollingModel(PredictionModel):
 
         for train, test in kfold.split(data, targets):
             # モデルを生成
-            self.__model = self.create_transformer_model((data.shape[1], data.shape[2]))
+            self.model = self.create_transformer_model((data.shape[1], data.shape[2]))
             # モデルをコンパイル
-            self.__model.compile(optimizer=Adam(learning_rate=PARAM_LEARNING_RATE), loss='binary_crossentropy', metrics=['accuracy'])
+            self.model.compile(optimizer=Adam(learning_rate=PARAM_LEARNING_RATE), loss='binary_crossentropy', metrics=['accuracy'])
             # モデルをトレーニング
-            self.__logger.log_system_message(f'Training for fold {fold_no} ...')
-            self.__model.fit(data[train], targets[train], epochs=epochs, batch_size=batch_size)
+            self.logger.log_system_message(f'Training for fold {fold_no} ...')
+            self.model.fit(data[train], targets[train], epochs=epochs, batch_size=batch_size)
 
             # モデルの性能を評価
-            scores.append(self.__model.evaluate(data[test], targets[test], verbose=0))
+            scores.append(self.model.evaluate(data[test], targets[test], verbose=0))
 
             fold_no += 1
 
@@ -316,7 +274,7 @@ class TransformerPredictionRollingModel(PredictionModel):
             Tuple[float, str, np.ndarray]: モデルの正解率、分類レポート、混同行列。
         """
         # モデルの評価
-        y_pred = (self.__model.predict(x_test) > 0.5).astype(int)
+        y_pred = (self.model.predict(x_test) > 0.5).astype(int)
         accuracy = accuracy_score(y_test, y_pred)
         report = classification_report(y_test, y_pred)
         conf_matrix = confusion_matrix(y_test, y_pred)
@@ -333,7 +291,7 @@ class TransformerPredictionRollingModel(PredictionModel):
             np.ndarray: 予測結果。
         """
 
-        return self.__model.predict(data)
+        return self.model.predict(data)
 
     def predict_single(self, data_point: np.ndarray) -> int:
         """
@@ -347,11 +305,11 @@ class TransformerPredictionRollingModel(PredictionModel):
         """
         # 単一データポイントの予測
         # 予測用スケーラーを使用
-        #self.__scaler.scaler = MinMaxScaler(feature_range=(0, 1))
-        data_point = data_point[self.__feature_columns].values
-        scaled_data_point = self.__scaler.fit_transform(data_point)
+        #self.scaler.scaler = MinMaxScaler(feature_range=(0, 1))
+        data_point = data_point[self.feature_columns].values
+        scaled_data_point = self.scaler.fit_transform(data_point)
         # モデルによる予測
-        prediction = self.__model.predict(scaled_data_point.reshape(1, -1, len(self.__feature_columns)))
+        prediction = self.model.predict(scaled_data_point.reshape(1, -1, len(self.feature_columns)))
         prediction = (prediction > 0.5).astype(int)
         return prediction[0][0]
 
@@ -360,32 +318,32 @@ class TransformerPredictionRollingModel(PredictionModel):
         訓練済みのモデルとスケーラーをファイルに保存する。
         """
         # モデルの保存
-        model_file_name = self.__filename + '.keras'
-        model_path = os.path.join(self.__datapath, model_file_name)
-        self.__logger.log_system_message(f"Saving model to {model_path}")
-        self.__model.save(model_path)
+        model_file_name = self.filename + '.keras'
+        model_path = os.path.join(self.datapath, model_file_name)
+        self.logger.log_system_message(f"Saving model to {model_path}")
+        self.model.save(model_path)
 
         # スケーラーの保存
-        model_scaler_file = self.__filename + '.scaler'
-        model_scaler_path = os.path.join(self.__datapath, model_scaler_file)
-        self.__logger.log_system_message(f"Saving scaler to {model_scaler_path}")
-        joblib.dump(self.__scaler, model_scaler_path)
+        model_scaler_file = self.filename + '.scaler'
+        model_scaler_path = os.path.join(self.datapath, model_scaler_file)
+        self.logger.log_system_message(f"Saving scaler to {model_scaler_path}")
+        joblib.dump(self.scaler, model_scaler_path)
 
     def load_model(self):
         """
         保存されたモデルとスケーラーを読み込む。
         """
         # モデルの読み込み
-        model_file_name = self.__filename + '.keras'
-        model_path = os.path.join(self.__datapath, model_file_name)
-        self.__logger.log_system_message(f"Loading model from {model_path}")
-        self.__model = tf.keras.models.load_model(model_path, custom_objects={'TransformerBlock': TransformerBlock})
+        model_file_name = self.filename + '.keras'
+        model_path = os.path.join(self.datapath, model_file_name)
+        self.logger.log_system_message(f"Loading model from {model_path}")
+        self.model = tf.keras.models.load_model(model_path, custom_objects={'TransformerBlock': TransformerBlock})
 
         # スケーラーの読み込み
-        model_scaler_file = self.__filename + '.scaler'
-        model_scaler_path = os.path.join(self.__datapath, model_scaler_file)
-        self.__logger.log_system_message(f"Loading scaler from {model_scaler_path}")
-        self.__scaler = joblib.load(model_scaler_path)
+        model_scaler_file = self.filename + '.scaler'
+        model_scaler_path = os.path.join(self.datapath, model_scaler_file)
+        self.logger.log_system_message(f"Loading scaler from {model_scaler_path}")
+        self.scaler = joblib.load(model_scaler_path)
 
     def get_data_period(self, date: str, period: int) -> np.ndarray:
         """
@@ -398,5 +356,54 @@ class TransformerPredictionRollingModel(PredictionModel):
         Returns:
             np.ndarray: 指定された期間のデータ。
         """
-        data = self.__data_loader.load_data_from_datetime_period(date, period, self.__table_name)
-        return data.filter(items=self.__feature_columns).to_numpy()
+        data = self.data_loader.load_data_from_datetime_period(date, period, self.table_name)
+        return data.filter(items=self.feature_columns).to_numpy()
+
+
+def main():
+    """
+    メインの実行関数。
+    """
+    # ログ情報の初期化
+
+
+    # モデルの初期化
+    model = TransformerPredictionRollingModel()
+    #learning_datafile = 'BTCUSDT_20210101000_20230901000_60_price_upper_mlts.csv'
+    learning_datafile = 'BTCUSDT_20200101_20230101_60_price_lower_mlts.csv'
+    x_train, x_test, y_train, y_test = model.load_and_prepare_data_time_series_from_csv(learning_datafile)
+    # データのロードと前処理
+    #x_train, x_test, y_train, y_test = model.load_and_prepare_data('2021-01-01 00:00:00', '2022-02-01 00:00:00')
+
+    # モデルの訓練
+        # モデルをクロスバリデーションで訓練します
+    cv_scores = model.train_with_cross_validation(
+        np.concatenate((x_train, x_test), axis=0),
+        np.concatenate((y_train, y_test), axis=0)
+    )
+    # クロスバリデーションの結果を表示
+    for i, score in enumerate(cv_scores):
+        print(f'Fold {i+1}: Accuracy = {score[1]}')
+    # モデルの評価
+    accuracy, report, conf_matrix = model.evaluate(x_test, y_test)
+    print(f"Accuracy: {accuracy}")
+    print(report)
+    print(conf_matrix)
+
+
+    test_datafile = 'BTCUSDT_20230901000_20231201000_60_price_upper_mlts.csv'
+    x_train, x_test, y_train, y_test = model.load_and_prepare_data_time_series_from_csv(learning_datafile)
+    # データのロードと前処理
+    #x_train, x_test, y_train, y_test = model.load_and_prepare_data('2021-01-01 00:00:00', '2022-02-01 00:00:00')
+
+    # モデルの訓練
+    #model.train(x_train, y_train)
+
+    # モデルの評価
+    accuracy, report, conf_matrix = model.evaluate(x_test, y_test)
+    print(f"Accuracy: {accuracy}")
+    print(report)
+    print(conf_matrix)
+
+if __name__ == '__main__':
+    main()

@@ -52,8 +52,7 @@ class SimulationStrategyContext(TradingContext):
         self.fx_transaction = FXTransaction()
         self.__model = init_inference_prediction_rolling_manager(TransformerPredictionRollingModel)
         self.init_model()
-        self.reset_record()
-        self.order_id = 0
+        self.reset_index()
 
     def init_model(self):
         self.__model.load_model()
@@ -87,30 +86,6 @@ class SimulationStrategyContext(TradingContext):
         return prediction
 
 
-    def reset_record(self):
-        """
-        レコードをリセットします。
-        """
-        self.order_id = 0
-        self.reset_index()
-
-    def set_order_id(self, order_id):
-        """
-        注文IDを設定します。
-
-        Args:
-            order_id (int): 注文ID。
-        """
-        self.order_id = order_id
-
-    def get_order_id(self) -> int:
-        """
-        注文IDを取得します。
-
-        Returns:
-            int: 注文ID。
-        """
-        return self.order_id
 
     def calculate_current_profit(self) -> float:
         """
@@ -128,7 +103,7 @@ class SimulationStrategyContext(TradingContext):
         利益分析を行い、インデックスをリセットします。
         最後にアイドル状態への遷移を記録します。
         """
-        self.reset_record()
+        self.reset_index()
         self.record_state_and_transition(STATE_IDLE)
 
     def change_to_position_state(self):
