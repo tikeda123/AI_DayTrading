@@ -1,5 +1,5 @@
 {
-	"editor.fontFamily": "'Courier New', monospace",
+	"editor.fontFamily": "'Courier New', monospace,\"JetBrains Mono\"",
 	"editor.detectIndentation": false,
 	"notebook.output.wordWrap": true,
 	"editor.copyWithSyntaxHighlighting": false,

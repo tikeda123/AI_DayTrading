@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 
 from common.config_manager import ConfigManager
 from common.trading_logger_db import TradingLoggerDB
-from common.data_loader_tran import DataLoaderTransactionDB
+from mongodb.data_loader_mongo import MongoDataLoader
+from common.constants import ACCOUNT_DATA
 
 
 class FXAccount:
@@ -34,7 +35,7 @@ class FXAccount:
         """
         self.config_manager = ConfigManager()
         self.logger = TradingLoggerDB()
-        self.data_loader = DataLoaderTransactionDB()
+        self.data_loader = MongoDataLoader()
         self.contract = self.config_manager.get('ACCOUNT', 'CONTRACT')
         self.init_amount = float(self.config_manager.get('ACCOUNT', 'INIT_AMOUNT'))
         self.amount = float(self.config_manager.get('ACCOUNT', 'AMOUNT'))
@@ -55,7 +56,6 @@ class FXAccount:
     def initialize_db_log(self):
         self.trn_df = None
         self.table_name = f"{self.contract}"+"_account"
-        self.data_loader.create_table(self.table_name,'fxaccount')
 
     def generate_filename(self) -> str:
         """ログファイルの完全なパスを生成して返します。
@@ -74,7 +74,7 @@ class FXAccount:
             cash_in (float): 入金額。
             cash_out (float): 出金額。
         """
-        serial = self.data_loader.get_next_serial(self.table_name)
+        serial = self.data_loader.get_next_serial(ACCOUNT_DATA)
 
         new_record = {
             'serial': serial,
@@ -90,7 +90,7 @@ class FXAccount:
         else:
             self.trn_df = pd.DataFrame([new_record])
 
-        self.data_loader.write_db(pd.DataFrame([new_record]),self.table_name)
+        self.data_loader.insert_data(pd.DataFrame([new_record]),coll_type=ACCOUNT_DATA)
 
     def save_log(self) -> bool:
         """取引ログをファイルに保存します。

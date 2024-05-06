@@ -1,8 +1,6 @@
 import sys,os
-import operator
 from datetime import datetime
 import pandas as pd
-from dependency_injector.wiring import inject, Provide
 
 # Import your necessary modules here
 # ...
@@ -14,8 +12,10 @@ parent_dir = os.path.dirname(current_dir)  # Aディレクトリーのパスを�
 sys.path.append(parent_dir)
 
 from common.config_manager import ConfigManager
+from common.constants import *
 from trading_analysis_kit.simulation_strategy_context import SimulationStrategyContext
 from trading_analysis_kit.ml_strategy import MLDataCreationStrategy
+from mongodb.data_loader_mongo import MongoDataLoader
 
 
 def check_arguments_and_format_dates(argv):
@@ -54,9 +54,9 @@ def create_ml_data_files_name(start_date,end_date,config_manager)->tuple:
     formatted_s_date = start_date[:-9].replace(':', '').replace('-', '').replace(' ', '')
     formatted_e_date = end_date[:-9].replace(':', '').replace('-', '').replace(' ', '')
 
-    data_ml_path = os.path.join(parent_dir, config_manager.get('AIML', 'DATAPATH'))
-    symbol = config_manager.get('ONLINE', 'SYMBOL')
-    interval = config_manager.get('ONLINE', 'INTERVAL')
+    data_ml_path = os.path.join(parent_dir, config_manager.get('AIML_ROLLING', 'DATAPATH'))
+    symbol = config_manager.get('SYMBOL')
+    interval = config_manager.get('INTERVAL')
 
     datafile = f"{symbol}_{formatted_s_date}_{formatted_e_date}_{interval}_price"
     # MLデータファイルのパス
@@ -69,25 +69,26 @@ def create_ml_data_files_name(start_date,end_date,config_manager)->tuple:
     return  ml_datafile_upper, ml_datafile_lower,mlnonts_datafile_upper,mlnonts_datafile_lower
 
 def create_table_name(config_manager)->str:
-    symbol = config_manager.get('ONLINE', 'SYMBOL')
-    interval = config_manager.get('ONLINE', 'INTERVAL')
+    symbol = config_manager.get('SYMBOL')
+    interval = config_manager.get('INTERVAL')
     return f'{symbol}_{interval}_market_data_tech'
 
 
 def create_ml_data(start_date,end_date,config_manager)->pd.DataFrame:
 
-    table_name = create_table_name(config_manager)
     strategy_context = MLDataCreationStrategy()
     context = SimulationStrategyContext(strategy_context)
-    context.load_data_from_datetime_period(start_date, end_date, table_name)
-    df = context.dataloader.get_raw()
+    context.load_data_from_datetime_period(start_date, end_date)
+    df = context.dataloader.get_raw_data()
+    print(df)
     context.run_trading(context)
-    result = context.get_data()
+    result = context.dataloader.get_raw_data()
     return result
 
 def create_time_series_data(df)->tuple:
     filtered_df = df[(df['bb_direction'].isin(['upper', 'lower'])) & (df['bb_profit'] != 0)]
 
+    print(filtered_df)
     df['entry_volume'] = 0
     # 各データセットを分けるためのリスト
     time_series_data_upper = []
@@ -98,8 +99,8 @@ def create_time_series_data(df)->tuple:
         start_index = max(0, index - 7)
         end_index = index + 1
 
-        df.loc[start_index:end_index,'entry_price'] = df.iloc[end_index]['entry_price']
-        df.loc[start_index:end_index,'entry_volume'] = df.iloc[end_index]['volume']
+        #df.loc[start_index:end_index,'entry_price'] = df.iloc[end_index]['entry_price']
+        #df.loc[start_index:end_index,'entry_volume'] = df.iloc[end_index]['volume']
 
         extracted_data = df.iloc[start_index:end_index]
         if df.iloc[index]['bb_direction'] == 'upper':
@@ -126,8 +127,13 @@ def main():
     ml_data = create_ml_data(start_date, end_date, config_manager)
     print(ml_data)
     upper_data, lower_data = create_time_series_data(ml_data)
+
+    db = MongoDataLoader()
+    db.insert_data(upper_data,coll_type=MARKET_DATA_ML_UPPER)
+    db.insert_data(lower_data,coll_type=MARKET_DATA_ML_LOWER)
     print(upper_data)
     print(lower_data)
+
     upper_data.to_csv(upper_data_filename, index=False)
     lower_data.to_csv(lower_data_filename, index=False)
 

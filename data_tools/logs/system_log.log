@@ -21,3 +21,176 @@
 2024-04-15 13:20:36,059 INFO: Table 'trading_log' and  created.
 2024-04-15 13:23:01,053 INFO: Sequence 'trading_log_serial_seq' already exists. No action taken.
 2024-04-15 13:23:01,088 INFO: Table 'trading_log' and  created.
+2024-05-03 11:50:29,649 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_60_['close', 'ema']_model.keras
+2024-05-03 11:50:30,150 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_60_['close', 'ema']_model.scaler
+2024-05-03 11:54:56,598 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 11:54:57,286 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 11:58:43,673 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 11:58:44,375 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 15:30:42,729 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 15:30:43,406 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 15:34:46,829 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 15:34:47,440 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 15:36:05,318 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 15:36:05,836 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 15:37:06,819 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 15:37:07,596 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 15:39:31,498 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 15:39:32,358 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 15:42:35,229 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 15:42:35,848 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 15:45:14,768 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 15:45:15,425 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 15:49:55,711 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 15:49:56,408 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 15:53:00,494 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 15:53:01,148 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 15:57:29,262 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 15:57:29,930 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 15:59:43,284 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 15:59:44,134 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 16:02:41,940 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 16:02:42,848 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 16:03:37,573 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 16:03:38,319 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 16:06:07,663 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 16:06:08,285 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 16:06:41,673 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 16:06:42,274 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 16:07:57,686 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 16:07:58,466 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 16:11:04,610 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 16:11:05,343 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 16:14:02,566 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 16:14:03,230 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 16:15:49,828 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 16:15:50,485 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-03 16:19:15,067 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-03 16:19:15,722 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 01:35:15,673 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 01:35:16,275 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 01:36:29,410 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 01:36:29,912 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 01:40:52,583 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 01:40:53,069 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 01:48:30,938 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 01:48:31,542 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 01:48:57,572 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 01:48:58,028 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 11:29:44,017 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 11:29:44,521 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 12:25:29,069 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 12:25:29,586 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 12:28:41,208 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 12:28:41,686 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 12:29:46,120 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 12:29:46,589 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 12:33:07,901 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 12:33:08,580 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 14:24:22,847 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 14:24:23,376 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 14:26:16,032 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 14:26:16,839 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 14:28:29,404 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 14:28:30,077 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 14:30:36,311 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 14:30:36,851 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 14:31:50,737 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 14:31:51,292 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 14:38:05,405 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 14:38:06,437 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 14:45:06,027 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 14:45:06,808 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 14:51:14,308 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 14:51:15,057 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 14:53:50,960 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 14:53:51,830 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 14:56:13,413 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 14:56:14,139 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 15:14:12,555 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 15:14:14,963 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 15:35:47,258 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 15:35:48,456 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 15:40:45,885 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 15:40:47,019 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 15:49:06,012 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 15:49:07,142 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 15:52:06,506 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 15:52:07,450 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 15:54:35,558 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 15:54:36,655 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 16:03:46,785 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 16:03:47,709 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 16:15:17,775 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 16:15:18,520 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 16:20:21,228 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 16:20:21,924 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 16:22:51,786 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 16:22:52,422 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 16:24:21,130 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 16:24:21,864 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 16:25:44,605 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 16:25:45,976 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-04 16:31:25,657 INFO: Sequence 'trading_log_serial_seq' already exists. No action taken.
+2024-05-04 16:31:25,707 INFO: Table 'trading_log' and  created.
+2024-05-04 16:31:25,990 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-04 16:31:26,779 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-05 02:07:13,561 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-05 02:07:14,031 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-05 02:09:19,559 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-05 02:09:20,001 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-05 02:11:23,998 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-05 02:11:24,454 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-05 02:12:48,430 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-05 02:12:48,894 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-05 02:13:38,786 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-05 02:13:39,267 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-05 02:14:33,875 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-05 02:14:34,354 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-05 02:20:42,163 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-05 02:20:42,632 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-05 02:31:59,836 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-05 02:32:00,311 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-05 02:35:06,014 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-05 02:35:06,489 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-05 02:37:04,931 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-05 02:37:05,410 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-05 02:41:59,210 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-05 02:41:59,696 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-05 02:48:35,175 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-05 02:48:35,626 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-05 02:50:44,086 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-05 02:50:44,589 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-05 02:52:11,257 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-05 02:52:11,717 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-05 03:00:49,724 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-05 03:00:50,205 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-05 03:03:56,111 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.keras
+2024-05-05 03:03:56,581 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/ETHUSDT_30_['close', 'ema']_model.scaler
+2024-05-05 19:30:04,747 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 19:38:53,574 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 19:44:32,597 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 19:46:52,608 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 22:36:26,799 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 22:38:34,970 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 22:38:45,158 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 23:08:30,342 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 23:08:56,070 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 23:19:27,539 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 23:19:37,668 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 23:23:06,124 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 23:23:16,218 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 23:25:44,431 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 23:25:54,641 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 23:27:24,129 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 23:27:36,060 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 23:28:58,629 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 23:29:10,549 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 23:32:46,278 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 23:32:58,330 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 23:37:00,518 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 23:37:12,588 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 23:42:58,686 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 23:43:10,934 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 23:48:23,205 INFO: ユニークインデックスを作成しました: start_at
+2024-05-05 23:48:54,179 INFO: ユニークインデックスを作成しました: start_at

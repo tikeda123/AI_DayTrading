@@ -30,10 +30,10 @@ def main():
 
     """
     entry_price = 20000
-    serial = fx_transaction.trade_entry('SHORT',  1, entry_price, '2023-01-03 19:00:00',None)
+    serial = fx_transaction.trade_entry('SHORT',  1, entry_price, '2023-01-03T19:00:00',"UPPER")
     #flag,losscut_price = fx_transaction.check_losscut(serial,21000)
     #fx_transaction.trade_exit(serial, 'STAGE1',losscut_price, '2023-01-03 20:00:00')
-    fx_transaction.trade_exit(serial, entry_price, '2023-01-03 20:00:00')
+    fx_transaction.trade_exit(serial, entry_price, '2023-01-03T20:00:00')
 
 if __name__ == "__main__":
     main()

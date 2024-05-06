@@ -2,6 +2,7 @@ import pandas as pd
 import os,sys
 
 from common.constants import *
+#from trading_analysis_kit.simulation_strategy_context import SimulationStrategyContext
 
 class State:
     """
@@ -49,10 +50,7 @@ class IdleState(State):
         特定のイベント(EVENT_ENTER_PREPARATION)が発生した場合、エントリー準備状態に遷移します。
         それ以外のイベントは無効として扱います。
         """
-        if event == EVENT_POSITION:
-            context.log_transaction( "エントリーイベントが発生。ポジション状態に遷移します。")
-            context.set_state(PositionState())
-        elif event == EVENT_ENTER_PREPARATION:
+        if event == EVENT_ENTER_PREPARATION:
             context.log_transaction("エントリー準備状態に遷移します。")
             context.set_state(EntryPreparationState())
         elif event == EVENT_IDLE:
@@ -71,11 +69,16 @@ class IdleState(State):
 
         対応するトレードの実行処理を行います。
         """
-        if context.is_first_column_greater_than_second(context.get_current_index(), COLUMN_CLOSE, COLUMN_UPPER_BAND2):
+        if context.is_first_column_greater_than_second(index, COLUMN_CLOSE, COLUMN_UPPER_BAND2):
+            context.dataloader.set_bb_direction(BB_DIRECTION_UPPER)
             context.strategy.Idel_event_execute(context)
-        #if index < TIME_SERIES_PERIOD:
-        #    return None
-        context.strategy.Idel_event_execute(context)
+        elif context.is_first_column_less_than_second(index, COLUMN_CLOSE, COLUMN_LOWER_BAND2):
+            context.dataloader.set_bb_direction(BB_DIRECTION_LOWER)
+            context.strategy.Idel_event_execute(context)
+        else:
+            #context.record_state = STATE_IDLE
+            #context.log_transaction('')
+            pass
 
 class EntryPreparationState(State):
     """
@@ -112,8 +115,6 @@ class EntryPreparationState(State):
         context.strategy.EntryPreparation_event_execute(context)
 
 
-
-
 class PositionState(State):
     """
     ポジション状態を表すクラスです。この状態では、トレードが実行され、ポジションを保有しています。
@@ -139,5 +140,9 @@ class PositionState(State):
         """
         状態に応じたイベント処理メソッド:
         """
-        context.strategy.PositionState_event_exit_execute(context)
+        event = context.strategy.decide_on_position_exit(context, index)
+        if event == 'PositionState_event_exit_execute':
+            context.strategy.PositionState_event_exit_execute(context)
+        else:
+            context.strategy.PositionState_event_continue_execute(context)
 

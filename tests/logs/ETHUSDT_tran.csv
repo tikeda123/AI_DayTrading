@@ -1,0 +1,2 @@
+,serial,init_equity,equity,leverage,contract,qty,entry_price,losscut_price,exit_price,limit_price,pl,pred,tradetype,stage,losscut,entrytime,exittime,direction,startup_flag
+0,20,1000.0,996.7,3.0,ETHUSDT,0.15,20000.0,20100.0,20000.0,26666.666666666668,-3.3000000000000003,1,SHORT_EXIT,0,0,2023-01-03 19:00:00,2023-01-03T20:00:00,UPPER,1

@@ -95,14 +95,14 @@ LOG_MESSAGE_TRANSACTION = 'go to {state}: {bb_direction}'
 LOG_MESSAGE_STATE_AND_TRANSITION = 'State and Transition Record'
 LOG_TRANSITION_TO_ENTRY_PREPARATION = "ボリンジャーバンドに触れた。エントリー準備状態に遷移します。"
 LOG_TRANSITION_TO_POSITION = "エントリーイベントが発生。ポジション状態に遷移します。"
-LOG_TRANSITION_TO_IDLE_FROM_POSITION = "ポジションを売却。アイドル状態に遷移します。"
+LOG_TRANSITION_TO_IDLE_FROM_POSITION = "アイドル状態に遷移します。"
 LOG_INVALID_EVENT = "エラー: 現在の状態では '{event}' イベントは無効です。"
 # 追加の定数定義例
 
 # ロギングメッセージ
 LOG_MESSAGE_ENTER_PREPARATION = "ボリンジャーバンドに触れた。エントリー準備状態に遷移します。"
 LOG_MESSAGE_ENTER_POSITION = "エントリーイベントが発生。ポジション状態に遷移します。"
-LOG_MESSAGE_EXIT_POSITION = "ポジションを売却。アイドル状態に遷移します。"
+LOG_MESSAGE_EXIT_POSITION = "アイドル状態に遷移します。"
 LOG_MESSAGE_INVALID_EVENT = "エラー: 現在の状態では '{event}' イベントは無効です。"
 LOG_MESSAGE_PREDICTION = 'prediction:{prediction}'
 LOG_MESSAGE_LOSSCUT_CHECK = 'is_losscut:{is_losscut},current_profit:{current_profit}'
@@ -152,3 +152,16 @@ WAIT_FOR_ENTRY_COUNT = 1
 #bybit api
 MAX_TRYOUT_HTTP_REQUEST = 3
 MAX_TRYOUT_HTTP_REQUEST_SLEEP = 5
+
+#monodb collection name
+MARKET_DATA = "market_data"
+MARKET_DATA_TECH = "market_data_tech"
+MARKET_DATA_ML_UPPER = "market_data_ml_UPPER"
+MARKET_DATA_ML_LOWER = "market_data_ml_LOWER"
+TRADING_LOG = "trading_log"
+TRANSACTION_DATA = "transaction_data"
+ACCOUNT_DATA = "account_data"
+
+#TRADING_LOG_SEQ = "trading_log_seq"
+#TRANSACTION_DATA_SEQ = "transaction_data_seq"
+#ACCOUNT_DATA_SEQ = "account_data_seq"

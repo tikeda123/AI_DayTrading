@@ -14,7 +14,7 @@ sys.path.append(parent_dir)
 
 from common.trading_logger_db import TradingLoggerDB
 from common.config_manager import ConfigManager
-from common.data_loader_db import DataLoaderDB
+from mongodb.data_loader_mongo import MongoDataLoader
 from common.constants import *
 
 
@@ -40,14 +40,16 @@ class TechnicalAnalyzer:
             config_manager (ConfigManager): 設定管理に使用するConfigManagerのインスタンス。
             trading_logger (TradingLogger): ログ記録に使用するTradingLoggerのインスタンス。
         """
-        self.__data_loader = DataLoaderDB()
+        #self.__data_loader = DataLoaderDB()
+        self.__data_loader = MongoDataLoader()
         self.__config_manager = ConfigManager()
-        self.__logger = TradingLoggerDB()
+        #self.__logger = TradingLoggerDB()
+
 
         if df is not None:
             self.__data = df
         else:
-            self.__data = self.__data_loader.get_raw()
+            self.__data = None #self.__data_loader.get_raw()
 
     def load_data_from_datetime_period(self, start_datetime, end_datetime, table_name=None)->pd.DataFrame:
         """
@@ -90,9 +92,13 @@ class TechnicalAnalyzer:
         Returns:
             pd.DataFrame: ロードしたデータフレーム。
         """
+        """
         table_name = self.__data_loader.make_table_name(table_name)
         self.__data_loader.load_data_from_db(table_name)
         self.__data = self.__data_loader.get_raw()
+        """
+        self.__data_loader.load_data(MARKET_DATA)
+        self.__data = self.__data_loader.get_df_raw()
         return self.__data
 
     def load_data_from_tech_db(self, table_name=None)->pd.DataFrame:
@@ -106,7 +112,7 @@ class TechnicalAnalyzer:
             pd.DataFrame: ロードしたデータフレーム。
         """
         table_name = self.__data_loader.make_table_name_tech()
-        self.__logger.log_verbose_message(table_name)
+        #self.__logger.log_verbose_message(table_name)
         self.__data_loader.load_data_from_db(table_name)
         self.__data = self.__data_loader.get_raw()
         return self.__data
@@ -324,9 +330,6 @@ class TechnicalAnalyzer:
         return self.__data
 
 def main():
-    container = configure_container(name=__name__)
-    from common.init_common_module import init_common_module
-    init_common_module()
 
     analyzer = TechnicalAnalyzer()
     table_name = 'BTCUSDT_240_market_data'

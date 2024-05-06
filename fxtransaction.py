@@ -5,9 +5,9 @@ import os,sys
 
 from common.trading_logger_db import TradingLoggerDB
 from common.config_manager import ConfigManager
-from common.data_loader_tran import DataLoaderTransactionDB
 from fxaccount import FXAccount
-
+from mongodb.data_loader_mongo import MongoDataLoader
+from common.constants import TRANSACTION_DATA
 
 class FXTransactionDataFrame:
     """
@@ -32,7 +32,7 @@ class FXTransactionDataFrame:
         """
         self.__logger = TradingLoggerDB()
         self.__config_manager = ConfigManager()
-        self.__data_loader = DataLoaderTransactionDB()
+        self.__data_loader = MongoDataLoader()
         self.startup_flag = True
         self.initialize_db_log()
 
@@ -69,7 +69,6 @@ class FXTransactionDataFrame:
         self.__fxtrn = pd.DataFrame(columns=self.__fxcol_names)
         self.__contract = self.__config_manager.get('ACCOUNT', 'CONTRACT')
         self.table_name = f"{self.__contract}"+"_fxtransaction"
-        self.__data_loader.create_table(self.table_name,'fxtransaction')
 
     def _create_filename(self):
         """
@@ -179,7 +178,10 @@ class FXTransactionDataFrame:
         else:
             self.__fxtrn = new_record_df
 
-        self.__data_loader.write_db(new_record_df,self.table_name)
+        new_record_df['exittime'] = pd.to_datetime(new_record_df['exittime'], errors='coerce')
+        new_record_df['exittime'] = new_record_df['exittime'].apply(lambda x: x.to_pydatetime() if pd.notnull(x) else None)
+
+        self.__data_loader.insert_data(new_record_df,coll_type=TRANSACTION_DATA)
 
     def _update_fxtrn_dataframe(self, serial):
         """
@@ -188,8 +190,8 @@ class FXTransactionDataFrame:
         Args:
             serial (int): シリアル番号。
         """
-        fd = self.__fxtrn[self.__fxtrn['serial'] == serial]
-        self.__data_loader.update_db_by_serial(self.table_name,fd,serial)
+        df = self.__fxtrn[self.__fxtrn['serial'] == serial]
+        self.__data_loader.update_data_by_serial(serial ,df,coll_type=TRANSACTION_DATA)
 
     def save_fxtrn_log(self)->bool:
         """
@@ -228,7 +230,7 @@ class FXTransactionDataFrame:
         Returns:
             int: 次のシリアル番号。
         """
-        return self.__data_loader.get_next_serial(self.table_name)
+        return self.__data_loader.get_next_serial(coll_type=TRANSACTION_DATA)
 
 
 
@@ -322,7 +324,6 @@ class FXTransaction:
 
 
     def get_losscut_price(self,serial):
-        print(f'serial:{serial},losscut_price:{self.__fxtrn.get_fd(serial,"losscut_price")}')
         return self.__fxtrn.get_fd(serial,'losscut_price')
 
     def trade_entry(self, tradetype: str, pred: int, entry_price: float, entry_time : str, direction: str)->int:
@@ -360,11 +361,11 @@ class FXTransaction:
         # トレード番号を取得
         serial = self.__fxtrn.get_next_serial()
         losscut_price = self.calculate_losscut_price(entry_price,tradetype)
-
+        exit_time = None
         # データフレームに新規レコードを追加
         self.__fxtrn._new_fxtrn_dataframe(serial, init_equity, equity, self.__leverage, self.__contract,
                                      qty, entry_price, losscut_price,0, limit_price, 0,
-                                     pred, tradetype, 0, self.__losscut, entry_time, None, direction)
+                                     pred, tradetype, 0, self.__losscut, entry_time, exit_time, direction)
         # ログに出力
         self.__logger.log_transaction(entry_time,f'Entry: {tradetype}, pred:{pred}, entry_price{entry_price}')
         self.__fxtrn.save_fxtrn_log()

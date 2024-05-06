@@ -1,6 +1,6 @@
 {
-    "SYMBOL"            :"ETHUSDT",
-    "INTERVAL"          :15,
+	"SYMBOL"            :"BTCUSDT",
+    "INTERVAL"          :60,
     "ONLINE":
     {
         "DBNAME"        :"trading",
@@ -25,6 +25,14 @@
         "PASSWORD"      :"password",
         "HOST"          :"localhost"
     },
+	"MONGODB":
+	{
+        "HOST"          :"localhost",
+        "PORT"      	:"27017",
+        "USERNAME"      :"root",
+		"PASSWORD"      :"password",
+		"DATABASE"    	:"trading"
+    },
     "ACCOUNT":
     {
         "CONTRACT"      :"ETHUSDT",
@@ -34,16 +42,17 @@
         "LEVERAGE"      :3,
         "FTC"           :0,
         "PTC"           :0.00055,
-        "LOSSCUT"       :0.03,
-        "TRAILING_RATE"     :0.5,
+        "LOSSCUT"       :0.015,
+        "TRAILING_STOP_DUR"      :1,
+        "TRAILING_STOP_RATE"     :0.01,
         "ENTRY_RATE"        :0.003
     },
 
     "LOG":
     {
-        "LOGLVL"        :10,
-        "VERBOSE"       :true,
-        "DB_FLAG"       :true,
+        "LOGLVL"        :20,
+        "VERBOSE"       :false,
+        "DB_FLAG"       :false,
         "LOGPATH"       :"logs/",
         "LOGFNAME"      :"btc_usdt.log",
         "DB_TABLE_NAME" :"trading_log",
@@ -53,9 +62,12 @@
     "AIML_ROLLING":
     {
         "DATAPATH"          :"data/data_rolling/",
-        "TARGET_COLUMN"     :["bb_profit","bb_profit"],
-		"FEATURE_COLUMNS"   :["ema","sma","close","macdhist","macd_diff","macdsignal","macd","rsi","upper_diff","lower_diff","middle_diff","volume_ma","dmi_diff"]
-    },
+		"LEARN_DATAPATH"    :"data/data_ml/",
+		"LOWERDATA_FILE"    :"BTCUSDT_20200101_20230101_60_price_lower_mlts.csv",
+		"UPPERDATA_FILE"    :"BTCUSDT_20200101_20230101_60_price_upper_mlts.csv",
+        "TARGET_COLUMN"     :["close","ema"],
+        "FEATURE_COLUMNS"   :["ema","sma","close","macdhist","macd_diff","macdsignal","macd","rsi","upper_diff","lower_diff","middle_diff","volume_ma","dmi_diff"]
+	},
     "TECHNICAL" :
     {
         "BB" :

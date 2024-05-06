@@ -11,7 +11,6 @@ parent_dir = os.path.dirname(current_dir)  # Aディレクトリーのパスを�
 sys.path.append(parent_dir)
 
 from common.constants import *
-from common.trading_logger import TradingLogger
 from bybit_api.bybit_base_api import BybitBaseAPI, CATEGORY
 
 class BybitPositionManager(BybitBaseAPI):

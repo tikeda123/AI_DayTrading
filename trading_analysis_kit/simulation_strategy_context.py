@@ -50,16 +50,24 @@ class SimulationStrategyContext(TradingContext):
 
         super().__init__(strategy)  # 親クラスのコンストラクタを呼び出す
         self.fx_transaction = FXTransaction()
-        self.__model = init_inference_prediction_rolling_manager(TransformerPredictionRollingModel)
-        self.init_model()
-        self.reset_index()
+        #self.__model = init_inference_prediction_rolling_manager(TransformerPredictionRollingModel)
+        #self.init_model()
 
     def init_model(self):
         self.__model.load_model()
-        #self.__model.load_and_prepare_data("202-01-01 00:00:00", "2024-01-01 00:00:00",test_size=0.2, random_state=None)
-        #self.__model.evaluate_models()
 
 
+    def record_entry_exit_price(self):
+        """
+        エントリー価格と出口価格を記録します。
+        """
+        # エントリー価格と出口価格を記録
+        entry_index = self.dataloader.ts.entry_index
+        exit_index = self.dataloader.ts.exit_index
+
+        self.dataloader.set_df_fromto(entry_index, exit_index, COLUMN_ENTRY_PRICE, self.dataloader.get_entry_price())
+        self.dataloader.set_df_fromto(entry_index, exit_index, COLUMN_EXIT_PRICE, self.dataloader.get_exit_price())
+        self.dataloader.set_df_fromto(entry_index, exit_index, COLUMN_BB_DIRECTION, self.dataloader.get_bb_direction())
 
     def prediction_trend(self):
         """
@@ -79,7 +87,9 @@ class SimulationStrategyContext(TradingContext):
         self.log_transaction(f"Prediction: {prediction}")
         return prediction
         """
-        df = self.dataloader.get_df_fromto(self.current_index-7, self.current_index)       #target = df[self.prediction_manager.get_feature_columns()]
+
+        current_index = self.dataloader.get_current_index()
+        df = self.dataloader.get_df_fromto(current_index-7, current_index)       #target = df[self.prediction_manager.get_feature_columns()]
         prediction = self.__model.predict_rolling_model(df)
         self.set_prediction(prediction)
         self.log_transaction(f"Prediction: {prediction}")
@@ -90,11 +100,18 @@ class SimulationStrategyContext(TradingContext):
     def calculate_current_profit(self) -> float:
         """
         現在の利益を計算し、結果をデータローダーに保存します。
+        ここでは、エントリー価格と現在の価格の差を利益を計算します。（Longを基本としています）
 
         Returns:
             float: 現在の利益。
         """
-        pass
+        current_price = self.dataloader.get_close_price()
+        entry_price = self.dataloader.get_entry_price()
+        current_profit = current_price - entry_price
+
+        self.dataloader.set_current_profit(current_profit)
+        self.log_transaction(f'Current profit: {current_profit},current price: {current_price},entry price: {entry_price}')
+        return current_profit
 
     def change_to_idle_state(self):
         """
@@ -103,7 +120,7 @@ class SimulationStrategyContext(TradingContext):
         利益分析を行い、インデックスをリセットします。
         最後にアイドル状態への遷移を記録します。
         """
-        self.reset_index()
+        self.dataloader.ts.reset_index()
         self.record_state_and_transition(STATE_IDLE)
 
     def change_to_position_state(self):
@@ -115,6 +132,8 @@ class SimulationStrategyContext(TradingContext):
         Args:
             direction (str): トレードの方向を示す文字列。
         """
+        self.dataloader.ts.entry_index = self.dataloader.get_current_index()
+        self.dataloader.set_entry_price(self.dataloader.get_close_price())
         self.record_state_and_transition(STATE_POSITION)
 
     def change_to_entrypreparation_state(self):
@@ -138,7 +157,6 @@ class SimulationStrategyContext(TradingContext):
         """
         # 状態と遷移を記録
         self.log_transaction(f'go to {state}')
-        self.record_state(state)
         self._state.handle_request(self, state)
 
 
