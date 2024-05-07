@@ -7,7 +7,8 @@ parent_dir = os.path.dirname(current_dir)
 sys.path.append(parent_dir)
 
 from common.utils import format_dates, exit_with_message
-from common.data_loader_db import DataLoaderDB
+from common.constants import *
+from mongodb.data_loader_mongo import MongoDataLoader
 from bybit_api.bybit_data_fetcher import BybitDataFetcher
 from trading_analysis_kit.technical_analyzer import TechnicalAnalyzer
 
@@ -61,13 +62,15 @@ def process_data_with_db_flag(result):
         result (DataFrame): データフレーム形式の取得データ。このデータはデータベースに保存され、分析に使用されます。
     """
 
-    data_loader_db = DataLoaderDB()
-    data_loader_db.import_to_db(dataframe=result)
+    data_loader_db = MongoDataLoader()
+    df = data_loader_db.convert_marketdata(result)
+    data_loader_db.insert_data(df,coll_type=MARKET_DATA)
+
 
     analyzer = TechnicalAnalyzer()
     analyzer.load_data_from_db()
     analysis_result = analyzer.analyze()
-    analyzer.import_to_db()
+    data_loader_db.insert_data(analysis_result,coll_type=MARKET_DATA_TECH)
 
     print(analysis_result)
     print("データはデータベースに保存されました")

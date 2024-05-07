@@ -16,6 +16,7 @@ parent_dir = os.path.dirname(current_dir)  # Aディレクトリーのパスを�
 sys.path.append(parent_dir)
 
 from common.constants import *
+from mongodb.data_loader_mongo import MongoDataLoader
 
 from aiml.transformer_prediction_rolling_model import TransformerPredictionRollingModel
 
@@ -55,11 +56,20 @@ class TransformerPredictionTSModel(TransformerPredictionRollingModel):
             l2_reg (float): L2正則化の係数。
         """
         super().__init__()
+        self._dataloader = MongoDataLoader()
 
-    def load_and_prepare_data_time_series_from_csv(self, csv_file_path, test_size=0.2, random_state=None):
-        data = self.load_data_from_csv(csv_file_path)
+    def load_and_prepare_data_time_series(self,
+                                          start_date,
+                                          end_date,
+                                          coll_type,
+                                          test_size=0.2,
+                                          random_state=None):
+        data = self._dataloader.load_data_from_datetime_period(start_date, end_date, coll_type)
         scaled_sequences, targets = self._prepare_sequences_time_series(data, TIME_SERIES_PERIOD-1, self.feature_columns)
-        return train_test_split(scaled_sequences, targets, test_size=test_size, random_state=random_state)
+        return train_test_split(scaled_sequences,
+                                targets,
+                                test_size=test_size,
+                                random_state=random_state)
 
     def _prepare_sequences_time_series(self, data,ftime_steps,feature_columns) -> Tuple[np.ndarray, np.ndarray]:
         #  TIME_SERIES_PERIOD-1, self.feature_columns
@@ -94,9 +104,11 @@ def main():
 
     # モデルの初期化
     model = TransformerPredictionTSModel()
-    #learning_datafile = 'BTCUSDT_20210101000_20230901000_60_price_upper_mlts.csv'
-    learning_datafile = 'BTCUSDT_20200101_20230101_60_price_lower_mlts.csv'
-    x_train, x_test, y_train, y_test = model.load_and_prepare_data_time_series_from_csv(learning_datafile)
+
+    x_train, x_test, y_train, y_test = model.load_and_prepare_data_time_series(
+                                                                    '2021-01-04 00:00:00',
+                                                                    '2024-01-01 00:00:00',
+                                                                    MARKET_DATA_ML_UPPER)
     # データのロードと前処理
     #x_train, x_test, y_train, y_test = model.load_and_prepare_data('2021-01-01 00:00:00', '2022-02-01 00:00:00')
 
@@ -116,8 +128,11 @@ def main():
     print(conf_matrix)
 
 
-    test_datafile = 'BTCUSDT_20230901000_20231201000_60_price_upper_mlts.csv'
-    x_train, x_test, y_train, y_test = model.load_and_prepare_data_time_series_from_csv(learning_datafile)
+    x_train, x_test, y_train, y_test = model.load_and_prepare_data_time_series(
+                                                            '2024-01-01 00:00:00',
+                                                            '2024-06-01 00:00:00',
+                                                            MARKET_DATA_ML_UPPER,
+                                                            test_size=0.95, random_state=None)
     # データのロードと前処理
     #x_train, x_test, y_train, y_test = model.load_and_prepare_data('2021-01-01 00:00:00', '2022-02-01 00:00:00')
 

@@ -50,7 +50,7 @@
 
     "LOG":
     {
-        "LOGLVL"        :20,
+        "LOGLVL"        :10,
         "VERBOSE"       :false,
         "DB_FLAG"       :false,
         "LOGPATH"       :"logs/",

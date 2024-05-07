@@ -22,7 +22,7 @@ parent_dir = os.path.dirname(current_dir)  # Aディレクトリーのパスを�
 sys.path.append(parent_dir)
 
 from common.trading_logger import TradingLogger
-from common.data_loader_db import DataLoaderDB
+from mongodb.data_loader_mongo import MongoDataLoader
 from common.utils import get_config
 from common.constants import *
 
@@ -67,7 +67,7 @@ class TransformerPredictionRollingModel(PredictionModel):
             config (Dict[str, Any]): モデルの設定値のディクショナリ。
         """
         self.logger = TradingLogger()
-        self.data_loader = DataLoaderDB()
+        self.data_loader = MongoDataLoader()
         self.config = get_config("AIML_ROLLING")
 
         if symbol is None:
@@ -95,7 +95,7 @@ class TransformerPredictionRollingModel(PredictionModel):
         self.target_column = self.config["TARGET_COLUMN"]
         self.filename = f'{self.symbol}_{self.interval}_{self.target_column}_model'
 
-    def get_data_loader(self) -> DataLoaderDB:
+    def get_data_loader(self) -> MongoDataLoader:
         """
         データローダーを取得する。
 
@@ -153,10 +153,22 @@ class TransformerPredictionRollingModel(PredictionModel):
        scaled_sequences, targets = self._prepare_sequences(data)
        return train_test_split(scaled_sequences, targets, test_size=test_size, random_state=random_state)
 
-    def load_and_prepare_data(self, start_datetime, end_datetime, test_size=0.5, random_state=None):
-       data = self.data_loader.load_data_from_datetime_period(start_datetime, end_datetime, self.table_name)
+    def load_and_prepare_data(self,
+                              start_datetime,
+                              end_datetime,
+                              test_size=0.5,
+                              random_state=None):
+
+       data = self.data_loader.load_data_from_datetime_period(
+                                               start_datetime,
+                                            end_datetime,
+                                            self.table_name)
        scaled_sequences, targets = self._prepare_sequences(data)
-       return train_test_split(scaled_sequences, targets, test_size=test_size, random_state=random_state)
+
+       return train_test_split(scaled_sequences,
+                                targets,
+                                test_size=test_size,
+                                random_state=random_state)
 
     def _prepare_sequences(self, data):
        """データからシーケンスとターゲットを準備します。
@@ -182,7 +194,6 @@ class TransformerPredictionRollingModel(PredictionModel):
        # 特徴量のスケーリング
        scaled_sequences = np.array([self.scaler.fit_transform(seq) for seq in sequences])
        return scaled_sequences, targets
-
 
 
     def create_transformer_model(self, input_shape, num_heads=8, dff=256, rate=0.1, l2_reg=0.01):
@@ -225,7 +236,12 @@ class TransformerPredictionRollingModel(PredictionModel):
         self.model.fit(x_train, y_train, epochs=epochs, batch_size=batch_size)
 
 
-    def train_with_cross_validation(self, data: np.ndarray, targets: np.ndarray, epochs: int = PARAM_EPOCHS, batch_size: int = 32, n_splits: int = 2) -> list:
+    def train_with_cross_validation(self,
+                                    data: np.ndarray,
+                                    targets: np.ndarray,
+                                    epochs: int = PARAM_EPOCHS,
+                                    batch_size: int = 32,
+                                    n_splits: int = 2) -> list:
         """
         K-Foldクロスバリデーションを用いてモデルを訓練する。
 

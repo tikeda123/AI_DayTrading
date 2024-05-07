@@ -1,224 +1,167 @@
 Serial,Date,Message,serial,date,message
-,,,16162.0,2021-01-02 08:00:00,go to EntryPreparationState
-,,,16163.0,2021-01-02 08:00:00,エントリー準備状態に遷移します。
-,,,16164.0,2021-01-02 09:00:00,go to PositionState
-,,,16165.0,2021-01-02 09:00:00,エントリーイベントが発生。ポジション状態に遷移します。
-,,,16166.0,2021-01-02 10:00:00,"Current profit: 54.5,current price: 29701.5,entry price: 29647.0"
-,,,16167.0,2021-01-02 11:00:00,"Current profit: 135.5,current price: 29782.5,entry price: 29647.0"
-,,,16168.0,2021-01-02 12:00:00,"Current profit: 997.5,current price: 30644.5,entry price: 29647.0"
-,,,16169.0,2021-01-02 13:00:00,"Current profit: 1963.0,current price: 31610.0,entry price: 29647.0"
-,,,16170.0,2021-01-02 14:00:00,"Current profit: 1698.0,current price: 31345.0,entry price: 29647.0"
-,,,16171.0,2021-01-02 15:00:00,"Current profit: 2082.0,current price: 31729.0,entry price: 29647.0"
-,,,16172.0,2021-01-02 16:00:00,"Current profit: 2907.5,current price: 32554.5,entry price: 29647.0"
-,,,16173.0,2021-01-02 17:00:00,"Current profit: 3265.5,current price: 32912.5,entry price: 29647.0"
-,,,16174.0,2021-01-02 18:00:00,"Current profit: 3433.5,current price: 33080.5,entry price: 29647.0"
-,,,16175.0,2021-01-02 19:00:00,"Current profit: 3458.0,current price: 33105.0,entry price: 29647.0"
-,,,16176.0,2021-01-02 20:00:00,"Current profit: 1259.0,current price: 30906.0,entry price: 29647.0"
-,,,16177.0,2021-01-02 20:00:00,go to IdleState
-,,,16178.0,2021-01-02 20:00:00,アイドル状態に遷移します。
-,,,16179.0,2021-01-03 07:00:00,go to EntryPreparationState
-,,,16180.0,2021-01-03 07:00:00,エントリー準備状態に遷移します。
-,,,16181.0,2021-01-03 08:00:00,go to PositionState
-,,,16182.0,2021-01-03 08:00:00,エントリーイベントが発生。ポジション状態に遷移します。
-,,,16183.0,2021-01-03 09:00:00,"Current profit: -174.0,current price: 34255.5,entry price: 34429.5"
-,,,16184.0,2021-01-03 10:00:00,"Current profit: -489.0,current price: 33940.5,entry price: 34429.5"
-,,,16185.0,2021-01-03 11:00:00,"Current profit: 49.0,current price: 34478.5,entry price: 34429.5"
-,,,16186.0,2021-01-03 12:00:00,"Current profit: -280.5,current price: 34149.0,entry price: 34429.5"
-,,,16187.0,2021-01-03 13:00:00,"Current profit: -506.0,current price: 33923.5,entry price: 34429.5"
-,,,16188.0,2021-01-03 14:00:00,"Current profit: -545.0,current price: 33884.5,entry price: 34429.5"
-,,,16189.0,2021-01-03 15:00:00,"Current profit: -906.5,current price: 33523.0,entry price: 34429.5"
-,,,16190.0,2021-01-03 16:00:00,"Current profit: -1697.5,current price: 32732.0,entry price: 34429.5"
-,,,16191.0,2021-01-03 16:00:00,go to IdleState
-,,,16192.0,2021-01-03 16:00:00,アイドル状態に遷移します。
-,,,16193.0,2021-01-04 09:00:00,go to EntryPreparationState
-,,,16194.0,2021-01-04 09:00:00,エントリー準備状態に遷移します。
-,,,16195.0,2021-01-04 10:00:00,go to PositionState
-,,,16196.0,2021-01-04 10:00:00,エントリーイベントが発生。ポジション状態に遷移します。
-,,,16197.0,2021-01-04 11:00:00,"Current profit: 446.0,current price: 30675.0,entry price: 30229.0"
-,,,16198.0,2021-01-04 12:00:00,"Current profit: 942.0,current price: 31171.0,entry price: 30229.0"
-,,,16199.0,2021-01-04 13:00:00,"Current profit: 1150.0,current price: 31379.0,entry price: 30229.0"
-,,,16200.0,2021-01-04 14:00:00,"Current profit: 1833.0,current price: 32062.0,entry price: 30229.0"
-,,,16201.0,2021-01-04 15:00:00,"Current profit: 1491.0,current price: 31720.0,entry price: 30229.0"
-,,,16202.0,2021-01-04 16:00:00,"Current profit: 1076.0,current price: 31305.0,entry price: 30229.0"
-,,,16203.0,2021-01-04 17:00:00,"Current profit: 794.0,current price: 31023.0,entry price: 30229.0"
-,,,16204.0,2021-01-04 18:00:00,"Current profit: 947.5,current price: 31176.5,entry price: 30229.0"
-,,,16205.0,2021-01-04 19:00:00,"Current profit: 1450.5,current price: 31679.5,entry price: 30229.0"
-,,,16206.0,2021-01-04 20:00:00,"Current profit: 1064.5,current price: 31293.5,entry price: 30229.0"
-,,,16207.0,2021-01-04 21:00:00,"Current profit: 812.0,current price: 31041.0,entry price: 30229.0"
-,,,16208.0,2021-01-04 22:00:00,"Current profit: 1137.5,current price: 31366.5,entry price: 30229.0"
-,,,16209.0,2021-01-04 23:00:00,"Current profit: 1795.0,current price: 32024.0,entry price: 30229.0"
-,,,16210.0,2021-01-04 23:00:00,go to IdleState
-,,,16211.0,2021-01-04 23:00:00,アイドル状態に遷移します。
-,,,16212.0,2021-01-06 20:00:00,go to EntryPreparationState
-,,,16213.0,2021-01-06 20:00:00,エントリー準備状態に遷移します。
-,,,16214.0,2021-01-06 21:00:00,go to PositionState
-,,,16215.0,2021-01-06 21:00:00,エントリーイベントが発生。ポジション状態に遷移します。
-,,,16216.0,2021-01-06 22:00:00,"Current profit: 96.0,current price: 36044.5,entry price: 35948.5"
-,,,16217.0,2021-01-06 23:00:00,"Current profit: 827.0,current price: 36775.5,entry price: 35948.5"
-,,,16218.0,2021-01-07 00:00:00,"Current profit: 1235.0,current price: 37183.5,entry price: 35948.5"
-,,,16219.0,2021-01-07 01:00:00,"Current profit: 968.5,current price: 36917.0,entry price: 35948.5"
-,,,16220.0,2021-01-07 02:00:00,"Current profit: 1062.5,current price: 37011.0,entry price: 35948.5"
-,,,16221.0,2021-01-07 03:00:00,"Current profit: 1588.5,current price: 37537.0,entry price: 35948.5"
-,,,16222.0,2021-01-07 04:00:00,"Current profit: 1547.5,current price: 37496.0,entry price: 35948.5"
-,,,16223.0,2021-01-07 05:00:00,"Current profit: 1396.5,current price: 37345.0,entry price: 35948.5"
-,,,16224.0,2021-01-07 06:00:00,"Current profit: 1183.0,current price: 37131.5,entry price: 35948.5"
-,,,16225.0,2021-01-07 07:00:00,"Current profit: 893.5,current price: 36842.0,entry price: 35948.5"
-,,,16226.0,2021-01-07 08:00:00,"Current profit: 1279.5,current price: 37228.0,entry price: 35948.5"
-,,,16227.0,2021-01-07 09:00:00,"Current profit: 1551.5,current price: 37500.0,entry price: 35948.5"
-,,,16228.0,2021-01-07 10:00:00,"Current profit: 1124.0,current price: 37072.5,entry price: 35948.5"
-,,,16229.0,2021-01-07 11:00:00,"Current profit: 1987.5,current price: 37936.0,entry price: 35948.5"
-,,,16230.0,2021-01-07 12:00:00,"Current profit: 2079.5,current price: 38028.0,entry price: 35948.5"
-,,,16231.0,2021-01-07 13:00:00,"Current profit: 2306.0,current price: 38254.5,entry price: 35948.5"
-,,,16232.0,2021-01-07 14:00:00,"Current profit: 2559.0,current price: 38507.5,entry price: 35948.5"
-,,,16233.0,2021-01-07 15:00:00,"Current profit: 3091.5,current price: 39040.0,entry price: 35948.5"
-,,,16234.0,2021-01-07 16:00:00,"Current profit: 3289.5,current price: 39238.0,entry price: 35948.5"
-,,,16235.0,2021-01-07 17:00:00,"Current profit: 3921.0,current price: 39869.5,entry price: 35948.5"
-,,,16236.0,2021-01-07 18:00:00,"Current profit: 3140.5,current price: 39089.0,entry price: 35948.5"
-,,,16237.0,2021-01-07 19:00:00,"Current profit: 3252.0,current price: 39200.5,entry price: 35948.5"
-,,,16238.0,2021-01-07 20:00:00,"Current profit: 3270.5,current price: 39219.0,entry price: 35948.5"
-,,,16239.0,2021-01-07 21:00:00,"Current profit: 3855.5,current price: 39804.0,entry price: 35948.5"
-,,,16240.0,2021-01-07 22:00:00,"Current profit: 3817.0,current price: 39765.5,entry price: 35948.5"
-,,,16241.0,2021-01-07 23:00:00,"Current profit: 3564.5,current price: 39513.0,entry price: 35948.5"
-,,,16242.0,2021-01-08 00:00:00,"Current profit: 2926.0,current price: 38874.5,entry price: 35948.5"
-,,,16243.0,2021-01-08 01:00:00,"Current profit: 2720.0,current price: 38668.5,entry price: 35948.5"
-,,,16244.0,2021-01-08 02:00:00,"Current profit: 1195.5,current price: 37144.0,entry price: 35948.5"
-,,,16245.0,2021-01-08 02:00:00,go to IdleState
-,,,16246.0,2021-01-08 02:00:00,アイドル状態に遷移します。
-,,,16247.0,2021-01-08 10:00:00,go to EntryPreparationState
-,,,16248.0,2021-01-08 10:00:00,エントリー準備状態に遷移します。
-,,,16249.0,2021-01-08 11:00:00,go to PositionState
-,,,16250.0,2021-01-08 11:00:00,エントリーイベントが発生。ポジション状態に遷移します。
-,,,16251.0,2021-01-08 12:00:00,"Current profit: -28.0,current price: 41359.5,entry price: 41387.5"
-,,,16252.0,2021-01-08 13:00:00,"Current profit: 7.5,current price: 41395.0,entry price: 41387.5"
-,,,16253.0,2021-01-08 14:00:00,"Current profit: 196.0,current price: 41583.5,entry price: 41387.5"
-,,,16254.0,2021-01-08 15:00:00,"Current profit: -479.0,current price: 40908.5,entry price: 41387.5"
-,,,16255.0,2021-01-08 16:00:00,"Current profit: -28.0,current price: 41359.5,entry price: 41387.5"
-,,,16256.0,2021-01-08 17:00:00,"Current profit: -309.5,current price: 41078.0,entry price: 41387.5"
-,,,16257.0,2021-01-08 18:00:00,"Current profit: -1407.5,current price: 39980.0,entry price: 41387.5"
-,,,16258.0,2021-01-08 18:00:00,go to IdleState
-,,,16259.0,2021-01-08 18:00:00,アイドル状態に遷移します。
-,,,16260.0,2021-01-10 11:00:00,go to EntryPreparationState
-,,,16261.0,2021-01-10 11:00:00,エントリー準備状態に遷移します。
-,,,16262.0,2021-01-10 12:00:00,go to PositionState
-,,,16263.0,2021-01-10 12:00:00,エントリーイベントが発生。ポジション状態に遷移します。
-,,,16264.0,2021-01-10 13:00:00,"Current profit: 213.5,current price: 39767.0,entry price: 39553.5"
-,,,16265.0,2021-01-10 14:00:00,"Current profit: -154.0,current price: 39399.5,entry price: 39553.5"
-,,,16266.0,2021-01-10 15:00:00,"Current profit: 142.5,current price: 39696.0,entry price: 39553.5"
-,,,16267.0,2021-01-10 16:00:00,"Current profit: -258.5,current price: 39295.0,entry price: 39553.5"
-,,,16268.0,2021-01-10 17:00:00,"Current profit: -959.0,current price: 38594.5,entry price: 39553.5"
-,,,16269.0,2021-01-10 18:00:00,"Current profit: -1419.5,current price: 38134.0,entry price: 39553.5"
-,,,16270.0,2021-01-10 19:00:00,"Current profit: -2063.0,current price: 37490.5,entry price: 39553.5"
-,,,16271.0,2021-01-10 20:00:00,"Current profit: -1823.5,current price: 37730.0,entry price: 39553.5"
-,,,16272.0,2021-01-10 21:00:00,"Current profit: -1482.5,current price: 38071.0,entry price: 39553.5"
-,,,16273.0,2021-01-10 22:00:00,"Current profit: -1112.5,current price: 38441.0,entry price: 39553.5"
-,,,16274.0,2021-01-10 23:00:00,"Current profit: -1384.0,current price: 38169.5,entry price: 39553.5"
-,,,16275.0,2021-01-11 00:00:00,"Current profit: -2285.5,current price: 37268.0,entry price: 39553.5"
-,,,16276.0,2021-01-11 01:00:00,"Current profit: -2250.0,current price: 37303.5,entry price: 39553.5"
-,,,16277.0,2021-01-11 02:00:00,"Current profit: -3130.0,current price: 36423.5,entry price: 39553.5"
-,,,16278.0,2021-01-11 03:00:00,"Current profit: -4146.0,current price: 35407.5,entry price: 39553.5"
-,,,16279.0,2021-01-11 04:00:00,"Current profit: -4043.0,current price: 35510.5,entry price: 39553.5"
-,,,16280.0,2021-01-11 05:00:00,"Current profit: -4647.0,current price: 34906.5,entry price: 39553.5"
-,,,16281.0,2021-01-11 06:00:00,"Current profit: -6620.0,current price: 32933.5,entry price: 39553.5"
-,,,16282.0,2021-01-11 07:00:00,"Current profit: -5177.5,current price: 34376.0,entry price: 39553.5"
-,,,16283.0,2021-01-11 08:00:00,"Current profit: -4117.0,current price: 35436.5,entry price: 39553.5"
-,,,16284.0,2021-01-11 09:00:00,"Current profit: -3778.5,current price: 35775.0,entry price: 39553.5"
-,,,16285.0,2021-01-11 10:00:00,"Current profit: -4157.5,current price: 35396.0,entry price: 39553.5"
-,,,16286.0,2021-01-11 11:00:00,"Current profit: -5325.5,current price: 34228.0,entry price: 39553.5"
-,,,16287.0,2021-01-11 12:00:00,"Current profit: -5223.5,current price: 34330.0,entry price: 39553.5"
-,,,16288.0,2021-01-11 13:00:00,"Current profit: -6676.5,current price: 32877.0,entry price: 39553.5"
-,,,16289.0,2021-01-11 14:00:00,"Current profit: -6272.5,current price: 33281.0,entry price: 39553.5"
-,,,16290.0,2021-01-11 15:00:00,"Current profit: -7995.5,current price: 31558.0,entry price: 39553.5"
-,,,16291.0,2021-01-11 16:00:00,"Current profit: -7758.5,current price: 31795.0,entry price: 39553.5"
-,,,16292.0,2021-01-11 17:00:00,"Current profit: -6675.5,current price: 32878.0,entry price: 39553.5"
-,,,16293.0,2021-01-11 18:00:00,"Current profit: -6936.0,current price: 32617.5,entry price: 39553.5"
-,,,16294.0,2021-01-11 19:00:00,"Current profit: -7241.5,current price: 32312.0,entry price: 39553.5"
-,,,16295.0,2021-01-11 20:00:00,"Current profit: -6090.0,current price: 33463.5,entry price: 39553.5"
-,,,16296.0,2021-01-11 21:00:00,"Current profit: -5588.0,current price: 33965.5,entry price: 39553.5"
-,,,16297.0,2021-01-11 22:00:00,"Current profit: -5180.0,current price: 34373.5,entry price: 39553.5"
-,,,16298.0,2021-01-11 22:00:00,go to IdleState
-,,,16299.0,2021-01-11 22:00:00,アイドル状態に遷移します。
-,,,16300.0,2021-01-13 21:00:00,go to EntryPreparationState
-,,,16301.0,2021-01-13 21:00:00,エントリー準備状態に遷移します。
-,,,16302.0,2021-01-13 22:00:00,go to PositionState
-,,,16303.0,2021-01-13 22:00:00,エントリーイベントが発生。ポジション状態に遷移します。
-,,,16304.0,2021-01-13 23:00:00,"Current profit: 165.0,current price: 37417.5,entry price: 37252.5"
-,,,16305.0,2021-01-14 00:00:00,"Current profit: 575.5,current price: 37828.0,entry price: 37252.5"
-,,,16306.0,2021-01-14 01:00:00,"Current profit: 261.0,current price: 37513.5,entry price: 37252.5"
-,,,16307.0,2021-01-14 02:00:00,"Current profit: 254.0,current price: 37506.5,entry price: 37252.5"
-,,,16308.0,2021-01-14 03:00:00,"Current profit: -177.0,current price: 37075.5,entry price: 37252.5"
-,,,16309.0,2021-01-14 04:00:00,"Current profit: 233.0,current price: 37485.5,entry price: 37252.5"
-,,,16310.0,2021-01-14 05:00:00,"Current profit: 262.0,current price: 37514.5,entry price: 37252.5"
-,,,16311.0,2021-01-14 06:00:00,"Current profit: 568.0,current price: 37820.5,entry price: 37252.5"
-,,,16312.0,2021-01-14 07:00:00,"Current profit: 957.5,current price: 38210.0,entry price: 37252.5"
-,,,16313.0,2021-01-14 08:00:00,"Current profit: 1128.0,current price: 38380.5,entry price: 37252.5"
-,,,16314.0,2021-01-14 09:00:00,"Current profit: 761.0,current price: 38013.5,entry price: 37252.5"
-,,,16315.0,2021-01-14 10:00:00,"Current profit: 1305.5,current price: 38558.0,entry price: 37252.5"
-,,,16316.0,2021-01-14 11:00:00,"Current profit: 1186.0,current price: 38438.5,entry price: 37252.5"
-,,,16317.0,2021-01-14 12:00:00,"Current profit: 1052.0,current price: 38304.5,entry price: 37252.5"
-,,,16318.0,2021-01-14 13:00:00,"Current profit: 1757.5,current price: 39010.0,entry price: 37252.5"
-,,,16319.0,2021-01-14 14:00:00,"Current profit: 2314.5,current price: 39567.0,entry price: 37252.5"
-,,,16320.0,2021-01-14 15:00:00,"Current profit: 2264.5,current price: 39517.0,entry price: 37252.5"
-,,,16321.0,2021-01-14 16:00:00,"Current profit: 2034.0,current price: 39286.5,entry price: 37252.5"
-,,,16322.0,2021-01-14 17:00:00,"Current profit: 2223.5,current price: 39476.0,entry price: 37252.5"
-,,,16323.0,2021-01-14 18:00:00,"Current profit: 2131.5,current price: 39384.0,entry price: 37252.5"
-,,,16324.0,2021-01-14 19:00:00,"Current profit: 2687.0,current price: 39939.5,entry price: 37252.5"
-,,,16325.0,2021-01-14 20:00:00,"Current profit: 2138.0,current price: 39390.5,entry price: 37252.5"
-,,,16326.0,2021-01-14 21:00:00,"Current profit: 1619.5,current price: 38872.0,entry price: 37252.5"
-,,,16327.0,2021-01-14 22:00:00,"Current profit: 1800.5,current price: 39053.0,entry price: 37252.5"
-,,,16328.0,2021-01-14 23:00:00,"Current profit: 1915.0,current price: 39167.5,entry price: 37252.5"
-,,,16329.0,2021-01-15 00:00:00,"Current profit: 2253.0,current price: 39505.5,entry price: 37252.5"
-,,,16330.0,2021-01-15 01:00:00,"Current profit: 1960.5,current price: 39213.0,entry price: 37252.5"
-,,,16331.0,2021-01-15 02:00:00,"Current profit: 2069.0,current price: 39321.5,entry price: 37252.5"
-,,,16332.0,2021-01-15 03:00:00,"Current profit: 1520.5,current price: 38773.0,entry price: 37252.5"
-,,,16333.0,2021-01-15 03:00:00,go to IdleState
-,,,16334.0,2021-01-15 03:00:00,アイドル状態に遷移します。
-,,,16335.0,2021-01-15 15:00:00,go to EntryPreparationState
-,,,16336.0,2021-01-15 15:00:00,エントリー準備状態に遷移します。
-,,,16337.0,2021-01-15 16:00:00,go to PositionState
-,,,16338.0,2021-01-15 16:00:00,エントリーイベントが発生。ポジション状態に遷移します。
-,,,16339.0,2021-01-15 17:00:00,"Current profit: -182.0,current price: 35953.5,entry price: 36135.5"
-,,,16340.0,2021-01-15 18:00:00,"Current profit: -725.0,current price: 35410.5,entry price: 36135.5"
-,,,16341.0,2021-01-15 19:00:00,"Current profit: -918.5,current price: 35217.0,entry price: 36135.5"
-,,,16342.0,2021-01-15 20:00:00,"Current profit: -546.0,current price: 35589.5,entry price: 36135.5"
-,,,16343.0,2021-01-15 21:00:00,"Current profit: 79.5,current price: 36215.0,entry price: 36135.5"
-,,,16344.0,2021-01-15 22:00:00,"Current profit: 458.5,current price: 36594.0,entry price: 36135.5"
-,,,16345.0,2021-01-15 23:00:00,"Current profit: 581.0,current price: 36716.5,entry price: 36135.5"
-,,,16346.0,2021-01-16 00:00:00,"Current profit: 994.0,current price: 37129.5,entry price: 36135.5"
-,,,16347.0,2021-01-16 00:00:00,go to IdleState
-,,,16348.0,2021-01-16 00:00:00,アイドル状態に遷移します。
-,,,16349.0,2021-01-17 07:00:00,go to EntryPreparationState
-,,,16350.0,2021-01-17 07:00:00,エントリー準備状態に遷移します。
-,,,16351.0,2021-01-17 08:00:00,go to PositionState
-,,,16352.0,2021-01-17 08:00:00,エントリーイベントが発生。ポジション状態に遷移します。
-,,,16353.0,2021-01-17 09:00:00,"Current profit: -564.0,current price: 34151.5,entry price: 34715.5"
-,,,16354.0,2021-01-17 10:00:00,"Current profit: 72.5,current price: 34788.0,entry price: 34715.5"
-,,,16355.0,2021-01-17 11:00:00,"Current profit: 532.0,current price: 35247.5,entry price: 34715.5"
-,,,16356.0,2021-01-17 12:00:00,"Current profit: 396.5,current price: 35112.0,entry price: 34715.5"
-,,,16357.0,2021-01-17 13:00:00,"Current profit: 99.5,current price: 34815.0,entry price: 34715.5"
-,,,16358.0,2021-01-17 14:00:00,"Current profit: 18.0,current price: 34733.5,entry price: 34715.5"
-,,,16359.0,2021-01-17 15:00:00,"Current profit: 1001.0,current price: 35716.5,entry price: 34715.5"
-,,,16360.0,2021-01-17 15:00:00,go to IdleState
-,,,16361.0,2021-01-17 15:00:00,アイドル状態に遷移します。
-,,,16362.0,2021-01-18 12:00:00,go to EntryPreparationState
-,,,16363.0,2021-01-18 12:00:00,エントリー準備状態に遷移します。
-,,,16364.0,2021-01-18 13:00:00,go to PositionState
-,,,16365.0,2021-01-18 13:00:00,エントリーイベントが発生。ポジション状態に遷移します。
-,,,16366.0,2021-01-18 14:00:00,"Current profit: -341.0,current price: 36498.5,entry price: 36839.5"
-,,,16367.0,2021-01-18 15:00:00,"Current profit: -381.0,current price: 36458.5,entry price: 36839.5"
-,,,16368.0,2021-01-18 16:00:00,"Current profit: -594.5,current price: 36245.0,entry price: 36839.5"
-,,,16369.0,2021-01-18 17:00:00,"Current profit: -1110.5,current price: 35729.0,entry price: 36839.5"
-,,,16370.0,2021-01-18 17:00:00,go to IdleState
-,,,16371.0,2021-01-18 17:00:00,アイドル状態に遷移します。
-,,,16372.0,2021-01-20 03:00:00,go to EntryPreparationState
-,,,16373.0,2021-01-20 03:00:00,エントリー準備状態に遷移します。
-,,,16374.0,2021-01-20 04:00:00,go to PositionState
-,,,16375.0,2021-01-20 04:00:00,エントリーイベントが発生。ポジション状態に遷移します。
-,,,16376.0,2021-01-20 05:00:00,"Current profit: 196.5,current price: 35475.5,entry price: 35279.0"
-,,,16377.0,2021-01-20 06:00:00,"Current profit: -36.0,current price: 35243.0,entry price: 35279.0"
-,,,16378.0,2021-01-20 07:00:00,"Current profit: 352.5,current price: 35631.5,entry price: 35279.0"
-,,,16379.0,2021-01-20 08:00:00,"Current profit: 196.5,current price: 35475.5,entry price: 35279.0"
-,,,16380.0,2021-01-20 09:00:00,"Current profit: -450.5,current price: 34828.5,entry price: 35279.0"
-,,,16381.0,2021-01-20 10:00:00,"Current profit: -547.0,current price: 34732.0,entry price: 35279.0"
-,,,16382.0,2021-01-20 11:00:00,"Current profit: -853.5,current price: 34425.5,entry price: 35279.0"
-,,,16383.0,2021-01-20 12:00:00,"Current profit: -565.0,current price: 34714.0,entry price: 35279.0"
-,,,16384.0,2021-01-20 13:00:00,"Current profit: -329.0,current price: 34950.0,entry price: 35279.0"
+,,,16385.0,2024-01-01 18:00:00,go to EntryPreparationState
+,,,16386.0,2024-01-01 18:00:00,エントリー準備状態に遷移します。
+,,,16387.0,2024-01-01 19:00:00,go to PositionState
+,,,16388.0,2024-01-01 19:00:00,エントリーイベントが発生。ポジション状態に遷移します。
+,,,16389.0,2024-01-01 20:00:00,"Current profit: 183.3000000000029,current price: 43753.4,entry price: 43570.1"
+,,,16390.0,2024-01-01 21:00:00,"Current profit: 107.59999999999854,current price: 43677.7,entry price: 43570.1"
+,,,16391.0,2024-01-01 22:00:00,"Current profit: 9.5,current price: 43579.6,entry price: 43570.1"
+,,,16392.0,2024-01-01 23:00:00,"Current profit: 665.4000000000015,current price: 44235.5,entry price: 43570.1"
+,,,16393.0,2024-01-02 00:00:00,"Current profit: 1617.800000000003,current price: 45187.9,entry price: 43570.1"
+,,,16394.0,2024-01-02 01:00:00,"Current profit: 1359.300000000003,current price: 44929.4,entry price: 43570.1"
+,,,16395.0,2024-01-02 02:00:00,"Current profit: 1860.0,current price: 45430.1,entry price: 43570.1"
+,,,16396.0,2024-01-02 03:00:00,"Current profit: 1864.0,current price: 45434.1,entry price: 43570.1"
+,,,16397.0,2024-01-02 04:00:00,"Current profit: 1649.800000000003,current price: 45219.9,entry price: 43570.1"
+,,,16398.0,2024-01-02 05:00:00,"Current profit: 1649.9000000000015,current price: 45220.0,entry price: 43570.1"
+,,,16399.0,2024-01-02 06:00:00,"Current profit: 1633.0,current price: 45203.1,entry price: 43570.1"
+,,,16400.0,2024-01-02 07:00:00,"Current profit: 1929.9000000000015,current price: 45500.0,entry price: 43570.1"
+,,,16401.0,2024-01-02 08:00:00,"Current profit: 2247.800000000003,current price: 45817.9,entry price: 43570.1"
+,,,16402.0,2024-01-02 09:00:00,"Current profit: 2161.5,current price: 45731.6,entry price: 43570.1"
+,,,16403.0,2024-01-02 10:00:00,"Current profit: 2088.5999999999985,current price: 45658.7,entry price: 43570.1"
+,,,16404.0,2024-01-02 11:00:00,"Current profit: 1925.800000000003,current price: 45495.9,entry price: 43570.1"
+,,,16405.0,2024-01-02 12:00:00,"Current profit: 1795.2000000000044,current price: 45365.3,entry price: 43570.1"
+,,,16406.0,2024-01-02 13:00:00,"Current profit: 2129.5,current price: 45699.6,entry price: 43570.1"
+,,,16407.0,2024-01-02 14:00:00,"Current profit: 1731.2000000000044,current price: 45301.3,entry price: 43570.1"
+,,,16408.0,2024-01-02 15:00:00,"Current profit: 1660.2000000000044,current price: 45230.3,entry price: 43570.1"
+,,,16409.0,2024-01-02 16:00:00,"Current profit: 1838.7000000000044,current price: 45408.8,entry price: 43570.1"
+,,,16410.0,2024-01-02 17:00:00,"Current profit: 1444.300000000003,current price: 45014.4,entry price: 43570.1"
+,,,16411.0,2024-01-02 18:00:00,"Current profit: 1632.5,current price: 45202.6,entry price: 43570.1"
+,,,16412.0,2024-01-02 19:00:00,"Current profit: 1518.5,current price: 45088.6,entry price: 43570.1"
+,,,16413.0,2024-01-02 20:00:00,"Current profit: 1253.7000000000044,current price: 44823.8,entry price: 43570.1"
+,,,16414.0,2024-01-02 20:00:00,go to IdleState
+,,,16415.0,2024-01-02 20:00:00,アイドル状態に遷移します。
+,,,16416.0,2024-01-03 11:00:00,go to EntryPreparationState
+,,,16417.0,2024-01-03 11:00:00,エントリー準備状態に遷移します。
+,,,16418.0,2024-01-03 12:00:00,go to PositionState
+,,,16419.0,2024-01-03 12:00:00,エントリーイベントが発生。ポジション状態に遷移します。
+,,,16420.0,2024-01-03 13:00:00,"Current profit: -237.59999999999854,current price: 42559.5,entry price: 42797.1"
+,,,16421.0,2024-01-03 14:00:00,"Current profit: -591.1999999999971,current price: 42205.9,entry price: 42797.1"
+,,,16422.0,2024-01-03 15:00:00,"Current profit: 214.20000000000437,current price: 43011.3,entry price: 42797.1"
+,,,16423.0,2024-01-03 16:00:00,"Current profit: 234.8000000000029,current price: 43031.9,entry price: 42797.1"
+,,,16424.0,2024-01-03 17:00:00,"Current profit: 132.09999999999854,current price: 42929.2,entry price: 42797.1"
+,,,16425.0,2024-01-03 18:00:00,"Current profit: -516.7999999999956,current price: 42280.3,entry price: 42797.1"
+,,,16426.0,2024-01-03 19:00:00,"Current profit: -180.5,current price: 42616.6,entry price: 42797.1"
+,,,16427.0,2024-01-03 20:00:00,"Current profit: -49.099999999998545,current price: 42748.0,entry price: 42797.1"
+,,,16428.0,2024-01-03 21:00:00,"Current profit: 157.40000000000146,current price: 42954.5,entry price: 42797.1"
+,,,16429.0,2024-01-03 22:00:00,"Current profit: -13.299999999995634,current price: 42783.8,entry price: 42797.1"
+,,,16430.0,2024-01-03 23:00:00,"Current profit: 74.80000000000291,current price: 42871.9,entry price: 42797.1"
+,,,16431.0,2024-01-04 00:00:00,"Current profit: 104.80000000000291,current price: 42901.9,entry price: 42797.1"
+,,,16432.0,2024-01-04 01:00:00,"Current profit: -66.09999999999854,current price: 42731.0,entry price: 42797.1"
+,,,16433.0,2024-01-04 02:00:00,"Current profit: 376.59999999999854,current price: 43173.7,entry price: 42797.1"
+,,,16434.0,2024-01-04 03:00:00,"Current profit: 344.3000000000029,current price: 43141.4,entry price: 42797.1"
+,,,16435.0,2024-01-04 04:00:00,"Current profit: 391.40000000000146,current price: 43188.5,entry price: 42797.1"
+,,,16436.0,2024-01-04 05:00:00,"Current profit: 417.3000000000029,current price: 43214.4,entry price: 42797.1"
+,,,16437.0,2024-01-04 06:00:00,"Current profit: 388.5,current price: 43185.6,entry price: 42797.1"
+,,,16438.0,2024-01-04 07:00:00,"Current profit: -1.7999999999956344,current price: 42795.3,entry price: 42797.1"
+,,,16439.0,2024-01-04 08:00:00,"Current profit: 81.80000000000291,current price: 42878.9,entry price: 42797.1"
+,,,16440.0,2024-01-04 09:00:00,"Current profit: 241.8000000000029,current price: 43038.9,entry price: 42797.1"
+,,,16441.0,2024-01-04 10:00:00,"Current profit: 306.90000000000146,current price: 43104.0,entry price: 42797.1"
+,,,16442.0,2024-01-04 11:00:00,"Current profit: 407.90000000000146,current price: 43205.0,entry price: 42797.1"
+,,,16443.0,2024-01-04 11:00:00,go to IdleState
+,,,16444.0,2024-01-04 11:00:00,アイドル状態に遷移します。
+,,,16445.0,2024-01-04 15:00:00,go to EntryPreparationState
+,,,16446.0,2024-01-04 15:00:00,エントリー準備状態に遷移します。
+,,,16447.0,2024-01-04 16:00:00,go to PositionState
+,,,16448.0,2024-01-04 16:00:00,エントリーイベントが発生。ポジション状態に遷移します。
+,,,16449.0,2024-01-04 17:00:00,"Current profit: 69.09999999999854,current price: 44010.9,entry price: 43941.8"
+,,,16450.0,2024-01-04 18:00:00,"Current profit: 133.09999999999854,current price: 44074.9,entry price: 43941.8"
+,,,16451.0,2024-01-04 19:00:00,"Current profit: 21.0,current price: 43962.8,entry price: 43941.8"
+,,,16452.0,2024-01-04 20:00:00,"Current profit: 196.0,current price: 44137.8,entry price: 43941.8"
+,,,16453.0,2024-01-04 21:00:00,"Current profit: 514.1999999999971,current price: 44456.0,entry price: 43941.8"
+,,,16454.0,2024-01-04 22:00:00,"Current profit: 394.1999999999971,current price: 44336.0,entry price: 43941.8"
+,,,16455.0,2024-01-04 23:00:00,"Current profit: 214.5,current price: 44156.3,entry price: 43941.8"
+,,,16456.0,2024-01-05 00:00:00,"Current profit: 278.6999999999971,current price: 44220.5,entry price: 43941.8"
+,,,16457.0,2024-01-05 01:00:00,"Current profit: -552.3000000000029,current price: 43389.5,entry price: 43941.8"
+,,,16458.0,2024-01-05 01:00:00,go to IdleState
+,,,16459.0,2024-01-05 01:00:00,アイドル状態に遷移します。
+,,,16460.0,2024-01-07 13:00:00,go to EntryPreparationState
+,,,16461.0,2024-01-07 13:00:00,エントリー準備状態に遷移します。
+,,,16462.0,2024-01-07 14:00:00,go to PositionState
+,,,16463.0,2024-01-07 14:00:00,エントリーイベントが発生。ポジション状態に遷移します。
+,,,16464.0,2024-01-07 15:00:00,"Current profit: -357.90000000000146,current price: 44061.0,entry price: 44418.9"
+,,,16465.0,2024-01-07 16:00:00,"Current profit: -496.09999999999854,current price: 43922.8,entry price: 44418.9"
+,,,16466.0,2024-01-07 16:00:00,go to IdleState
+,,,16467.0,2024-01-07 16:00:00,アイドル状態に遷移します。
+,,,16468.0,2024-01-08 00:00:00,go to EntryPreparationState
+,,,16469.0,2024-01-08 00:00:00,エントリー準備状態に遷移します。
+,,,16470.0,2024-01-08 01:00:00,go to PositionState
+,,,16471.0,2024-01-08 01:00:00,エントリーイベントが発生。ポジション状態に遷移します。
+,,,16472.0,2024-01-08 02:00:00,"Current profit: -353.0,current price: 43363.0,entry price: 43716.0"
+,,,16473.0,2024-01-08 03:00:00,"Current profit: -188.3000000000029,current price: 43527.7,entry price: 43716.0"
+,,,16474.0,2024-01-08 04:00:00,"Current profit: -104.09999999999854,current price: 43611.9,entry price: 43716.0"
+,,,16475.0,2024-01-08 05:00:00,"Current profit: -62.0,current price: 43654.0,entry price: 43716.0"
+,,,16476.0,2024-01-08 06:00:00,"Current profit: 204.3000000000029,current price: 43920.3,entry price: 43716.0"
+,,,16477.0,2024-01-08 06:00:00,go to IdleState
+,,,16478.0,2024-01-08 06:00:00,アイドル状態に遷移します。
+,,,16479.0,2024-01-08 11:00:00,go to EntryPreparationState
+,,,16480.0,2024-01-08 11:00:00,エントリー準備状態に遷移します。
+,,,16481.0,2024-01-08 12:00:00,go to PositionState
+,,,16482.0,2024-01-08 12:00:00,エントリーイベントが発生。ポジション状態に遷移します。
+,,,16483.0,2024-01-08 13:00:00,"Current profit: -192.09999999999854,current price: 44925.9,entry price: 45118.0"
+,,,16484.0,2024-01-08 14:00:00,"Current profit: -319.3000000000029,current price: 44798.7,entry price: 45118.0"
+,,,16485.0,2024-01-08 15:00:00,"Current profit: -142.6999999999971,current price: 44975.3,entry price: 45118.0"
+,,,16486.0,2024-01-08 16:00:00,"Current profit: -174.90000000000146,current price: 44943.1,entry price: 45118.0"
+,,,16487.0,2024-01-08 17:00:00,"Current profit: 530.0,current price: 45648.0,entry price: 45118.0"
+,,,16488.0,2024-01-08 18:00:00,"Current profit: 1863.199999999997,current price: 46981.2,entry price: 45118.0"
+,,,16489.0,2024-01-08 19:00:00,"Current profit: 1887.9000000000015,current price: 47005.9,entry price: 45118.0"
+,,,16490.0,2024-01-08 20:00:00,"Current profit: 1681.9000000000015,current price: 46799.9,entry price: 45118.0"
+,,,16491.0,2024-01-08 21:00:00,"Current profit: 1964.0,current price: 47082.0,entry price: 45118.0"
+,,,16492.0,2024-01-08 22:00:00,"Current profit: 1897.4000000000015,current price: 47015.4,entry price: 45118.0"
+,,,16493.0,2024-01-08 23:00:00,"Current profit: 1854.800000000003,current price: 46972.8,entry price: 45118.0"
+,,,16494.0,2024-01-09 00:00:00,"Current profit: 1582.0,current price: 46700.0,entry price: 45118.0"
+,,,16495.0,2024-01-09 01:00:00,"Current profit: 1471.199999999997,current price: 46589.2,entry price: 45118.0"
+,,,16496.0,2024-01-09 02:00:00,"Current profit: 1684.0,current price: 46802.0,entry price: 45118.0"
+,,,16497.0,2024-01-09 03:00:00,"Current profit: 1831.199999999997,current price: 46949.2,entry price: 45118.0"
+,,,16498.0,2024-01-09 04:00:00,"Current profit: 1705.800000000003,current price: 46823.8,entry price: 45118.0"
+,,,16499.0,2024-01-09 05:00:00,"Current profit: 1623.4000000000015,current price: 46741.4,entry price: 45118.0"
+,,,16500.0,2024-01-09 06:00:00,"Current profit: 1683.4000000000015,current price: 46801.4,entry price: 45118.0"
+,,,16501.0,2024-01-09 07:00:00,"Current profit: 1737.0,current price: 46855.0,entry price: 45118.0"
+,,,16502.0,2024-01-09 08:00:00,"Current profit: 1455.300000000003,current price: 46573.3,entry price: 45118.0"
+,,,16503.0,2024-01-09 09:00:00,"Current profit: 1401.5,current price: 46519.5,entry price: 45118.0"
+,,,16504.0,2024-01-09 10:00:00,"Current profit: 1356.800000000003,current price: 46474.8,entry price: 45118.0"
+,,,16505.0,2024-01-09 11:00:00,"Current profit: 1525.9000000000015,current price: 46643.9,entry price: 45118.0"
+,,,16506.0,2024-01-09 12:00:00,"Current profit: 1068.300000000003,current price: 46186.3,entry price: 45118.0"
+,,,16507.0,2024-01-09 12:00:00,go to IdleState
+,,,16508.0,2024-01-09 12:00:00,アイドル状態に遷移します。
+,,,16509.0,2024-01-09 13:00:00,go to EntryPreparationState
+,,,16510.0,2024-01-09 13:00:00,エントリー準備状態に遷移します。
+,,,16511.0,2024-01-09 14:00:00,go to PositionState
+,,,16512.0,2024-01-09 14:00:00,エントリーイベントが発生。ポジション状態に遷移します。
+,,,16513.0,2024-01-09 15:00:00,"Current profit: 297.3000000000029,current price: 46875.0,entry price: 46577.7"
+,,,16514.0,2024-01-09 16:00:00,"Current profit: 326.3000000000029,current price: 46904.0,entry price: 46577.7"
+,,,16515.0,2024-01-09 17:00:00,"Current profit: 148.20000000000437,current price: 46725.9,entry price: 46577.7"
+,,,16516.0,2024-01-09 18:00:00,"Current profit: 72.10000000000582,current price: 46649.8,entry price: 46577.7"
+,,,16517.0,2024-01-09 19:00:00,"Current profit: 304.40000000000146,current price: 46882.1,entry price: 46577.7"
+,,,16518.0,2024-01-09 20:00:00,"Current profit: 70.10000000000582,current price: 46647.8,entry price: 46577.7"
+,,,16519.0,2024-01-09 21:00:00,"Current profit: -1122.0999999999985,current price: 45455.6,entry price: 46577.7"
+,,,16520.0,2024-01-09 21:00:00,go to IdleState
+,,,16521.0,2024-01-09 21:00:00,アイドル状態に遷移します。
+,,,16522.0,2024-01-10 12:00:00,go to EntryPreparationState
+,,,16523.0,2024-01-10 12:00:00,エントリー準備状態に遷移します。
+,,,16524.0,2024-01-10 13:00:00,go to PositionState
+,,,16525.0,2024-01-10 13:00:00,エントリーイベントが発生。ポジション状態に遷移します。
+,,,16526.0,2024-01-10 14:00:00,"Current profit: -231.90000000000146,current price: 44904.0,entry price: 45135.9"
+,,,16527.0,2024-01-10 15:00:00,"Current profit: 442.5,current price: 45578.4,entry price: 45135.9"
+,,,16528.0,2024-01-10 16:00:00,"Current profit: 193.29999999999563,current price: 45329.2,entry price: 45135.9"
+,,,16529.0,2024-01-10 17:00:00,"Current profit: 1290.0999999999985,current price: 46426.0,entry price: 45135.9"
+,,,16530.0,2024-01-10 17:00:00,go to IdleState
+,,,16531.0,2024-01-10 17:00:00,アイドル状態に遷移します。
+,,,16532.0,2024-01-11 12:00:00,go to EntryPreparationState
+,,,16533.0,2024-01-11 12:00:00,エントリー準備状態に遷移します。
+,,,16534.0,2024-01-11 13:00:00,go to PositionState
+,,,16535.0,2024-01-11 13:00:00,エントリーイベントが発生。ポジション状態に遷移します。
+,,,16536.0,2024-01-11 14:00:00,"Current profit: 1245.2999999999956,current price: 48578.2,entry price: 47332.9"
+,,,16537.0,2024-01-11 15:00:00,"Current profit: -510.59999999999854,current price: 46822.3,entry price: 47332.9"
+,,,16538.0,2024-01-11 16:00:00,"Current profit: -1292.7000000000044,current price: 46040.2,entry price: 47332.9"
+,,,16539.0,2024-01-11 16:00:00,go to IdleState
+,,,16540.0,2024-01-11 16:00:00,アイドル状態に遷移します。
+,,,16541.0,2024-01-12 14:00:00,go to EntryPreparationState
+,,,16542.0,2024-01-12 14:00:00,エントリー準備状態に遷移します。
+,,,16543.0,2024-01-12 15:00:00,go to PositionState
+,,,16544.0,2024-01-12 15:00:00,エントリーイベントが発生。ポジション状態に遷移します。
+,,,16545.0,2024-01-12 16:00:00,"Current profit: -839.5,current price: 43662.0,entry price: 44501.5"
+,,,16546.0,2024-01-12 17:00:00,"Current profit: -659.6999999999971,current price: 43841.8,entry price: 44501.5"
+,,,16547.0,2024-01-12 18:00:00,"Current profit: -984.5,current price: 43517.0,entry price: 44501.5"
+,,,16548.0,2024-01-12 19:00:00,"Current profit: -989.4000000000015,current price: 43512.1,entry price: 44501.5"
+,,,16549.0,2024-01-12 20:00:00,"Current profit: -812.4000000000015,current price: 43689.1,entry price: 44501.5"
+,,,16550.0,2024-01-12 21:00:00,"Current profit: -1022.1999999999971,current price: 43479.3,entry price: 44501.5"

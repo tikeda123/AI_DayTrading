@@ -11,11 +11,12 @@ parent_dir = os.path.dirname(current_dir)  # Aディレクトリーのパスを�
 # Aディレクトリーのパスをsys.pathに追加
 sys.path.append(parent_dir)
 
-from common.config_manager import ConfigManager
 from common.constants import *
+from common.config_manager import ConfigManager
 from trading_analysis_kit.simulation_strategy_context import SimulationStrategyContext
 from trading_analysis_kit.ml_strategy import MLDataCreationStrategy
 from mongodb.data_loader_mongo import MongoDataLoader
+
 
 
 def check_arguments_and_format_dates(argv):
@@ -74,13 +75,12 @@ def create_table_name(config_manager)->str:
     return f'{symbol}_{interval}_market_data_tech'
 
 
-def create_ml_data(start_date,end_date,config_manager)->pd.DataFrame:
+def create_ml_data(start_date,end_date)->pd.DataFrame:
 
     strategy_context = MLDataCreationStrategy()
     context = SimulationStrategyContext(strategy_context)
     context.load_data_from_datetime_period(start_date, end_date)
-    df = context.dataloader.get_raw_data()
-    print(df)
+    context.dataloader.get_raw_data()
     context.run_trading(context)
     result = context.dataloader.get_raw_data()
     return result
@@ -119,13 +119,11 @@ def create_nonets_data(upper_df,lower_df)->tuple:
     return upper_df_filtered,lower_df_filtered
 
 def main():
+    config_manager = ConfigManager()
     start_date, end_date = check_arguments_and_format_dates(sys.argv)
 
-    config_manager = ConfigManager()
-
-    upper_data_filename, lower_data_filename,upper_data_nonets_filename, lower_data_nonets_filename = create_ml_data_files_name(start_date, end_date, config_manager)
-    ml_data = create_ml_data(start_date, end_date, config_manager)
-    print(ml_data)
+    upper_data_filename, lower_data_filename,upper_data_nonets_filename, lower_data_nonets_filename = create_ml_data_files_name(start_date, end_date,config_manager)
+    ml_data = create_ml_data(start_date, end_date)
     upper_data, lower_data = create_time_series_data(ml_data)
 
     db = MongoDataLoader()
@@ -140,11 +138,6 @@ def main():
     upper_data_nonets, lower_data_nonets = create_nonets_data(upper_data, lower_data)
     upper_data_nonets.to_csv(upper_data_nonets_filename, index=False)
     lower_data_nonets.to_csv(lower_data_nonets_filename, index=False)
-
-
-
-
-
 
 
 if __name__ == "__main__":

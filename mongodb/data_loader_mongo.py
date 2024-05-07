@@ -1,13 +1,9 @@
 import sys
 import os
-from pathlib import Path
 import pandas as pd
-import numpy as np
 
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure, OperationFailure
-from bson.objectid import ObjectId
-from datetime import datetime
 
 # b.pyのディレクトリの絶対パスを取得
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -158,10 +154,13 @@ class MongoDataLoader(DataLoader):
             if len(data) > 0:
                 self._df = pd.DataFrame(data)
                 self._df['start_at'] = pd.to_datetime(self._df['start_at'])
-                self._df.set_index('start_at', inplace=True)
+                #self._df.set_index('start_at', inplace=True)
                 self.set_df_raw(self._df)
                 self.remove_unuse_colums()
+                print(self._df)
+                return self._df
             else:
+                print("指定された日時範囲のデータが見つかりませんでした。")
                 self.logger.log_system_message("指定された日時範囲のデータが見つかりませんでした。")
         except OperationFailure as e:
             self.logger.log_system_message(f"データの読み込みに失敗しました: {str(e)}")
@@ -263,7 +262,6 @@ class MongoDataLoader(DataLoader):
             raise
         finally:
             self.close()
-
 
     def update_data_by_serial(self, serial_id, new_df, coll_type=None):
         if coll_type is not None:
