@@ -7,7 +7,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split, KFold
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-from tensorflow.keras.layers import Dense, Dropout, GlobalAveragePooling1D,LayerNormalization, MultiHeadAttention, Input, Flatten
+from tensorflow.keras.layers import Dense, Dropout, LayerNormalization, MultiHeadAttention, Input, Flatten
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.regularizers import l2
 
@@ -31,10 +31,10 @@ from aiml.transformerblock import TransformerBlock
 
 # ハイパーパラメータの設定
 PARAM_LEARNING_RATE = 0.001
-PARAM_EPOCHS = 900
+PARAM_EPOCHS = 1000
 
 N_SPLITS=3
-POSITIVE_THRESHOLD = 0.000
+POSITIVE_THRESHOLD = 0
 
 
 class TransformerPredictionRollingModel(PredictionModel):
@@ -152,7 +152,7 @@ class TransformerPredictionRollingModel(PredictionModel):
     def load_and_prepare_data_from_csv(self, csv_file_path, test_size=0.5, random_state=None):
        data = self.load_data_from_csv(csv_file_path)
        scaled_sequences, targets = self._prepare_sequences(data)
-       return train_test_split(scaled_sequences, targets, test_size=test_size, random_state=random_state, shuffle=False)
+       return train_test_split(scaled_sequences, targets, test_size=test_size, random_state=random_state,shuffle=False)
 
     def load_and_prepare_data(self,
                               start_datetime,
@@ -214,19 +214,11 @@ class TransformerPredictionRollingModel(PredictionModel):
             tf.keras.Model: 作成されたモデル。
         """
         inputs = tf.keras.Input(shape=input_shape)
-        x = inputs
-        #for _ in range(3):  # 3つのTransformerBlockを積み重ねる
-        x = TransformerBlock(input_shape[1], num_heads, dff, rate, l2_reg=l2_reg)(x)
-        #x = TransformerBlock(input_shape[1], num_heads, dff, rate, l2_reg=l2_reg)(x)        #x = TransformerBlock(input_shape[1], num_heads, dff, rate, l2_reg=l2_reg)(inputs)
-        #x = GlobalAveragePooling1D()(x)
-        #x = Dropout(0.2)(x)
-        #x = Dense(80, activation='relu', kernel_regularizer=l2(l2_reg))(x)
+        x = TransformerBlock(input_shape[1], num_heads, dff, rate, l2_reg=l2_reg)(inputs)
         x = Dropout(0.2)(x)
-        x = Dense(40, activation='relu', kernel_regularizer=l2(l2_reg))(x)
+        x = Dense(20, activation='relu', kernel_regularizer=l2(l2_reg))(x)
         x = Dropout(0.2)(x)
-        x = Dense(32, activation='relu', kernel_regularizer=l2(l2_reg))(x)
-        x = Dropout(0.2)(x)
-        x = Dense(16, activation='relu', kernel_regularizer=l2(l2_reg))(x)
+        x = Dense(10, activation='relu', kernel_regularizer=l2(l2_reg))(x)
         x = Flatten()(x)
         outputs = Dense(1, activation='sigmoid', kernel_regularizer=l2(l2_reg))(x)
         model = tf.keras.Model(inputs=inputs, outputs=outputs)

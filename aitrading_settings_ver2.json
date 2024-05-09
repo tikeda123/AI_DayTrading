@@ -63,11 +63,9 @@
     {
         "DATAPATH"          :"data/data_rolling/",
 		"LEARN_DATAPATH"    :"data/data_ml/",
-		"LOWERDATA_FILE"    :"BTCUSDT_20200101_20230101_60_price_lower_mlts.csv",
-		"UPPERDATA_FILE"    :"BTCUSDT_20200101_20230101_60_price_upper_mlts.csv",
         "TARGET_COLUMN"     :["close","ema"],
-        "FEATURE_COLUMNS"   :["ema","sma","close","macdhist","macd_diff","macdsignal","macd","rsi","upper_diff","lower_diff","middle_diff","volume_ma","dmi_diff"]
-	},
+		"FEATURE_COLUMNS"   :["macd","macdsignal","adx","adxr","p_di","m_di","ema","sma","close","macdhist","macd_diff","macdsignal","macd","rsi","upper_diff","lower_diff","middle_diff","volume_ma","dmi_diff","volume"]
+ 	},
     "TECHNICAL" :
     {
         "BB" :

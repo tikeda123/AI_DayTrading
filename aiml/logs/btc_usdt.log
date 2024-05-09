@@ -12230,3 +12230,1035 @@ weighted avg       0.67      0.67      0.67      4600
 
 [[1394  790]
  [ 735 1681]]
+Rolling_model Model, Accuracy: 0.6428571428571429
+              precision    recall  f1-score   support
+
+       False       0.57      0.72      0.63        18
+        True       0.74      0.58      0.65        24
+
+    accuracy                           0.64        42
+   macro avg       0.65      0.65      0.64        42
+weighted avg       0.66      0.64      0.64        42
+
+[[13  5]
+ [10 14]]
+Rolling_model Model, Accuracy: 0.6190476190476191
+              precision    recall  f1-score   support
+
+       False       0.54      0.72      0.62        18
+        True       0.72      0.54      0.62        24
+
+    accuracy                           0.62        42
+   macro avg       0.63      0.63      0.62        42
+weighted avg       0.64      0.62      0.62        42
+
+[[13  5]
+ [11 13]]
+Rolling_model Model, Accuracy: 0.5952380952380952
+              precision    recall  f1-score   support
+
+       False       0.50      0.76      0.60        17
+        True       0.75      0.48      0.59        25
+
+    accuracy                           0.60        42
+   macro avg       0.62      0.62      0.60        42
+weighted avg       0.65      0.60      0.59        42
+
+[[13  4]
+ [13 12]]
+Rolling_model Model, Accuracy: 0.525
+              precision    recall  f1-score   support
+
+       False       0.50      0.84      0.63        19
+        True       0.62      0.24      0.34        21
+
+    accuracy                           0.53        40
+   macro avg       0.56      0.54      0.49        40
+weighted avg       0.57      0.53      0.48        40
+
+[[16  3]
+ [16  5]]
+Rolling_model Model, Accuracy: 0.575
+              precision    recall  f1-score   support
+
+       False       0.58      0.82      0.68        22
+        True       0.56      0.28      0.37        18
+
+    accuracy                           0.57        40
+   macro avg       0.57      0.55      0.52        40
+weighted avg       0.57      0.57      0.54        40
+
+[[18  4]
+ [13  5]]
+Rolling_model Model, Accuracy: 0.55
+              precision    recall  f1-score   support
+
+       False       0.56      0.82      0.67        22
+        True       0.50      0.22      0.31        18
+
+    accuracy                           0.55        40
+   macro avg       0.53      0.52      0.49        40
+weighted avg       0.53      0.55      0.51        40
+
+[[18  4]
+ [14  4]]
+Rolling_model Model, Accuracy: 0.55
+              precision    recall  f1-score   support
+
+       False       0.56      0.82      0.67        22
+        True       0.50      0.22      0.31        18
+
+    accuracy                           0.55        40
+   macro avg       0.53      0.52      0.49        40
+weighted avg       0.53      0.55      0.51        40
+
+[[18  4]
+ [14  4]]
+Rolling_model Model, Accuracy: 0.475
+              precision    recall  f1-score   support
+
+       False       0.47      0.95      0.63        19
+        True       0.50      0.05      0.09        21
+
+    accuracy                           0.48        40
+   macro avg       0.49      0.50      0.36        40
+weighted avg       0.49      0.47      0.35        40
+
+[[18  1]
+ [20  1]]
+Rolling_model Model, Accuracy: 0.65
+              precision    recall  f1-score   support
+
+       False       0.62      1.00      0.77        23
+        True       1.00      0.18      0.30        17
+
+    accuracy                           0.65        40
+   macro avg       0.81      0.59      0.53        40
+weighted avg       0.78      0.65      0.57        40
+
+[[23  0]
+ [14  3]]
+Rolling_model Model, Accuracy: 0.525
+              precision    recall  f1-score   support
+
+       False       0.53      1.00      0.69        21
+        True       0.00      0.00      0.00        19
+
+    accuracy                           0.53        40
+   macro avg       0.26      0.50      0.34        40
+weighted avg       0.28      0.53      0.36        40
+
+[[21  0]
+ [19  0]]
+Rolling_model Model, Accuracy: 0.5238095238095238
+              precision    recall  f1-score   support
+
+       False       0.36      0.31      0.33        16
+        True       0.61      0.65      0.63        26
+
+    accuracy                           0.52        42
+   macro avg       0.48      0.48      0.48        42
+weighted avg       0.51      0.52      0.52        42
+
+[[ 5 11]
+ [ 9 17]]
+Rolling_model Model, Accuracy: 0.5
+              precision    recall  f1-score   support
+
+       False       0.36      0.29      0.32        17
+        True       0.57      0.64      0.60        25
+
+    accuracy                           0.50        42
+   macro avg       0.46      0.47      0.46        42
+weighted avg       0.48      0.50      0.49        42
+
+[[ 5 12]
+ [ 9 16]]
+Rolling_model Model, Accuracy: 0.5
+              precision    recall  f1-score   support
+
+       False       0.38      0.28      0.32        18
+        True       0.55      0.67      0.60        24
+
+    accuracy                           0.50        42
+   macro avg       0.47      0.47      0.46        42
+weighted avg       0.48      0.50      0.48        42
+
+[[ 5 13]
+ [ 8 16]]
+Rolling_model Model, Accuracy: 0.47619047619047616
+              precision    recall  f1-score   support
+
+       False       0.31      0.24      0.27        17
+        True       0.55      0.64      0.59        25
+
+    accuracy                           0.48        42
+   macro avg       0.43      0.44      0.43        42
+weighted avg       0.45      0.48      0.46        42
+
+[[ 4 13]
+ [ 9 16]]
+Rolling_model Model, Accuracy: 0.5
+              precision    recall  f1-score   support
+
+       False       0.36      0.29      0.32        17
+        True       0.57      0.64      0.60        25
+
+    accuracy                           0.50        42
+   macro avg       0.46      0.47      0.46        42
+weighted avg       0.48      0.50      0.49        42
+
+[[ 5 12]
+ [ 9 16]]
+Rolling_model Model, Accuracy: 0.5
+              precision    recall  f1-score   support
+
+       False       0.38      0.28      0.32        18
+        True       0.55      0.67      0.60        24
+
+    accuracy                           0.50        42
+   macro avg       0.47      0.47      0.46        42
+weighted avg       0.48      0.50      0.48        42
+
+[[ 5 13]
+ [ 8 16]]
+Rolling_model Model, Accuracy: 0.5
+              precision    recall  f1-score   support
+
+       False       0.36      0.29      0.32        17
+        True       0.57      0.64      0.60        25
+
+    accuracy                           0.50        42
+   macro avg       0.46      0.47      0.46        42
+weighted avg       0.48      0.50      0.49        42
+
+[[ 5 12]
+ [ 9 16]]
+Rolling_model Model, Accuracy: 0.5
+              precision    recall  f1-score   support
+
+       False       0.33      0.24      0.28        17
+        True       0.57      0.68      0.62        25
+
+    accuracy                           0.50        42
+   macro avg       0.45      0.46      0.45        42
+weighted avg       0.47      0.50      0.48        42
+
+[[ 4 13]
+ [ 8 17]]
+Rolling_model Model, Accuracy: 0.5
+              precision    recall  f1-score   support
+
+       False       0.44      0.61      0.51        18
+        True       0.59      0.42      0.49        24
+
+    accuracy                           0.50        42
+   macro avg       0.51      0.51      0.50        42
+weighted avg       0.52      0.50      0.50        42
+
+[[11  7]
+ [14 10]]
+Rolling_model Model, Accuracy: 0.575
+              precision    recall  f1-score   support
+
+       False       0.56      0.75      0.64        20
+        True       0.62      0.40      0.48        20
+
+    accuracy                           0.57        40
+   macro avg       0.59      0.57      0.56        40
+weighted avg       0.59      0.57      0.56        40
+
+[[15  5]
+ [12  8]]
+Rolling_model Model, Accuracy: 0.6
+              precision    recall  f1-score   support
+
+       False       0.59      0.81      0.68        21
+        True       0.64      0.37      0.47        19
+
+    accuracy                           0.60        40
+   macro avg       0.61      0.59      0.57        40
+weighted avg       0.61      0.60      0.58        40
+
+[[17  4]
+ [12  7]]
+Rolling_model Model, Accuracy: 0.55
+              precision    recall  f1-score   support
+
+       False       0.54      0.75      0.63        20
+        True       0.58      0.35      0.44        20
+
+    accuracy                           0.55        40
+   macro avg       0.56      0.55      0.53        40
+weighted avg       0.56      0.55      0.53        40
+
+[[15  5]
+ [13  7]]
+Rolling_model Model, Accuracy: 0.575
+              precision    recall  f1-score   support
+
+       False       0.57      0.81      0.67        21
+        True       0.60      0.32      0.41        19
+
+    accuracy                           0.57        40
+   macro avg       0.58      0.56      0.54        40
+weighted avg       0.58      0.57      0.55        40
+
+[[17  4]
+ [13  6]]
+Rolling_model Model, Accuracy: 0.6
+              precision    recall  f1-score   support
+
+       False       0.60      0.82      0.69        22
+        True       0.60      0.33      0.43        18
+
+    accuracy                           0.60        40
+   macro avg       0.60      0.58      0.56        40
+weighted avg       0.60      0.60      0.57        40
+
+[[18  4]
+ [12  6]]
+Rolling_model Model, Accuracy: 0.575
+              precision    recall  f1-score   support
+
+       False       0.55      0.80      0.65        20
+        True       0.64      0.35      0.45        20
+
+    accuracy                           0.57        40
+   macro avg       0.59      0.57      0.55        40
+weighted avg       0.59      0.57      0.55        40
+
+[[16  4]
+ [13  7]]
+Rolling_model Model, Accuracy: 0.55
+              precision    recall  f1-score   support
+
+       False       0.52      0.74      0.61        19
+        True       0.62      0.38      0.47        21
+
+    accuracy                           0.55        40
+   macro avg       0.57      0.56      0.54        40
+weighted avg       0.57      0.55      0.54        40
+
+[[14  5]
+ [13  8]]
+Rolling_model Model, Accuracy: 0.575
+              precision    recall  f1-score   support
+
+       False       0.57      0.81      0.67        21
+        True       0.60      0.32      0.41        19
+
+    accuracy                           0.57        40
+   macro avg       0.58      0.56      0.54        40
+weighted avg       0.58      0.57      0.55        40
+
+[[17  4]
+ [13  6]]
+Rolling_model Model, Accuracy: 0.625
+              precision    recall  f1-score   support
+
+       False       0.61      0.81      0.69        21
+        True       0.67      0.42      0.52        19
+
+    accuracy                           0.62        40
+   macro avg       0.64      0.62      0.61        40
+weighted avg       0.64      0.62      0.61        40
+
+[[17  4]
+ [11  8]]
+Rolling_model Model, Accuracy: 0.625
+              precision    recall  f1-score   support
+
+       False       0.62      0.82      0.71        22
+        True       0.64      0.39      0.48        18
+
+    accuracy                           0.62        40
+   macro avg       0.63      0.60      0.59        40
+weighted avg       0.63      0.62      0.61        40
+
+[[18  4]
+ [11  7]]
+Rolling_model Model, Accuracy: 0.6
+              precision    recall  f1-score   support
+
+       False       0.57      0.80      0.67        20
+        True       0.67      0.40      0.50        20
+
+    accuracy                           0.60        40
+   macro avg       0.62      0.60      0.58        40
+weighted avg       0.62      0.60      0.58        40
+
+[[16  4]
+ [12  8]]
+Rolling_model Model, Accuracy: 0.6
+              precision    recall  f1-score   support
+
+       False       0.62      0.78      0.69        23
+        True       0.55      0.35      0.43        17
+
+    accuracy                           0.60        40
+   macro avg       0.58      0.57      0.56        40
+weighted avg       0.59      0.60      0.58        40
+
+[[18  5]
+ [11  6]]
+Rolling_model Model, Accuracy: 0.575
+              precision    recall  f1-score   support
+
+       False       0.55      0.80      0.65        20
+        True       0.64      0.35      0.45        20
+
+    accuracy                           0.57        40
+   macro avg       0.59      0.57      0.55        40
+weighted avg       0.59      0.57      0.55        40
+
+[[16  4]
+ [13  7]]
+Rolling_model Model, Accuracy: 0.575
+              precision    recall  f1-score   support
+
+       False       0.55      0.80      0.65        20
+        True       0.64      0.35      0.45        20
+
+    accuracy                           0.57        40
+   macro avg       0.59      0.57      0.55        40
+weighted avg       0.59      0.57      0.55        40
+
+[[16  4]
+ [13  7]]
+Rolling_model Model, Accuracy: 0.6
+              precision    recall  f1-score   support
+
+       False       0.59      0.76      0.67        21
+        True       0.62      0.42      0.50        19
+
+    accuracy                           0.60        40
+   macro avg       0.60      0.59      0.58        40
+weighted avg       0.60      0.60      0.59        40
+
+[[16  5]
+ [11  8]]
+Rolling_model Model, Accuracy: 0.828125
+              precision    recall  f1-score   support
+
+       False       0.89      0.88      0.88        48
+        True       0.65      0.69      0.67        16
+
+    accuracy                           0.83        64
+   macro avg       0.77      0.78      0.78        64
+weighted avg       0.83      0.83      0.83        64
+
+[[42  6]
+ [ 5 11]]
+Rolling_model Model, Accuracy: 0.828125
+              precision    recall  f1-score   support
+
+       False       0.91      0.86      0.88        49
+        True       0.61      0.73      0.67        15
+
+    accuracy                           0.83        64
+   macro avg       0.76      0.80      0.78        64
+weighted avg       0.84      0.83      0.83        64
+
+[[42  7]
+ [ 4 11]]
+Rolling_model Model, Accuracy: 0.625
+              precision    recall  f1-score   support
+
+       False       0.63      0.77      0.69        22
+        True       0.62      0.44      0.52        18
+
+    accuracy                           0.62        40
+   macro avg       0.62      0.61      0.61        40
+weighted avg       0.62      0.62      0.61        40
+
+[[17  5]
+ [10  8]]
+Rolling_model Model, Accuracy: 0.6190476190476191
+              precision    recall  f1-score   support
+
+       False       0.62      0.78      0.69        23
+        True       0.62      0.42      0.50        19
+
+    accuracy                           0.62        42
+   macro avg       0.62      0.60      0.60        42
+weighted avg       0.62      0.62      0.61        42
+
+[[18  5]
+ [11  8]]
+Rolling_model Model, Accuracy: 0.6363636363636364
+              precision    recall  f1-score   support
+
+       False       0.60      1.00      0.75         6
+        True       1.00      0.20      0.33         5
+
+    accuracy                           0.64        11
+   macro avg       0.80      0.60      0.54        11
+weighted avg       0.78      0.64      0.56        11
+
+[[6 0]
+ [4 1]]
+Rolling_model Model, Accuracy: 0.7272727272727273
+              precision    recall  f1-score   support
+
+       False       0.70      1.00      0.82         7
+        True       1.00      0.25      0.40         4
+
+    accuracy                           0.73        11
+   macro avg       0.85      0.62      0.61        11
+weighted avg       0.81      0.73      0.67        11
+
+[[7 0]
+ [3 1]]
+Rolling_model Model, Accuracy: 0.631578947368421
+              precision    recall  f1-score   support
+
+       False       0.64      0.82      0.72        11
+        True       0.60      0.38      0.46         8
+
+    accuracy                           0.63        19
+   macro avg       0.62      0.60      0.59        19
+weighted avg       0.62      0.63      0.61        19
+
+[[9 2]
+ [5 3]]
+Rolling_model Model, Accuracy: 0.5789473684210527
+              precision    recall  f1-score   support
+
+       False       0.64      0.75      0.69        12
+        True       0.40      0.29      0.33         7
+
+    accuracy                           0.58        19
+   macro avg       0.52      0.52      0.51        19
+weighted avg       0.55      0.58      0.56        19
+
+[[9 3]
+ [5 2]]
+Rolling_model Model, Accuracy: 0.5789473684210527
+              precision    recall  f1-score   support
+
+       False       0.62      0.73      0.67        11
+        True       0.50      0.38      0.43         8
+
+    accuracy                           0.58        19
+   macro avg       0.56      0.55      0.55        19
+weighted avg       0.57      0.58      0.57        19
+
+[[8 3]
+ [5 3]]
+Rolling_model Model, Accuracy: 0.5263157894736842
+              precision    recall  f1-score   support
+
+       False       0.50      0.78      0.61         9
+        True       0.60      0.30      0.40        10
+
+    accuracy                           0.53        19
+   macro avg       0.55      0.54      0.50        19
+weighted avg       0.55      0.53      0.50        19
+
+[[7 2]
+ [7 3]]
+Rolling_model Model, Accuracy: 0.5263157894736842
+              precision    recall  f1-score   support
+
+       False       0.57      0.73      0.64        11
+        True       0.40      0.25      0.31         8
+
+    accuracy                           0.53        19
+   macro avg       0.49      0.49      0.47        19
+weighted avg       0.50      0.53      0.50        19
+
+[[8 3]
+ [6 2]]
+Rolling_model Model, Accuracy: 0.5263157894736842
+              precision    recall  f1-score   support
+
+       False       0.54      0.70      0.61        10
+        True       0.50      0.33      0.40         9
+
+    accuracy                           0.53        19
+   macro avg       0.52      0.52      0.50        19
+weighted avg       0.52      0.53      0.51        19
+
+[[7 3]
+ [6 3]]
+Rolling_model Model, Accuracy: 0.631578947368421
+              precision    recall  f1-score   support
+
+       False       0.67      0.73      0.70        11
+        True       0.57      0.50      0.53         8
+
+    accuracy                           0.63        19
+   macro avg       0.62      0.61      0.61        19
+weighted avg       0.63      0.63      0.63        19
+
+[[8 3]
+ [4 4]]
+Rolling_model Model, Accuracy: 0.6111111111111112
+              precision    recall  f1-score   support
+
+       False       0.58      0.65      0.61        17
+        True       0.65      0.58      0.61        19
+
+    accuracy                           0.61        36
+   macro avg       0.61      0.61      0.61        36
+weighted avg       0.61      0.61      0.61        36
+
+[[11  6]
+ [ 8 11]]
+Rolling_model Model, Accuracy: 0.6111111111111112
+              precision    recall  f1-score   support
+
+       False       0.58      0.65      0.61        17
+        True       0.65      0.58      0.61        19
+
+    accuracy                           0.61        36
+   macro avg       0.61      0.61      0.61        36
+weighted avg       0.61      0.61      0.61        36
+
+[[11  6]
+ [ 8 11]]
+Rolling_model Model, Accuracy: 0.6111111111111112
+              precision    recall  f1-score   support
+
+       False       0.58      0.65      0.61        17
+        True       0.65      0.58      0.61        19
+
+    accuracy                           0.61        36
+   macro avg       0.61      0.61      0.61        36
+weighted avg       0.61      0.61      0.61        36
+
+[[11  6]
+ [ 8 11]]
+Rolling_model Model, Accuracy: 0.625
+              precision    recall  f1-score   support
+
+       False       0.64      0.67      0.65        21
+        True       0.61      0.58      0.59        19
+
+    accuracy                           0.62        40
+   macro avg       0.62      0.62      0.62        40
+weighted avg       0.62      0.62      0.62        40
+
+[[14  7]
+ [ 8 11]]
+Rolling_model Model, Accuracy: 0.625
+              precision    recall  f1-score   support
+
+       False       0.64      0.67      0.65        21
+        True       0.61      0.58      0.59        19
+
+    accuracy                           0.62        40
+   macro avg       0.62      0.62      0.62        40
+weighted avg       0.62      0.62      0.62        40
+
+[[14  7]
+ [ 8 11]]
+Rolling_model Model, Accuracy: 0.625
+              precision    recall  f1-score   support
+
+       False       0.64      0.67      0.65        21
+        True       0.61      0.58      0.59        19
+
+    accuracy                           0.62        40
+   macro avg       0.62      0.62      0.62        40
+weighted avg       0.62      0.62      0.62        40
+
+[[14  7]
+ [ 8 11]]
+Rolling_model Model, Accuracy: 0.625
+              precision    recall  f1-score   support
+
+       False       0.64      0.67      0.65        21
+        True       0.61      0.58      0.59        19
+
+    accuracy                           0.62        40
+   macro avg       0.62      0.62      0.62        40
+weighted avg       0.62      0.62      0.62        40
+
+[[14  7]
+ [ 8 11]]
+Rolling_model Model, Accuracy: 0.6190476190476191
+              precision    recall  f1-score   support
+
+       False       0.64      0.75      0.69        12
+        True       0.57      0.44      0.50         9
+
+    accuracy                           0.62        21
+   macro avg       0.61      0.60      0.60        21
+weighted avg       0.61      0.62      0.61        21
+
+[[9 3]
+ [5 4]]
+Rolling_model Model, Accuracy: 0.6190476190476191
+              precision    recall  f1-score   support
+
+       False       0.64      0.75      0.69        12
+        True       0.57      0.44      0.50         9
+
+    accuracy                           0.62        21
+   macro avg       0.61      0.60      0.60        21
+weighted avg       0.61      0.62      0.61        21
+
+[[9 3]
+ [5 4]]
+Rolling_model Model, Accuracy: 0.3888888888888889
+              precision    recall  f1-score   support
+
+       False       0.20      0.12      0.15         8
+        True       0.46      0.60      0.52        10
+
+    accuracy                           0.39        18
+   macro avg       0.33      0.36      0.34        18
+weighted avg       0.35      0.39      0.36        18
+
+[[1 7]
+ [4 6]]
+Rolling_model Model, Accuracy: 0.6111111111111112
+              precision    recall  f1-score   support
+
+       False       0.55      0.75      0.63         8
+        True       0.71      0.50      0.59        10
+
+    accuracy                           0.61        18
+   macro avg       0.63      0.62      0.61        18
+weighted avg       0.64      0.61      0.61        18
+
+[[6 2]
+ [5 5]]
+Rolling_model Model, Accuracy: 0.47619047619047616
+              precision    recall  f1-score   support
+
+       False       0.42      0.56      0.48        18
+        True       0.56      0.42      0.48        24
+
+    accuracy                           0.48        42
+   macro avg       0.49      0.49      0.48        42
+weighted avg       0.50      0.48      0.48        42
+
+[[10  8]
+ [14 10]]
+Rolling_model Model, Accuracy: 0.47619047619047616
+              precision    recall  f1-score   support
+
+       False       0.42      0.56      0.48        18
+        True       0.56      0.42      0.48        24
+
+    accuracy                           0.48        42
+   macro avg       0.49      0.49      0.48        42
+weighted avg       0.50      0.48      0.48        42
+
+[[10  8]
+ [14 10]]
+Rolling_model Model, Accuracy: 0.47619047619047616
+              precision    recall  f1-score   support
+
+       False       0.42      0.56      0.48        18
+        True       0.56      0.42      0.48        24
+
+    accuracy                           0.48        42
+   macro avg       0.49      0.49      0.48        42
+weighted avg       0.50      0.48      0.48        42
+
+[[10  8]
+ [14 10]]
+Rolling_model Model, Accuracy: 0.6428571428571429
+              precision    recall  f1-score   support
+
+       False       0.57      0.67      0.62        18
+        True       0.71      0.62      0.67        24
+
+    accuracy                           0.64        42
+   macro avg       0.64      0.65      0.64        42
+weighted avg       0.65      0.64      0.64        42
+
+[[12  6]
+ [ 9 15]]
+Rolling_model Model, Accuracy: 0.6428571428571429
+              precision    recall  f1-score   support
+
+       False       0.57      0.67      0.62        18
+        True       0.71      0.62      0.67        24
+
+    accuracy                           0.64        42
+   macro avg       0.64      0.65      0.64        42
+weighted avg       0.65      0.64      0.64        42
+
+[[12  6]
+ [ 9 15]]
+Rolling_model Model, Accuracy: 0.6428571428571429
+              precision    recall  f1-score   support
+
+       False       0.57      0.67      0.62        18
+        True       0.71      0.62      0.67        24
+
+    accuracy                           0.64        42
+   macro avg       0.64      0.65      0.64        42
+weighted avg       0.65      0.64      0.64        42
+
+[[12  6]
+ [ 9 15]]
+Rolling_model Model, Accuracy: 0.5476190476190477
+              precision    recall  f1-score   support
+
+       False       0.48      0.56      0.51        18
+        True       0.62      0.54      0.58        24
+
+    accuracy                           0.55        42
+   macro avg       0.55      0.55      0.55        42
+weighted avg       0.56      0.55      0.55        42
+
+[[10  8]
+ [11 13]]
+Rolling_model Model, Accuracy: 0.47619047619047616
+              precision    recall  f1-score   support
+
+       False       0.38      0.33      0.35        18
+        True       0.54      0.58      0.56        24
+
+    accuracy                           0.48        42
+   macro avg       0.46      0.46      0.46        42
+weighted avg       0.47      0.48      0.47        42
+
+[[ 6 12]
+ [10 14]]
+Rolling_model Model, Accuracy: 0.6428571428571429
+              precision    recall  f1-score   support
+
+       False       0.56      0.78      0.65        18
+        True       0.76      0.54      0.63        24
+
+    accuracy                           0.64        42
+   macro avg       0.66      0.66      0.64        42
+weighted avg       0.68      0.64      0.64        42
+
+[[14  4]
+ [11 13]]
+Rolling_model Model, Accuracy: 0.5
+              precision    recall  f1-score   support
+
+       False       0.43      0.50      0.46        18
+        True       0.57      0.50      0.53        24
+
+    accuracy                           0.50        42
+   macro avg       0.50      0.50      0.50        42
+weighted avg       0.51      0.50      0.50        42
+
+[[ 9  9]
+ [12 12]]
+Rolling_model Model, Accuracy: 0.5
+              precision    recall  f1-score   support
+
+       False       0.43      0.50      0.46        18
+        True       0.57      0.50      0.53        24
+
+    accuracy                           0.50        42
+   macro avg       0.50      0.50      0.50        42
+weighted avg       0.51      0.50      0.50        42
+
+[[ 9  9]
+ [12 12]]
+Rolling_model Model, Accuracy: 0.47619047619047616
+              precision    recall  f1-score   support
+
+       False       0.40      0.44      0.42        18
+        True       0.55      0.50      0.52        24
+
+    accuracy                           0.48        42
+   macro avg       0.47      0.47      0.47        42
+weighted avg       0.48      0.48      0.48        42
+
+[[ 8 10]
+ [12 12]]
+Rolling_model Model, Accuracy: 0.4523809523809524
+              precision    recall  f1-score   support
+
+       False       0.35      0.33      0.34        18
+        True       0.52      0.54      0.53        24
+
+    accuracy                           0.45        42
+   macro avg       0.44      0.44      0.44        42
+weighted avg       0.45      0.45      0.45        42
+
+[[ 6 12]
+ [11 13]]
+Rolling_model Model, Accuracy: 0.5714285714285714
+              precision    recall  f1-score   support
+
+       False       0.50      0.56      0.53        18
+        True       0.64      0.58      0.61        24
+
+    accuracy                           0.57        42
+   macro avg       0.57      0.57      0.57        42
+weighted avg       0.58      0.57      0.57        42
+
+[[10  8]
+ [10 14]]
+Rolling_model Model, Accuracy: 0.38095238095238093
+              precision    recall  f1-score   support
+
+       False       0.33      0.44      0.38        18
+        True       0.44      0.33      0.38        24
+
+    accuracy                           0.38        42
+   macro avg       0.39      0.39      0.38        42
+weighted avg       0.40      0.38      0.38        42
+
+[[ 8 10]
+ [16  8]]
+Rolling_model Model, Accuracy: 0.5476190476190477
+              precision    recall  f1-score   support
+
+       False       0.38      0.40      0.39        15
+        True       0.65      0.63      0.64        27
+
+    accuracy                           0.55        42
+   macro avg       0.51      0.51      0.51        42
+weighted avg       0.55      0.55      0.55        42
+
+[[ 6  9]
+ [10 17]]
+Rolling_model Model, Accuracy: 0.5714285714285714
+              precision    recall  f1-score   support
+
+       False       0.38      0.33      0.36        15
+        True       0.66      0.70      0.68        27
+
+    accuracy                           0.57        42
+   macro avg       0.52      0.52      0.52        42
+weighted avg       0.56      0.57      0.56        42
+
+[[ 5 10]
+ [ 8 19]]
+Rolling_model Model, Accuracy: 0.5714285714285714
+              precision    recall  f1-score   support
+
+       False       0.38      0.33      0.36        15
+        True       0.66      0.70      0.68        27
+
+    accuracy                           0.57        42
+   macro avg       0.52      0.52      0.52        42
+weighted avg       0.56      0.57      0.56        42
+
+[[ 5 10]
+ [ 8 19]]
+Rolling_model Model, Accuracy: 0.5714285714285714
+              precision    recall  f1-score   support
+
+       False       0.38      0.33      0.36        15
+        True       0.66      0.70      0.68        27
+
+    accuracy                           0.57        42
+   macro avg       0.52      0.52      0.52        42
+weighted avg       0.56      0.57      0.56        42
+
+[[ 5 10]
+ [ 8 19]]
+Rolling_model Model, Accuracy: 0.5714285714285714
+              precision    recall  f1-score   support
+
+       False       0.38      0.33      0.36        15
+        True       0.66      0.70      0.68        27
+
+    accuracy                           0.57        42
+   macro avg       0.52      0.52      0.52        42
+weighted avg       0.56      0.57      0.56        42
+
+[[ 5 10]
+ [ 8 19]]
+Rolling_model Model, Accuracy: 0.7380952380952381
+              precision    recall  f1-score   support
+
+       False       0.75      0.40      0.52        15
+        True       0.74      0.93      0.82        27
+
+    accuracy                           0.74        42
+   macro avg       0.74      0.66      0.67        42
+weighted avg       0.74      0.74      0.71        42
+
+[[ 6  9]
+ [ 2 25]]
+Rolling_model Model, Accuracy: 0.7380952380952381
+              precision    recall  f1-score   support
+
+       False       0.75      0.40      0.52        15
+        True       0.74      0.93      0.82        27
+
+    accuracy                           0.74        42
+   macro avg       0.74      0.66      0.67        42
+weighted avg       0.74      0.74      0.71        42
+
+[[ 6  9]
+ [ 2 25]]
+Rolling_model Model, Accuracy: 0.7380952380952381
+              precision    recall  f1-score   support
+
+       False       0.75      0.40      0.52        15
+        True       0.74      0.93      0.82        27
+
+    accuracy                           0.74        42
+   macro avg       0.74      0.66      0.67        42
+weighted avg       0.74      0.74      0.71        42
+
+[[ 6  9]
+ [ 2 25]]
+Rolling_model Model, Accuracy: 0.7380952380952381
+              precision    recall  f1-score   support
+
+       False       0.75      0.40      0.52        15
+        True       0.74      0.93      0.82        27
+
+    accuracy                           0.74        42
+   macro avg       0.74      0.66      0.67        42
+weighted avg       0.74      0.74      0.71        42
+
+[[ 6  9]
+ [ 2 25]]
+Rolling_model Model, Accuracy: 0.475
+              precision    recall  f1-score   support
+
+       False       0.47      0.45      0.46        20
+        True       0.48      0.50      0.49        20
+
+    accuracy                           0.48        40
+   macro avg       0.47      0.47      0.47        40
+weighted avg       0.47      0.47      0.47        40
+
+[[ 9 11]
+ [10 10]]
+Rolling_model Model, Accuracy: 0.725
+              precision    recall  f1-score   support
+
+       False       0.70      0.80      0.74        20
+        True       0.76      0.65      0.70        20
+
+    accuracy                           0.73        40
+   macro avg       0.73      0.73      0.72        40
+weighted avg       0.73      0.72      0.72        40
+
+[[16  4]
+ [ 7 13]]
+Rolling_model Model, Accuracy: 0.725
+              precision    recall  f1-score   support
+
+       False       0.70      0.80      0.74        20
+        True       0.76      0.65      0.70        20
+
+    accuracy                           0.73        40
+   macro avg       0.73      0.73      0.72        40
+weighted avg       0.73      0.72      0.72        40
+
+[[16  4]
+ [ 7 13]]
+Rolling_model Model, Accuracy: 0.725
+              precision    recall  f1-score   support
+
+       False       0.70      0.80      0.74        20
+        True       0.76      0.65      0.70        20
+
+    accuracy                           0.73        40
+   macro avg       0.73      0.73      0.72        40
+weighted avg       0.73      0.72      0.72        40
+
+[[16  4]
+ [ 7 13]]

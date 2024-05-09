@@ -13,7 +13,7 @@ sys.path.append(parent_dir)
 
 from common.utils import get_config
 from common.trading_logger import TradingLogger
-from common.constants import COLUMN_START_AT, TIME_SERIES_PERIOD
+from common.constants import COLUMN_START_AT, TIME_SERIES_PERIOD, MARKET_DATA_ML_LOWER, MARKET_DATA_ML_UPPER
 from common.utils import get_config
 
 from aiml.prediction_model import PredictionModel
@@ -54,29 +54,21 @@ class InterfacePredictionRollingManager:
         self.logger = TradingLogger()
         self.prediction_model: PredictionModel = None
 
-    def initialize_model(self, model_class):
+    def initialize_model(self, id, model_class):
         """
         指定されたモデルクラスを初期化する。
 
         Args:
             model_class (type): 初期化するモデルクラス。
         """
-        self.prediction_model = model_class(self.symbol, self.interval)
+        self.prediction_model = model_class(id, self.symbol, self.interval)
 
-    def load_data_from_db_tech(self, table_name_tech: str = None):
-        """
-        テクニカルデータをデータベースから読み込む。
-
-        Args:
-            table_name_tech (str, optional): テクニカルデータのテーブル名。
-        """
-        if table_name_tech is None:
-            table_name_tech = self.table_name_tech
-
-        data_loader = self.prediction_model.get_data_loader()
-        data_loader.load_data_from_db(table_name_tech)
-
-    def load_and_prepare_data(self, start_datetime: str, end_datetime: str, test_size: float = 0.5, random_state: int = None) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    def load_and_prepare_data(self,
+                              start_datetime: str,
+                              end_datetime: str,
+                              coll_type: str,
+                              test_size: float = 0.5,
+                              random_state: int = None) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
         """
         指定された期間のデータを読み込み、前処理を行い、訓練データとテストデータに分割する。
 
@@ -89,7 +81,16 @@ class InterfacePredictionRollingManager:
         Returns:
             Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]: 訓練データ、テストデータ、訓練ラベル、テストラベル。
         """
-        self.rl_x_train, self.rl_x_test, self.rl_y_train, self.rl_y_test = self.prediction_model.load_and_prepare_data(start_datetime, end_datetime, test_size=test_size, random_state=random_state)
+        self.rl_x_train, self.rl_x_test, self.rl_y_train, self.rl_y_test = self.prediction_model.load_and_prepare_data(start_datetime, end_datetime, coll_type,test_size=test_size, random_state=random_state)
+        return self.rl_x_train, self.rl_x_test, self.rl_y_train, self.rl_y_test
+
+    def load_and_prepare_data_time_series(self,
+                                          start_datetime,
+                                          end_datetime,
+                                          coll_type,
+                                          test_size=0.2,
+                                          random_state=None):
+        self.rl_x_train, self.rl_x_test, self.rl_y_train, self.rl_y_test = self.prediction_model.load_and_prepare_data_time_series(start_datetime, end_datetime, coll_type,test_size=test_size, random_state=random_state)
         return self.rl_x_train, self.rl_x_test, self.rl_y_train, self.rl_y_test
 
     def train_models(self, x_train: np.ndarray=None, y_train: np.ndarray=None):
@@ -228,7 +229,7 @@ class InterfacePredictionRollingManager:
         return sequence.to_numpy()
 
 
-def init_inference_prediction_rolling_manager(model_class) -> InterfacePredictionRollingManager:
+def init_inference_prediction_rolling_manager(id,model_class) -> InterfacePredictionRollingManager:
     """
     InferencePredictionRollingManagerインスタンスを初期化し、指定されたモデルクラスを初期化する。
 
@@ -239,23 +240,23 @@ def init_inference_prediction_rolling_manager(model_class) -> InterfacePredictio
         InferencePredictionRollingManager: 初期化されたInferencePredictionRollingManagerインスタンス。
     """
     manager = InterfacePredictionRollingManager()
-    manager.initialize_model(model_class)
+    manager.initialize_model(id,model_class)
     return manager
 
 def main():
 
-    from aiml.transformer_prediction_rolling_model import TransformerPredictionRollingModel
+    from aiml.transformer_prediction_ts_model import TransformerPredictionTSModel
 
-    manager = init_inference_prediction_rolling_manager(TransformerPredictionRollingModel)
-    manager.load_and_prepare_data("2022-01-01 00:00:00", "2023-01-01 00:00:00",test_size=0.2, random_state=None)
+    manager = init_inference_prediction_rolling_manager("upper_mlts",TransformerPredictionTSModel)
+    #manager.load_and_prepare_data_time_series("2021-01-03 00:00:00", "2024-01-01 00:00:00",MARKET_DATA_ML_UPPER,test_size=0.2, random_state=None)
     #manager.train_models()
-    manager.train_with_cross_validation()
-    manager.save_model()
+    #manager.train_with_cross_validation()
+    #manager.save_model()
 
-    #manager.load_model()
-    #manager.load_and_prepare_data("2023-01-01 00:00:00", "2024-05-01 00:00:00",test_size=0.2, random_state=None)
+    manager.load_model()
+    manager.load_and_prepare_data_time_series("2024-01-01 00:00:00", "2024-06-01 00:00:00",MARKET_DATA_ML_UPPER,test_size=0.9, random_state=None)
 
-    #manager.evaluate_models()
+    manager.evaluate_models()
 
     # テストデータを取得
 
