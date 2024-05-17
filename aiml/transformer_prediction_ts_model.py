@@ -70,6 +70,7 @@ class TransformerPredictionTSModel(TransformerPredictionRollingModel):
         #  TIME_SERIES_PERIOD-1, self.feature_columns
         filtered_data = data[(data[COLUMN_BB_DIRECTION].isin([BB_DIRECTION_UPPER, BB_DIRECTION_LOWER])) & (data[COLUMN_BB_PROFIT] != 0)]
         # シーケンスとターゲットの生成
+
         sequences, targets = [], []
 
         for i in range(len(filtered_data)):
@@ -79,8 +80,7 @@ class TransformerPredictionTSModel(TransformerPredictionRollingModel):
                 break
 
             sequence = data.loc[start_index:end_index, feature_columns].values
-            positive = data.loc[end_index, COLUMN_CLOSE]*POSITIVE_THRESHOLD
-            target = data.loc[end_index, COLUMN_BB_PROFIT] > positive
+            target = data.loc[end_index, COLUMN_BB_PROFIT] > POSITIVE_THRESHOLD
             sequences.append(sequence)
             targets.append(target)
 
@@ -154,7 +154,7 @@ def main():
     x_train, x_test, y_train, y_test = model.load_and_prepare_data_time_series(
                                                                     '2020-01-04 00:00:00',
                                                                     '2024-01-01 00:00:00',
-                                                                    MARKET_DATA_ML_LOWER)
+                                                                    MARKET_DATA_ML_LOWER,)
     # データのロードと前処理
     #x_train, x_test, y_train, y_test = model.load_and_prepare_data('2021-01-01 00:00:00', '2022-02-01 00:00:00')
     #model.load_model()
@@ -181,9 +181,6 @@ def main():
 
 
 
-
-
-
     cv_scores = model.train_with_cross_validation(
         np.concatenate((x_train, x_test), axis=0),
         np.concatenate((y_train, y_test), axis=0)
@@ -196,6 +193,8 @@ def main():
     print(f'Accuracy: {accuracy}')
     print(report)
     print(conf_matrix)
+
+    #model.load_model()
     model.save_model()
 
 
@@ -209,7 +208,7 @@ def main():
 
     # モデルの訓練
     #model.train(x_train, y_train)
-
+    #model.load_model()
     # モデルの評価
     accuracy, report, conf_matrix = model.evaluate(x_test, y_test)
     print(f"Accuracy: {accuracy}")

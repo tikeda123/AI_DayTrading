@@ -193,6 +193,8 @@ class TechnicalAnalyzer:
             if nbdev_multiplier == 1:
                 self._truncate_and_add_to_df(middle_band, COLUMN_MIDDLE_BAND)
 
+        self.__data['bbvi'] = ((self.__data['upper2'] - self.__data['lower2']) / self.__data['middle'])*100
+        self._truncate_and_add_to_df(self.__data['bbvi'], COLUMN_BBVI)
         #self.__data.dropna(inplace=True)
         #self.__data.reset_index(drop=True, inplace=True)
 

@@ -19,7 +19,6 @@ class OnlineStrategy(TradingStrategy):
         self.__online_api = BybitTrader()
 
 
-
     def Idel_event_execute(self, context):
         """
         Executes an event in the idle state by increasing the entry counter

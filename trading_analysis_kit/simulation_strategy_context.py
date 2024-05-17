@@ -15,10 +15,8 @@ from common.constants import *
 
 # 技術分析やシミュレーション戦略、取引コンテキストのクラスをインポート
 from fxtransaction import FXTransaction
-from trading_analysis_kit.simulation_strategy import SimulationStrategy
 from trading_analysis_kit.trading_context import TradingContext
-from aiml.interface_prediction_manager import init_inference_prediction_rolling_manager
-from aiml.transformer_prediction_rolling_model import TransformerPredictionRollingModel
+from trading_analysis_kit.simulation_entry_strategy import BollingerBand_EntryStrategy
 
 # TradingContextを継承したシミュレーション戦略コンテキストクラス
 class SimulationStrategyContext(TradingContext):
@@ -31,15 +29,11 @@ class SimulationStrategyContext(TradingContext):
     Attributes:
         fx_transaction (FXTransaction): FX取引を管理するクラスのインスタンス。
         entry_manager (BollingerBand_EntryStrategy): エントリー戦略を管理するクラスのインスタンス。
-        exit_manager (BollingerBand_ExitStrategy): エグジット戦略を管理するクラスのインスタンス。
-        bb_direction (str): ボリンジャーバンドの方向。
-        exit_line (str): エグジットライン。
-        entry_counter (int): エントリーの回数をカウントする変数。
 
     Args:
         strategy (SimulationStrategy): シミュレーション戦略を提供するクラスのインスタンス。
     """
-    def __init__(self,strategy: SimulationStrategy):
+    def __init__(self,strategy):
         """
         クラスのコンストラクタです。親クラスのコンストラクタを呼び出し、インデックスをリセットし、
         FX取引クラスのインスタンスを初期化します。
@@ -50,54 +44,57 @@ class SimulationStrategyContext(TradingContext):
 
         super().__init__(strategy)  # 親クラスのコンストラクタを呼び出す
         self.fx_transaction = FXTransaction()
-        #self.__model = init_inference_prediction_rolling_manager(TransformerPredictionRollingModel)
-        #self.init_model()
+        self.entry_manager = BollingerBand_EntryStrategy()
+        self.losscut = self.config_manager.get("ACCOUNT", "LOSSCUT")
+        self.leverage = self.config_manager.get("ACCOUNT", "LEVERAGE")
+        self.init_amount = self.config_manager.get("ACCOUNT", "INIT_AMOUNT")
+        self.ptc = self.config_manager.get("ACCOUNT", "PTC")
+        self.make_filenname()
 
-    def init_model(self):
-        self.__model.load_model()
+    def make_filenname(self):
+        symbol = self.config_manager.get("SYMBOL")
+        interval = self.config_manager.get("INTERVAL")
+        self.simulation_result_filename = f'{symbol}_{interval}_simulation_result.csv'
 
+    def save_simulation_result(self,context):
+        """
+        シミュレーション結果を保存します。
+        Args:
+            context (TradingContext): トレーディングコンテキストオブジェクト。
+        """
+        save_filepath = parent_dir + '/' + self.config_manager.get('AIML_ROLLING','DATAPATH') + self.simulation_result_filename
+        df = context.dm.get_raw_data()
+        print(df)
+        df.to_csv(save_filepath, index=False)
+
+    def record_max_min_pandl_to_entrypoint(self):
+        """
+        最大と最小の利益を記録します。
+        """
+        entry_index = self.dm.get_entry_index()
+        exit_index = self.dm.get_exit_index()
+        df = self.dm.get_df_fromto(entry_index+1, exit_index)
+        min_pandl = df[COLUMN_MIN_PANDL].min()
+        max_pandl = df[COLUMN_MAX_PANDL].max()
+
+        self.dm.set_min_pandl(min_pandl, entry_index)
+        self.dm.set_max_pandl(max_pandl, entry_index)
+        #self.log_transaction(f'entrypoint max_pandl: {max_pandl},min_pandl: {min_pandl}')
 
     def record_entry_exit_price(self):
         """
         エントリー価格と出口価格を記録します。
         """
         # エントリー価格と出口価格を記録
-        entry_index = self.dataloader.ts.entry_index
-        exit_index = self.dataloader.ts.exit_index
+        entry_index = self.dm.get_entry_index()
+        exit_index = self.dm.get_exit_index()
 
-        self.dataloader.set_df_fromto(entry_index, exit_index, COLUMN_ENTRY_PRICE, self.dataloader.get_entry_price())
-        self.dataloader.set_df_fromto(entry_index, exit_index, COLUMN_EXIT_PRICE, self.dataloader.get_exit_price())
-        self.dataloader.set_df_fromto(entry_index, exit_index, COLUMN_BB_DIRECTION, self.dataloader.get_bb_direction())
-
-    def prediction_trend(self):
-        """
-        現在の市場の状況を分析してトレンドを予測します。
-
-        Args:
-            context (TradingContext): トレーディングコンテキストオブジェクト。
-
-        Returns:
-            int: トレンド予測結果。
-        """
-        """
-        df = self.dataloader.get_df_fromto(self.current_index, self.current_index)       #target = df[self.prediction_manager.get_feature_columns()]
-        target =  df.iloc[0]
-        prediction = self.__model.predict_price_direction(target)
-        self.set_prediction(prediction)
-        self.log_transaction(f"Prediction: {prediction}")
-        return prediction
-        """
-
-        current_index = self.dataloader.get_current_index()
-        df = self.dataloader.get_df_fromto(current_index-7, current_index)       #target = df[self.prediction_manager.get_feature_columns()]
-        prediction = self.__model.predict_rolling_model(df)
-        self.set_prediction(prediction)
-        self.log_transaction(f"Prediction: {prediction}")
-        return prediction
+        self.dm.set_df_fromto(entry_index, exit_index, COLUMN_ENTRY_PRICE, self.dm.get_entry_price())
+        self.dm.set_df_fromto(entry_index, exit_index, COLUMN_EXIT_PRICE, self.dm.get_exit_price())
+        self.dm.set_df_fromto(entry_index, exit_index, COLUMN_BB_DIRECTION, self.dm.get_bb_direction())
 
 
-
-    def calculate_current_profit(self) -> float:
+    def calculate_current_profit(self,current_price=None) -> float:
         """
         現在の利益を計算し、結果をデータローダーに保存します。
         ここでは、エントリー価格と現在の価格の差を利益を計算します。（Longを基本としています）
@@ -105,13 +102,102 @@ class SimulationStrategyContext(TradingContext):
         Returns:
             float: 現在の利益。
         """
-        current_price = self.dataloader.get_close_price()
-        entry_price = self.dataloader.get_entry_price()
-        current_profit = current_price - entry_price
+        if current_price is None:
+            current_price = self.dm.get_close_price()
 
-        self.dataloader.set_current_profit(current_profit)
-        self.log_transaction(f'Current profit: {current_profit},current price: {current_price},entry price: {entry_price}')
+        entry_price = self.dm.get_entry_price()
+        pred_type = self.dm.get_prediction()
+
+        qty = self.init_amount * self.leverage / entry_price
+        buymnt = (qty * entry_price)  # 買った時の金額
+        selmnt = (qty * current_price)
+
+        buy_fee = self.init_amount*self.ptc*self.leverage
+        sel_fee = self.init_amount*self.ptc*self.leverage
+
+        if pred_type == PRED_TYPE_LONG:  # LONGの場合の利益計算
+            current_profit = selmnt - buymnt  - (buy_fee + sel_fee)# 収益P＆L
+        else:  # SHORTの場合の利益計算
+            current_profit = buymnt - selmnt  - (buy_fee + sel_fee)# 収益P＆L
+
+        #self.log_transaction(f'Current profit: {current_profit},current price: {current_price},entry price: {entry_price}')
         return current_profit
+
+    def is_profit_triggered(self,triggered_profit)->(bool,float):
+        """
+        利益がトリガーされたかどうかを判断します。
+
+        Returns:
+            bool: 利益がトリガーされたかどうかの真偽値。
+
+        現在の価格をもとに利益がトリガーされたかどうかを判断し、
+        トリガーされた場合はTrueを返します。
+        """
+        entry_type = self.dm.get_entry_type()
+        profit_price = None
+
+        if entry_type == ENTRY_TYPE_LONG:
+            profit_price = self.dm.get_high_price()
+        else:
+            profit_price = self.dm.get_low_price()
+
+        profit = self.calculate_current_profit(profit_price)
+        if profit > triggered_profit:
+            calculate_profit_price = self.calculate_profit_triggered_price(triggered_profit)
+            return True, calculate_profit_price
+        return False, profit_price
+
+    def calculate_profit_triggered_price(self, profit) -> float:
+        """
+        利益がトリガーされた場合の価格を計算します。
+
+        Args:
+            profit (float): 利益。
+
+        Returns:
+            float: 利益がトリガーされた場合の価格。
+        """
+        entry_price = self.dm.get_entry_price()
+        pred_type = self.dm.get_prediction()
+        qty = self.init_amount * self.leverage / entry_price
+        buymnt = qty * entry_price
+        buy_fee = self.init_amount * self.ptc * self.leverage
+        sell_fee = (self.init_amount + profit) * self.ptc * self.leverage
+
+        if pred_type == PRED_TYPE_LONG:
+        # LONGの場合の利益計算
+            profit_price = (buymnt + buy_fee + sell_fee + profit) / qty
+        else:
+            # SHORTの場合の利益計算
+            profit_price = (buymnt - buy_fee - sell_fee - profit) / qty
+
+        return profit_price
+
+
+    def is_losscut_triggered(self)->(bool,float):
+        """
+        損切りがトリガーされたかどうかを判断します。
+
+        Returns:
+            bool: 損切りがトリガーされたかどうかの真偽値。
+
+        現在の価格をもとに損切りがトリガーされたかどうかを判断し、
+        トリガーされた場合はTrueを返します。
+        """
+        entry_type = self.dm.get_entry_type()
+        losscut_price = None
+
+        if entry_type == ENTRY_TYPE_LONG:
+            losscut_price = self.dm.get_low_price()
+        else:
+            losscut_price = self.dm.get_high_price()
+
+        loss_cut_pandl =  self.losscut*self.init_amount*-1
+        pandl = self.calculate_current_profit(losscut_price)
+
+        if pandl < loss_cut_pandl:
+            return True, loss_cut_pandl
+        return False, pandl
 
     def change_to_idle_state(self):
         """
@@ -120,7 +206,7 @@ class SimulationStrategyContext(TradingContext):
         利益分析を行い、インデックスをリセットします。
         最後にアイドル状態への遷移を記録します。
         """
-        self.dataloader.ts.reset_index()
+        self.dm.reset_index()
         self.record_state_and_transition(STATE_IDLE)
 
     def change_to_position_state(self):
@@ -132,8 +218,10 @@ class SimulationStrategyContext(TradingContext):
         Args:
             direction (str): トレードの方向を示す文字列。
         """
-        self.dataloader.ts.entry_index = self.dataloader.get_current_index()
-        self.dataloader.set_entry_price(self.dataloader.get_close_price())
+        entry_index = self.dm.get_current_index()
+        entry_price = self.dm.get_close_price()
+        self.dm.set_entry_index(entry_index)
+        self.dm.set_entry_price(entry_price)
         self.record_state_and_transition(STATE_POSITION)
 
     def change_to_entrypreparation_state(self):
@@ -159,6 +247,19 @@ class SimulationStrategyContext(TradingContext):
         self.log_transaction(f'go to {state}')
         self._state.handle_request(self, state)
 
+    def set_current_max_min_pandl(self):
+        h_pandl = self.calculate_current_profit(self.dm.get_high_price())
+        l_pandl = self.calculate_current_profit(self.dm.get_low_price())
+
+        max_pandl = max(h_pandl,l_pandl)
+        min_pandl = min(h_pandl,l_pandl)
+
+        self.dm.set_max_pandl(max_pandl)
+        self.dm.set_min_pandl(min_pandl)
+
+        return max_pandl,min_pandl
+        #self.log_transaction(f'current max_pandl: {max_pandl},min_pandl: {min_pandl}')
+
 
     def print_win_lose(self):
         """
@@ -172,13 +273,14 @@ class SimulationStrategyContext(TradingContext):
 def main():
         # 設定ファイルのパスを指定
 
-
+    from trading_analysis_kit.simulation_strategy import SimulationStrategy
     strategy_context = SimulationStrategy()
 
     context = SimulationStrategyContext(strategy_context)
-    context.load_data_from_datetime_period('2024-01-01 00:00:00', '2024-01-31 00:00:00')
+    context.load_data_from_datetime_period('2023-10-01 00:00:00', '2024-01-01 00:00:00')
     context.run_trading(context)
     context.print_win_lose()
+    context.save_simulation_result(context)
 
 if __name__ == "__main__":
     main()

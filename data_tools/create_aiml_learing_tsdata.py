@@ -80,9 +80,9 @@ def create_ml_data(start_date,end_date)->pd.DataFrame:
     strategy_context = MLDataCreationStrategy()
     context = SimulationStrategyContext(strategy_context)
     context.load_data_from_datetime_period(start_date, end_date)
-    context.dataloader.get_raw_data()
+    context.dm.get_raw_data()
     context.run_trading(context)
-    result = context.dataloader.get_raw_data()
+    result = context.dm.get_raw_data()
     return result
 
 def create_time_series_data(df)->tuple:

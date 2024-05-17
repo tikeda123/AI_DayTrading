@@ -367,7 +367,7 @@ class FXTransaction:
                                      qty, entry_price, losscut_price,0, limit_price, 0,
                                      pred, tradetype, 0, self.__losscut, entry_time, exit_time, direction)
         # ログに出力
-        self.__logger.log_transaction(entry_time,f'Entry: {tradetype}, pred:{pred}, entry_price{entry_price}')
+        self.__logger.log_transaction(entry_time,f'Entry: {direction}, {tradetype}, pred:{pred}, entry_price{entry_price}')
         self.__fxtrn.save_fxtrn_log()
         return serial
 
@@ -417,8 +417,8 @@ class FXTransaction:
         """
         # 指定されたserialがレコードに存在しなかったら0を返す
         if not self.__fxtrn.does_serial_exist(serial):
-            self.__logger.log_message(f'no exit record: {serial}')
-            return 0
+            self.__logger.log_message(f'trade_exit:no exit record: {serial}')
+            raise ValueError(f'trade_exit:no exit record: {serial}')
 
         equity = self.__fxtrn.get_fd(serial,'equity')
         tradetype = self.__fxtrn.get_fd(serial,'tradetype')
@@ -462,8 +462,8 @@ class FXTransaction:
         """
         # 指定されたserialがレコードに存在しなかったら0を返す
         if not self.__fxtrn.does_serial_exist(serial):
-            self.__logger.log_message(f'no exit record: {serial}')
-            return 0
+            self.__logger.log_message(f'trade_cancel:no exit record: {serial}')
+            raise ValueError(f'trade_cancel:no exit record: {serial}')
 
         equity = self.__fxtrn.get_fd(serial,'equity')
         tradetype = self.__fxtrn.get_fd(serial,'tradetype')
@@ -507,8 +507,8 @@ class FXTransaction:
                            ロスカットが発動すべき場合はTrue、そうでない場合はFalse。
         """
         if not self.__fxtrn.does_serial_exist(serial):
-            self.__logger.log_message(f'no exit record: {serial}')
-            return False,0
+            self.__logger.log_message(f'check_losscut:no exit record: {serial}')
+            raise ValueError(f'check_losscut:no exit record: {serial}')
 
         losscut_price = self.__fxtrn.get_fd(serial,'losscut_price')
         tradetype = self.__fxtrn.get_fd(serial,'tradetype')
@@ -537,13 +537,18 @@ class FXTransaction:
         SHORT = 'SHORT'
         # 指定されたserialがレコードに存在しない場合
         if not self.__fxtrn.does_serial_exist(serial):
-            self.__logger.log_message(f'no exit record: {serial}')
-            return False, 0
+            self.__logger.log_message(f'is_losscut_triggered:no exit record: {serial}')
+            #致命的なエラー処理
+            raise ValueError(f'is_losscut_triggered:no exit record: {serial}')
+
+            #return False, 0
 
         losscut_price = self.__fxtrn.get_fd(serial, 'losscut_price')
         tradetype = self.__fxtrn.get_fd(serial, 'tradetype')
 
         is_long_triggered = tradetype == LONG and losscut_price <= current_price
+        #if tradetype == LONG:
+        #    print(f'long: losscut_price:{losscut_price},current_price:{current_price}')
         is_short_triggered = tradetype == SHORT and losscut_price >= current_price
 
         is_triggered = not (is_long_triggered or is_short_triggered)
@@ -576,15 +581,6 @@ class FXTransaction:
         else:  # SHORTの場合
             return entry_price + loss_per_btc
 
-    def display_all_win_rates(self):
-        """
-        すべての方向と取引タイプに対する勝率を計算し表示します。
-        """
-        # 方向と取引タイプの組み合わせ
-        tradetype_exits = ['LONG_EXIT', 'SHORT_EXIT']
-        # すべての組み合わせについてループ
-        for tradetype_exit in tradetype_exits:
-            self.calculate_win_rate(tradetype_exit)
 
     def plot_balance_over_time(self):
         """
@@ -593,16 +589,18 @@ class FXTransaction:
         # 残高の変化をプロット
         self.__fxac.plot_balance_over_time()
 
-    def calculate_win_rate(self, tradetype_exit):
+    def calculate_win_rate(self, direction, tradetype_exit):
         """
-        指定された取引タイプに基づく勝率、ロスカットの割合、勝ち負けの平均時間を計算し表示します。
+        指定された方向と取引タイプに基づく勝率を計算し表示します。
 
         Args:
+            direction (str): 取引方向（'lower' または 'upper'）。
             tradetype_exit (str): エグジットの取引タイプ（'LONG_EXIT' または 'SHORT_EXIT'）。
         """
-        # 指定された取引タイプに基づいてフィルタリング
+        # 指定された方向と取引タイプに基づいてフィルタリング
         filtered_trades = self.__fxtrn.get_fxtrn_dataframe()[
-            self.__fxtrn.get_fxtrn_dataframe()['tradetype'] == tradetype_exit
+            (self.__fxtrn.get_fxtrn_dataframe()['direction'] == direction) &
+            (self.__fxtrn.get_fxtrn_dataframe()['tradetype'] == tradetype_exit)
         ]
 
         # 勝ちの取引数
@@ -623,27 +621,22 @@ class FXTransaction:
         # 負けた時のplの平均値
         average_loss_pl = filtered_trades[filtered_trades['pl'] < 0]['pl'].mean() if losses > 0 else 0
 
-        # ロスカットの割合を計算
-        losscut_trades = filtered_trades[filtered_trades['losscut'] == 'losscut']
-        losscut_rate = (len(losscut_trades) / total_trades) * 100 if total_trades > 0 else 0
+        self.__logger.log_verbose_message(f"Direction: {direction}, TradeType: {tradetype_exit}, Win Rate: {win_rate:.2f}%, Average Win PL: {average_win_pl:.2f}, Average Loss PL: {average_loss_pl:.2f}")
 
-        # 勝ちの取引の平均時間を計算
-        win_trades = filtered_trades[filtered_trades['pl'] > 0]
-        average_win_time = (win_trades['exittime'] - win_trades['entrytime']).mean() if not win_trades.empty else pd.Timedelta(0)
 
-        # 負けの取引の平均時間を計算
-        loss_trades = filtered_trades[filtered_trades['pl'] < 0]
-        average_loss_time = (loss_trades['exittime'] - loss_trades['entrytime']).mean() if not loss_trades.empty else pd.Timedelta(0)
+    def display_all_win_rates(self):
+        """
+        すべての方向と取引タイプに対する勝率を計算し表示します。
+        """
+        # 方向と取引タイプの組み合わせ
+        directions = ['lower', 'upper']
+        tradetype_exits = ['LONG_EXIT', 'SHORT_EXIT']
 
-        # 全取引の平均時間を計算
-        average_time = (filtered_trades['exittime'] - filtered_trades['entrytime']).mean() if not filtered_trades.empty else pd.Timedelta(0)
-
-        self.__logger.log_verbose_message(
-            f"TradeType: {tradetype_exit}, Win Rate: {win_rate:.2f}%, Losscut Rate: {losscut_rate:.2f}%")
-        self.__logger.log_verbose_message(
-            f"Average Win PL: {average_win_pl:.2f}, Average Loss PL: {average_loss_pl:.2f}")
-        self.__logger.log_verbose_message(
-            f"Average Win Time: {average_win_time}, Average Loss Time: {average_loss_time}, Average Time: {average_time}")
+        # すべての組み合わせについてループ
+        for direction in directions:
+            for tradetype_exit in tradetype_exits:
+                # 勝率を計算し表示
+                self.calculate_win_rate(direction, tradetype_exit)
 
 # 以下のようにFXTransactionクラスを使用することができます
 # config_manager = ConfigManager(...) # 適切に初期化

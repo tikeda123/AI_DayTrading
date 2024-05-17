@@ -31,10 +31,10 @@ from aiml.transformerblock import TransformerBlock
 
 # ハイパーパラメータの設定
 PARAM_LEARNING_RATE = 0.001
-PARAM_EPOCHS = 900
+PARAM_EPOCHS = 700
 
 N_SPLITS=3
-POSITIVE_THRESHOLD = 0.000
+POSITIVE_THRESHOLD = 0
 
 
 class TransformerPredictionRollingModel(PredictionModel):
@@ -94,7 +94,7 @@ class TransformerPredictionRollingModel(PredictionModel):
         self.datapath = parent_dir + '/' + self.config['DATAPATH']
         self.feature_columns = self.config['FEATURE_COLUMNS']
         self.target_column = self.config["TARGET_COLUMN"]
-        self.filename = f'{self.id}_{self.symbol}_{self.interval}_{self.target_column}_model'
+        self.filename = f'{self.id}_{self.symbol}_{self.interval}_model'
 
     def get_data_loader(self) -> MongoDataLoader:
         """
@@ -164,8 +164,7 @@ class TransformerPredictionRollingModel(PredictionModel):
        data = self.data_loader.load_data_from_datetime_period(
                                                start_datetime,
                                                 end_datetime,
-                                                coll_type,
-                                                self.table_name)
+                                                coll_type)
        scaled_sequences, targets = self._prepare_sequences(data)
 
        return train_test_split(scaled_sequences,
@@ -333,7 +332,10 @@ class TransformerPredictionRollingModel(PredictionModel):
         # 単一データポイントの予測
         # 予測用スケーラーを使用
         #self.scaler.scaler = MinMaxScaler(feature_range=(0, 1))
-        data_point = data_point[self.feature_columns].values
+
+        #data_point = data_point[self.feature_columns].values
+        #print(data_point)
+
         scaled_data_point = self.scaler.fit_transform(data_point)
         # モデルによる予測
         prediction = self.model.predict(scaled_data_point.reshape(1, -1, len(self.feature_columns)))
@@ -395,7 +397,7 @@ def main():
 
 
     # モデルの初期化
-    model = TransformerPredictionRollingModel("lower_mlts")
+    model = TransformerPredictionRollingModel("upper_mlts")
     #learning_datafile = 'BTCUSDT_20210101000_20230901000_60_price_upper_mlts.csv'
     learning_datafile = 'BTCUSDT_20200101_20230101_60_price_lower_mlts.csv'
     x_train, x_test, y_train, y_test = model.load_and_prepare_data_time_series_from_csv(learning_datafile)

@@ -13,7 +13,7 @@ sys.path.append(parent_dir)
 
 from common.utils import get_config
 from common.trading_logger import TradingLogger
-from common.constants import COLUMN_START_AT, TIME_SERIES_PERIOD, MARKET_DATA_ML_LOWER, MARKET_DATA_ML_UPPER
+from common.constants import *
 from common.utils import get_config
 
 from aiml.prediction_model import PredictionModel
@@ -170,10 +170,10 @@ class InterfacePredictionRollingManager:
         data_frame = data_loader.get_df_fromto(df.index[0] - (TIME_SERIES_PERIOD - 1), df.index[0])
         target_df = self.create_time_series_data(data_frame)
 
-        prediction = self.predict_rolling_model(target_df)
+        prediction = self.predict_model(target_df)
         return prediction
 
-    def predict_rolling_model(self, data_point: np.ndarray) -> int:
+    def predict_model(self, data_point: np.ndarray) -> int:
         """
         単一のデータポイントに対して予測を行う。
 
@@ -245,16 +245,17 @@ def init_inference_prediction_rolling_manager(id,model_class) -> InterfacePredic
 
 def main():
 
-    from aiml.transformer_prediction_ts_model import TransformerPredictionTSModel
+    #from aiml.transformer_prediction_ts_model import TransformerPredictionTSModel
+    from aiml.transformer_prediction_rolling_model import TransformerPredictionRollingModel
 
-    manager = init_inference_prediction_rolling_manager("upper_mlts",TransformerPredictionTSModel)
-    #manager.load_and_prepare_data_time_series("2021-01-03 00:00:00", "2024-01-01 00:00:00",MARKET_DATA_ML_UPPER,test_size=0.2, random_state=None)
+    manager = init_inference_prediction_rolling_manager("rolling",TransformerPredictionRollingModel)
+    manager.load_and_prepare_data("2023-06-03 00:00:00", "2024-01-01 00:00:00",MARKET_DATA_TECH,test_size=0.2, random_state=None)
     #manager.train_models()
-    #manager.train_with_cross_validation()
-    #manager.save_model()
+    manager.train_with_cross_validation()
+    manager.save_model()
 
-    manager.load_model()
-    manager.load_and_prepare_data_time_series("2024-01-01 00:00:00", "2024-06-01 00:00:00",MARKET_DATA_ML_UPPER,test_size=0.9, random_state=None)
+    #manager.load_model()
+    manager.load_and_prepare_data("2024-01-01 00:00:00", "2024-06-01 00:00:00",MARKET_DATA_TECH,test_size=0.9, random_state=None)
 
     manager.evaluate_models()
 

@@ -30,6 +30,7 @@ COLUMN_P_DI = 'p_di'
 COLUMN_M_DI = 'm_di'
 COLUMN_ADX = 'adx'
 COLUMN_ADXR = 'adxr'
+COLUMN_BBVI = 'bbvi'
 COLUMN_VOLUME_MA = 'volume_ma'
 COLUMN_VOLUME_MA_DIFF = 'volume_ma_diff'
 COLUMN_UPPER_DIFF = 'upper_diff'
@@ -62,6 +63,11 @@ COLUMN_SMA = 'sma'
 COLUMN_EMA = 'ema'
 COLUMN_ENTRY_TYPE = 'entry_type'
 COLUMN_PANDL = 'pandl'
+COLUMN_MAX_PANDL = 'max_pandl'
+COLUMN_MIN_PANDL = 'min_pandl'
+COLUMN_EXIT_REASON = 'exit_reason'
+EXIT_REASON_LOSSCUT = 'losscut'
+EXIT_REASON_NORMAL = 'normal'
 
 # 状態名定義
 STATE_IDLE = 'IdleState'
@@ -131,6 +137,8 @@ COUNTER_LOWER_0_LOSE = 'lower_0_lose'
 # エントリータイプ
 ENTRY_TYPE_LONG = 'LONG'
 ENTRY_TYPE_SHORT = 'SHORT'
+PRED_TYPE_LONG = 1
+PRED_TYPE_SHORT = 0
 
 
 COUNTER_UPPER_1_LOSS = 'upper_1_loss'

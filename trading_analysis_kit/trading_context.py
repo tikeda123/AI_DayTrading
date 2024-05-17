@@ -7,7 +7,7 @@ from common.config_manager import ConfigManager
 from common.constants import *
 
 from trading_analysis_kit.trading_state import IdleState
-from trading_analysis_kit.trading_data import TradingData,TradingStateData
+from trading_analysis_kit.trading_data_manager import TradingDataManager
 
 
 class TradingContext:
@@ -26,8 +26,7 @@ class TradingContext:
         self._state = IdleState()
         self.config_manager = ConfigManager()
         self.trading_logger = TradingLoggerDB()
-        self.dataloader = TradingData()
-        self.state_data = TradingStateData()
+        self.dm = TradingDataManager()
         self.strategy = strategy_context
 
     def get_state(self):
@@ -66,7 +65,7 @@ class TradingContext:
         Returns:
             bool: 最初のカラムの値が2番目のカラムの値より小さい場合はTrue、そうでない場合はFalse。
         """
-        return self.dataloader.is_first_column_less_than_second(index, col1, col2)
+        return self.dm.is_first_column_less_than_second(index, col1, col2)
 
     def is_first_column_greater_than_second(self, index, col1, col2) -> bool:
         """
@@ -80,7 +79,7 @@ class TradingContext:
         Returns:
             bool: 最初のカラムの値が2番目のカラムの値より大きい場合はTrue、そうでない場合はFalse。
         """
-        return self.dataloader.is_first_column_greater_than_second(index, col1, col2)
+        return self.dm.is_first_column_greater_than_second(index, col1, col2)
 
     def log_transaction(self, message):
         """
@@ -89,7 +88,7 @@ class TradingContext:
         Args:
             message (str): ログに記録するメッセージ。
         """
-        date = self.dataloader.get_current_date()
+        date = self.dm.get_current_date()
         self.trading_logger.log_transaction(date, message)
 
     def event_handle(self, index: int):
@@ -99,7 +98,7 @@ class TradingContext:
         Args:
             index (int): イベントを処理するデータのインデックス。
         """
-        self.dataloader.set_current_index(index)
+        self.dm.set_current_index(index)
         self._state.event_handle(self, index)
 
     def run_trading(self,context):
@@ -109,7 +108,7 @@ class TradingContext:
         Args:
             context (TradingContext): 実行する取引コンテキスト。
         """
-        data = context.dataloader.get_raw_data()
+        data = context.dm.get_raw_data()
         for index in range(len(data)):
             context.event_handle(index)
 
@@ -123,11 +122,7 @@ class TradingContext:
             end_datetime (datetime): データロードの終了日時。
             table_name (str, optional): データをロードするテーブル名。デフォルトはNoneです。
         """
-        self.dataloader.load_data_from_datetime_period(start_datetime, end_datetime,MARKET_DATA_TECH)
-        self.dataloader.ts.reset_index()
-        self.dataloader.add_data_columns()
-        self.dataloader.reset_index()
-
+        self.dm.load_data_from_datetime_period(start_datetime, end_datetime,MARKET_DATA_TECH)
 
     def load_recent_data_from_db(self, table_name=None)->pd.DataFrame:
         """

@@ -10,6 +10,7 @@ parent_dir = os.path.dirname(current_dir)  # Aディレクトリーのパスを�
 sys.path.append(parent_dir)
 
 from common.trading_logger import TradingLogger
+from common.constants import COLUMN_BB_DIRECTION
 
 class DataLoader:
     """
@@ -84,7 +85,7 @@ class DataLoader:
         """
         self._df.at[index,column] = value
 
-    def set_df_fromto(self, start_index:int,end_index:int,column,value):
+    def set_df_fromto(self, start_index: int,end_index: int,column: str,value: any):
         """
         指定した範囲のインデックスとカラム名の位置に値を一括設定します。
 

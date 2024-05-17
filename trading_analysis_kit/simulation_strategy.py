@@ -1,11 +1,19 @@
 import pandas as pd
 import os,sys
 
+# b.pyのディレクトリの絶対パスを取得
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)  # Aディレクトリーのパスを取得
+
+# Aディレクトリーのパスをsys.pathに追加
+sys.path.append(parent_dir)
+
 from common.constants import *
 from common.utils import get_config
 
 from trading_analysis_kit.trading_state import *
 from trading_analysis_kit.trading_strategy import TradingStrategy
+#from trading_analysis_kit.simulation_strategy_context import SimulationStrategyContext
 
 class SimulationStrategy(TradingStrategy):
     """
@@ -24,95 +32,10 @@ class SimulationStrategy(TradingStrategy):
         Args:
             context (TradingContext): The trading context object.
         """
-        if context.get_current_index() < 10:
+        if context.dm.get_current_index() < 10:
             return
 
-
-        current_price = context.get_current_price()
-
-        #if current_price > context.get_lower2_price() and current_price < context.get_upper2_price():
-        #        return
-
-        trend_prediction = context.prediction_trend()
-
-        #print("Idle event execute")
-        #trend_prediction = context.prediction_trend()
-        #if  current_price < context.get_lower2_price() and trend_prediction == 0:
-        #    return
-
-        #elif  current_price > context.get_upper2_price() and trend_prediction == 1:
-        #    return
-        ema_price = context.get_ema_price(context.get_current_index())
-
-        entry_type = ENTRY_TYPE_LONG if trend_prediction == 1 else ENTRY_TYPE_SHORT
-        context.set_entry_type(entry_type)
-        #current_price = context.get_current_price()
-        #trend_prediction = context.prediction_trend()
-        #trend_prediction = 1 - trend_prediction
-
-        # Determine the adjusted entry price based on trend prediction
-        entry_price = self.calculate_adjusted_entry_price(ema_price, current_price, trend_prediction)
-
-
-        """
-        if trend_prediction == 1:
-            entry_price = entry_price * (1 - self.__entry_rate)
-        else:
-            entry_price = entry_price * (1 + self.__entry_rate)
-
-        if trend_prediction == 1:
-            if entry_price > current_price:
-                context.log_transaction("Entry Preparation: No Entry")
-                context.change_to_idle_state()
-                return
-        else:
-            if entry_price < current_price:
-                context.log_transaction("Entry Preparation: No Entry")
-                context.change_to_idle_state()
-                return
-         """
-        #if False == self.entry_conditions_met(context.get_high_price(), entry_price, context.get_low_price()):
-        #    context.log_transaction("Entry Preparation: No Entry")
-        #    context.change_to_idle_state()
-        #    return
-        context.set_entry_index(context.get_current_index())
-        context.set_entry_price(entry_price)
-        context.set_entry_type(entry_type)
-        self.trade_entry(context, entry_type, entry_price)
         context.change_to_entrypreparation_state()
-
-
-    def calculate_adjusted_entry_price(self, ema_price, current_price, trend_prediction):
-        """
-        Calculates the adjusted entry price based on the EMA and the current price.
-
-        Args:
-            ema_price (float): EMA price from the previous day.
-            current_price (float): Today's current price.
-            trend_prediction (int): Prediction of the market trend (1 for upward, other for downward).
-
-        Returns:
-            float: The adjusted entry price.
-        """
-        adjustment_factor = 1 - self.__entry_rate if trend_prediction == 1 else 1 + self.__entry_rate
-        ideal_price = ema_price * adjustment_factor
-
-        return current_price if (trend_prediction == 1 and ideal_price > current_price) or \
-                                (trend_prediction != 1 and ideal_price < current_price) else ideal_price
-
-    def entry_conditions_met(self, high_price, entry_price, low_price):
-        """
-        Checks if the entry conditions are met based on price thresholds.
-
-        Args:
-            high_price (float): Today's high price.
-            entry_price (float): Calculated entry price.
-            low_price (float): Today's low price.
-
-        Returns:
-            bool: True if conditions are met, False otherwise.
-        """
-        return high_price > entry_price > low_price
 
 
     def EntryPreparation_event_execute(self, context):
@@ -124,133 +47,92 @@ class SimulationStrategy(TradingStrategy):
         Args:
             context (TradingContext): トレーディングコンテキストオブジェクト。
         """
-
-        # Check if the entry conditions are met
-        entry_price = context.get_entry_price()
-
-        if False == self.entry_conditions_met(context.get_high_price(), entry_price, context.get_low_price()):
-            context.log_transaction("Entry Preparation: No Entry")
-            serial = context.get_fx_serial()
-            context.fx_transaction.trade_cancel(serial, context.get_current_date())
-            context.change_to_idle_state()
+        if context.entry_manager.should_entry(context):
+            self.trade_entry(context)
+            context.change_to_position_state()
             return
 
-
-        is_losscut_triggered, exit_price = self.is_losscut_triggered(context)
-
-        if is_losscut_triggered:
-            losscut_event = "losscut"
-            context.log_transaction(f'losscut price: {exit_price}')
-            self.trade_exit(context, exit_price, losscut=losscut_event)
-            context.change_to_idle_state()
-            return
-
-        # コンテキストの状態をアイドルに変更します。
-        if not self.should_hold_position(context):
-            exit_price = context.get_current_price()
-            self.trade_exit(context, exit_price)
-            context.change_to_idle_state()
-            return
-
-        context.change_to_position_state()
+        context.change_to_idle_state()
         return
-
-    """
-        if trade_type == ENTRY_TYPE_LONG and current_price < entry_price:
-            self.trade_exit(context, current_price)
-            context.change_to_idle_state()
-            return
-        elif trade_type == ENTRY_TYPE_SHORT and current_price > entry_price:
-            self.trade_exit(context, current_price)
-            context.change_to_idle_state()
-            return
-
-
-        if not self.should_hold_position(context):
-            exit_price = context.get_current_price()
-            self.trade_exit(context, exit_price)
-            context.change_to_idle_state()
-            return
-
-
-        # コンテキストの状態をアイドルに変更します。
-        context.change_to_position_state()
-        return
-    """
 
     def PositionState_event_exit_execute(self, context):
         """
-        ポジション状態でのエグジットイベントを実行します。ロスカットがトリガーされた場合は、
-        ロスカット価格でポジションを終了し、そうでない場合は現在の価格でポジションを終了します。
+        ポジション状態でのエグジットイベントを実行します。
+        ロスカットがトリガーされた場合は、ロスカット価格でポジションを終了し、
+        そうでない場合は現在の価格でポジションを終了します。
         その後、状態をアイドル状態に変更します。
 
         Args:
             context (TradingContext): トレーディングコンテキストオブジェクト。
         """
-        pandl = self.calculate_current_pandl(context)
-
-       # 損切りがトリガーされたかどうかを判断します。
+        context.set_current_max_min_pandl()
         is_losscut_triggered, exit_price = self.is_losscut_triggered(context)
 
         if is_losscut_triggered:
-            losscut_event = "losscut"
-            context.log_transaction(f'losscut price: {exit_price}')
-            self.trade_exit(context, exit_price, losscut=losscut_event)
-            context.change_to_idle_state()
+            self._handle_position_exit(context, exit_price, losscut=True)
             return
+        else:
+            if self.should_hold_position(context):
+                pandl = self.calculate_current_pandl(context)
+                context.dm.set_pandl(pandl)
+                context.log_transaction(f'continue Position state pandl:{pandl}')
+                return
 
-        if not self.should_hold_position(context):
-            exit_price = context.get_current_price()
-            self.trade_exit(context, exit_price)
-            context.change_to_idle_state()
-            return
+        self._handle_position_exit(context, context.dm.get_close_price())
 
-        context.set_pandl(pandl)
-        context.log_transaction(f'continue Position state pandl:{pandl}')
+
 
     def PositionState_event_continue_execute(self, context):
         """
-        ポジション状態での継続イベントを実行します。ロスカットの判断を行い、必要に応じて
-        ポジションを終了しアイドル状態に遷移します。
+        ポジション状態での継続イベントを実行します。
+        ロスカットの判断を行い、必要に応じてポジションを終了しアイドル状態に遷移します。
+        ロスカットがトリガーされない場合は、現在の損益を計算し、ログに記録します。
 
         Args:
             context (TradingContext): トレーディングコンテキストオブジェクト。
         """
-        pass
-        #ここで、継続するかどうか判断するロジックを実装する。もう一度、機械学習モデルを使って、予測を行い、
-        #予測が正しければ、継続する。予測が間違っていれば、エグジットする。エントリーした価格が、一つ前の日のEMAよりも
-        #高い場合は、ロングポジションを継続する。逆に、エントリーした価格が、一つ前の日のEMAよりも低い場合は、ショートポジションを継続する。
+        context.set_current_max_min_pandl()
+        is_losscut_triggered, exit_price = self.is_losscut_triggered(context)
 
-    def should_hold_position(self, context):
+        if is_losscut_triggered:
+            self._handle_position_exit(context, exit_price, losscut=True)
+            return
+
+        pandl = self.calculate_current_pandl(context)
+        context.dm.set_pandl(pandl)
+        context.log_transaction(f'continue Position state pandl:{pandl}')
+
+
+    def _handle_position_exit(self, context, exit_price, losscut=False):
         """
-        ポジションを保持すべきかどうかを判断します。
+        ポジションの終了処理を行います。
 
         Args:
             context (TradingContext): トレーディングコンテキストオブジェクト。
-
-        Returns:
-            bool: ポジションを保持すべきかどうかの真偽値。
-
-        ポジションを保持すべきかどうかを判断します。
+            exit_price (float, optional): ポジション終了価格。デフォルトはNone。
+            losscut (bool, optional): ロスカットによる終了かどうか。デフォルトはFalse。
         """
-        trend_prediction = context.prediction_trend()
-        entry_type = context.get_entry_type()
-        entry_price = context.get_entry_price()
-        current_ema_price = context.get_ema_price()
 
-        if trend_prediction == 1 and entry_type == ENTRY_TYPE_LONG:
-            return True
-        elif trend_prediction == 0 and entry_type == ENTRY_TYPE_SHORT:
-            return True
-        """
-        if trend_prediction == 1 and entry_type == ENTRY_TYPE_LONG and entry_price < current_ema_price:
-            return True
-        elif trend_prediction == 0 and entry_type == ENTRY_TYPE_SHORT and entry_price > current_ema_price:
-            return True
-        """
-        return False
+        if losscut:
+            context.log_transaction(f'losscut price: {exit_price}')
+            losscut = "losscut"
+            reason = EXIT_REASON_LOSSCUT
+        else:
+            reason = EXIT_REASON_NORMAL
+            losscut = None
 
-    def trade_entry(self, context, entry_type,entry_price):
+        self.trade_exit(context, exit_price, losscut=losscut)
+        profit = context.calculate_current_profit(exit_price)
+        context.dm.set_bb_profit(profit, context.dm.get_entry_index())
+        pandl = profit = context.calculate_current_profit()
+        context.dm.set_pandl(pandl)
+        context.dm.set_exit_reason(reason)
+        context.dm.set_exit_reason(reason, context.dm.get_entry_index())
+        context.record_entry_exit_price()
+        context.record_max_min_pandl_to_entrypoint()
+        context.change_to_idle_state()
+
+    def trade_entry(self, context):
         """
         トレードのエントリーを実行します。
 
@@ -262,13 +144,19 @@ class SimulationStrategy(TradingStrategy):
         トレードエントリーを実行します。
         """
 
-        date = context.get_current_date()
-        pred = 1 if entry_type == ENTRY_TYPE_LONG else 0
+        date = context.dm.get_current_date()
+        pred = context.dm.get_prediction()
+        bb_direction = context.dm.get_bb_direction()
+        entry_price = context.dm.get_close_price()
+        entry_type = ENTRY_TYPE_LONG if pred == 1 else ENTRY_TYPE_SHORT
+        context.dm.set_entry_type(entry_type)
+        context.dm.set_entry_price(entry_price)
+
 
         # トレードエントリーを実行し、トランザクションシリアル番号を取得
-        serial = context.fx_transaction.trade_entry(entry_type, pred, entry_price, date, "upper")
+        serial = context.fx_transaction.trade_entry(entry_type, pred, entry_price, date, bb_direction)
         # 取得したトランザクションシリアル番号をコンテキストに設定
-        context.set_fx_serial(serial)
+        context.dm.set_fx_serial(serial)
 
     def trade_exit(self, context, exit_price,losscut=None):
         """
@@ -283,10 +171,10 @@ class SimulationStrategy(TradingStrategy):
 
         指定された価格でトレードのエグジットを実行し、損益を計算します。
         """
-        serial = context.get_fx_serial()
-        date = context.get_current_date()
-        context.set_exit_index(context.get_current_index())
-        context.set_exit_price(exit_price)
+        serial = context.dm.get_fx_serial()
+        date = context.dm.get_current_date()
+        context.dm.set_exit_index(context.dm.get_current_index())
+        context.dm.set_exit_price(exit_price)
         return context.fx_transaction.trade_exit(serial,exit_price, date, losscut=losscut)
 
     def is_losscut_triggered(self, context):
@@ -302,18 +190,18 @@ class SimulationStrategy(TradingStrategy):
         現在の価格をもとに損切りがトリガーされたかどうかを判断し、
         トリガーされた場合はその価格を返します。
         """
-        serial = context.get_fx_serial()
-        entry_type = context.get_entry_type()
+        serial = context.dm.get_fx_serial()
+        entry_type = context.dm.get_entry_type()
         losscut_price = None
 
         if entry_type == ENTRY_TYPE_LONG:
-            losscut_price = context.get_low_price()
+            losscut_price = context.dm.get_low_price()
         else:
-            losscut_price = context.get_high_price()
+            losscut_price = context.dm.get_high_price()
 
         return context.fx_transaction.is_losscut_triggered(serial, losscut_price)
 
-    def calculate_current_pandl(self, context):
+    def calculate_current_pandl(self, context,exit_price=None):
         """
         現在の損益を計算します。
 
@@ -325,10 +213,65 @@ class SimulationStrategy(TradingStrategy):
 
         現在の価格とエントリー価格をもとに損益を計算します。
         """
-        serial = context.get_fx_serial()
-        current_price = context.get_current_price()
+        serial = context.dm.get_fx_serial()
+        if exit_price is not None:
+            pandl = context.fx_transaction.get_pandl(serial, exit_price)
+            return pandl
+
+        current_price = context.dm.get_close_price()
         pandl = context.fx_transaction.get_pandl(serial, current_price)
         return pandl
+
+    def decide_on_position_exit(self, context, index: int):
+        bb_direction = context.dm.get_bb_direction()
+        pred = context.dm.get_prediction()
+
+        position_state_dict = {
+            (BB_DIRECTION_UPPER, PRED_TYPE_LONG): ['less_than', COLUMN_MIDDLE_BAND],
+            (BB_DIRECTION_UPPER, PRED_TYPE_SHORT): ['less_than', COLUMN_LOWER_BAND1],
+            (BB_DIRECTION_LOWER, PRED_TYPE_LONG): ['greater_than', COLUMN_UPPER_BAND1],
+            (BB_DIRECTION_LOWER, PRED_TYPE_SHORT): ['greater_than', COLUMN_MIDDLE_BAND]
+        }
+
+        condition = position_state_dict.get((bb_direction, pred))
+        if condition is None:
+            return 'PositionState_event_continue_execute'
+
+        operator, column = condition
+
+        if operator == 'less_than':
+            if context.is_first_column_less_than_second(COLUMN_CLOSE, column,index):
+                return 'PositionState_event_exit_execute'
+        elif operator == 'greater_than':
+            if context.is_first_column_greater_than_second(COLUMN_CLOSE, column,index):
+                return 'PositionState_event_exit_execute'
+
+        return 'PositionState_event_continue_execute'
+
+    def should_hold_position(self, context):
+        """
+        ポジションを保持すべきかどうかを判断します。
+
+        Args:
+            context (TradingContext): トレーディングコンテキストオブジェクト。
+
+        Returns:
+            bool: ポジションを保持すべきかどうかの真偽値。
+
+        ポジションを保持すべきかどうかを判断します。
+        """
+        pandl = self.calculate_current_pandl(context)
+
+        if pandl < 0:
+            return False
+
+        trend_prediction = context.dm.get_prediction()
+        rolling_pred = context.entry_manager.predict_trend_rolling(context)
+
+        if rolling_pred != trend_prediction:
+            return False
+
+        return True
 
     def show_win_lose(self,context):
         """

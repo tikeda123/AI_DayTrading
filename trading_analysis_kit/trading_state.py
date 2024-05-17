@@ -69,15 +69,16 @@ class IdleState(State):
 
         対応するトレードの実行処理を行います。
         """
-        if context.is_first_column_greater_than_second(index, COLUMN_CLOSE, COLUMN_UPPER_BAND2):
-            context.dataloader.set_bb_direction(BB_DIRECTION_UPPER)
+        context.dm.record_state(STATE_IDLE)
+        if context.is_first_column_greater_than_second(COLUMN_CLOSE, COLUMN_UPPER_BAND2, index):
+            context.dm.set_bb_direction(BB_DIRECTION_UPPER)
             context.strategy.Idel_event_execute(context)
-        elif context.is_first_column_less_than_second(index, COLUMN_CLOSE, COLUMN_LOWER_BAND2):
-            context.dataloader.set_bb_direction(BB_DIRECTION_LOWER)
+        elif context.is_first_column_less_than_second(COLUMN_CLOSE, COLUMN_LOWER_BAND2, index):
+            context.dm.set_bb_direction(BB_DIRECTION_LOWER)
             context.strategy.Idel_event_execute(context)
         else:
             #context.record_state = STATE_IDLE
-            #context.log_transaction('')
+            context.log_transaction('')
             pass
 
 class EntryPreparationState(State):
@@ -112,6 +113,7 @@ class EntryPreparationState(State):
         """
         状態に応じたイベント処理メソッド:
         """
+        context.dm.record_state(STATE_ENTRY_PREPARATION)
         context.strategy.EntryPreparation_event_execute(context)
 
 
@@ -140,6 +142,7 @@ class PositionState(State):
         """
         状態に応じたイベント処理メソッド:
         """
+        context.dm.record_state(STATE_POSITION)
         event = context.strategy.decide_on_position_exit(context, index)
         if event == 'PositionState_event_exit_execute':
             context.strategy.PositionState_event_exit_execute(context)

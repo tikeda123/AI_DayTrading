@@ -35,14 +35,14 @@
     },
     "ACCOUNT":
     {
-        "CONTRACT"      :"ETHUSDT",
+        "CONTRACT"      :"BTCUSDT",
         "INIT_AMOUNT"   :1000,
         "AMOUNT"        :1000,
         "INIT_EQUITY"   :1000,
         "LEVERAGE"      :3,
         "FTC"           :0,
         "PTC"           :0.00055,
-        "LOSSCUT"       :0.015,
+        "LOSSCUT"       :0.04,
         "TRAILING_STOP_DUR"      :1,
         "TRAILING_STOP_RATE"     :0.01,
         "ENTRY_RATE"        :0.003
@@ -51,7 +51,7 @@
     "LOG":
     {
         "LOGLVL"        :10,
-        "VERBOSE"       :false,
+        "VERBOSE"       :true,
         "DB_FLAG"       :false,
         "LOGPATH"       :"logs/",
         "LOGFNAME"      :"btc_usdt.log",
@@ -63,9 +63,13 @@
     {
         "DATAPATH"          :"data/data_rolling/",
 		"LEARN_DATAPATH"    :"data/data_ml/",
-        "TARGET_COLUMN"     :["close","ema"],
+        "TARGET_COLUMN"     :["ema","ema"],
 		"FEATURE_COLUMNS"   :["macd","macdsignal","adx","adxr","p_di","m_di","ema","sma","close","macdhist","macd_diff","macdsignal","macd","rsi","upper_diff","lower_diff","middle_diff","volume_ma","dmi_diff","volume"]
  	},
+	 "ENTRY" :
+	 {
+		 "DIFFERENCE" :300
+	 },
     "TECHNICAL" :
     {
         "BB" :
