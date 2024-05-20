@@ -229,7 +229,10 @@ class InterfacePredictionRollingManager:
         return sequence.to_numpy()
 
 
-def init_inference_prediction_rolling_manager(id,model_class) -> InterfacePredictionRollingManager:
+def init_inference_prediction_rolling_manager(id,
+                                              model_class,
+                                              symbol=None,
+                                              interval=None) -> InterfacePredictionRollingManager:
     """
     InferencePredictionRollingManagerインスタンスを初期化し、指定されたモデルクラスを初期化する。
 
@@ -239,7 +242,7 @@ def init_inference_prediction_rolling_manager(id,model_class) -> InterfacePredic
     Returns:
         InferencePredictionRollingManager: 初期化されたInferencePredictionRollingManagerインスタンス。
     """
-    manager = InterfacePredictionRollingManager()
+    manager = InterfacePredictionRollingManager(symbol,interval)
     manager.initialize_model(id,model_class)
     return manager
 
@@ -249,7 +252,7 @@ def main():
     from aiml.transformer_prediction_rolling_model import TransformerPredictionRollingModel
 
     manager = init_inference_prediction_rolling_manager("rolling",TransformerPredictionRollingModel)
-    manager.load_and_prepare_data("2023-06-03 00:00:00", "2024-01-01 00:00:00",MARKET_DATA_TECH,test_size=0.2, random_state=None)
+    manager.load_and_prepare_data("2021-10-03 00:00:00", "2024-01-01 00:00:00",MARKET_DATA_TECH,test_size=0.2, random_state=None)
     #manager.train_models()
     manager.train_with_cross_validation()
     manager.save_model()

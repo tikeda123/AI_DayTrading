@@ -79,6 +79,7 @@ class TransformerPredictionTSModel(TransformerPredictionRollingModel):
             if end_index > len(data):
                 break
 
+
             sequence = data.loc[start_index:end_index, feature_columns].values
             target = data.loc[end_index, COLUMN_BB_PROFIT] > POSITIVE_THRESHOLD
             sequences.append(sequence)
@@ -152,12 +153,12 @@ def main():
     model = TransformerPredictionTSModel("lower_mlts")
 
     x_train, x_test, y_train, y_test = model.load_and_prepare_data_time_series(
-                                                                    '2020-01-04 00:00:00',
-                                                                    '2024-01-01 00:00:00',
+                                                                    '2020-01-01 00:00:00',
+                                                                    '2023-06-03 00:00:00',
                                                                     MARKET_DATA_ML_LOWER,)
     # データのロードと前処理
     #x_train, x_test, y_train, y_test = model.load_and_prepare_data('2021-01-01 00:00:00', '2022-02-01 00:00:00')
-    #model.load_model()
+    #model.load_model(0
     # モデルの訓練
         # モデルをクロスバリデーションで訓練します
     """
@@ -180,12 +181,12 @@ def main():
     """
 
 
-
     cv_scores = model.train_with_cross_validation(
         np.concatenate((x_train, x_test), axis=0),
         np.concatenate((y_train, y_test), axis=0)
     )
     # クロスバリデーションの結果を表示
+
     for i, score in enumerate(cv_scores):
         print(f'Fold {i+1}: Accuracy = {score[1]}')
     # モデルの評価
@@ -199,10 +200,10 @@ def main():
 
 
     x_train, x_test, y_train, y_test = model.load_and_prepare_data_time_series(
-                                                            '2024-01-01 00:00:00',
+                                                            '2023-06-01 00:00:00',
                                                             '2024-06-01 00:00:00',
                                                             MARKET_DATA_ML_LOWER,
-                                                            test_size=0.95, random_state=None)
+                                                            test_size=0.9, random_state=None)
     # データのロードと前処理
     #x_train, x_test, y_train, y_test = model.load_and_prepare_data('2021-01-01 00:00:00', '2022-02-01 00:00:00')
 

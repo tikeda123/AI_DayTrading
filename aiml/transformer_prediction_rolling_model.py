@@ -30,10 +30,10 @@ from aiml.prediction_model import PredictionModel
 from aiml.transformerblock import TransformerBlock
 
 # ハイパーパラメータの設定
-PARAM_LEARNING_RATE = 0.001
-PARAM_EPOCHS = 700
+PARAM_LEARNING_RATE = 0.0005
+PARAM_EPOCHS = 400
 
-N_SPLITS=3
+N_SPLITS=5
 POSITIVE_THRESHOLD = 0
 
 

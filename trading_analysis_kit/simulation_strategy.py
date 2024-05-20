@@ -52,6 +52,7 @@ class SimulationStrategy(TradingStrategy):
             context.change_to_position_state()
             return
 
+
         context.change_to_idle_state()
         return
 
@@ -101,7 +102,6 @@ class SimulationStrategy(TradingStrategy):
         pandl = self.calculate_current_pandl(context)
         context.dm.set_pandl(pandl)
         context.log_transaction(f'continue Position state pandl:{pandl}')
-
 
     def _handle_position_exit(self, context, exit_price, losscut=False):
         """
@@ -228,8 +228,8 @@ class SimulationStrategy(TradingStrategy):
 
         position_state_dict = {
             (BB_DIRECTION_UPPER, PRED_TYPE_LONG): ['less_than', COLUMN_MIDDLE_BAND],
-            (BB_DIRECTION_UPPER, PRED_TYPE_SHORT): ['less_than', COLUMN_LOWER_BAND1],
-            (BB_DIRECTION_LOWER, PRED_TYPE_LONG): ['greater_than', COLUMN_UPPER_BAND1],
+            (BB_DIRECTION_UPPER, PRED_TYPE_SHORT): ['less_than', COLUMN_MIDDLE_BAND],
+            (BB_DIRECTION_LOWER, PRED_TYPE_LONG): ['greater_than', COLUMN_MIDDLE_BAND],
             (BB_DIRECTION_LOWER, PRED_TYPE_SHORT): ['greater_than', COLUMN_MIDDLE_BAND]
         }
 
@@ -260,6 +260,7 @@ class SimulationStrategy(TradingStrategy):
 
         ポジションを保持すべきかどうかを判断します。
         """
+        return False
         pandl = self.calculate_current_pandl(context)
 
         if pandl < 0:

@@ -1,6 +1,6 @@
 {
 	"SYMBOL"            :"BTCUSDT",
-    "INTERVAL"          :60,
+    "INTERVAL"          :240,
     "ONLINE":
     {
         "DBNAME"        :"trading",
@@ -42,7 +42,7 @@
         "LEVERAGE"      :3,
         "FTC"           :0,
         "PTC"           :0.00055,
-        "LOSSCUT"       :0.04,
+        "LOSSCUT"       :0.9,
         "TRAILING_STOP_DUR"      :1,
         "TRAILING_STOP_RATE"     :0.01,
         "ENTRY_RATE"        :0.003
@@ -63,12 +63,12 @@
     {
         "DATAPATH"          :"data/data_rolling/",
 		"LEARN_DATAPATH"    :"data/data_ml/",
-        "TARGET_COLUMN"     :["ema","ema"],
+        "TARGET_COLUMN"     :["close","ema"],
 		"FEATURE_COLUMNS"   :["macd","macdsignal","adx","adxr","p_di","m_di","ema","sma","close","macdhist","macd_diff","macdsignal","macd","rsi","upper_diff","lower_diff","middle_diff","volume_ma","dmi_diff","volume"]
  	},
 	 "ENTRY" :
 	 {
-		 "DIFFERENCE" :300
+		 "DIFFERENCE" :1
 	 },
     "TECHNICAL" :
     {

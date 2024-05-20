@@ -30,20 +30,35 @@ class BollingerBand_EntryStrategy():
         """
         インスタンスの初期化メソッドです。トレンド予測マネージャーをロードします。
         """
-        from common.utils import get_config
-        self.conf = get_config("ENTRY")
-        self.manager_upper = init_inference_prediction_rolling_manager("upper_mlts",TransformerPredictionTSModel)
-        self.manager_lower = init_inference_prediction_rolling_manager("lower_mlts",TransformerPredictionTSModel)
-        self.manager_rolling = init_inference_prediction_rolling_manager("rolling",TransformerPredictionRollingModel)
         self.init_model()
 
     def init_model(self):
         """
         トレンド予測モデルを初期化します。
         """
+        from common.utils import get_config
+
+        self.conf = get_config("ENTRY")
+
+        self.manager_upper = init_inference_prediction_rolling_manager(
+                                                        "upper_mlts",
+                                                        TransformerPredictionTSModel)
+        self.manager_lower = init_inference_prediction_rolling_manager(
+                                                        "lower_mlts",
+                                                        TransformerPredictionTSModel)
+        self.manager_rolling = init_inference_prediction_rolling_manager(
+                                                        "rolling",
+                                                        TransformerPredictionRollingModel)
+#        self.manager_rolling_four = init_inference_prediction_rolling_manager(
+#                                                        "rolling",
+#                                                        TransformerPredictionRollingModel
+#                                                        ,interval=240)
         self.manager_upper.load_model()
         self.manager_lower.load_model()
         self.manager_rolling.load_model()
+ #       self.manager_rolling_four.load_model()
+#        self.manager_rolling_four.load_and_prepare_data("2024-01-01 00:00:00", "2024-06-01 00:00:00",MARKET_DATA_TECH,test_size=0.9, random_state=None)
+
 
     def should_entry(self, context)->bool:
         """
@@ -61,8 +76,11 @@ class BollingerBand_EntryStrategy():
         bb_direction = context.dm.get_bb_direction()
         #pred = PRED_TYPE_LONG
         pred = self.trend_prediction(context)
+        #pred = PRED_TYPE_SHORT
+        context.dm.set_prediction(pred)
         #pred = PRED_TYPE_LONG
-        rolling_pred = self.predict_trend_rolling(context)
+        #rolling_pred = self.predict_trend_rolling_four_hour(context)
+
         #print(f'rolling_pred:{rolling_pred}')
         #if pred != PRED_TYPE_SHORT:
         #    return False
@@ -70,16 +88,38 @@ class BollingerBand_EntryStrategy():
         #    return False
         #if pred == PRED_TYPE_SHORT:
         #    return False
-        #if pred != rolling_pred:
-        #    return False
+
+        #if bb_direction == BB_DIRECTION_LOWER and pred == PRED_TYPE_LONG:
+        #        return False
+
+        #if bb_direction == BB_DIRECTION_UPPER:
+        #        return False
+
+        #rsi = context.dm.get_value_by_column("rsi")
+        #bbvi = context.dm.get_value_by_column("bbvi")
+
+        #if bb_direction == BB_DIRECTION_LOWER and pred == PRED_TYPE_SHORT:
+        #    if rsi <26.1 or bbvi < 0.22:
+        #        return False
+        """
+        rsi = context.dm.get_value_by_column("rsi")
+        bbvi = context.dm.get_value_by_column("bbvi")
+
+        if bb_direction == BB_DIRECTION_UPPER and pred == PRED_TYPE_SHORT:
+            if rsi < 78.29  or bbvi < 0.97  :
+                return False
+
+
+
+        if bb_direction == BB_DIRECTION_LOWER and pred == PRED_TYPE_LONG:
+            if rsi <23.39 or bbvi < 1.66:
+                return False
         if bb_direction == BB_DIRECTION_UPPER and pred == PRED_TYPE_LONG:
-            if rolling_pred != pred:
+            if rsi <62.45 or bbvi < 2.24:
                 return False
+        """
 
-        if bb_direction == BB_DIRECTION_LOWER and pred == PRED_TYPE_SHORT:
-            #if rolling_pred != pred:
-                return False
-
+        return True
         """
         if bb_direction == BB_DIRECTION_UPPER:
             if pred == PRED_TYPE_LONG and rolling_pred != pred:
@@ -128,6 +168,7 @@ class BollingerBand_EntryStrategy():
             target_df = self.manager_lower.create_time_series_data(df)
             prediction = self.manager_lower.predict_model(target_df)
 
+        #prediction = 1 - prediction
         context.dm.set_prediction(prediction)
         context.log_transaction(f"Prediction: {prediction}")
         return prediction
@@ -183,6 +224,23 @@ class BollingerBand_EntryStrategy():
                 prediction = PRED_TYPE_SHORT
          """
         context.log_transaction(f"Prediction_rolling for Entry: {prediction}")
+        return prediction
+
+    def predict_trend_rolling_four_hour(self, context)->int:
+        """
+        トレンド予測を行います。
+
+        Args:
+            context (TradingContext): トレーディングコンテキストオブジェクト。
+
+        Returns:
+            int: トレンド予測結果。
+        """
+
+        current_date = context.dm.get_current_date()
+        feature_date = self.find_four_hour_interval(current_date)
+        prediction = self.manager_rolling_four.predict_rolling_model_date(feature_date)
+        context.log_transaction(f"Prediction_rolling_four_hour for Entry: {prediction}")
         return prediction
 
 
