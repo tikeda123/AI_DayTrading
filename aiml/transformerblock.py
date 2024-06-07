@@ -2,8 +2,10 @@
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout, LayerNormalization, MultiHeadAttention
 from tensorflow.keras.regularizers import l2
+from tensorflow.keras.layers import GlobalAveragePooling1D,Layer, MultiHeadAttention, Dense, LayerNormalization, Dropout
+import matplotlib.pyplot as plt
+
 
 
 def step_decay(epoch):
@@ -21,6 +23,7 @@ def step_decay(epoch):
     lr = initial_lr * (drop ** np.floor((1+epoch)/epochs_drop))
     return lr
 
+'''
 class TransformerBlock(tf.keras.layers.Layer):
     """Transformerモデルのブロックを表すクラスです。
 
@@ -77,3 +80,83 @@ class TransformerBlock(tf.keras.layers.Layer):
         ffn_output = self.ffn(out1)
         ffn_output = self.dropout2(ffn_output, training=training)
         return self.layernorm2(out1 + ffn_output)
+'''
+
+
+
+class TransformerBlock(tf.keras.layers.Layer):
+    """Transformerモデルのブロックを表すクラスです。
+
+    Args:
+        d_model (int): 埋め込みの次元数。
+        num_heads (int): アテンション機構のヘッド数。
+        dff (int): フィードフォワードネットワークの次元数。
+        rate (float): ドロップアウト率。
+        l2_reg (float): L2正則化の係数。
+
+    Attributes:
+        mha (MultiHeadAttention): マルチヘッドアテンション層。
+        ffn (Sequential): フィードフォワードネットワーク層。
+        layernorm1 (LayerNormalization): 最初のレイヤー正規化層。
+        layernorm2 (LayerNormalization): 二番目のレイヤー正規化層。
+        dropout1 (Dropout): 最初のドロップアウト層。
+        dropout2 (Dropout): 二番目のドロップアウト層。
+    """
+    def __init__(self, d_model, num_heads, dff, rate=0.1, l2_reg=0.01, **kwargs):
+        """TransformerBlockのインスタンスを初期化します。
+        """
+        super().__init__(**kwargs)
+        self.d_model = d_model
+        self.num_heads = num_heads
+        self.dff = dff
+        self.rate = rate
+        self.l2_reg = l2_reg
+
+        self.mha = MultiHeadAttention(key_dim=d_model, num_heads=num_heads)
+
+        # L2正規化をDense層に適用
+        self.ffn = Sequential([
+            Dense(dff, activation='relu', kernel_regularizer=l2(l2_reg)),
+            Dense(d_model, kernel_regularizer=l2(l2_reg))
+        ])
+        self.layernorm1 = LayerNormalization(epsilon=1e-6)
+        self.layernorm2 = LayerNormalization(epsilon=1e-6)
+        self.dropout1 = Dropout(rate)
+        self.dropout2 = Dropout(rate)
+        self.gap = GlobalAveragePooling1D()
+
+    def call(self, x, training=False):
+        """モデルの実行を行います。
+
+        Args:
+            x (Tensor): 入力テンソル。
+            training (bool): トレーニングモードかどうか。
+
+        Returns:
+            Tensor: 出力テンソル。
+        """
+
+        attn_output = self.mha(x, x, x)
+        attn_output = self.dropout1(attn_output, training=training)
+        attn_output = self.layernorm1(x + attn_output)
+
+        ffn_output = self.ffn(attn_output)
+        ffn_output = self.dropout2(ffn_output, training=training)
+        return self.layernorm2(attn_output + ffn_output)
+
+    def get_config(self):
+        config = super(TransformerBlock, self).get_config()
+        config.update({
+            'd_model': self.d_model,
+            'num_heads': self.num_heads,
+            'dff': self.dff,
+            'rate': self.rate,
+            'l2_reg': self.l2_reg
+        })
+        return config
+
+    @classmethod
+    def from_config(cls, config):
+        return cls(**config)
+
+

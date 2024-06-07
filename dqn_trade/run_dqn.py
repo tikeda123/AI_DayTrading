@@ -68,12 +68,12 @@ def main():
     db = MongoDataLoader()
     data = db.load_data_from_datetime_period("2023-01-01", "2024-06-01",coll_type=MARKET_DATA_TECH)
     data = data.drop(columns=['date'])
-    data['start_at'] = data['start_at'].astype(int) / 10**9
+    #data['start_at'] = data['start_at'].astype(int) / 10**9
     data = data[['start_at', 'close','volume','rsi','sma','macdhist']]
 # インデックスを日時型に設定
     data['datetime'] = pd.to_datetime(data['start_at'], unit='s')
     data.set_index('datetime', inplace=True)
-    data.drop(columns=['start_at'], inplace=True)
+   # data.drop(columns=['start_at'], inplace=True)
 
         # データの正規化
     #data['close'] = (data['close'] - data['close'].min()) / (data['close'].max() - data['close'].min())
@@ -83,7 +83,7 @@ def main():
 
 
     train_data = data[:'2024-01-01 00:00:00']
-    test_data = data['2024-01-01 00:00:00':]
+    test_data = data['2024-02-01 00:00:00':'2024-03-01 00:00:00']
 
     print(f'Train data shape: {train_data.shape}')
     print(f'Test data shape: {test_data.shape}')
@@ -106,7 +106,6 @@ def main():
 # エージェントの設定
     #dqn = DQNAgent(model=model, nb_actions=3, memory=memory, nb_steps_warmup=5000, target_model_update=1e-2, policy=policy)
     #dqn.compile(Adam(lr=1e-3), metrics=['mae'])
-
 
     dqn.fit(train_env, nb_steps=30000, visualize=False, verbose=2, callbacks=[EpisodeLogger()])
     #  訓練の実行

@@ -1,13 +1,32 @@
 import pandas as pd
 import sys, os
+
+
 from datetime import datetime
 import gym
 from gym import spaces
 import numpy as np
 
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+sys.path.append(parent_dir)
+
+
+from trading_analysis_kit.simulation_strategy_context import SimulationStrategyContext
+from fxtransaction import FXTransaction
+
+
+def trade_entry_action():
+    pass
+
+def trade_exit_action():
+    pass
+
 class TradingDQNEnv(gym.Env):
     def __init__(self, data, initial_balance=1000):
         super(TradingDQNEnv, self).__init__()
+        self.fx_transaction = FXTransaction()
         self.data = data
         self.n_steps = len(data)
         self.current_step = 0
@@ -49,7 +68,8 @@ class TradingDQNEnv(gym.Env):
         elif action == 1:  # 何もしない
             #print('hold')
             reward = 0
-        elif action == 2:  # 買う
+        elif action == 2:  #Entry
+            #self.fx_transaction.trade_entry(self.data.iloc[self.current_step])
             if self.balance > 0:
                 self.buy_price = current_price
                 self.position = self.balance / current_price

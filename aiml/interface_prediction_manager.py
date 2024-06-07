@@ -202,6 +202,18 @@ class InterfacePredictionRollingManager:
         self.logger.log_debug_message(report)
         self.logger.log_debug_message(conf_matrix)
 
+    def predict(self, x: np.ndarray) -> np.ndarray:
+        """
+        予測を行う。
+
+        Args:
+            x (np.ndarray): 予測するデータ。
+
+        Returns:
+            np.ndarray: 予測結果。
+        """
+        return self.prediction_model.predict(x)
+
     def save_model(self):
         """
         訓練済みモデルを保存する。
@@ -252,7 +264,7 @@ def main():
     from aiml.transformer_prediction_rolling_model import TransformerPredictionRollingModel
 
     manager = init_inference_prediction_rolling_manager("rolling",TransformerPredictionRollingModel)
-    manager.load_and_prepare_data("2021-10-03 00:00:00", "2024-01-01 00:00:00",MARKET_DATA_TECH,test_size=0.2, random_state=None)
+    manager.load_and_prepare_data("2023-01-01 00:00:00", "2024-01-01 00:00:00",MARKET_DATA_TECH,test_size=0.2, random_state=None)
     #manager.train_models()
     manager.train_with_cross_validation()
     manager.save_model()

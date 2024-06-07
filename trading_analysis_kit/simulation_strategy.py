@@ -47,11 +47,12 @@ class SimulationStrategy(TradingStrategy):
         Args:
             context (TradingContext): トレーディングコンテキストオブジェクト。
         """
-        if context.entry_manager.should_entry(context):
+        flag,pred = context.entry_manager.trend_prediction(context)
+        context.dm.set_prediction(pred)
+        if flag:
             self.trade_entry(context)
             context.change_to_position_state()
             return
-
 
         context.change_to_idle_state()
         return
@@ -124,8 +125,8 @@ class SimulationStrategy(TradingStrategy):
         self.trade_exit(context, exit_price, losscut=losscut)
         profit = context.calculate_current_profit(exit_price)
         context.dm.set_bb_profit(profit, context.dm.get_entry_index())
-        pandl = profit = context.calculate_current_profit()
-        context.dm.set_pandl(pandl)
+
+        context.dm.set_pandl(profit)
         context.dm.set_exit_reason(reason)
         context.dm.set_exit_reason(reason, context.dm.get_entry_index())
         context.record_entry_exit_price()
@@ -228,8 +229,8 @@ class SimulationStrategy(TradingStrategy):
 
         position_state_dict = {
             (BB_DIRECTION_UPPER, PRED_TYPE_LONG): ['less_than', COLUMN_MIDDLE_BAND],
-            (BB_DIRECTION_UPPER, PRED_TYPE_SHORT): ['less_than', COLUMN_MIDDLE_BAND],
-            (BB_DIRECTION_LOWER, PRED_TYPE_LONG): ['greater_than', COLUMN_MIDDLE_BAND],
+            (BB_DIRECTION_UPPER, PRED_TYPE_SHORT): ['less_than', COLUMN_LOWER_BAND1],
+            (BB_DIRECTION_LOWER, PRED_TYPE_LONG): ['greater_than', COLUMN_UPPER_BAND1],
             (BB_DIRECTION_LOWER, PRED_TYPE_SHORT): ['greater_than', COLUMN_MIDDLE_BAND]
         }
 

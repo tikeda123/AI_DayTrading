@@ -80,7 +80,7 @@ def step_decay(epoch)->float:
     lr = initial_lr * (drop ** np.floor((1+epoch)/epochs_drop))
     return lr
 
-
+'''
 class TransformerBlock(tf.keras.layers.Layer):
     """
     TransformerブロックのカスタムKerasレイヤークラスです。マルチヘッドアテンションとフィードフォワードネットワークを含みます。
@@ -132,6 +132,8 @@ class TransformerBlock(tf.keras.layers.Layer):
         ffn_output = self.ffn(out1)
         ffn_output = self.dropout2(ffn_output, training=training)
         return self.layernorm2(out1 + ffn_output)
+'''
+
 
 class Transformer_PredictionModel:
     """

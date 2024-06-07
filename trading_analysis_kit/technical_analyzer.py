@@ -51,7 +51,7 @@ class TechnicalAnalyzer:
         else:
             self.__data = None #self.__data_loader.get_raw()
 
-    def load_data_from_datetime_period(self, start_datetime, end_datetime, table_name=None)->pd.DataFrame:
+    def load_data_from_datetime_period(self, start_datetime, end_datetime, table_name)->pd.DataFrame:
         """
         指定した期間とテーブル名からデータをロードし、データフレームを更新します。
 
@@ -63,9 +63,9 @@ class TechnicalAnalyzer:
         Returns:
             pd.DataFrame: ロードしたデータフレーム。
         """
-        table_name = self.__data_loader.make_table_name(table_name)
+
         self.__data_loader.load_data_from_datetime_period(start_datetime, end_datetime, table_name)
-        self.__data = self.__data_loader.get_raw()
+        self.__data = self.__data_loader.get_df_raw()
         return self.__data
     def load_recent_data_from_db(self, table_name=None)->pd.DataFrame:
         """
@@ -134,6 +134,7 @@ class TechnicalAnalyzer:
         Returns:
             pd.DataFrame: 分析結果が追加されたデータフレーム。
         """
+        self.calculate_wclprice()
         self.calculate_rsi()
         self.calculate_bollinger_bands()
         self.calculate_macd()
@@ -143,8 +144,46 @@ class TechnicalAnalyzer:
         self.calculate_sma()
         self.calculate_ema()
         self.calculate_differences_for_time_series()
+        self.calculate_aroon()
+        self.calculate_adline()
+        self.calculate_mfi()
+        self.calculate_ROC()
+        self.calculate_ATR()
+
         self.finalize_analysis()
         return self.__data
+
+    def calculate_ATR(self):
+        """
+        ATRを計算し、データフレームに追加します。
+        """
+        timeperiod = int(self.__config_manager.get('TECHNICAL', 'ATR', 'TIMEPERIOD'))
+        self.__data[COLUMN_ATR] = ta.ATR(self.__data[COLUMN_HIGH], self.__data[COLUMN_LOW], self.__data[COLUMN_CLOSE], timeperiod)
+        self._truncate_and_add_to_df(self.__data[COLUMN_ATR], COLUMN_ATR)
+        #self.__data.dropna(inplace=True)
+        #self.__data.reset_index(drop=True, inplace=True)
+    def calculate_ROC(self):
+        """
+        ROCを計算し、データフレームに追加します。
+        """
+        timeperiod = int(self.__config_manager.get('TECHNICAL', 'ROC', 'TIMEPERIOD'))
+        self.__data[COLUMN_ROC] = ta.ROC(self.__data[COLUMN_WCLPRICE], timeperiod)
+        self._truncate_and_add_to_df(self.__data[COLUMN_ROC], COLUMN_ROC)
+        #self.__data.dropna(inplace=True)
+        #self.__data.reset_index(drop=True, inplace=True)
+
+    def calculate_mfi(self):
+        """
+        MFIを計算し、データフレームに追加します。
+        """
+        timeperiod = int(self.__config_manager.get('TECHNICAL', 'MFI', 'TIMEPERIOD'))
+        self.__data[COLUMN_MFI] = ta.MFI(self.__data[COLUMN_HIGH], self.__data[COLUMN_LOW], self.__data[COLUMN_CLOSE], self.__data[COLUMN_VOLUME], timeperiod)
+        self._truncate_and_add_to_df(self.__data[COLUMN_MFI], COLUMN_MFI)
+        #self.__data.dropna(inplace=True)
+        #self.__data.reset_index(drop=True, inplace=True)
+    def calculate_wclprice(self):
+        self.__data[COLUMN_WCLPRICE] = (self.__data[COLUMN_HIGH] + self.__data[COLUMN_LOW] + 2 * self.__data[COLUMN_CLOSE]) / 4
+        self._truncate_and_add_to_df(self.__data[COLUMN_WCLPRICE], COLUMN_WCLPRICE)
 
     def finalize_analysis(self):
         """
@@ -153,9 +192,6 @@ class TechnicalAnalyzer:
         """
         self.__data.dropna(inplace=True)
         #nan_rows = self.__data[self.__data.isnull().any(axis=1)]
-
-
-
         self.__data.reset_index(drop=True, inplace=True)
         return self.__data
 
@@ -164,7 +200,7 @@ class TechnicalAnalyzer:
         RSIを計算し、データフレームに追加します。
         """
         timeperiod = int(self.__config_manager.get('TECHNICAL', 'RSI', 'TIMEPERIOD'))
-        self.__data[COLUMN_RSI] = ta.RSI(self.__data[COLUMN_CLOSE], timeperiod)
+        self.__data[COLUMN_RSI] = ta.RSI(self.__data[COLUMN_WCLPRICE], timeperiod)
         self._truncate_and_add_to_df(self.__data[COLUMN_RSI], COLUMN_RSI)
         #self.__data.dropna(inplace=True)
         #self.__data.reset_index(drop=True, inplace=True)
@@ -182,7 +218,7 @@ class TechnicalAnalyzer:
 
         for nbdev_multiplier in range(1, 4):
             upper_band, middle_band, lower_band = ta.BBANDS(
-                self.__data[COLUMN_CLOSE],
+                self.__data[COLUMN_WCLPRICE],
                 timeperiod,
                 nbdevup=nbdev_multiplier,
                 nbdevdn=nbdev_multiplier,
@@ -203,7 +239,7 @@ class TechnicalAnalyzer:
         MACDを計算し、データフレームに追加します。
         """
         fastperiod, slowperiod, signalperiod = int(self.__config_manager.get('TECHNICAL', 'MACD', 'FASTPERIOD')), int(self.__config_manager.get('TECHNICAL', 'MACD', 'SLOWPERIOD')), int(self.__config_manager.get('TECHNICAL', 'MACD', 'SIGNALPERIOD'))
-        macd, macdsignal, macdhist = ta.MACD(self.__data[COLUMN_CLOSE], fastperiod, slowperiod, signalperiod)
+        macd, macdsignal, macdhist = ta.MACD(self.__data[COLUMN_WCLPRICE], fastperiod, slowperiod, signalperiod)
         self._truncate_and_add_to_df(macd, COLUMN_MACD)
         self._truncate_and_add_to_df(macdsignal, COLUMN_MACDSIGNAL)
         self._truncate_and_add_to_df(macdhist, COLUMN_MACDHIST)
@@ -225,6 +261,15 @@ class TechnicalAnalyzer:
         self._truncate_and_add_to_df(adxr, COLUMN_ADXR)
         #self.__data.dropna(inplace=True)
         #self.__data.reset_index(drop=True, inplace=True)
+
+    def calculate_aroon(self):
+        period = int(self.__config_manager.get('TECHNICAL', 'AROON', 'TIMEPERIOD'))
+        aroon = ta.AROONOSC(self.__data['high'], self.__data['low'], timeperiod=period)
+        self._truncate_and_add_to_df(aroon, 'aroon')
+
+    def calculate_adline(self):
+        ad = ta.AD(self.__data['high'], self.__data['low'], self.__data['close'], self.__data['volume'])
+        self._truncate_and_add_to_df(ad, COLUMN_ADLINE)
 
     def calculate_volume_moving_average(self):
         """
@@ -254,18 +299,22 @@ class TechnicalAnalyzer:
         """
         時系列データのための各種指標の差分を計算し、データフレームに追加します。
         """
-        self.__data[COLUMN_UPPER_DIFF] = self.__data[COLUMN_UPPER_BAND2] - self.__data[COLUMN_CLOSE]
-        self.__data[COLUMN_LOWER_DIFF] = self.__data[COLUMN_LOWER_BAND2] - self.__data[COLUMN_CLOSE]
-        self.__data[COLUMN_MIDDLE_DIFF] = self.__data[COLUMN_MIDDLE_BAND] - self.__data[COLUMN_CLOSE]
-        self.__data[COLUMN_EMA_DIFF] = self.__data[COLUMN_EMA] - self.__data[COLUMN_CLOSE]
-        self.__data[COLUMN_SMA_DIFF] = self.__data[COLUMN_SMA] - self.__data[COLUMN_CLOSE]
+        self.__data[COLUMN_UPPER_DIFF] = self.__data[COLUMN_UPPER_BAND2] - self.__data[COLUMN_WCLPRICE]
+        self.__data[COLUMN_LOWER_DIFF] = self.__data[COLUMN_LOWER_BAND2] - self.__data[COLUMN_WCLPRICE]
+        self.__data[COLUMN_MIDDLE_DIFF] = self.__data[COLUMN_MIDDLE_BAND] - self.__data[COLUMN_WCLPRICE]
+        self.__data[COLUMN_EMA_DIFF] = self.__data[COLUMN_EMA] - self.__data[COLUMN_WCLPRICE]
+        self.__data[COLUMN_SMA_DIFF] = self.__data[COLUMN_SMA] - self.__data[COLUMN_WCLPRICE]
+        self.__data[COLUMN_RSI_SELL] = self.__data[COLUMN_RSI] - 70
+        self.__data['ema_sma'] = self.__data[COLUMN_EMA] - self.__data[COLUMN_SMA]
+        self.__data['sma_ema'] = self.__data[COLUMN_SMA] - self.__data[COLUMN_EMA]
+        self.__data['ema_sma_500'] = np.where(self.__data['ema_sma'] > 500, self.__data['ema_sma'], 0)
+        self.__data['sma_ema_500'] = np.where(self.__data['sma_ema'] > 500, self.__data['sma_ema'], 0)
         #self.__data[COLUMN_ENTRY_DIFF] = self.__data[COLUMN_ENTRY_PRICE] - self.__data[COLUMN_CLOSE]
 
         self.__data[COLUMN_RSI_SELL] = self.__data[COLUMN_RSI] - 70
         self.__data[COLUMN_RSI_BUY] = self.__data[COLUMN_RSI] - 30
         self.__data[COLUMN_DMI_DIFF] = self.__data[COLUMN_P_DI] - self.__data[COLUMN_M_DI]
         self.__data[COLUMN_MACD_DIFF] = self.__data[COLUMN_MACD] - self.__data[COLUMN_MACDSIGNAL]
-
         self.__data[COLUMN_BOL_DIFF] = self.__data[COLUMN_UPPER_BAND2] - self.__data[COLUMN_LOWER_BAND2]
 
     def calculate_differences(self):
@@ -286,7 +335,7 @@ class TechnicalAnalyzer:
         単純移動平均(SMA)を計算し、データフレームに追加します。
         """
         timeperiod = int(self.__config_manager.get('TECHNICAL', 'SMA', 'TIMEPERIOD'))
-        self.__data[COLUMN_SMA] = ta.SMA(self.__data[COLUMN_CLOSE], timeperiod)
+        self.__data[COLUMN_SMA] = ta.SMA(self.__data[COLUMN_WCLPRICE], timeperiod)
         self._truncate_and_add_to_df(self.__data[COLUMN_SMA], COLUMN_SMA)
         #self.__data.dropna(inplace=True)
         #self.__data.reset_index(drop=True, inplace=True)
@@ -296,7 +345,7 @@ class TechnicalAnalyzer:
         指数移動平均（EMA）を計算し、データフレームに追加します。
         """
         timeperiod = int(self.__config_manager.get('TECHNICAL', 'EMA', 'TIMEPERIOD'))
-        self.__data[COLUMN_EMA] = ta.EMA(self.__data[COLUMN_CLOSE], timeperiod)
+        self.__data[COLUMN_EMA] = ta.EMA(self.__data[COLUMN_WCLPRICE], timeperiod)
         self._truncate_and_add_to_df(self.__data[COLUMN_EMA], COLUMN_EMA)
         #self.__data.dropna(inplace=True)
         #self.__data.reset_index(drop=True, inplace=True)

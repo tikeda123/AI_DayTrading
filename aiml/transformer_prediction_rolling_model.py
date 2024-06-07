@@ -4,15 +4,25 @@ from typing import Tuple
 import numpy as np
 import tensorflow as tf
 import pandas as pd
+import shap
+
 from sklearn.model_selection import train_test_split, KFold
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-from tensorflow.keras.layers import Dense, Dropout, GlobalAveragePooling1D,LayerNormalization, MultiHeadAttention, Input, Flatten
+#from tensorflow.keras.layers import Conv1D, MaxPooling1D, Flatten, Dense, Dropout, GlobalAveragePooling1D
+import tensorflow as tf
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.regularizers import l2
 
+import matplotlib.pyplot as plt
+
 import joblib
 
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import (
+    Conv1D, MaxPooling1D, Flatten, Dense, Dropout, GlobalAveragePooling1D, Input,
+    MultiHeadAttention, LayerNormalization
+)
 
 # b.pyのディレクトリの絶対パスを取得
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -30,10 +40,11 @@ from aiml.prediction_model import PredictionModel
 from aiml.transformerblock import TransformerBlock
 
 # ハイパーパラメータの設定
-PARAM_LEARNING_RATE = 0.0005
-PARAM_EPOCHS = 400
+PARAM_LEARNING_RATE = 0.0002
+PARAM_EPOCHS = 200
 
-N_SPLITS=5
+N_SPLITS=3
+
 POSITIVE_THRESHOLD = 0
 
 
@@ -69,7 +80,12 @@ class TransformerPredictionRollingModel(PredictionModel):
         self.id = id
         self.logger = TradingLogger()
         self.data_loader = MongoDataLoader()
-        self.config = get_config("AIML_ROLLING")
+        if id == 'upper_mlts':
+            self.config = get_config("AIML_ROLLING_UPPER")
+        elif id == 'lower_mlts':
+            self.config = get_config("AIML_ROLLING_LOWER")
+        else:
+            self.config = get_config("AIML_ROLLING")
 
         if symbol is None:
             self.symbol =  get_config("SYMBOL")
@@ -83,7 +99,7 @@ class TransformerPredictionRollingModel(PredictionModel):
 
 
         self.initialize_paths()
-        self.scaler = MinMaxScaler(feature_range=(0, 1))
+        self.scaler = MinMaxScaler(feature_range=(-1, 1))
         self.create_table_name()
         self.model = None
 
@@ -198,7 +214,44 @@ class TransformerPredictionRollingModel(PredictionModel):
        return scaled_sequences, targets
 
 
-    def create_transformer_model(self, input_shape, num_heads=16, dff=256, rate=0.1, l2_reg=0.01):
+    def create_cnn_transformer_model(
+        self, input_shape, num_heads=16, dff=256, rate=0.1, l2_reg=0.01, num_transformer_blocks=3,
+        num_filters=64, kernel_size=3, pool_size=2
+    ):
+        """
+        CNNとTransformerを組み合わせたモデルを作成する。
+        """
+
+        # CNN部分
+        inputs = Input(shape=input_shape)
+        x = Conv1D(num_filters, kernel_size, activation='relu', padding='same')(inputs)
+        x = MaxPooling1D(pool_size)(x)
+        x = Conv1D(num_filters * 2, kernel_size, activation='relu', padding='same')(x)
+        x = MaxPooling1D(pool_size)(x)
+
+        # Transformer部分
+        x = LayerNormalization(epsilon=1e-6)(x)  # LayerNormalizationを追加
+        for _ in range(num_transformer_blocks):
+            x = TransformerBlock(x.shape[-1], num_heads, dff, rate, l2_reg=l2_reg)(x)
+
+        # 出力層
+        x = GlobalAveragePooling1D()(x)
+        x = Dropout(0.2)(x)
+        x = Dense(160, activation='relu', kernel_regularizer=l2(l2_reg))(x)
+        x = Dropout(0.2)(x)
+        x = Dense(80, activation='relu', kernel_regularizer=l2(l2_reg))(x)
+        x = Dropout(0.2)(x)
+        x = Dense(40, activation='relu', kernel_regularizer=l2(l2_reg))(x)
+        x = Dropout(0.2)(x)
+        x = Dense(32, activation='relu', kernel_regularizer=l2(l2_reg))(x)
+        x = Dropout(0.2)(x)
+        x = Dense(16, activation='relu', kernel_regularizer=l2(l2_reg))(x)
+        outputs = Dense(1, activation='sigmoid', kernel_regularizer=l2(l2_reg))(x)
+
+        model = tf.keras.Model(inputs=inputs, outputs=outputs)
+        return model
+
+    def create_transformer_model(self, input_shape, num_heads=16, dff=256, rate=0.1, l2_reg=0.01,num_transformer_blocks=3):
         """
         Transformerモデルを作成する。
 
@@ -212,14 +265,15 @@ class TransformerPredictionRollingModel(PredictionModel):
         Returns:
             tf.keras.Model: 作成されたモデル。
         """
+
         inputs = tf.keras.Input(shape=input_shape)
         x = inputs
-        #for _ in range(3):  # 3つのTransformerBlockを積み重ねる
-        x = TransformerBlock(input_shape[1], num_heads, dff, rate, l2_reg=l2_reg)(x)
-        #x = TransformerBlock(input_shape[1], num_heads, dff, rate, l2_reg=l2_reg)(x)        #x = TransformerBlock(input_shape[1], num_heads, dff, rate, l2_reg=l2_reg)(inputs)
-        #x = GlobalAveragePooling1D()(x)
-        #x = Dropout(0.2)(x)
-        #x = Dense(80, activation='relu', kernel_regularizer=l2(l2_reg))(x)
+        for _ in range(num_transformer_blocks):
+            x = TransformerBlock(input_shape[1], num_heads, dff, rate, l2_reg=l2_reg)(x)
+        x = GlobalAveragePooling1D()(x)
+
+        x = Dropout(0.2)(x)
+        x = Dense(80, activation='relu', kernel_regularizer=l2(l2_reg))(x)
         x = Dropout(0.2)(x)
         x = Dense(40, activation='relu', kernel_regularizer=l2(l2_reg))(x)
         x = Dropout(0.2)(x)
@@ -227,6 +281,7 @@ class TransformerPredictionRollingModel(PredictionModel):
         x = Dropout(0.2)(x)
         x = Dense(16, activation='relu', kernel_regularizer=l2(l2_reg))(x)
         x = Flatten()(x)
+
         outputs = Dense(1, activation='sigmoid', kernel_regularizer=l2(l2_reg))(x)
         model = tf.keras.Model(inputs=inputs, outputs=outputs)
         return model
@@ -241,7 +296,8 @@ class TransformerPredictionRollingModel(PredictionModel):
             batch_size (int): バッチサイズ。
         """
         # モデルのトレーニング
-        self.model = self.create_transformer_model((x_train.shape[1], x_train.shape[2]))
+        #self.model = self.create_transformer_model((x_train.shape[1], x_train.shape[2]))
+        self.model = self.create_cnn_transformer_model((x_train.shape[1], x_train.shape[2]))
         self.model.compile(optimizer=Adam(learning_rate=PARAM_LEARNING_RATE), loss='binary_crossentropy', metrics=['accuracy'])
         self.model.fit(x_train, y_train, epochs=epochs, batch_size=batch_size)
 
@@ -274,7 +330,8 @@ class TransformerPredictionRollingModel(PredictionModel):
 
         for train, test in kfold.split(data, targets):
             # モデルを生成
-            self.model = self.create_transformer_model((data.shape[1], data.shape[2]))
+            #self.model = self.create_transformer_model((data.shape[1], data.shape[2]))
+            self.model = self.create_cnn_transformer_model((data.shape[1], data.shape[2]))
             # モデルをコンパイル
             self.model.compile(optimizer=Adam(learning_rate=PARAM_LEARNING_RATE), loss='binary_crossentropy', metrics=['accuracy'])
             # モデルをトレーニング
@@ -316,7 +373,7 @@ class TransformerPredictionRollingModel(PredictionModel):
         Returns:
             np.ndarray: 予測結果。
         """
-
+        print("Predict function input shape:", data.shape)
         return self.model.predict(data)
 
     def predict_single(self, data_point: np.ndarray) -> int:
@@ -362,17 +419,26 @@ class TransformerPredictionRollingModel(PredictionModel):
         """
         保存されたモデルとスケーラーを読み込む。
         """
+        '''
         # モデルの読み込み
         model_file_name = self.filename + '.keras'
         model_path = os.path.join(self.datapath, model_file_name)
         self.logger.log_system_message(f"Loading model from {model_path}")
         self.model = tf.keras.models.load_model(model_path, custom_objects={'TransformerBlock': TransformerBlock})
+        '''
+        model_file_name = self.filename + '.keras'
+        model_path = os.path.join(self.datapath, model_file_name)
+        self.logger.log_system_message(f"Loading model from {model_path}")
+        self.model = tf.keras.models.load_model(model_path, custom_objects={'TransformerBlock': TransformerBlock})
+
 
         # スケーラーの読み込み
         model_scaler_file = self.filename + '.scaler'
         model_scaler_path = os.path.join(self.datapath, model_scaler_file)
         self.logger.log_system_message(f"Loading scaler from {model_scaler_path}")
         self.scaler = joblib.load(model_scaler_path)
+
+
 
     def get_data_period(self, date: str, period: int) -> np.ndarray:
         """
@@ -388,16 +454,189 @@ class TransformerPredictionRollingModel(PredictionModel):
         data = self.data_loader.load_data_from_datetime_period(date, period, self.table_name)
         return data.filter(items=self.feature_columns).to_numpy()
 
+    def compute_gradcam(self, data, layer_name='transformer_block_4', pred_index=None):
+        grad_model = tf.keras.models.Model([self.model.inputs], [self.model.get_layer(layer_name).output, self.model.output])
+        with tf.GradientTape() as tape:
+            conv_outputs, predictions = grad_model(data)
+            if pred_index is None:
+                pred_index = tf.argmax(predictions[0])
+            class_channel = predictions[:, pred_index]
+        grads = tape.gradient(class_channel, conv_outputs)
+        pooled_grads = tf.reduce_mean(grads, axis=(0, 1))
+        conv_outputs = conv_outputs[0]
+        heatmap = conv_outputs @ pooled_grads[..., tf.newaxis]
+        heatmap = tf.squeeze(heatmap)
+        heatmap = tf.maximum(heatmap, 0) / tf.math.reduce_max(heatmap)
+        return heatmap.numpy()
+
+    def display_gradcam(self, data, heatmap, alpha=0.4):
+        plt.figure(figsize=(10, 6))
+        plt.plot(data.flatten(), label='Input Data')
+        plt.imshow(np.expand_dims(heatmap, axis=0), aspect='auto', cmap='viridis', alpha=alpha)
+        plt.colorbar(label='Importance')
+        plt.xlabel('Time Step')
+        plt.ylabel('Feature Index')
+        plt.title('Grad-CAM Visualization')
+        plt.legend()
+        plt.show()
+
+def permutation_feature_importance(model, X, y, metric, n_repeats=10):
+    baseline_score = metric(y, (model.predict(X) > 0.5).astype(int).flatten())
+    feature_importances = []
+
+    for column in range(X.shape[2]):
+        scores = []
+        for _ in range(n_repeats):
+            X_permuted = X.copy()
+            np.random.shuffle(X_permuted[:, :, column])
+            score = metric(y, (model.predict(X_permuted) > 0.5).astype(int).flatten())
+            scores.append(score)
+        feature_importances.append(baseline_score - np.mean(scores))
+
+    return np.array(feature_importances)
+
+def drop_column_feature_importance(model, X, y, metric):
+    baseline_score = metric(y, (model.predict(X) > 0.5).astype(int).flatten())
+    feature_importances = []
+
+    for column in range(X.shape[2]):
+        X_dropped = X.copy()
+        X_dropped[:, :, column] = 0
+        score = metric(y, (model.predict(X_dropped) > 0.5).astype(int).flatten())
+        feature_importances.append(baseline_score - score)
+
+    return np.array(feature_importances)
 
 def main():
+
+    model = TransformerPredictionRollingModel("rolling")
+    x_train, x_test, y_train, y_test = model.load_and_prepare_data(
+                                                                    '2020-01-01 00:00:00',
+                                                                    '2024-01-01 00:00:00',
+                                                                    MARKET_DATA_TECH)
+    # データのロードと前処理
+    #x_train, x_test, y_train, y_test = model.load_and_prepare_data('2021-01-01 00:00:00', '2022-02-01 00:00:00')
+    #model.load_model(0
+    # モデルの訓練
+        # モデルをクロスバリデーションで訓練します
     """
-    メインの実行関数。
+    param_grid = {
+        'num_heads': [4, 8, 16],
+        'dff': [128, 256, 512],
+        'rate': [0.1, 0.2, 0.3],
+        'l2_reg': [0.001, 0.01, 0.1]
+    }
+
+    # ハイパーパラメータの探索とモデルの訓練
+    best_params = model.train_with_hyperparameter_tuning(
+        np.concatenate((x_train, x_test), axis=0),
+        np.concatenate((y_train, y_test), axis=0),
+        param_grid
+    )
+
+    print(f"Best hyperparameters: {best_params['best_params']}")
+    print(f"Best validation loss: {best_params['best_val_loss']}")
     """
-    # ログ情報の初期化
+
+
+    cv_scores = model.train_with_cross_validation(
+        np.concatenate((x_train, x_test), axis=0),
+        np.concatenate((y_train, y_test), axis=0)
+    )
+    # クロスバリデーションの結果を表示
+
+    for i, score in enumerate(cv_scores):
+        print(f'Fold {i+1}: Accuracy = {score[1]}')
+    # モデルの評価
+    accuracy, report, conf_matrix = model.evaluate(x_test, y_test)
+    print(f'Accuracy: {accuracy}')
+    print(report)
+    print(conf_matrix)
+
+    model.save_model()
+
+
+    #model.load_model()
+        # モデルのレイヤー名を取得する
+    #layer_names = [layer.name for layer in model.model.layers]
+    #print("Available layers:", layer_names)
+
+    #x_train, x_test, y_train, y_test = model.load_and_prepare_data(
+    #                                                        '2023-01-01 00:00:00',
+    #                                                        '2024-01-01 00:00:00',
+    #                                                        MARKET_DATA_TECH,
+    #                                                        test_size=0.9, random_state=None)
+    # データのロードと前処理
+    #x_train, x_test, y_train, y_test = model.load_and_prepare_data('2021-01-01 00:00:00', '2022-02-01 00:00:00')
+
+    # モデルの訓練
+    #model.train(x_train, y_train)
+    #model.load_model()
+    # モデルの評価
+    #accuracy, report, conf_matrix = model.evaluate(x_test, y_test)
+    #print(f"Accuracy: {accuracy}")
+    #print(report)
+    #print(conf_matrix)
+
+
+
+    #model.load_model()
+
+    x_train, x_test, y_train, y_test = model.load_and_prepare_data('2024-01-01 00:00:00', '2024-06-01 00:00:00', MARKET_DATA_TECH, test_size=0.9, random_state=None)
+    accuracy, report, conf_matrix = model.evaluate(x_test, y_test)
+    print(f"Accuracy: {accuracy}")
+    print(report)
+    print(conf_matrix)
+
+
+        #print(f"Prediction for data point {i}: {model.predict_single(x_test[i])}")
+
+    """
+        # 異なるレイヤー名を試す
+    for layer_name in layer_names:
+        print(f"Grad-CAM for layer: {layer_name}")
+        try:
+            heatmap = model.compute_gradcam(x_test, layer_name=layer_name)
+            model.display_gradcam(x_test[0], heatmap)
+            grads = check_gradients(model.model, x_test, layer_name)
+            mean_grad = tf.reduce_mean(tf.abs(grads))
+            print(f"Checking gradients for layer: {layer_name}")
+            print(f"Mean gradient for {layer_name}: {mean_grad}")
+        except Exception as e:
+            print(f"Could not compute Grad-CAM for layer {layer_name}: {e}")
+
+
+
+
+    # Permutation Feature Importanceの計算
+    permutation_importances = permutation_feature_importance(model.model, x_test, y_test, accuracy_score)
+     # 特徴量重要度の可視化
+    plt.figure(figsize=(10, 6))
+    plt.bar(range(len(permutation_importances)), permutation_importances)
+    plt.xlabel('Feature Index')
+    plt.ylabel('Permutation Feature Importance')
+    plt.title('Permutation Feature Importance')
+    plt.tight_layout()
+    plt.show()
+
+    # Permutation Feature Importanceの計算
+    permutation_importances = drop_column_feature_importance(model, x_test, y_test, accuracy_score)
+    # 特徴量重要度の可視化
+    plt.figure(figsize=(10, 6))
+    plt.bar(range(len(permutation_importances)), permutation_importances)
+    plt.xlabel('Feature Index')
+    plt.ylabel('Permutation Feature Importance')
+    plt.title('Permutation Feature Importance')
+    plt.tight_layout()
+    plt.show()
+
+
+def main():
+
 
 
     # モデルの初期化
-    model = TransformerPredictionRollingModel("upper_mlts")
+    model = TransformerPredictionRollingModel("rolling")
     #learning_datafile = 'BTCUSDT_20210101000_20230901000_60_price_upper_mlts.csv'
     learning_datafile = 'BTCUSDT_20200101_20230101_60_price_lower_mlts.csv'
     x_train, x_test, y_train, y_test = model.load_and_prepare_data_time_series_from_csv(learning_datafile)
@@ -433,6 +672,8 @@ def main():
     print(f"Accuracy: {accuracy}")
     print(report)
     print(conf_matrix)
-
+"""
 if __name__ == '__main__':
     main()
+
+

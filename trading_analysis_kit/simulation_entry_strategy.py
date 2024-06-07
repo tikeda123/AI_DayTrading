@@ -1,7 +1,6 @@
 import pandas as pd
 import os,sys
 from datetime import datetime
-import operator
 import numpy as np
 # b.pyのディレクトリの絶対パスを取得
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -46,18 +45,16 @@ class BollingerBand_EntryStrategy():
         self.manager_lower = init_inference_prediction_rolling_manager(
                                                         "lower_mlts",
                                                         TransformerPredictionTSModel)
-        self.manager_rolling = init_inference_prediction_rolling_manager(
-                                                        "rolling",
-                                                        TransformerPredictionRollingModel)
-#        self.manager_rolling_four = init_inference_prediction_rolling_manager(
-#                                                        "rolling",
-#                                                        TransformerPredictionRollingModel
-#                                                        ,interval=240)
+
+        #self.manager_rolling_six  = init_inference_prediction_rolling_manager(
+        #                                                "rolling",
+        #                                                TransformerPredictionRollingModel
+        #                                                ,interval=360)
         self.manager_upper.load_model()
         self.manager_lower.load_model()
-        self.manager_rolling.load_model()
+        #self.manager_rolling_six.load_model()
  #       self.manager_rolling_four.load_model()
-#        self.manager_rolling_four.load_and_prepare_data("2024-01-01 00:00:00", "2024-06-01 00:00:00",MARKET_DATA_TECH,test_size=0.9, random_state=None)
+        #self.manager_rolling_six.load_and_prepare_data("2024-01-01 00:00:00", "2024-06-05 00:00:00",MARKET_DATA_TECH,test_size=0.9, random_state=None)
 
 
     def should_entry(self, context)->bool:
@@ -161,17 +158,30 @@ class BollingerBand_EntryStrategy():
         df = context.dm.get_df_fromto(context.dm.get_current_index() - (TIME_SERIES_PERIOD - 1),
                                                context.dm.get_current_index())
 
+        #pred_six = self.predict_trend_rolling_six_hour(context)
+
+        flag = True
         if bb_direction == BB_DIRECTION_UPPER:
             target_df = self.manager_upper.create_time_series_data(df)
             prediction = self.manager_upper.predict_model(target_df)
+            #f prediction == PRED_TYPE_LONG and pred_six == PRED_TYPE_SHORT:
+            #prediction = PRED_TYPE_LONG
+            #flag = False
+            #    flag = False
         elif bb_direction == BB_DIRECTION_LOWER:
+            #prediction = PRED_TYPE_LONG
+            #flag = False
             target_df = self.manager_lower.create_time_series_data(df)
             prediction = self.manager_lower.predict_model(target_df)
+            #if prediction == PRED_TYPE_SHORT and pred_six == PRED_TYPE_LONG:
+            #    flag = False
+            #if prediction == PRED_TYPE_SHORT:
+            #    flag = False
 
         #prediction = 1 - prediction
         context.dm.set_prediction(prediction)
         context.log_transaction(f"Prediction: {prediction}")
-        return prediction
+        return flag,prediction
 
     def find_four_hour_interval(self,start_datetime_str):
         """
@@ -194,6 +204,28 @@ class BollingerBand_EntryStrategy():
 
         # 4時間間隔の開始時刻を文字列で返す
         return four_hour_block_start.strftime('%Y-%m-%d %H:%M:%S')
+
+    def find_six_hour_interval(self,start_datetime_str):
+        """
+        上記のプログラムは、指定された日時の4時間間隔の開始時刻を計算する関数です。
+        Args:
+            start_datetime_str (str): 開始時刻の文字列。
+
+        Returns:
+            str: 4時間間隔の開始時刻の文字列。
+        """
+        # 文字列からdatetimeオブジェクトに変換
+        #print(f'start_datetime_str:{start_datetime_str}')
+        #start_datetime = datetime.strptime(start_datetime_str, '%Y-%m-%d %H:%M:%S')
+        start_datetime = start_datetime_str
+
+        # 4時間間隔の開始時刻を計算
+        hours_since_start_of_day = start_datetime.hour + start_datetime.minute / 60 + start_datetime.second / 3600
+        four_six_block_number = int(hours_since_start_of_day // 6)
+        four_six_block_start = start_datetime.replace(hour=four_six_block_number * 6, minute=0, second=0, microsecond=0)
+
+        # 4時間間隔の開始時刻を文字列で返す
+        return four_six_block_start.strftime('%Y-%m-%d %H:%M:%S')
 
     def predict_trend_rolling(self, context)->int:
         """
@@ -241,6 +273,23 @@ class BollingerBand_EntryStrategy():
         feature_date = self.find_four_hour_interval(current_date)
         prediction = self.manager_rolling_four.predict_rolling_model_date(feature_date)
         context.log_transaction(f"Prediction_rolling_four_hour for Entry: {prediction}")
+        return prediction
+
+    def predict_trend_rolling_six_hour(self, context)->int:
+        """
+        トレンド予測を行います。
+
+        Args:
+            context (TradingContext): トレーディングコンテキストオブジェクト。
+
+        Returns:
+            int: トレンド予測結果。
+        """
+
+        current_date = context.dm.get_current_date()
+        feature_date = self.find_six_hour_interval(current_date)
+        prediction = self.manager_rolling_six.predict_rolling_model_date(feature_date)
+        context.log_transaction(f"Prediction_rolling_six_hour for Entry: {prediction}")
         return prediction
 
 

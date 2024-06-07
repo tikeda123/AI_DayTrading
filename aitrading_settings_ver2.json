@@ -1,6 +1,6 @@
 {
-	"SYMBOL"            :"BTCUSDT",
-    "INTERVAL"          :240,
+    "SYMBOL"            :"BTCUSDT",
+    "INTERVAL"          :60,
     "ONLINE":
     {
         "DBNAME"        :"trading",
@@ -25,13 +25,13 @@
         "PASSWORD"      :"password",
         "HOST"          :"localhost"
     },
-	"MONGODB":
-	{
+    "MONGODB":
+    {
         "HOST"          :"localhost",
         "PORT"      	:"27017",
         "USERNAME"      :"root",
-		"PASSWORD"      :"password",
-		"DATABASE"    	:"trading"
+        "PASSWORD"      :"password",
+        "DATABASE"    	:"trading"
     },
     "ACCOUNT":
     {
@@ -42,7 +42,7 @@
         "LEVERAGE"      :3,
         "FTC"           :0,
         "PTC"           :0.00055,
-        "LOSSCUT"       :0.9,
+        "LOSSCUT"       :0.1,
         "TRAILING_STOP_DUR"      :1,
         "TRAILING_STOP_RATE"     :0.01,
         "ENTRY_RATE"        :0.003
@@ -62,16 +62,46 @@
     "AIML_ROLLING":
     {
         "DATAPATH"          :"data/data_rolling/",
-		"LEARN_DATAPATH"    :"data/data_ml/",
-        "TARGET_COLUMN"     :["close","ema"],
-		"FEATURE_COLUMNS"   :["macd","macdsignal","adx","adxr","p_di","m_di","ema","sma","close","macdhist","macd_diff","macdsignal","macd","rsi","upper_diff","lower_diff","middle_diff","volume_ma","dmi_diff","volume"]
- 	},
-	 "ENTRY" :
-	 {
-		 "DIFFERENCE" :1
-	 },
+        "LEARN_DATAPATH"    :"data/data_ml/",
+        "TARGET_COLUMN"     :["ema","wclprice"],
+        "FEATURE_COLUMNS"   :["wclprice","bbvi","rsi","ema","sma","ema_sma","aroon","adline","macd","macdhist","lower2"]
+     },
+     "AIML_ROLLING_LOWER":
+     {
+         "DATAPATH"          :"data/data_rolling/",
+         "LEARN_DATAPATH"    :"data/data_ml/",
+         "TARGET_COLUMN"     :["ema","wclprice"],
+         "FEATURE_COLUMNS"   :["close","open","high","low","wclprice","bbvi","rsi","ema","sma","ema_sma","aroon","adline","macd","macdhist","macdsignal","lower2","volume","atr","roc","mfi"]
+		},
+      "AIML_ROLLING_UPPER":
+      {
+          "DATAPATH"          :"data/data_rolling/",
+          "LEARN_DATAPATH"    :"data/data_ml/",
+          "TARGET_COLUMN"     :["ema","wclprice"],
+          "FEATURE_COLUMNS"   :["close","open","high","low","wclprice","bbvi","rsi","ema","sma","ema_sma","aroon","adline","macd","macdhist","macdsignal","upper2","volume","atr","roc","mfi"]
+       },
+     "ENTRY" :
+     {
+         "DIFFERENCE" :1
+     },
     "TECHNICAL" :
     {
+        "ATR" :
+        {
+            "TIMEPERIOD":14
+        },
+        "ROC" :
+        {
+            "TIMEPERIOD":14
+        },
+        "MFI" :
+        {
+            "TIMEPERIOD":14
+        },
+        "AROON" :
+        {
+            "TIMEPERIOD":14
+        },
         "BB" :
         {
             "TIMEPERIOD":20,

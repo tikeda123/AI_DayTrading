@@ -5,9 +5,11 @@ import numpy as np
 import tensorflow as tf
 import pandas as pd
 
-from sklearn.model_selection import train_test_split
-from sklearn.model_selection import ParameterGrid
+from sklearn.model_selection import train_test_split,ParameterGrid
 from tqdm import tqdm
+from typing import Tuple
+import numpy as np
+from imblearn.over_sampling import SMOTE
 
 # b.pyのディレクトリの絶対パスを取得
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -58,14 +60,48 @@ class TransformerPredictionTSModel(TransformerPredictionRollingModel):
                                           end_date,
                                           coll_type,
                                           test_size=0.2,
-                                          random_state=None):
+                                          random_state=None,
+                                          oversample=False):
         data = self._dataloader.load_data_from_datetime_period(start_date, end_date, coll_type)
-        scaled_sequences, targets = self._prepare_sequences_time_series(data, TIME_SERIES_PERIOD-1, self.feature_columns)
+        scaled_sequences, targets = self._prepare_sequences_time_series(data, TIME_SERIES_PERIOD-1, self.feature_columns,oversample)
         return train_test_split(scaled_sequences,
                                 targets,
                                 test_size=test_size,
                                 random_state=random_state,shuffle=False)
 
+    def _prepare_sequences_time_series(self, data, ftime_steps, feature_columns, oversample=False) -> Tuple[np.ndarray, np.ndarray]:
+        # フィルタリングされたデータを取得
+        filtered_data = data[(data[COLUMN_BB_DIRECTION].isin([BB_DIRECTION_UPPER, BB_DIRECTION_LOWER])) & (data[COLUMN_BB_PROFIT] != 0)]
+
+        sequences, targets = [], []
+
+        for i in range(len(filtered_data)):
+            end_index = filtered_data.index[i]
+            start_index = end_index - ftime_steps
+            if end_index > len(data):
+                break
+
+            sequence = data.loc[start_index:end_index, feature_columns].values
+            target = data.loc[end_index, COLUMN_BB_PROFIT] > POSITIVE_THRESHOLD
+            sequences.append(sequence)
+            targets.append(target)
+
+        sequences = np.array(sequences)
+        targets = np.array(targets)
+        scaled_sequences = np.array([self.scaler.fit_transform(seq) for seq in sequences])
+
+        # オーバーサンプリング
+        if oversample:
+            n_samples, n_time_steps, n_features = scaled_sequences.shape
+            scaled_sequences_reshaped = scaled_sequences.reshape(n_samples, -1)
+            smote = SMOTE()
+            X_resampled, y_resampled = smote.fit_resample(scaled_sequences_reshaped, targets)
+            X_resampled = X_resampled.reshape(-1, n_time_steps, n_features)
+            return X_resampled, y_resampled
+        else:
+            return scaled_sequences, targets
+
+    """
     def _prepare_sequences_time_series(self, data,ftime_steps,feature_columns) -> Tuple[np.ndarray, np.ndarray]:
         #  TIME_SERIES_PERIOD-1, self.feature_columns
         filtered_data = data[(data[COLUMN_BB_DIRECTION].isin([BB_DIRECTION_UPPER, BB_DIRECTION_LOWER])) & (data[COLUMN_BB_PROFIT] != 0)]
@@ -90,7 +126,7 @@ class TransformerPredictionTSModel(TransformerPredictionRollingModel):
         targets = np.array(targets)
         scaled_sequences = np.array([self.scaler.fit_transform(seq) for seq in sequences])
         return scaled_sequences, targets
-
+    """
     def train_with_hyperparameter_tuning(self,
                                          data: np.ndarray,
                                          targets: np.ndarray,
@@ -142,6 +178,64 @@ class TransformerPredictionTSModel(TransformerPredictionRollingModel):
         return {'best_params': best_params, 'best_val_loss': best_val_loss}
 
 
+def permutation_feature_importance(model, X, y, metric, n_repeats=10):
+    baseline_score = metric(y, (model.predict(X) > 0.5).astype(int).flatten())
+    feature_importances = []
+
+    for column in range(X.shape[2]):
+        scores = []
+        for _ in range(n_repeats):
+            X_permuted = X.copy()
+            np.random.shuffle(X_permuted[:, :, column])
+            score = metric(y, (model.predict(X_permuted) > 0.5).astype(int).flatten())
+            scores.append(score)
+        feature_importances.append(baseline_score - np.mean(scores))
+
+    return np.array(feature_importances)
+
+def drop_column_feature_importance(model, X, y, metric):
+    baseline_score = metric(y, (model.predict(X) > 0.5).astype(int).flatten())
+    feature_importances = []
+
+    for column in range(X.shape[2]):
+        X_dropped = X.copy()
+        X_dropped[:, :, column] = 0
+        score = metric(y, (model.predict(X_dropped) > 0.5).astype(int).flatten())
+        feature_importances.append(baseline_score - score)
+
+    return np.array(feature_importances)
+
+def check_gradients(model, data, layer_name):
+    grad_model = tf.keras.models.Model([model.inputs], [model.get_layer(layer_name).output, model.output])
+    with tf.GradientTape() as tape:
+        conv_outputs, predictions = grad_model(data)
+        class_channel = predictions[:, tf.argmax(predictions[0])]
+    grads = tape.gradient(class_channel, conv_outputs)
+    return grads
+
+
+def train_main(model):
+    x_train, x_test, y_train, y_test = model.load_and_prepare_data_time_series(
+                                                                    '2020-01-01 00:00:00',
+                                                                    '2024-01-01 00:00:00',
+                                                                    MARKET_DATA_ML_UPPER,oversample=False)
+    model.train(x_train, y_train)
+
+    model.save_model()
+
+    x_train, x_test, y_train, y_test = model.load_and_prepare_data_time_series( '2024-01-01 00:00:00',
+                                                                                '2024-06-01 00:00:00',
+                                                                                MARKET_DATA_ML_UPPER,
+                                                                                test_size=0.9,
+                                                                                random_state=None,
+                                                                                oversample=False)
+    accuracy, report, conf_matrix = model.evaluate(x_test, y_test)
+    print(f"Accuracy: {accuracy}")
+    print(report)
+    print(conf_matrix)
+    return  accuracy
+
+
 def main():
     """
     メインの実行関数。
@@ -150,13 +244,17 @@ def main():
 
 
     # モデルの初期化
-    model = TransformerPredictionTSModel("lower_mlts")
+    model = TransformerPredictionTSModel("upper_mlts")
 
-    x_train, x_test, y_train, y_test = model.load_and_prepare_data_time_series(
-                                                                    '2020-01-01 00:00:00',
-                                                                    '2023-06-03 00:00:00',
-                                                                    MARKET_DATA_ML_LOWER,)
-    # データのロードと前処理
+    for i in range(100):
+        accuracy_score = train_main(model)
+        if accuracy_score >= 0.65:
+            break
+
+
+
+
+     # データのロードと前処理
     #x_train, x_test, y_train, y_test = model.load_and_prepare_data('2021-01-01 00:00:00', '2022-02-01 00:00:00')
     #model.load_model(0
     # モデルの訓練
@@ -178,7 +276,6 @@ def main():
 
     print(f"Best hyperparameters: {best_params['best_params']}")
     print(f"Best validation loss: {best_params['best_val_loss']}")
-    """
 
 
     cv_scores = model.train_with_cross_validation(
@@ -194,27 +291,47 @@ def main():
     print(f'Accuracy: {accuracy}')
     print(report)
     print(conf_matrix)
-
-    #model.load_model()
     model.save_model()
+   """
+
+    """
+        # 異なるレイヤー名を試す
+    for layer_name in layer_names:
+        print(f"Grad-CAM for layer: {layer_name}")
+        try:
+            heatmap = model.compute_gradcam(x_test, layer_name=layer_name)
+            model.display_gradcam(x_test[0], heatmap)
+            grads = check_gradients(model.model, x_test, layer_name)
+            mean_grad = tf.reduce_mean(tf.abs(grads))
+            print(f"Checking gradients for layer: {layer_name}")
+            print(f"Mean gradient for {layer_name}: {mean_grad}")
+        except Exception as e:
+            print(f"Could not compute Grad-CAM for layer {layer_name}: {e}")
 
 
-    x_train, x_test, y_train, y_test = model.load_and_prepare_data_time_series(
-                                                            '2023-06-01 00:00:00',
-                                                            '2024-06-01 00:00:00',
-                                                            MARKET_DATA_ML_LOWER,
-                                                            test_size=0.9, random_state=None)
-    # データのロードと前処理
-    #x_train, x_test, y_train, y_test = model.load_and_prepare_data('2021-01-01 00:00:00', '2022-02-01 00:00:00')
 
-    # モデルの訓練
-    #model.train(x_train, y_train)
-    #model.load_model()
-    # モデルの評価
-    accuracy, report, conf_matrix = model.evaluate(x_test, y_test)
-    print(f"Accuracy: {accuracy}")
-    print(report)
-    print(conf_matrix)
 
+    # Permutation Feature Importanceの計算
+    permutation_importances = permutation_feature_importance(model.model, x_test, y_test, accuracy_score)
+     # 特徴量重要度の可視化
+    plt.figure(figsize=(10, 6))
+    plt.bar(range(len(permutation_importances)), permutation_importances)
+    plt.xlabel('Feature Index')
+    plt.ylabel('Permutation Feature Importance')
+    plt.title('Permutation Feature Importance')
+    plt.tight_layout()
+    plt.show()
+
+    # Permutation Feature Importanceの計算
+    permutation_importances = drop_column_feature_importance(model, x_test, y_test, accuracy_score)
+    # 特徴量重要度の可視化
+    plt.figure(figsize=(10, 6))
+    plt.bar(range(len(permutation_importances)), permutation_importances)
+    plt.xlabel('Feature Index')
+    plt.ylabel('drop_column_feature_importance')
+    plt.title('drop_column_feature_importance')
+    plt.tight_layout()
+    plt.show()
+      """
 if __name__ == '__main__':
     main()

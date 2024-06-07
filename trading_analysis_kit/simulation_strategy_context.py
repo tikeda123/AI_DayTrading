@@ -120,7 +120,7 @@ class SimulationStrategyContext(TradingContext):
         else:  # SHORTの場合の利益計算
             current_profit = buymnt - selmnt  - (buy_fee + sel_fee)# 収益P＆L
 
-        #self.log_transaction(f'Current profit: {current_profit},current price: {current_price},entry price: {entry_price}')
+        #self.log_transaction(f'current price: {current_price},entry price: {entry_price}')
         return current_profit
 
     def is_profit_triggered(self,triggered_profit)->(bool,float):
@@ -277,7 +277,7 @@ def main():
     strategy_context = SimulationStrategy()
 
     context = SimulationStrategyContext(strategy_context)
-    context.load_data_from_datetime_period('2023-09-01 00:00:00', '2024-01-01 00:00:00')
+    context.load_data_from_datetime_period('2024-01-01 00:00:00', '2024-06-01 00:00:00')
     context.run_trading(context)
     context.print_win_lose()
     context.save_simulation_result(context)

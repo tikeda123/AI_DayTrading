@@ -66,6 +66,12 @@ COLUMN_PANDL = 'pandl'
 COLUMN_MAX_PANDL = 'max_pandl'
 COLUMN_MIN_PANDL = 'min_pandl'
 COLUMN_EXIT_REASON = 'exit_reason'
+COLUMN_WCLPRICE = 'wclprice'
+COLUMN_ADLINE = 'adline'
+COLUMN_MFI = 'mfi'
+COLUMN_ROC = 'roc'
+COLUMN_ATR = 'atr'
+
 EXIT_REASON_LOSSCUT = 'losscut'
 EXIT_REASON_NORMAL = 'normal'
 
