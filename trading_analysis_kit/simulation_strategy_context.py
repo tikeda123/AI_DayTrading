@@ -277,7 +277,7 @@ def main():
     strategy_context = SimulationStrategy()
 
     context = SimulationStrategyContext(strategy_context)
-    context.load_data_from_datetime_period('2024-01-01 00:00:00', '2024-06-01 00:00:00')
+    context.load_data_from_datetime_period('2024-01-01 00:00:00', '2024-07-01 00:00:00')
     context.run_trading(context)
     context.print_win_lose()
     context.save_simulation_result(context)

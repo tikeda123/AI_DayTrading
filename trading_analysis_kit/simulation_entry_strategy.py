@@ -39,13 +39,18 @@ class BollingerBand_EntryStrategy():
 
         self.conf = get_config("ENTRY")
 
+        #self.manager_upper = init_inference_prediction_rolling_manager(
+        #                                                "upper_mlts",
+        #                                                TransformerPredictionTSModel)
+        #self.manager_lower = init_inference_prediction_rolling_manager(
+        #                                                "lower_mlts",
+        #                                                TransformerPredictionTSModel)
         self.manager_upper = init_inference_prediction_rolling_manager(
-                                                        "upper_mlts",
+                                                        "mix_upper_mlts",
                                                         TransformerPredictionTSModel)
         self.manager_lower = init_inference_prediction_rolling_manager(
-                                                        "lower_mlts",
+                                                        "mix_lower_mlts",
                                                         TransformerPredictionTSModel)
-
         #self.manager_rolling_six  = init_inference_prediction_rolling_manager(
         #                                                "rolling",
         #                                                TransformerPredictionRollingModel
@@ -98,23 +103,7 @@ class BollingerBand_EntryStrategy():
         #if bb_direction == BB_DIRECTION_LOWER and pred == PRED_TYPE_SHORT:
         #    if rsi <26.1 or bbvi < 0.22:
         #        return False
-        """
-        rsi = context.dm.get_value_by_column("rsi")
-        bbvi = context.dm.get_value_by_column("bbvi")
-
-        if bb_direction == BB_DIRECTION_UPPER and pred == PRED_TYPE_SHORT:
-            if rsi < 78.29  or bbvi < 0.97  :
-                return False
-
-
-
-        if bb_direction == BB_DIRECTION_LOWER and pred == PRED_TYPE_LONG:
-            if rsi <23.39 or bbvi < 1.66:
-                return False
-        if bb_direction == BB_DIRECTION_UPPER and pred == PRED_TYPE_LONG:
-            if rsi <62.45 or bbvi < 2.24:
-                return False
-        """
+  
 
         return True
         """
@@ -173,8 +162,8 @@ class BollingerBand_EntryStrategy():
             #flag = False
             target_df = self.manager_lower.create_time_series_data(df)
             prediction = self.manager_lower.predict_model(target_df)
-            #if prediction == PRED_TYPE_SHORT and pred_six == PRED_TYPE_LONG:
-            #    flag = False
+            if prediction == PRED_TYPE_SHORT:
+                flag = False
             #if prediction == PRED_TYPE_SHORT:
             #    flag = False
 

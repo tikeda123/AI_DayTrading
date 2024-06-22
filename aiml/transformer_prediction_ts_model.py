@@ -55,6 +55,17 @@ class TransformerPredictionTSModel(TransformerPredictionRollingModel):
         super().__init__(id,synbol,interval)
         self._dataloader = MongoDataLoader()
 
+    def load_and_prepare_data_time_series_mix(self,
+                                          data,
+                                          test_size=0.2,
+                                          random_state=None,
+                                          oversample=False):
+        scaled_sequences, targets = self._prepare_sequences_time_series(data, TIME_SERIES_PERIOD-1, self.feature_columns,oversample)
+        return train_test_split(scaled_sequences,
+                                targets,
+                                test_size=test_size,
+                                random_state=random_state,shuffle=False)
+
     def load_and_prepare_data_time_series(self,
                                           start_date,
                                           end_date,
@@ -215,6 +226,7 @@ def check_gradients(model, data, layer_name):
 
 
 def train_main(model):
+
     x_train, x_test, y_train, y_test = model.load_and_prepare_data_time_series(
                                                                     '2020-01-01 00:00:00',
                                                                     '2024-01-01 00:00:00',

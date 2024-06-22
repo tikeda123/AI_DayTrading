@@ -42,8 +42,15 @@ class MongoDataLoader(DataLoader):
         self.username =  self.config.get('MONGODB', 'USERNAME')
         self.password = self.config.get('MONGODB', 'PASSWORD')
         self.database = self.config.get('MONGODB', 'DATABASE')
+        self.collection = None
         self.set_collection_name(MARKET_DATA)
         self.set_seq_collection_name(TRADING_LOG)
+
+    def set_collection(self, collection_name):
+        """
+        コレクション名を生成します。
+        """
+        self.collection = collection_name
 
     def set_collection_name(self, collection_name):
         """

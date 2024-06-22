@@ -41,7 +41,7 @@ from aiml.transformerblock import TransformerBlock
 
 # ハイパーパラメータの設定
 PARAM_LEARNING_RATE = 0.0002
-PARAM_EPOCHS = 200
+PARAM_EPOCHS = 500
 
 N_SPLITS=3
 

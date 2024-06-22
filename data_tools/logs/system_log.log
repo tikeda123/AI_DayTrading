@@ -426,3 +426,6 @@
 2024-06-03 01:28:31,706 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/lower_mlts_BTCUSDT_60_model.scaler
 2024-06-03 01:28:31,707 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/rolling_BTCUSDT_360_model.keras
 2024-06-03 01:28:32,340 INFO: Loading scaler from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/rolling_BTCUSDT_360_model.scaler
+2024-06-16 23:21:53,757 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/upper_mlts_BTCUSDT_30_model.keras
+2024-06-16 23:22:39,504 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/upper_mlts_BTCUSDT_30_model.keras
+2024-06-16 23:23:18,392 INFO: Loading model from /Users/ikedatoshihiko/workspace/btctrading_wk/offline/btctrading_offline_ver2_0/AI_DayTrading/data/data_rolling/upper_mlts_BTCUSDT_30_model.keras

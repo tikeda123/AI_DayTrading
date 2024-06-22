@@ -42,7 +42,7 @@
         "LEVERAGE"      :3,
         "FTC"           :0,
         "PTC"           :0.00055,
-        "LOSSCUT"       :0.1,
+        "LOSSCUT"       :0.06,
         "TRAILING_STOP_DUR"      :1,
         "TRAILING_STOP_RATE"     :0.01,
         "ENTRY_RATE"        :0.003
