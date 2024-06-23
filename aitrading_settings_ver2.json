@@ -1,6 +1,6 @@
 {
     "SYMBOL"            :"BTCUSDT",
-    "INTERVAL"          :60,
+    "INTERVAL"          :5,
     "ONLINE":
     {
         "DBNAME"        :"trading",
@@ -51,7 +51,7 @@
     "LOG":
     {
         "LOGLVL"        :10,
-        "VERBOSE"       :true,
+        "VERBOSE"       :false,
         "DB_FLAG"       :false,
         "LOGPATH"       :"logs/",
         "LOGFNAME"      :"btc_usdt.log",

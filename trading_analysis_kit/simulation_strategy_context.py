@@ -44,7 +44,7 @@ class SimulationStrategyContext(TradingContext):
 
         super().__init__(strategy)  # 親クラスのコンストラクタを呼び出す
         self.fx_transaction = FXTransaction()
-        self.entry_manager = BollingerBand_EntryStrategy()
+        #self.entry_manager = BollingerBand_EntryStrategy()
         self.losscut = self.config_manager.get("ACCOUNT", "LOSSCUT")
         self.leverage = self.config_manager.get("ACCOUNT", "LEVERAGE")
         self.init_amount = self.config_manager.get("ACCOUNT", "INIT_AMOUNT")

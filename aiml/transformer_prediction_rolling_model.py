@@ -40,10 +40,10 @@ from aiml.prediction_model import PredictionModel
 from aiml.transformerblock import TransformerBlock
 
 # ハイパーパラメータの設定
-PARAM_LEARNING_RATE = 0.0002
-PARAM_EPOCHS = 500
+PARAM_LEARNING_RATE = 0.0001
+PARAM_EPOCHS = 600
 
-N_SPLITS=3
+N_SPLITS=4
 
 POSITIVE_THRESHOLD = 0
 
@@ -215,7 +215,7 @@ class TransformerPredictionRollingModel(PredictionModel):
 
 
     def create_cnn_transformer_model(
-        self, input_shape, num_heads=16, dff=256, rate=0.1, l2_reg=0.01, num_transformer_blocks=3,
+        self, input_shape, num_heads=32, dff=256, rate=0.1, l2_reg=0.01, num_transformer_blocks=4,
         num_filters=64, kernel_size=3, pool_size=2
     ):
         """
