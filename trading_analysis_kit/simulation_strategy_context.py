@@ -44,7 +44,7 @@ class SimulationStrategyContext(TradingContext):
 
         super().__init__(strategy)  # 親クラスのコンストラクタを呼び出す
         self.fx_transaction = FXTransaction()
-        #self.entry_manager = BollingerBand_EntryStrategy()
+        self.entry_manager = BollingerBand_EntryStrategy()
         self.losscut = self.config_manager.get("ACCOUNT", "LOSSCUT")
         self.leverage = self.config_manager.get("ACCOUNT", "LEVERAGE")
         self.init_amount = self.config_manager.get("ACCOUNT", "INIT_AMOUNT")
@@ -277,7 +277,7 @@ def main():
     strategy_context = SimulationStrategy()
 
     context = SimulationStrategyContext(strategy_context)
-    context.load_data_from_datetime_period('2024-01-01 00:00:00', '2024-07-01 00:00:00')
+    context.load_data_from_datetime_period('2023-01-01 00:00:00', '2023-07-01 00:00:00')
     context.run_trading(context)
     context.print_win_lose()
     context.save_simulation_result(context)

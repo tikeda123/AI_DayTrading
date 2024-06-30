@@ -57,9 +57,23 @@ class BollingerBand_EntryStrategy():
         #                                                ,interval=360)
         self.manager_upper.load_model()
         self.manager_lower.load_model()
+        self.warm_up()
+
         #self.manager_rolling_six.load_model()
  #       self.manager_rolling_four.load_model()
         #self.manager_rolling_six.load_and_prepare_data("2024-01-01 00:00:00", "2024-06-05 00:00:00",MARKET_DATA_TECH,test_size=0.9, random_state=None)
+
+    def warm_up(self):
+            x_train, x_test, y_train, y_test = self.manager_upper.load_and_prepare_data_time_series( '2020-01-01 00:00:00',
+                                                                                '2024-01-01 00:00:00',
+                                                                                MARKET_DATA_ML_UPPER,
+                                                                                test_size=0.9,
+                                                                                random_state=None)
+            x_train, x_test, y_train, y_test = self.manager_lower.load_and_prepare_data_time_series( '2020-01-01 00:00:00',
+                                                                                '2024-01-01 00:00:00',
+                                                                                MARKET_DATA_ML_LOWER,
+                                                                                test_size=0.9,
+                                                                                random_state=None)
 
 
     def should_entry(self, context)->bool:
@@ -103,7 +117,7 @@ class BollingerBand_EntryStrategy():
         #if bb_direction == BB_DIRECTION_LOWER and pred == PRED_TYPE_SHORT:
         #    if rsi <26.1 or bbvi < 0.22:
         #        return False
-  
+
 
         return True
         """
@@ -156,16 +170,14 @@ class BollingerBand_EntryStrategy():
             #f prediction == PRED_TYPE_LONG and pred_six == PRED_TYPE_SHORT:
             #prediction = PRED_TYPE_LONG
             #flag = False
-            #    flag = False
         elif bb_direction == BB_DIRECTION_LOWER:
             #prediction = PRED_TYPE_LONG
             #flag = False
             target_df = self.manager_lower.create_time_series_data(df)
             prediction = self.manager_lower.predict_model(target_df)
-            if prediction == PRED_TYPE_SHORT:
-                flag = False
             #if prediction == PRED_TYPE_SHORT:
             #    flag = False
+            #flag=False
 
         #prediction = 1 - prediction
         context.dm.set_prediction(prediction)

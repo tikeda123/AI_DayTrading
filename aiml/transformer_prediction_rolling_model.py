@@ -7,7 +7,7 @@ import pandas as pd
 import shap
 
 from sklearn.model_selection import train_test_split, KFold
-from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 #from tensorflow.keras.layers import Conv1D, MaxPooling1D, Flatten, Dense, Dropout, GlobalAveragePooling1D
 import tensorflow as tf
@@ -41,9 +41,9 @@ from aiml.transformerblock import TransformerBlock
 
 # ハイパーパラメータの設定
 PARAM_LEARNING_RATE = 0.0001
-PARAM_EPOCHS = 600
+PARAM_EPOCHS = 500
 
-N_SPLITS=4
+N_SPLITS=3
 
 POSITIVE_THRESHOLD = 0
 
@@ -99,7 +99,8 @@ class TransformerPredictionRollingModel(PredictionModel):
 
 
         self.initialize_paths()
-        self.scaler = MinMaxScaler(feature_range=(-1, 1))
+        self.scaler = MinMaxScaler()
+
         self.create_table_name()
         self.model = None
 
@@ -215,7 +216,7 @@ class TransformerPredictionRollingModel(PredictionModel):
 
 
     def create_cnn_transformer_model(
-        self, input_shape, num_heads=32, dff=256, rate=0.1, l2_reg=0.01, num_transformer_blocks=4,
+        self, input_shape, num_heads=16, dff=256, rate=0.1, l2_reg=0.01, num_transformer_blocks=4,
         num_filters=64, kernel_size=3, pool_size=2
     ):
         """

@@ -1,6 +1,6 @@
 {
     "SYMBOL"            :"BTCUSDT",
-    "INTERVAL"          :5,
+    "INTERVAL"          :60,
     "ONLINE":
     {
         "DBNAME"        :"trading",
@@ -42,7 +42,7 @@
         "LEVERAGE"      :3,
         "FTC"           :0,
         "PTC"           :0.00055,
-        "LOSSCUT"       :0.06,
+        "LOSSCUT"       :0.2,
         "TRAILING_STOP_DUR"      :1,
         "TRAILING_STOP_RATE"     :0.01,
         "ENTRY_RATE"        :0.003
@@ -51,7 +51,7 @@
     "LOG":
     {
         "LOGLVL"        :10,
-        "VERBOSE"       :false,
+        "VERBOSE"       :true,
         "DB_FLAG"       :false,
         "LOGPATH"       :"logs/",
         "LOGFNAME"      :"btc_usdt.log",

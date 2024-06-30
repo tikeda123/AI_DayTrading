@@ -4,6 +4,7 @@ from typing import Tuple
 import numpy as np
 import tensorflow as tf
 import pandas as pd
+import time
 
 from sklearn.model_selection import train_test_split,ParameterGrid
 from tqdm import tqdm
@@ -22,6 +23,7 @@ from common.constants import *
 from mongodb.data_loader_mongo import MongoDataLoader
 
 from aiml.transformer_prediction_rolling_model import *
+
 
 
 class TransformerPredictionTSModel(TransformerPredictionRollingModel):
@@ -60,7 +62,10 @@ class TransformerPredictionTSModel(TransformerPredictionRollingModel):
                                           test_size=0.2,
                                           random_state=None,
                                           oversample=False):
+
+
         scaled_sequences, targets = self._prepare_sequences_time_series(data, TIME_SERIES_PERIOD-1, self.feature_columns,oversample)
+
         return train_test_split(scaled_sequences,
                                 targets,
                                 test_size=test_size,
@@ -84,22 +89,27 @@ class TransformerPredictionTSModel(TransformerPredictionRollingModel):
         # フィルタリングされたデータを取得
         filtered_data = data[(data[COLUMN_BB_DIRECTION].isin([BB_DIRECTION_UPPER, BB_DIRECTION_LOWER])) & (data[COLUMN_BB_PROFIT] != 0)]
 
-        sequences, targets = [], []
+        def sequence_generator():
+            for i in range(len(filtered_data)):
+                end_index = filtered_data.index[i]
+                start_index = end_index - ftime_steps
+                if end_index > len(data):
+                    break
+                sequence = data.loc[start_index:end_index, feature_columns].values
+                target = data.loc[end_index, COLUMN_BB_PROFIT] > POSITIVE_THRESHOLD
+                yield sequence, target
 
-        for i in range(len(filtered_data)):
-            end_index = filtered_data.index[i]
-            start_index = end_index - ftime_steps
-            if end_index > len(data):
-                break
+        sequences = []
+        targets = []
+        #self.scaler = MinMaxScaler()
 
-            sequence = data.loc[start_index:end_index, feature_columns].values
-            target = data.loc[end_index, COLUMN_BB_PROFIT] > POSITIVE_THRESHOLD
-            sequences.append(sequence)
+        for seq, target in sequence_generator():
+            scaled_seq = self.scaler.fit_transform(seq)
+            sequences.append(scaled_seq)
             targets.append(target)
 
-        sequences = np.array(sequences)
+        scaled_sequences = np.array(sequences)
         targets = np.array(targets)
-        scaled_sequences = np.array([self.scaler.fit_transform(seq) for seq in sequences])
 
         # オーバーサンプリング
         if oversample:
@@ -256,8 +266,8 @@ def main():
 
 
     # モデルの初期化
-    model = TransformerPredictionTSModel("upper_mlts")
-
+    model = TransformerPredictionTSModel("mix_upper_mlts")
+    """
     for i in range(100):
         accuracy_score = train_main(model)
         if accuracy_score >= 0.65:
@@ -271,6 +281,7 @@ def main():
     #model.load_model(0
     # モデルの訓練
         # モデルをクロスバリデーションで訓練します
+    """
     """
     param_grid = {
         'num_heads': [4, 8, 16],
@@ -305,6 +316,19 @@ def main():
     print(conf_matrix)
     model.save_model()
    """
+
+    model.load_model()
+
+    x_train, x_test, y_train, y_test = model.load_and_prepare_data_time_series( '2023-01-01 00:00:00',
+                                                                                '2023-03-01 00:00:00',
+                                                                                MARKET_DATA_ML_UPPER,
+                                                                                test_size=0.9,
+                                                                                random_state=None,
+                                                                                oversample=False)
+    accuracy, report, conf_matrix = model.evaluate(x_test, y_test)
+    print(f"Accuracy: {accuracy}")
+    print(report)
+    print(conf_matrix)
 
     """
         # 異なるレイヤー名を試す
